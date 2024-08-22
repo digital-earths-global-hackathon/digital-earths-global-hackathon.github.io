@@ -12,12 +12,16 @@ the suggested scientific topics around which the hackhon is being bulit include:
 * Variability in mountainous regions and complex terrain 
 * Impacts of small scale features (e.g. convection) on waves and the large scale circulation
 
-# Core Simuations 
+# Simulations
+
+## Core Simuations 
 
 The common scientific agenda of the Digital Earths Global Hackathon (DEGH) will be simulations of using global atmospheric general circulation models 
 with a horizontal discretization of 5 km or less.  
 Every participating node is requested to host one or more such simulations, which are performed and for which output is provided following a common protocool  
 These are the DEGH core simulations.  
+
+## Additional Simulations
 
 In addition to these global simulations, regional simulations with a horizontal discretization of 5 km or less are welcome. 
 Ideally these would be longer or with multiple ensemble members. In addition, the same output should be provided as requested for global simulations. 
