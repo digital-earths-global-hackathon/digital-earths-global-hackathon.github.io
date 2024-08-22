@@ -3,24 +3,45 @@ title: Scientific Scope
 order: 10
 ---
 
+# Science Focus
+
+Given that the focus is on simulations with a horizontal discretization of 5 km or less, and most of the simulations are short (one year or less for global),
+the suggested scientific topics around which the hackhon is being bulit include: 
+* Convective Organization and convective features including tropical cyclones and Mesoscale Convective Systems. 
+* Extreme Precipitation
+* Variability in mountainous regions and complex terrain 
+* Impacts of small scale features (e.g. convection) on waves and the large scale circulation
+
 # Core Simuations 
 
-The common scientific agenda of the Digital Earths Global Hackathon (DEGH) will be simulations of an annual cycle using global atmospheric general circulation models with a horizontal discretization of 5 km or less.  Every participating node will host one or more such simulations, which are performed and for which output is provided following a common protocool  These are the DEGH core simulations.
+The common scientific agenda of the Digital Earths Global Hackathon (DEGH) will be simulations of using global atmospheric general circulation models 
+with a horizontal discretization of 5 km or less.  
+Every participating node is requested to host one or more such simulations, which are performed and for which output is provided following a common protocool  
+These are the DEGH core simulations.  
+
+In addition to these global simulations, regional simulations with a horizontal discretization of 5 km or less are welcome. 
+Ideally these would be longer or with multiple ensemble members. In addition, the same output should be provided as requested for global simulations. 
 
 ##  Experimental Protocol
 
-The protocol follows Takasuka et al., *Prog. Earth and Planet. Sci.* (2024), and contains the following elements:
+The protocol ideally follows Takasuka et al., *Prog. Earth and Planet. Sci.* (2024), and contains the following elements:
 
- * Atmosphere-only model with specified sea-ice and sea-surface tmeperature and ideally no convective parameterization.
+ * Atmosphere-only model with specified sea-ice and sea-surface tmeperature
  * Simulation grid: horizontal tiling of 5 km or less in linear dimension, vertical grid unspecified.
  * Atmospheric initializaiton interpolated from IFS on 2020-01-20.
  * Land initialization up to individual groups, but must be documented.
  * Analysis period: From 2020-03-01 to 2021-02-28.
- * Output grid: HEALPix zoom level 9 or higher (effective cell size of 13 km) at 6 hr interval (3D variables) and 1 hr interval for 2D fields.
+ * Output grid: effective cell size of 13 km or higher at 6 hr interval (3D variables) and 1 hr interval for 2D fields.
 
 ##  Output Protocol
 
-Below the minimum output is listed and CF Conventions are followed.  For some models the hydrometeor categories may not map directly onto the specified output.  In these cases hydrometeor habits can be left out (for instance if snow and cloud ice are not distinguished), or additional information can be added, e.g., for models with hail.
+Below the minimum output is listed and CF Conventions are followed.  
+For some models the hydrometeor categories may not map directly onto the specified output.  
+In these cases hydrometeor habits can be left out (for instance if snow and cloud ice are not distinguished), 
+or additional information can be added, e.g., for models with hail.
+
+It is requested that output from the core simulations be provided in HEALPix compatible format, or with routines to convert it. 
+It is also requested that for non HEALPix formats (possible for regional output) python read routines be provided.
 
 **3D Output Variables:** 
 
