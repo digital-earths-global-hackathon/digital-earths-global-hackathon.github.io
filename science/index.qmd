@@ -37,6 +37,17 @@ The protocol ideally follows Takasuka et al., *Prog. Earth and Planet. Sci.* (20
  * Analysis period: From 2020-03-01 to 2021-02-28.
  * Output grid: effective cell size of 13 km or higher at 6 hr interval (3D variables) and 1 hr interval for 2D fields.
 
+
+# Output and Diagnostics
+
+## Diagnotics and workflows
+
+We encourage model groups and others to bring diagnostic workflows to the table for analyzing km-scale models. 
+The focus of the hackathon is python server based architectures (e.g. jupyter servers). 
+Groups should consider making sure their workflows will operate at different nodes in the same way (through installable packges for python/pip/etc.)
+
+We welcom for example different ways to analyze data and analysis scripts like feature trackers (for convection, cyclones, etc.)
+
 ##  Output Protocol
 
 Below the minimum output is listed and CF Conventions are followed.  
@@ -46,15 +57,6 @@ or additional information can be added, e.g., for models with hail.
 
 It is requested that output from the core simulations be provided in HEALPix compatible format, or with routines to convert it. 
 It is also requested that for non HEALPix formats (possible for regional output) python read routines be provided.
-
-
-# Output and Diagnostics
-
-We encourage model groups and others to bring diagnostic workflows to the table for analyzing km-scale models. 
-The focus of the hackathon is python server based architectures (e.g. jupyter servers). 
-Groups should consider making sure their workflows will operate at different nodes in the same way (through installable packges for python/pip/etc.)
-
-We welcom for example different ways to analyze data and analysis scripts like feature trackers (for convection, cyclones, etc.)
 
 
 ## Output Variables
