@@ -33,25 +33,59 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Digital Earths – Global Hackathon",
+    "objectID": "Hosts/index.html",
+    "href": "Hosts/index.html",
+    "title": "Hosts",
     "section": "",
-    "text": "May 12-18 2025 – Beijing, Boulder, Oxford, Sao Paulo, Stockholm, Tokyo\nThe Digital Earths Global Hackathon will bring together scientists from around the world to jointly analyze the first ever coordinated experiments of climate models simulating a full annual cycle with horizontal grid spacings of 5 km or less).\nParticipants will gather at one of a number of regional nodes for the hacking, each of which will provide access to a combined data-compute resource hosting the data and proximate computing capbility for its analysis. Each node will host at least one full annual cycle of output data standardized on a common (HEALPix) grid. Standardization will help participants share their analysis workflows with other teams analyzing other models at other nodes, and thereby build global communities around common interests."
+    "text": "This is a table with the known participating institutions and teams, including people nominated to committees.\n\n\n\nTeam\nComputing facility\nMeeting location\nSteering group member\nTechnical committee\nLogistics committee\nAssociated Project(s)\n\n\n\n\nAU\n?NCI\nUNSW?\nChristian Jakob\nBen Evans\nMelissa Hart\n\n\n\nBR/AR\nINPE\nUSP\nRosmeri Porfirio da Rocha\nSebastião Antonio\nRosmeri Porfirio da Rocha\n\n\n\nCN\nEarthlab\nIAP\nYing Yang\n\n\n\n\n\nEU\nDKRZ\nStockholm Univ\nBjorn Stevens\nFlorian Ziemen\nHeike Konow\nnextGEMS\n\n\nIN (NCMRWF/IITM)\nNCMRWF\nNCMRWF\nRaghav Mupparthy\nTBD\nTBD\nTBD\n\n\nJP\nJAMSTEC\nUTokyo\nMasaki Satoh\nTakashi Arakawa, Masaki Satoh\nTomoki Ohno, Masaki Satoh\nICCP-GSRA\n\n\nUK\nJASMIN\nUniv Oxford\nPier Luigi Vidale\nAdrian Hines\nPhilip Stier\n\n\n\nUS-Central (NSF/NCAR)\nNCAR-NWSC\nNCAR\nBrian Medeiros / Bill Skamarock\nTBD\nTBD\n\n\n\nUS-East (GFDL?)\nTBD\nTBD\nTBD\nTBD\nTBD\n\n\n\nUS-West (DOE)\nNERSC/LBL\nLBL/Berkeley?\nAndrew Gettelman / Paul Ullrich\nTBD\nTBD\n\n\n\nZA\n\n\nJessica Steinkopf",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Hosts"
+    ]
   },
   {
-    "objectID": "index.html#goals",
-    "href": "index.html#goals",
-    "title": "Digital Earths – Global Hackathon",
-    "section": "Goals",
-    "text": "Goals\n\naccelerate the improvement and analysis of km-scale climate models (including regional models)\nsocialize best practices in coding and data intensive applications (infrastructure and workflows)\nestablish and disseminate the advantages of adopting common standards for km-scale climate information\nbuild solidarity and open access to resources\n\nIn addition individual centers may provide access to additional resources to supplement the standardized model outputs. This could include output from km-scale regional models or km-scale satellite data all of which would ideally be standardized similarly to the global models. Likewise computing capabilities could be augmented to support the application of machine learning."
+    "objectID": "hosting/technical/index.html",
+    "href": "hosting/technical/index.html",
+    "title": "Technical details for host teams",
+    "section": "",
+    "text": "Combined data and compute to support at least 100 users analyzing at least 100 TB data sets.\n1PB data resource (100TB minimum)\nLarge (1000) multi-core analysis platforms with fast access to data resource (could be separate from meeting place) and JUPYTER support.\nOne DYAMOND-Annual Simulation on HEALPIX (other data and other formats can be hosted as desired, but each participant must host at least one standardized dataset).",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Technical details for host teams"
+    ]
   },
   {
-    "objectID": "index.html#organization",
-    "href": "index.html#organization",
-    "title": "Digital Earths – Global Hackathon",
-    "section": "Organization",
-    "text": "Organization\nA scientific steering committee will be responsible for the organization and will be supported by sub-committees for technical and logistical issues.\nParticipating teams around the world will assign someone to the sub-committees and is welcome to nominate a member for the scientific steering committee."
+    "objectID": "hosting/technical/index.html#the-data-request",
+    "href": "hosting/technical/index.html#the-data-request",
+    "title": "Technical details for host teams",
+    "section": "The data request",
+    "text": "The data request\nThe Data request is under development, and we are working on a python script to verify that a dataset matches the request.",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Technical details for host teams"
+    ]
+  },
+  {
+    "objectID": "hosting/technical/index.html#grids",
+    "href": "hosting/technical/index.html#grids",
+    "title": "Technical details for host teams",
+    "section": "Grids",
+    "text": "Grids\nThe HEALPix grid (Górski et al., 2004) has proven very useful for providing the data, as it features equal area cells, on isolatitude bands and yields itself naturally to a hierarchy of resolutions. It also features the option of using a cell ordering (nest) that represents the hierarchy and thus regions that are close in index space, usually also are close in geographical space. This eases reading only a region of a dataset from disks. See easy.gems for more info.",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Technical details for host teams"
+    ]
+  },
+  {
+    "objectID": "hosting/technical/index.html#catalogs",
+    "href": "hosting/technical/index.html#catalogs",
+    "title": "Technical details for host teams",
+    "section": "Catalogs",
+    "text": "Catalogs\nGrouping the datasets in catalogs allows to abstract from file system paths, and eases later dataset updates and migrations. Intake has proven useful here - mind that there are version one and two and that the two versions are not necessarily compatible.\nSee easy.gems for examples of the use of intake in the context of previous hackathons.",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Technical details for host teams"
+    ]
   },
   {
     "objectID": "hosting/technical/data_request.html",
@@ -126,47 +160,14 @@
     ]
   },
   {
-    "objectID": "hosting/technical/index.html",
-    "href": "hosting/technical/index.html",
-    "title": "Technical details for host teams",
+    "objectID": "hosting/time_line.html",
+    "href": "hosting/time_line.html",
+    "title": "Organization time line",
     "section": "",
-    "text": "Combined data and compute to support at least 100 users analyzing at least 100 TB data sets.\n1PB data resource (100TB minimum)\nLarge (1000) multi-core analysis platforms with fast access to data resource (could be separate from meeting place) and JUPYTER support.\nOne DYAMOND-Annual Simulation on HEALPIX (other data and other formats can be hosted as desired, but each participant must host at least one standardized dataset).",
+    "text": "This is an idealized time line until when tasks need to be completed. Tasks could be completed earlier of course.\n\nas soon as possible\n\ndecide on locations (for people and data)\nwhich projects want to be involved?\nannounce dates to the community, with reference to basic website?\ncome up with a cool title\nwhat budget do we have for location costs, etc.? are there any sponsors?\n\n9 months before the event (August 2024)\n\ndecide on rough agenda, potential keynote speakers\n\n8 months before the event (September 2024)\n\nbook meeting venues\n\n7 months before the event (October 2024)\n6 months before the event (November 2024)\n\nplan possible side events at each location (tours)? social events, world cafe, etc.?\ndefine terms of reference (TOR) for hackathon participation (is necessary for nextGEMS)\n\n5 months before the event (December 2024)\n\nwebsite online\nregistration page(s) set up\nannounce hackathon\npublish schedule\nopen registration (1 Jan)\n\n4 months before the event (January 2025)\n\napplication deadline for travel support (15 Jan)\ninvitation letters for visa applications to be sent out\n\n3 months before the event (February 2025)\n\nregistration closes (1 Feb)\ndecision on participant numbers / can we accept all registrations?\nsend out confirmation about travel support (1 Feb)\nsend out registration confirmation (14 Feb)\nopen payment options (14 Feb)\n\n2 months before the event (March 2025)\n\nset up communication channels for the hackathon (Mattermost, mailing list(s))\nsimulations ready\n\n1 month before the event (April 2025)\n\nworkflow for data access\nparticipation fee payment deadline (15 April)\nsend NDAs to participants\n\nlast weeks before the event\n\nbadges\nsigns",
     "crumbs": [
       "Hosting a hackathon site",
-      "Technical details for host teams"
-    ]
-  },
-  {
-    "objectID": "hosting/technical/index.html#the-data-request",
-    "href": "hosting/technical/index.html#the-data-request",
-    "title": "Technical details for host teams",
-    "section": "The data request",
-    "text": "The data request\nThe Data request is under development, and we are working on a python script to verify that a dataset matches the request.",
-    "crumbs": [
-      "Hosting a hackathon site",
-      "Technical details for host teams"
-    ]
-  },
-  {
-    "objectID": "hosting/technical/index.html#grids",
-    "href": "hosting/technical/index.html#grids",
-    "title": "Technical details for host teams",
-    "section": "Grids",
-    "text": "Grids\nThe HEALPix grid (Górski et al., 2004) has proven very useful for providing the data, as it features equal area cells, on isolatitude bands and yields itself naturally to a hierarchy of resolutions. It also features the option of using a cell ordering (nest) that represents the hierarchy and thus regions that are close in index space, usually also are close in geographical space. This eases reading only a region of a dataset from disks. See easy.gems for more info.",
-    "crumbs": [
-      "Hosting a hackathon site",
-      "Technical details for host teams"
-    ]
-  },
-  {
-    "objectID": "hosting/technical/index.html#catalogs",
-    "href": "hosting/technical/index.html#catalogs",
-    "title": "Technical details for host teams",
-    "section": "Catalogs",
-    "text": "Catalogs\nGrouping the datasets in catalogs allows to abstract from file system paths, and eases later dataset updates and migrations. Intake has proven useful here - mind that there are version one and two and that the two versions are not necessarily compatible.\nSee easy.gems for examples of the use of intake in the context of previous hackathons.",
-    "crumbs": [
-      "Hosting a hackathon site",
-      "Technical details for host teams"
+      "Organization time line"
     ]
   },
   {
@@ -249,6 +250,42 @@
     ]
   },
   {
+    "objectID": "hosting/technical/meeting-2024-10-21.html",
+    "href": "hosting/technical/meeting-2024-10-21.html",
+    "title": "Preparation meeting on 2024-10-21/22",
+    "section": "",
+    "text": "This will be a virtual meeting via zoom, and we will record the sessions / take notes to allow for those with conflicting schedules / time zones to follow the conversations.\nWe will hold the sessions in the afternoon to ease participation from the Americas.\nPlease register to receive the zoom link\n\n\n\n\n\n\n\n\n\n\n\n\n\nTime in CEST (UTC+2)\nWhat\nWho\n\n\n\n\nThe setting\n\n\n\n\n15:00\nRound of introductions, agenda , …\nall, Flo (DKRZ)\n\n\n15:20\nIdea and goals of the hackathon\nBjorn Stevens (MPI-M)\n\n\n15:45\nA typical hackathon agenda\nHeike Konow (MPI-M)\n\n\n16:00\nUseful datasets\nTobi (MPI-M)\n\n\n16:15\nRegional grids\nAndreas Prein (ETHZ)\n\n\n16:30\nThe experimental protocols\ntbd\n\n\n17:00\nDiscussion on the setting and data\nall\n\n\n17:30\n☕️ Coffee break\nall\n\n\nData access\n\n\n\n\n17:45\nZarr and other stores\nFlo\n\n\n18:00\nCatalogs\nTobi (MPI-M)\n\n\n18:15\nStorage needs\nFlo (DKRZ)\n\n\n18:30\nOpen discussion\nall\n\n\n19:00\nEnd\nall\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTime in CEST (UTC+2)\nWhat\nWho\n\n\n\n\nWorking with the data\n\n\n\n\n15:00\nWelcome back and recap\nFlo\n\n\n15:15\nUxarray\nOrhan Eroglu / John Clyne (UCAR)\n\n\n15:30\neasygems and other python packages\nLukas (MPI-M)\n\n\n15:45\nStorm trackers\ntbd\n\n\n16:00\nProcessing needs, incl. py envs,…\nLukas\n\n\nDocumentation and collaboration\n\n\n\n\n16:15\ndocumentation: Pythia, easy.gems.dkrz.de\nJohn Clyne (UCAR), Tobi?\n\n\n16:45\nCollecting code and results across nodes\nNikolay Koldunov (AWI)\n\n\n17:00\n☕️ Coffee break\n\n\n\nWorking from here\n\n\n\n\n17:30\nWhat’s open, next steps\nall, Flo\n\n\n19:00\nEnd",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Technical details for host teams",
+      "Preparation meeting on 2024-10-21/22"
+    ]
+  },
+  {
+    "objectID": "hosting/technical/meeting-2024-10-21.html#monday-2024-10-21",
+    "href": "hosting/technical/meeting-2024-10-21.html#monday-2024-10-21",
+    "title": "Preparation meeting on 2024-10-21/22",
+    "section": "",
+    "text": "Time in CEST (UTC+2)\nWhat\nWho\n\n\n\n\nThe setting\n\n\n\n\n15:00\nRound of introductions, agenda , …\nall, Flo (DKRZ)\n\n\n15:20\nIdea and goals of the hackathon\nBjorn Stevens (MPI-M)\n\n\n15:45\nA typical hackathon agenda\nHeike Konow (MPI-M)\n\n\n16:00\nUseful datasets\nTobi (MPI-M)\n\n\n16:15\nRegional grids\nAndreas Prein (ETHZ)\n\n\n16:30\nThe experimental protocols\ntbd\n\n\n17:00\nDiscussion on the setting and data\nall\n\n\n17:30\n☕️ Coffee break\nall\n\n\nData access\n\n\n\n\n17:45\nZarr and other stores\nFlo\n\n\n18:00\nCatalogs\nTobi (MPI-M)\n\n\n18:15\nStorage needs\nFlo (DKRZ)\n\n\n18:30\nOpen discussion\nall\n\n\n19:00\nEnd\nall",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Technical details for host teams",
+      "Preparation meeting on 2024-10-21/22"
+    ]
+  },
+  {
+    "objectID": "hosting/technical/meeting-2024-10-21.html#tuesday-2024-10-22",
+    "href": "hosting/technical/meeting-2024-10-21.html#tuesday-2024-10-22",
+    "title": "Preparation meeting on 2024-10-21/22",
+    "section": "",
+    "text": "Time in CEST (UTC+2)\nWhat\nWho\n\n\n\n\nWorking with the data\n\n\n\n\n15:00\nWelcome back and recap\nFlo\n\n\n15:15\nUxarray\nOrhan Eroglu / John Clyne (UCAR)\n\n\n15:30\neasygems and other python packages\nLukas (MPI-M)\n\n\n15:45\nStorm trackers\ntbd\n\n\n16:00\nProcessing needs, incl. py envs,…\nLukas\n\n\nDocumentation and collaboration\n\n\n\n\n16:15\ndocumentation: Pythia, easy.gems.dkrz.de\nJohn Clyne (UCAR), Tobi?\n\n\n16:45\nCollecting code and results across nodes\nNikolay Koldunov (AWI)\n\n\n17:00\n☕️ Coffee break\n\n\n\nWorking from here\n\n\n\n\n17:30\nWhat’s open, next steps\nall, Flo\n\n\n19:00\nEnd",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Technical details for host teams",
+      "Preparation meeting on 2024-10-21/22"
+    ]
+  },
+  {
     "objectID": "hosting/technical/transforming_to_healpix.html",
     "href": "hosting/technical/transforming_to_healpix.html",
     "title": "Transforming data to healpix",
@@ -285,61 +322,24 @@
     ]
   },
   {
-    "objectID": "hosting/technical/meeting-2024-10-21.html",
-    "href": "hosting/technical/meeting-2024-10-21.html",
-    "title": "Preparation meeting on 2024-10-21/22",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Digital Earths – Global Hackathon",
     "section": "",
-    "text": "This will be a virtual meeting via zoom, and we will record the sessions / take notes to allow for those with conflicting schedules / time zones to follow the conversations.\nWe will hold the sessions in the afternoon to ease participation from the Americas.\nPlease register to receive the zoom link\n\n\n\n\n\n\n\n\n\n\n\n\n\nTime in CEST (UTC+2)\nWhat\nWho\n\n\n\n\nThe setting\n\n\n\n\n15:00\nRound of introductions, agenda , …\nall, Flo (DKRZ)\n\n\n15:20\nIdea and goals of the hackathon\ntbd\n\n\n15:45\nA typical hackathon agenda\nHeike (MPI-M)?\n\n\n16:00\nThe healpix grid\nFlo / Tobi (MPI-M)?\n\n\n16:15\nRegional grids\nAndreas Prein (ETHZ)\n\n\n16:30\nThe experimental protocols\ntbd\n\n\n17:00\nDiscussion on the setting and data\n\n\n\n17:30\n☕️ Coffee break\nall\n\n\nData access\n\n\n\n\n17:45\nZarr and other stores\nFlo\n\n\n18:00\n(Intake) catalogs\nTobi/Lukas?\n\n\n18:15\nStorage needs\nall, Flo\n\n\n18:30\nOpen discussion\nall\n\n\n19:00\nEnd\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTime in CEST (UTC+2)\nWhat\nWho\n\n\n\n\nWorking with the data\n\n\n\n\n15:00\nWelcome back and recap\nFlo\n\n\n15:15\nUxarray\nOrhan Eroglu / John Clyne (UCAR)\n\n\n15:30\neasygems and other python packages\nLukas (MPI-M)?\n\n\n15:45\nStorm trackers\ntbd\n\n\n16:00\nProcessing needs, incl. py envs,…\nall, Flo\n\n\nDocumentation and collaboration\n\n\n\n\n16:15\ndocumentation: Pythia, easy.gems.dkrz.de\nJohn Clyne (UCAR), Tobi?\n\n\n16:45\nCollecting code and results across nodes\nall\n\n\n17:00\n☕️ Coffee break\n\n\n\nWorking from here\n\n\n\n\n17:30\nWhat’s open, next steps\nall, Flo\n\n\n19:00\nEnd",
-    "crumbs": [
-      "Hosting a hackathon site",
-      "Technical details for host teams",
-      "Preparation meeting on 2024-10-21/22"
-    ]
+    "text": "May 12-18 2025 – Beijing, Boulder, Oxford, Sao Paulo, Stockholm, Tokyo\nThe Digital Earths Global Hackathon will bring together scientists from around the world to jointly analyze the first ever coordinated experiments of climate models simulating a full annual cycle with horizontal grid spacings of 5 km or less).\nParticipants will gather at one of a number of regional nodes for the hacking, each of which will provide access to a combined data-compute resource hosting the data and proximate computing capbility for its analysis. Each node will host at least one full annual cycle of output data standardized on a common (HEALPix) grid. Standardization will help participants share their analysis workflows with other teams analyzing other models at other nodes, and thereby build global communities around common interests."
   },
   {
-    "objectID": "hosting/technical/meeting-2024-10-21.html#monday-2024-10-21",
-    "href": "hosting/technical/meeting-2024-10-21.html#monday-2024-10-21",
-    "title": "Preparation meeting on 2024-10-21/22",
-    "section": "",
-    "text": "Time in CEST (UTC+2)\nWhat\nWho\n\n\n\n\nThe setting\n\n\n\n\n15:00\nRound of introductions, agenda , …\nall, Flo (DKRZ)\n\n\n15:20\nIdea and goals of the hackathon\ntbd\n\n\n15:45\nA typical hackathon agenda\nHeike (MPI-M)?\n\n\n16:00\nThe healpix grid\nFlo / Tobi (MPI-M)?\n\n\n16:15\nRegional grids\nAndreas Prein (ETHZ)\n\n\n16:30\nThe experimental protocols\ntbd\n\n\n17:00\nDiscussion on the setting and data\n\n\n\n17:30\n☕️ Coffee break\nall\n\n\nData access\n\n\n\n\n17:45\nZarr and other stores\nFlo\n\n\n18:00\n(Intake) catalogs\nTobi/Lukas?\n\n\n18:15\nStorage needs\nall, Flo\n\n\n18:30\nOpen discussion\nall\n\n\n19:00\nEnd",
-    "crumbs": [
-      "Hosting a hackathon site",
-      "Technical details for host teams",
-      "Preparation meeting on 2024-10-21/22"
-    ]
+    "objectID": "index.html#goals",
+    "href": "index.html#goals",
+    "title": "Digital Earths – Global Hackathon",
+    "section": "Goals",
+    "text": "Goals\n\naccelerate the improvement and analysis of km-scale climate models (including regional models)\nsocialize best practices in coding and data intensive applications (infrastructure and workflows)\nestablish and disseminate the advantages of adopting common standards for km-scale climate information\nbuild solidarity and open access to resources\n\nIn addition individual centers may provide access to additional resources to supplement the standardized model outputs. This could include output from km-scale regional models or km-scale satellite data all of which would ideally be standardized similarly to the global models. Likewise computing capabilities could be augmented to support the application of machine learning."
   },
   {
-    "objectID": "hosting/technical/meeting-2024-10-21.html#tuesday-2024-10-22",
-    "href": "hosting/technical/meeting-2024-10-21.html#tuesday-2024-10-22",
-    "title": "Preparation meeting on 2024-10-21/22",
-    "section": "",
-    "text": "Time in CEST (UTC+2)\nWhat\nWho\n\n\n\n\nWorking with the data\n\n\n\n\n15:00\nWelcome back and recap\nFlo\n\n\n15:15\nUxarray\nOrhan Eroglu / John Clyne (UCAR)\n\n\n15:30\neasygems and other python packages\nLukas (MPI-M)?\n\n\n15:45\nStorm trackers\ntbd\n\n\n16:00\nProcessing needs, incl. py envs,…\nall, Flo\n\n\nDocumentation and collaboration\n\n\n\n\n16:15\ndocumentation: Pythia, easy.gems.dkrz.de\nJohn Clyne (UCAR), Tobi?\n\n\n16:45\nCollecting code and results across nodes\nall\n\n\n17:00\n☕️ Coffee break\n\n\n\nWorking from here\n\n\n\n\n17:30\nWhat’s open, next steps\nall, Flo\n\n\n19:00\nEnd",
-    "crumbs": [
-      "Hosting a hackathon site",
-      "Technical details for host teams",
-      "Preparation meeting on 2024-10-21/22"
-    ]
-  },
-  {
-    "objectID": "hosting/time_line.html",
-    "href": "hosting/time_line.html",
-    "title": "Organization time line",
-    "section": "",
-    "text": "This is an idealized time line until when tasks need to be completed. Tasks could be completed earlier of course.\n\nas soon as possible\n\ndecide on locations (for people and data)\nwhich projects want to be involved?\nannounce dates to the community, with reference to basic website?\ncome up with a cool title\nwhat budget do we have for location costs, etc.? are there any sponsors?\n\n9 months before the event (August 2024)\n\ndecide on rough agenda, potential keynote speakers\n\n8 months before the event (September 2024)\n\nbook meeting venues\n\n7 months before the event (October 2024)\n6 months before the event (November 2024)\n\nplan possible side events at each location (tours)? social events, world cafe, etc.?\ndefine terms of reference (TOR) for hackathon participation (is necessary for nextGEMS)\n\n5 months before the event (December 2024)\n\nwebsite online\nregistration page(s) set up\nannounce hackathon\npublish schedule\nopen registration (1 Jan)\n\n4 months before the event (January 2025)\n\napplication deadline for travel support (15 Jan)\ninvitation letters for visa applications to be sent out\n\n3 months before the event (February 2025)\n\nregistration closes (1 Feb)\ndecision on participant numbers / can we accept all registrations?\nsend out confirmation about travel support (1 Feb)\nsend out registration confirmation (14 Feb)\nopen payment options (14 Feb)\n\n2 months before the event (March 2025)\n\nset up communication channels for the hackathon (Mattermost, mailing list(s))\nsimulations ready\n\n1 month before the event (April 2025)\n\nworkflow for data access\nparticipation fee payment deadline (15 April)\nsend NDAs to participants\n\nlast weeks before the event\n\nbadges\nsigns",
-    "crumbs": [
-      "Hosting a hackathon site",
-      "Organization time line"
-    ]
-  },
-  {
-    "objectID": "Hosts/index.html",
-    "href": "Hosts/index.html",
-    "title": "Hosts",
-    "section": "",
-    "text": "This is a table with the known participating institutions and teams, including people nominated to committees.\n\n\n\nTeam\nComputing facility\nMeeting location\nSteering group member\nTechnical committee\nLogistics committee\nAssociated Project(s)\n\n\n\n\nAU\n?NCI\nUNSW?\nChristian Jakob\nBen Evans\nMelissa Hart\n\n\n\nBR/AR\nINPE\nUSP\nRosmeri Porfirio da Rocha\nSebastião Antonio\nRosmeri Porfirio da Rocha\n\n\n\nCN\nEarthlab\nIAP\nYing Yang\n\n\n\n\n\nEU\nDKRZ\nStockholm Univ\nBjorn Stevens\nFlorian Ziemen\nHeike Konow\nnextGEMS\n\n\nIN (NCMRWF/IITM)\nNCMRWF\nNCMRWF\nRaghav Mupparthy\nTBD\nTBD\nTBD\n\n\nJP\nJAMSTEC\nUTokyo\nMasaki Satoh\nTakashi Arakawa, Masaki Satoh\nTomoki Ohno, Masaki Satoh\nICCP-GSRA\n\n\nUK\nJASMIN\nUniv Oxford\nPier Luigi Vidale\nAdrian Hines\nPhilip Stier\n\n\n\nUS-Central (NSF/NCAR)\nNCAR-NWSC\nNCAR\nBrian Medeiros / Bill Skamarock\nTBD\nTBD\n\n\n\nUS-East (GFDL?)\nTBD\nTBD\nTBD\nTBD\nTBD\n\n\n\nUS-West (DOE)\nNERSC/LBL\nLBL/Berkeley?\nAndrew Gettelman / Paul Ullrich\nTBD\nTBD\n\n\n\nZA\n\n\nJessica Steinkopf",
-    "crumbs": [
-      "Hosting a hackathon site",
-      "Hosts"
-    ]
+    "objectID": "index.html#organization",
+    "href": "index.html#organization",
+    "title": "Digital Earths – Global Hackathon",
+    "section": "Organization",
+    "text": "Organization\nA scientific steering committee will be responsible for the organization and will be supported by sub-committees for technical and logistical issues.\nParticipating teams around the world will assign someone to the sub-committees and is welcome to nominate a member for the scientific steering committee."
   }
 ]
