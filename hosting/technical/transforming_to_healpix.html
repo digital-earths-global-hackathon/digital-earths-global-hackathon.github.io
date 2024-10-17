@@ -282,9 +282,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="cdo">CDO</h3>
 <p>The simplest way to convert a file to a healpix level 9 netCDF probably is using a recent cdo version and calling</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cdo</span> <span class="at">-f</span> nc4 <span class="at">-k</span> auto <span class="at">-z</span> zstd <span class="at">-remapnn,hpz9</span> INFILE OUTFILE</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>To create zarr, use</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cdo</span> <span class="at">-f</span> nczarr <span class="at">-k</span> auto <span class="at">-z</span> zstd <span class="at">-remapnn,hpz9</span> INFILE <span class="dt">\</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    file://OUTFILE.zarr#mode=zarr,file</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>To create zarr, first create an <a href="https://github.com/Unidata/netcdf-c/blob/main/docs/quickstart_env.md">.ncrc</a> file specifying that you want the dimension separator to be a <code>/</code> instead of <code>.</code>.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="op">&gt;&gt;</span> ~/.ncrc</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> ZARR.DIMENSION_SEPARATOR=/ <span class="op">&gt;&gt;</span> ~/.ncrc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Then use</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">cdo</span> <span class="at">-f</span> nczarr <span class="at">-k</span> auto <span class="at">-z</span> zstd <span class="at">-remapnn,hpz9</span> INFILE <span class="dt">\</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    file://OUTFILE.zarr#mode=zarr,file</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>However, cdo does not really produce the optimal chunking, so going via python might be better for production. For testing, this should actually work pretty well.</p>
 
 
