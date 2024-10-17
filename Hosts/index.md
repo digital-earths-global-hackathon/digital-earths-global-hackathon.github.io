@@ -13,7 +13,7 @@ This is a table with the known participating institutions and teams, including p
 | EU | [DKRZ](https://www.dkrz.de/en) | Stockholm Univ | [Bjorn Stevens](https://mpimet.mpg.de/en/staff/bjorn-stevens) | [Florian Ziemen](https://www.dkrz.de/en/about-en/staff/dr-florian-ziemen) | [Heike Konow](https://mpimet.mpg.de/mitarbeiterinnen/heike-konow) | [nextGEMS](https://nextgems-h2020.eu) |
 | IN (NCMRWF/IITM) | NCMRWF | NCMRWF | Raghav  Mupparthy | TBD | TBD | TBD | MoES / MO Partnership|
 | JP | JAMSTEC | UTokyo | [Masaki Satoh](https://cesd.aori.u-tokyo.ac.jp/satoh/index.html) | Takashi Arakawa, [Masaki Satoh](https://cesd.aori.u-tokyo.ac.jp/satoh/index.html) | Tomoki Ohno, [Masaki Satoh](https://cesd.aori.u-tokyo.ac.jp/satoh/index.html) | [ICCP-GSRA](https://dpo.aori.u-tokyo.ac.jp/dmmg/ICCP-GSRA/) |
-| UK     | JASMIN     | Univ Oxford | [Pier Luigi Vidale](https://research.reading.ac.uk/meteorology/people/pier-luigi-vidale/)  | [Adrian Hines](https://ncas.ac.uk/people/10594/adrian-hines/)| [Philip Stier](https://www.physics.ox.ac.uk/our-people/stier)| |
+| UK     | JASMIN     | Univ Oxford | [Pier Luigi Vidale](https://research.reading.ac.uk/meteorology/people/pier-luigi-vidale/)  | [Fatima Chami](https://people.ncas.ac.uk/people/view/372) | [Philip Stier](https://www.physics.ox.ac.uk/our-people/stier)| |
 | US-Central (NSF/NCAR)   | NCAR-NWSC | NCAR | [Brian Medeiros](https://staff.ucar.edu/users/brianpm) / [Bill Skamarock](https://staff.ucar.edu/users/skamaroc) | TBD | TBD | 
 | US-East (GFDL?) | TBD | TBD | TBD | TBD | TBD |  |
 | US-West (DOE) | NERSC/LBL | LBL/Berkeley? | [Andrew Gettelman](https://www.pnnl.gov/people/andrew-gettelman) / [Paul Ullrich](https://people.llnl.gov/ullrich4) | TBD | TBD |  |
