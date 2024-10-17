@@ -226,6 +226,160 @@
     ]
   },
   {
+    "objectID": "talks/index.html",
+    "href": "talks/index.html",
+    "title": "Talks",
+    "section": "",
+    "text": "Building useful datasets for Earth System Model output (Tobi and Lukas’ talk at EGU 2024)\nStoring data",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks"
+    ]
+  },
+  {
+    "objectID": "talks/index.html#technical",
+    "href": "talks/index.html#technical",
+    "title": "Talks",
+    "section": "",
+    "text": "Building useful datasets for Earth System Model output (Tobi and Lukas’ talk at EGU 2024)\nStoring data",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks"
+    ]
+  },
+  {
+    "objectID": "talks/storing_data/index.html#datasets-are",
+    "href": "talks/storing_data/index.html#datasets-are",
+    "title": "Storing data",
+    "section": "Datasets are",
+    "text": "Datasets are\n\n(from xarray docs)\n\n\nn-dimensional variables\nshared dimensions\n\n\n\ncoordinates\nattributes for metadata",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/storing_data/index.html#datasets-are-not",
+    "href": "talks/storing_data/index.html#datasets-are-not",
+    "title": "Storing data",
+    "section": "Datasets are not",
+    "text": "Datasets are not\n\na single file\na storage format\nshaped by storage & handling\n\n\nIn the past, people often designed datasets to match their file handling requirements. The resulting view on a dataset seems to be overly restrictive and leads to unfortunate usage patterns.",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/storing_data/index.html#access-to-subsets",
+    "href": "talks/storing_data/index.html#access-to-subsets",
+    "title": "Storing data",
+    "section": "Access to subsets",
+    "text": "Access to subsets\n\n\n\n\n\n\nWithout subset access and hierarchies, analysis scripts are forced to load way too much data.",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/storing_data/index.html#align-the-ordering-of-data-with-read-patterns",
+    "href": "talks/storing_data/index.html#align-the-ordering-of-data-with-read-patterns",
+    "title": "Storing data",
+    "section": "Align the ordering of data with read patterns",
+    "text": "Align the ordering of data with read patterns\n\nhttps://www.unidata.ucar.edu/blogs/developer/entry/chunking_data_why_it_mattersMake a compromise that’s okay-ish for everybody by chunking along all dimensions.",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/storing_data/index.html#compress-small-chunks",
+    "href": "talks/storing_data/index.html#compress-small-chunks",
+    "title": "Storing data",
+    "section": "Compress small chunks",
+    "text": "Compress small chunks\n\nAny access will require uncompressing entire chunks.\nBy keeping them small to reduce the amount of data that will be uncompressed but not used.\nKeep them big enough for the compressor to do its job.\nUsually MB-ish blocks are a good compromise.",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/storing_data/index.html#use-fast-compressors",
+    "href": "talks/storing_data/index.html#use-fast-compressors",
+    "title": "Storing data",
+    "section": "Use fast compressors",
+    "text": "Use fast compressors\n\ndeflate (gzip/…) is widely used but slow.\nlz4 and zstd are much faster.\nUse lz4 or zstd from blosc as a good standard.",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/storing_data/index.html#contents-of-a-dataset",
+    "href": "talks/storing_data/index.html#contents-of-a-dataset",
+    "title": "Storing data",
+    "section": "Contents of a dataset",
+    "text": "Contents of a dataset\n\nMetadata\nn-d variables consisting of many numbers",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/storing_data/index.html#netcdf4-hdf5",
+    "href": "talks/storing_data/index.html#netcdf4-hdf5",
+    "title": "Storing data",
+    "section": "netCDF4 / HDF5",
+    "text": "netCDF4 / HDF5\n\nnetCDF4, a.k.a. HDF5 stores metadata and chunks in one file.\nUsually a dataset is split across many of these files.\nLoading the dataset requires opening all files.1\n\nThere is the option of multi-file netCDF4/HDF5, but I have not seen this in practice.",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/storing_data/index.html#zarr-is-as-simple-as-it-gets.",
+    "href": "talks/storing_data/index.html#zarr-is-as-simple-as-it-gets.",
+    "title": "Storing data",
+    "section": "Zarr is as simple as it gets.",
+    "text": "Zarr is as simple as it gets.\n\n.json files for the metadata\nbinary files for (compressed) chunks\n\nAs chunks are stored separately, this scales for any size of dataset. We are working with a 500 TB dataset in nextGEMS.",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/storing_data/index.html#kerchunk-fsspec",
+    "href": "talks/storing_data/index.html#kerchunk-fsspec",
+    "title": "Storing data",
+    "section": "Kerchunk + fsspec",
+    "text": "Kerchunk + fsspec\n\nWe can index a multi-file HDF5 dataset with kerchunk, and then create a pseudo-filesystem zarr with fsspec in python.\nAllows to treat a set of netCDF4 files as one zarr dataset.\nDirect access only via python.\nA simple python web server can present it as zarr via https for other languages.",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/storing_data/index.html#performance-benchmarks-for-chunking",
+    "href": "talks/storing_data/index.html#performance-benchmarks-for-chunking",
+    "title": "Storing data",
+    "section": "Performance benchmarks for chunking",
+    "text": "Performance benchmarks for chunking\n\n\n\n\n\n\n\n\n\n\nStorage layout, chunk shapes\nRead time series (sec)\nRead spatial slice (sec)\nPerformance bias (slowest / fastest)\n\n\n\n\nContiguous favoring time range\n0.013\n180\n14000\n\n\nContiguous favoring spatial slice\n200\n0.012\n17000\n\n\nDefault (all axes equal) chunks, 4673 x 12 x 16\n1.4\n34\n24\n\n\n36 KB chunks, 92 x 9 x 11\n2.4\n1.7\n1.4\n\n\n8 KB chunks, 46 x 6 x 8\n1.4\n1.1\n1.2\n\n\n\nsource: unidata blog\n\n\n\n\n\nTalks page",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Storing data"
+    ]
+  },
+  {
     "objectID": "hosting/logistics/agenda_template.html",
     "href": "hosting/logistics/agenda_template.html",
     "title": "Agenda template",
