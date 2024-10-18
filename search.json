@@ -230,7 +230,7 @@
     "href": "talks/index.html",
     "title": "Talks",
     "section": "",
-    "text": "Building useful datasets for Earth System Model output (Tobi and Lukas’ talk at EGU 2024)\nStoring data",
+    "text": "Building useful datasets for Earth System Model output (Tobi and Lukas’ talk at EGU 2024)\nStoring data\nPython packages",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks"
@@ -241,10 +241,70 @@
     "href": "talks/index.html#technical",
     "title": "Talks",
     "section": "",
-    "text": "Building useful datasets for Earth System Model output (Tobi and Lukas’ talk at EGU 2024)\nStoring data",
+    "text": "Building useful datasets for Earth System Model output (Tobi and Lukas’ talk at EGU 2024)\nStoring data\nPython packages",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks"
+    ]
+  },
+  {
+    "objectID": "talks/python_packages/index.html#the-basics",
+    "href": "talks/python_packages/index.html#the-basics",
+    "title": "Sharing is caring",
+    "section": "The basics",
+    "text": "The basics\n\nPython functions and classes can be organised in modules\nimport my_module\n\nmy_module.my_function(42)\nPackages allow for a hierarchical structuring of modules\nThe Python Package Index (PyPI) helps you find and install software1\npip install &lt;package_name&gt;\n\nauthors need to actively publish their code",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Sharing is caring"
+    ]
+  },
+  {
+    "objectID": "talks/python_packages/index.html#the-default-stack",
+    "href": "talks/python_packages/index.html#the-default-stack",
+    "title": "Sharing is caring",
+    "section": "The default stack",
+    "text": "The default stack\nThis talk will not cover the “usual suspects”1\nNumPy, SciPy, matplotlib, cartopy, netcdf4, xarray (+flox), …\nI expect those to be installed",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Sharing is caring"
+    ]
+  },
+  {
+    "objectID": "talks/python_packages/index.html#healpix",
+    "href": "talks/python_packages/index.html#healpix",
+    "title": "Sharing is caring",
+    "section": "healpix",
+    "text": "healpix\n\nimplements a lean set of routines for working with HEALPix\nhealpix.nside2npix(9)\nhealpix.ang2pix(nside=9, 52, 10, nest=True, lonlat=True)\nrequires only numpy, and can be installed using pip:\npython -m pip install healpix",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Sharing is caring"
+    ]
+  },
+  {
+    "objectID": "talks/python_packages/index.html#easygems",
+    "href": "talks/python_packages/index.html#easygems",
+    "title": "Sharing is caring",
+    "section": "easygems",
+    "text": "easygems\n\nprovides a (small) set of convenience functions to work with model output\neasygems.healpix.healpix_show(ds_daily.tas.sel(time=\"2024-09-10\"))\nstarted as a “bin” for functions used on easy.gems\ncan be installed using pip\npython -m pip install easygems",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Sharing is caring"
+    ]
+  },
+  {
+    "objectID": "talks/python_packages/index.html#gribscan",
+    "href": "talks/python_packages/index.html#gribscan",
+    "title": "Sharing is caring",
+    "section": "gribscan",
+    "text": "gribscan\n\nscan GRIB files and create zarr-compatible indices\ngribscan-index *.grib2\ngribscan-build --magician ifs --prefix $PWD *.index\nprovides the command-line tools gribscan-index and gribscan-build\nrequires an ecCodes version matching the output data\ncan be installed using pip\npython -m pip install gribscan\n\n\n\n\n\nTalks page",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Sharing is caring"
     ]
   },
   {
