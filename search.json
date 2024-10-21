@@ -92,7 +92,7 @@
     "href": "hosting/technical/data_request.html",
     "title": "Draft Data request",
     "section": "",
-    "text": "This data request still is in a draft stadium. To improve it, please open an issue (and a matching pull request).\n\n\nThe data from global models should be provided on the HEALPix grid on zoom level 9 or higher (effective cell size of 13 km). To ease analysis, please provide all HEALPix levels up to this level.\nFor regional models, we will need further discussion with teams that have a strong experience in intercomparisons of regional models.\n3D Output Levels:\nThe output should be interpolated to the following 25 pressure levels:\nimport numpy as np\ntr = np.arange(100,900,100)\nlt = np.arange(850,1025,25)\nua = np.arange(10,90,20)\nlevels = sorted({1,5,20,150,250,750}.union(tr,lt,ua))\n\n\n\nHEALPix grids have 12*4**level cells, so a level 9 HEALPix grid consists of roughly 3 million cells. It has proven very beneficial for the analysis to also store all lower grid resolutions. This adds approximately 30% to the output volume, and allows prototyping analyses at lower resolution, or generating maps from an amount of data that actually matches the pixels in a plot. For level 9 and all lower levels together, about 4 million floats are needed per 2D slice. The totals for storing this data (assuming 4 bytes/float, and 50% compression) are\n3D: 3.3TB\n2D: 2.0TB\ntotal: 5.3TB\nSee below for the code.\nNote that for any additional healpix level, the requirements grow by a factor of 4, so a ~6km resolution dataset (HEALPix level 10) already consumes about 20 TB.\n\n\n\nIn principle any file format that is compatible with standard software could be used. However, zarr has proven very advantageous, as it allows to\n\nbuild large datasets covering anything up to an entire simulation output\nchunk data in all dimensions\n\nIf plain zarr 2 is used, data can be read in many programming languages. For C-based software, a recent libnetcdf will do the trick. The downside of this approach is a lot of small files, which can be problematic on HPC systems, especially with inode quota.\nOther possible approaches include the use of kerchunk in python for grouping data chunks in (netCDF/HDF5) files into unified datasets that look like zarr to python. Other programming languages / codes can then still make use of the underlying netCDF files.\n\n\n\nFor some models, the hydrometeor categories may not map directly onto the specified output. In these cases hydrometeor habits can be left out (for instance if snow and cloud ice are not distinguished), or additional information can be added, e.g., for models with hail. In such cases, please try to follow the CF conventions, and open an issue, so we can amend the table and keep the naming consistent among all teams.\n\n\n\n\n\nCF standard name\nshort name\nunits\n\n\n\n\ngeopotential height\nzg\nm\n\n\neastward_wind\nua\nm/s\n\n\nnorthtward_wind\nva\nm/s\n\n\nupward_air_velocity\nwa\nm/s\n\n\ntemperature\nta\nK\n\n\nrelative_humidity\nhur\n-\n\n\nspecific_humidity\nhus\nkg/kg\n\n\nmass_fraction_of_cloud_liquid_water_in_air\nclw\nkg/kg\n\n\nmass_fraction_of_cloud_ice_in_air\ncli\nkg/kg\n\n\nmass_fraction_of_rain_in_air\nqr\nkg/kg\n\n\nmass_fraction_of_snow_water_in_air\nqs\nkg/kg\n\n\nmass_fraction_of_graupel_in_air\nqg\nkg/kg\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\natmosphere_mass_content_of_cloud_condensed_water\nclwvi\nkg m-2\n\n\n\natmosphere_mass_content_of_cloud_ice\nclivi\nkg m-2\n\n\n\nsurface_upward_latent_heat_flux\nhfls\nW m-2\ndefined downward in paper\n\n\nsurface_upward_sensible_heat_flux\nhfss\nW m-2\ndefined downward in paper\n\n\ntoa_outgoing_longwave_flux\nrlut\nW m-2\n\n\n\ntoa_outgoing_longwave_flux_clear_sky\nrlutcs\nW m-2\n\n\n\ntoa_incoming_longwave_flux\nrldt\nW m-2\n\n\n\nsurface_upwelling_longwave_flux_in_air\nrlus\nW m-2\n\n\n\nsurface_upwelling_longwave_flux_in_air_clear_sky\nrluscs\nW m-2\n\n\n\nsurface_downwelling_longwave_flux_in_air\nrldt\nW m-2\n\n\n\nsurface_downwelling_longwave_flux_in_air_clear_sky\nrldscs\nW m-2\n\n\n\ntoa_outgoing_shortwave_flux\nrsut\nW m-2\n\n\n\ntoa_outgoing_shortwave_flux_clear_sky\nrsutcs\nW m-2\n\n\n\ntoa_incoming_shortwave_flux\nrsdt\nW m-2\n\n\n\nsurface_upwelling_shortwave_flux_in_air\nrsus\nW m-2\n\n\n\nsurface_upwelling_shortwave_flux_in_air_clear_sky\nrsuscs\nW m-2\n\n\n\nsurface_downwelling_shortwave_flux_in_air\nrsds\nW m-2\n\n\n\nsurface_downwelling_shortwave_flux_in_air_clear_sky\nrsdscs\nW m-2\n\n\n\nprecipitation_flux\npr\nkg m-2 s-1\n\n\n\natmosphere_mass_content_of_water_vapor\nprw\nkg m-2 s-1\n\n\n\nsurface_air_pressure\nps\nPa\n\n\n\nair_pressure_at_mean_sea_level\npsl\nPa\n\n\n\nspecific_humidity\nhuss\nkg kg-1\n2m above ground\n\n\nair_temperature\ntas\nK\n2m above ground\n\n\neastward_wind\nuas\nm s-1\n10m above ground\n\n\nnorthward_wind\nvas\nm s-1\n10m above ground\n\n\nsurface_temperature\nts\nK\n\n\n\nsurface_downward_eastward_stress\ntauu\nN m-2\n\n\n\nsurface_downward_northward_stress\ntauv\nN m-2\n\n\n\ncloud_area_fraction\nclt\n1\n\n\n\n\n\n\n\n\nvars_3d = 12\nvars_2d = 30\ninterval_3d = 6/24.\ninterval_2d = 1/24.\nlevels_3d = 25\n\nparams = dict ( \n    max_healpix_level = 9,\n    duration = 365,\n    float_precision = 4,\n    float_compression = .5,\n)\ndef compute_volume(var_count, levels, interval, max_healpix_level, duration, float_precision, float_compression):\n    cells = sum (12 * 4** level for level in range (max_healpix_level + 1))\n    return cells * var_count * levels * duration / interval * float_precision * float_compression\n\nvolume_3d = compute_volume(var_count=vars_3d, levels=levels_3d, interval=interval_3d, **params)\nvolume_2d = compute_volume(var_count=vars_2d, levels=1, interval = interval_2d, **params)\nprint (f'3D: {volume_3d/1024**4:.1f}TB\\n2D: {volume_2d/1024**4:.1f}TB\\ntotal: {(volume_3d+volume_2d)/1024**4:.1f}TB')",
+    "text": "This data request still is in a draft stadium. To improve it, please open an issue (and a matching pull request).\n\n\nThe data from global models should be provided on the HEALPix grid on zoom level 9 or higher (effective cell size of 13 km). To ease analysis, please provide all HEALPix levels up to this level.\nFor regional models, we will need further discussion with teams that have a strong experience in intercomparisons of regional models.\n3D Output Levels:\nThe output should be interpolated to the following 25 pressure levels:\nimport numpy as np\ntr = np.arange(100,900,100)\nlt = np.arange(850,1025,25)\nua = np.arange(10,90,20)\nlevels = sorted({1,5,20,150,250,750}.union(tr,lt,ua))\n\n\n\nHEALPix grids have 12*4**level cells, so a level 9 HEALPix grid consists of roughly 3 million cells. It has proven very beneficial for the analysis to also store all lower grid resolutions. This adds approximately 30% to the output volume, and allows prototyping analyses at lower resolution, or generating maps from an amount of data that actually matches the pixels in a plot. For level 9 and all lower levels together, about 4 million floats are needed per 2D slice. Furthermore, we want the 2D fields on 6-hourly interval as well, and all fields also daily. The totals for storing this data (assuming 4 bytes/float, and 50% compression) are\n3D: 4.2TB\n2D: 2.7TB\ntotal: 6.8TB\nSee below for the code.\nWithout the hierarchy, the requirements are:\n\n\n\n\n\n\n\n\n\n\n\n\ntype\ncells / snapshot\nMB / snap-shot1\nsnapshots\nGB / var\nvars\nGB total\n\n\n\n\n2D\n3 M\n6\n365*24\n52\n33\n1650\n\n\n3D\n75 M\n150\n365*4\n220\n12\n2600\n\n\n\nNote that for any additional healpix level, the requirements grow by a factor of 4, so a ~6km resolution dataset (HEALPix level 10) already consumes about 20 TB.\n\n\n\nIn principle any file format that is compatible with standard software could be used. However, zarr has proven very advantageous, as it allows to\n\nbuild large datasets covering anything up to an entire simulation output\nchunk data in all dimensions\n\nIf plain zarr 2 is used, data can be read in many programming languages. For C-based software, a recent libnetcdf will do the trick. The downside of this approach is a lot of small files, which can be problematic on HPC systems, especially with inode quota.\nOther possible approaches include the use of kerchunk in python for grouping data chunks in (netCDF/HDF5) files into unified datasets that look like zarr to python. Other programming languages / codes can then still make use of the underlying netCDF files.\n\n\n\nFor some models, the hydrometeor categories may not map directly onto the specified output. In these cases hydrometeor habits can be left out (for instance if snow and cloud ice are not distinguished), or additional information can be added, e.g., for models with hail. In such cases, please try to follow the CF conventions, and open an issue, so we can amend the table and keep the naming consistent among all teams.\n\n\n\n\n\nCF standard name\nshort name\nunits\n\n\n\n\ngeopotential height\nzg\nm\n\n\neastward_wind\nua\nm/s\n\n\nnorthtward_wind\nva\nm/s\n\n\nupward_air_velocity\nwa\nm/s\n\n\ntemperature\nta\nK\n\n\nrelative_humidity\nhur\n-\n\n\nspecific_humidity\nhus\nkg/kg\n\n\nmass_fraction_of_cloud_liquid_water_in_air\nclw\nkg/kg\n\n\nmass_fraction_of_cloud_ice_in_air\ncli\nkg/kg\n\n\nmass_fraction_of_rain_in_air\nqr\nkg/kg\n\n\nmass_fraction_of_snow_water_in_air\nqs\nkg/kg\n\n\nmass_fraction_of_graupel_in_air\nqg\nkg/kg\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\natmosphere_mass_content_of_cloud_condensed_water\nclwvi\nkg m-2\n\n\n\natmosphere_mass_content_of_cloud_ice\nclivi\nkg m-2\n\n\n\nsurface_upward_latent_heat_flux\nhfls\nW m-2\ndefined downward in paper\n\n\nsurface_upward_sensible_heat_flux\nhfss\nW m-2\ndefined downward in paper\n\n\ntoa_outgoing_longwave_flux\nrlut\nW m-2\n\n\n\ntoa_outgoing_longwave_flux_clear_sky\nrlutcs\nW m-2\n\n\n\ntoa_incoming_longwave_flux\nrldt\nW m-2\n\n\n\nsurface_upwelling_longwave_flux_in_air\nrlus\nW m-2\n\n\n\nsurface_upwelling_longwave_flux_in_air_clear_sky\nrluscs\nW m-2\n\n\n\nsurface_downwelling_longwave_flux_in_air\nrldt\nW m-2\n\n\n\nsurface_downwelling_longwave_flux_in_air_clear_sky\nrldscs\nW m-2\n\n\n\ntoa_outgoing_shortwave_flux\nrsut\nW m-2\n\n\n\ntoa_outgoing_shortwave_flux_clear_sky\nrsutcs\nW m-2\n\n\n\ntoa_incoming_shortwave_flux\nrsdt\nW m-2\n\n\n\nsurface_upwelling_shortwave_flux_in_air\nrsus\nW m-2\n\n\n\nsurface_upwelling_shortwave_flux_in_air_clear_sky\nrsuscs\nW m-2\n\n\n\nsurface_downwelling_shortwave_flux_in_air\nrsds\nW m-2\n\n\n\nsurface_downwelling_shortwave_flux_in_air_clear_sky\nrsdscs\nW m-2\n\n\n\nprecipitation_flux\npr\nkg m-2 s-1\n\n\n\natmosphere_mass_content_of_water_vapor\nprw\nkg m-2 s-1\n\n\n\nsurface_air_pressure\nps\nPa\n\n\n\nair_pressure_at_mean_sea_level\npsl\nPa\n\n\n\nspecific_humidity\nhuss\nkg kg-1\n2m above ground\n\n\nair_temperature\ntas\nK\n2m above ground\n\n\neastward_wind\nuas\nm s-1\n10m above ground\n\n\nnorthward_wind\nvas\nm s-1\n10m above ground\n\n\nsurface_temperature\nts\nK\n\n\n\nsurface_downward_eastward_stress\ntauu\nN m-2\n\n\n\nsurface_downward_northward_stress\ntauv\nN m-2\n\n\n\ncloud_area_fraction\nclt\n1\n\n\n\nliquid_water_content_of_surface_snow\nswe\nkg m-2\nshort name invented\n\n\nsnow_area_fraction_viewable_from_above\nsncvfa\n1\nshort name based on snc for surface_snow_area_fraction\n\n\nsoil_liquid_water_content\nmrso\nkg m-2\nshort name invented\n\n\n\n\n\n\n\nvars_3d = 12\nvars_2d = 33\ninterval_3d = 6/24.\ninterval_2d = 1/24.\ninterval_daily = 1.\nlevels_3d = 25\n\nparams = dict ( \n    max_healpix_level = 9,\n    duration = 365,\n    float_precision = 4,\n    float_compression = .5,\n)\ndef compute_volume(var_count, levels, interval, max_healpix_level, duration, float_precision, float_compression):\n    cells = sum (12 * 4** level for level in range (max_healpix_level + 1))\n    return cells * var_count * levels * duration / interval * float_precision * float_compression\n\nvolume_3d = ( compute_volume(var_count=vars_3d, levels=levels_3d, interval=interval_3d, **params) +\ncompute_volume(var_count=vars_3d, levels=levels_3d, interval=interval_daily, **params))\nvolume_2d = (compute_volume(var_count=vars_2d, levels=1, interval = interval_2d, **params) + \n            compute_volume(var_count=vars_2d, levels=1, interval = interval_3d, **params) + \n            compute_volume(var_count=vars_2d, levels=1, interval = interval_daily, **params))\nprint (f'3D: {volume_3d/1024**4:.1f}TB\\n2D: {volume_2d/1024**4:.1f}TB\\ntotal: {(volume_3d+volume_2d)/1024**4:.1f}TB')",
     "crumbs": [
       "Hosting a hackathon site",
       "Technical details for host teams",
@@ -116,7 +116,7 @@
     "href": "hosting/technical/data_request.html#data-volume",
     "title": "Draft Data request",
     "section": "",
-    "text": "HEALPix grids have 12*4**level cells, so a level 9 HEALPix grid consists of roughly 3 million cells. It has proven very beneficial for the analysis to also store all lower grid resolutions. This adds approximately 30% to the output volume, and allows prototyping analyses at lower resolution, or generating maps from an amount of data that actually matches the pixels in a plot. For level 9 and all lower levels together, about 4 million floats are needed per 2D slice. The totals for storing this data (assuming 4 bytes/float, and 50% compression) are\n3D: 3.3TB\n2D: 2.0TB\ntotal: 5.3TB\nSee below for the code.\nNote that for any additional healpix level, the requirements grow by a factor of 4, so a ~6km resolution dataset (HEALPix level 10) already consumes about 20 TB.",
+    "text": "HEALPix grids have 12*4**level cells, so a level 9 HEALPix grid consists of roughly 3 million cells. It has proven very beneficial for the analysis to also store all lower grid resolutions. This adds approximately 30% to the output volume, and allows prototyping analyses at lower resolution, or generating maps from an amount of data that actually matches the pixels in a plot. For level 9 and all lower levels together, about 4 million floats are needed per 2D slice. Furthermore, we want the 2D fields on 6-hourly interval as well, and all fields also daily. The totals for storing this data (assuming 4 bytes/float, and 50% compression) are\n3D: 4.2TB\n2D: 2.7TB\ntotal: 6.8TB\nSee below for the code.\nWithout the hierarchy, the requirements are:\n\n\n\n\n\n\n\n\n\n\n\n\ntype\ncells / snapshot\nMB / snap-shot1\nsnapshots\nGB / var\nvars\nGB total\n\n\n\n\n2D\n3 M\n6\n365*24\n52\n33\n1650\n\n\n3D\n75 M\n150\n365*4\n220\n12\n2600\n\n\n\nNote that for any additional healpix level, the requirements grow by a factor of 4, so a ~6km resolution dataset (HEALPix level 10) already consumes about 20 TB.",
     "crumbs": [
       "Hosting a hackathon site",
       "Technical details for host teams",
@@ -140,7 +140,7 @@
     "href": "hosting/technical/data_request.html#variables",
     "title": "Draft Data request",
     "section": "",
-    "text": "For some models, the hydrometeor categories may not map directly onto the specified output. In these cases hydrometeor habits can be left out (for instance if snow and cloud ice are not distinguished), or additional information can be added, e.g., for models with hail. In such cases, please try to follow the CF conventions, and open an issue, so we can amend the table and keep the naming consistent among all teams.\n\n\n\n\n\nCF standard name\nshort name\nunits\n\n\n\n\ngeopotential height\nzg\nm\n\n\neastward_wind\nua\nm/s\n\n\nnorthtward_wind\nva\nm/s\n\n\nupward_air_velocity\nwa\nm/s\n\n\ntemperature\nta\nK\n\n\nrelative_humidity\nhur\n-\n\n\nspecific_humidity\nhus\nkg/kg\n\n\nmass_fraction_of_cloud_liquid_water_in_air\nclw\nkg/kg\n\n\nmass_fraction_of_cloud_ice_in_air\ncli\nkg/kg\n\n\nmass_fraction_of_rain_in_air\nqr\nkg/kg\n\n\nmass_fraction_of_snow_water_in_air\nqs\nkg/kg\n\n\nmass_fraction_of_graupel_in_air\nqg\nkg/kg\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\natmosphere_mass_content_of_cloud_condensed_water\nclwvi\nkg m-2\n\n\n\natmosphere_mass_content_of_cloud_ice\nclivi\nkg m-2\n\n\n\nsurface_upward_latent_heat_flux\nhfls\nW m-2\ndefined downward in paper\n\n\nsurface_upward_sensible_heat_flux\nhfss\nW m-2\ndefined downward in paper\n\n\ntoa_outgoing_longwave_flux\nrlut\nW m-2\n\n\n\ntoa_outgoing_longwave_flux_clear_sky\nrlutcs\nW m-2\n\n\n\ntoa_incoming_longwave_flux\nrldt\nW m-2\n\n\n\nsurface_upwelling_longwave_flux_in_air\nrlus\nW m-2\n\n\n\nsurface_upwelling_longwave_flux_in_air_clear_sky\nrluscs\nW m-2\n\n\n\nsurface_downwelling_longwave_flux_in_air\nrldt\nW m-2\n\n\n\nsurface_downwelling_longwave_flux_in_air_clear_sky\nrldscs\nW m-2\n\n\n\ntoa_outgoing_shortwave_flux\nrsut\nW m-2\n\n\n\ntoa_outgoing_shortwave_flux_clear_sky\nrsutcs\nW m-2\n\n\n\ntoa_incoming_shortwave_flux\nrsdt\nW m-2\n\n\n\nsurface_upwelling_shortwave_flux_in_air\nrsus\nW m-2\n\n\n\nsurface_upwelling_shortwave_flux_in_air_clear_sky\nrsuscs\nW m-2\n\n\n\nsurface_downwelling_shortwave_flux_in_air\nrsds\nW m-2\n\n\n\nsurface_downwelling_shortwave_flux_in_air_clear_sky\nrsdscs\nW m-2\n\n\n\nprecipitation_flux\npr\nkg m-2 s-1\n\n\n\natmosphere_mass_content_of_water_vapor\nprw\nkg m-2 s-1\n\n\n\nsurface_air_pressure\nps\nPa\n\n\n\nair_pressure_at_mean_sea_level\npsl\nPa\n\n\n\nspecific_humidity\nhuss\nkg kg-1\n2m above ground\n\n\nair_temperature\ntas\nK\n2m above ground\n\n\neastward_wind\nuas\nm s-1\n10m above ground\n\n\nnorthward_wind\nvas\nm s-1\n10m above ground\n\n\nsurface_temperature\nts\nK\n\n\n\nsurface_downward_eastward_stress\ntauu\nN m-2\n\n\n\nsurface_downward_northward_stress\ntauv\nN m-2\n\n\n\ncloud_area_fraction\nclt\n1",
+    "text": "For some models, the hydrometeor categories may not map directly onto the specified output. In these cases hydrometeor habits can be left out (for instance if snow and cloud ice are not distinguished), or additional information can be added, e.g., for models with hail. In such cases, please try to follow the CF conventions, and open an issue, so we can amend the table and keep the naming consistent among all teams.\n\n\n\n\n\nCF standard name\nshort name\nunits\n\n\n\n\ngeopotential height\nzg\nm\n\n\neastward_wind\nua\nm/s\n\n\nnorthtward_wind\nva\nm/s\n\n\nupward_air_velocity\nwa\nm/s\n\n\ntemperature\nta\nK\n\n\nrelative_humidity\nhur\n-\n\n\nspecific_humidity\nhus\nkg/kg\n\n\nmass_fraction_of_cloud_liquid_water_in_air\nclw\nkg/kg\n\n\nmass_fraction_of_cloud_ice_in_air\ncli\nkg/kg\n\n\nmass_fraction_of_rain_in_air\nqr\nkg/kg\n\n\nmass_fraction_of_snow_water_in_air\nqs\nkg/kg\n\n\nmass_fraction_of_graupel_in_air\nqg\nkg/kg\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\natmosphere_mass_content_of_cloud_condensed_water\nclwvi\nkg m-2\n\n\n\natmosphere_mass_content_of_cloud_ice\nclivi\nkg m-2\n\n\n\nsurface_upward_latent_heat_flux\nhfls\nW m-2\ndefined downward in paper\n\n\nsurface_upward_sensible_heat_flux\nhfss\nW m-2\ndefined downward in paper\n\n\ntoa_outgoing_longwave_flux\nrlut\nW m-2\n\n\n\ntoa_outgoing_longwave_flux_clear_sky\nrlutcs\nW m-2\n\n\n\ntoa_incoming_longwave_flux\nrldt\nW m-2\n\n\n\nsurface_upwelling_longwave_flux_in_air\nrlus\nW m-2\n\n\n\nsurface_upwelling_longwave_flux_in_air_clear_sky\nrluscs\nW m-2\n\n\n\nsurface_downwelling_longwave_flux_in_air\nrldt\nW m-2\n\n\n\nsurface_downwelling_longwave_flux_in_air_clear_sky\nrldscs\nW m-2\n\n\n\ntoa_outgoing_shortwave_flux\nrsut\nW m-2\n\n\n\ntoa_outgoing_shortwave_flux_clear_sky\nrsutcs\nW m-2\n\n\n\ntoa_incoming_shortwave_flux\nrsdt\nW m-2\n\n\n\nsurface_upwelling_shortwave_flux_in_air\nrsus\nW m-2\n\n\n\nsurface_upwelling_shortwave_flux_in_air_clear_sky\nrsuscs\nW m-2\n\n\n\nsurface_downwelling_shortwave_flux_in_air\nrsds\nW m-2\n\n\n\nsurface_downwelling_shortwave_flux_in_air_clear_sky\nrsdscs\nW m-2\n\n\n\nprecipitation_flux\npr\nkg m-2 s-1\n\n\n\natmosphere_mass_content_of_water_vapor\nprw\nkg m-2 s-1\n\n\n\nsurface_air_pressure\nps\nPa\n\n\n\nair_pressure_at_mean_sea_level\npsl\nPa\n\n\n\nspecific_humidity\nhuss\nkg kg-1\n2m above ground\n\n\nair_temperature\ntas\nK\n2m above ground\n\n\neastward_wind\nuas\nm s-1\n10m above ground\n\n\nnorthward_wind\nvas\nm s-1\n10m above ground\n\n\nsurface_temperature\nts\nK\n\n\n\nsurface_downward_eastward_stress\ntauu\nN m-2\n\n\n\nsurface_downward_northward_stress\ntauv\nN m-2\n\n\n\ncloud_area_fraction\nclt\n1\n\n\n\nliquid_water_content_of_surface_snow\nswe\nkg m-2\nshort name invented\n\n\nsnow_area_fraction_viewable_from_above\nsncvfa\n1\nshort name based on snc for surface_snow_area_fraction\n\n\nsoil_liquid_water_content\nmrso\nkg m-2\nshort name invented",
     "crumbs": [
       "Hosting a hackathon site",
       "Technical details for host teams",
@@ -152,7 +152,19 @@
     "href": "hosting/technical/data_request.html#code-for-computing-the-data-volume",
     "title": "Draft Data request",
     "section": "",
-    "text": "vars_3d = 12\nvars_2d = 30\ninterval_3d = 6/24.\ninterval_2d = 1/24.\nlevels_3d = 25\n\nparams = dict ( \n    max_healpix_level = 9,\n    duration = 365,\n    float_precision = 4,\n    float_compression = .5,\n)\ndef compute_volume(var_count, levels, interval, max_healpix_level, duration, float_precision, float_compression):\n    cells = sum (12 * 4** level for level in range (max_healpix_level + 1))\n    return cells * var_count * levels * duration / interval * float_precision * float_compression\n\nvolume_3d = compute_volume(var_count=vars_3d, levels=levels_3d, interval=interval_3d, **params)\nvolume_2d = compute_volume(var_count=vars_2d, levels=1, interval = interval_2d, **params)\nprint (f'3D: {volume_3d/1024**4:.1f}TB\\n2D: {volume_2d/1024**4:.1f}TB\\ntotal: {(volume_3d+volume_2d)/1024**4:.1f}TB')",
+    "text": "vars_3d = 12\nvars_2d = 33\ninterval_3d = 6/24.\ninterval_2d = 1/24.\ninterval_daily = 1.\nlevels_3d = 25\n\nparams = dict ( \n    max_healpix_level = 9,\n    duration = 365,\n    float_precision = 4,\n    float_compression = .5,\n)\ndef compute_volume(var_count, levels, interval, max_healpix_level, duration, float_precision, float_compression):\n    cells = sum (12 * 4** level for level in range (max_healpix_level + 1))\n    return cells * var_count * levels * duration / interval * float_precision * float_compression\n\nvolume_3d = ( compute_volume(var_count=vars_3d, levels=levels_3d, interval=interval_3d, **params) +\ncompute_volume(var_count=vars_3d, levels=levels_3d, interval=interval_daily, **params))\nvolume_2d = (compute_volume(var_count=vars_2d, levels=1, interval = interval_2d, **params) + \n            compute_volume(var_count=vars_2d, levels=1, interval = interval_3d, **params) + \n            compute_volume(var_count=vars_2d, levels=1, interval = interval_daily, **params))\nprint (f'3D: {volume_3d/1024**4:.1f}TB\\n2D: {volume_2d/1024**4:.1f}TB\\ntotal: {(volume_3d+volume_2d)/1024**4:.1f}TB')",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Technical details for host teams",
+      "Draft Data request"
+    ]
+  },
+  {
+    "objectID": "hosting/technical/data_request.html#footnotes",
+    "href": "hosting/technical/data_request.html#footnotes",
+    "title": "Draft Data request",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nAssuming 4-byte floats and 50% compression↩︎",
     "crumbs": [
       "Hosting a hackathon site",
       "Technical details for host teams",
@@ -223,6 +235,163 @@
     "crumbs": [
       "Hosting a hackathon site",
       "Logistics for hosting a hackathon site"
+    ]
+  },
+  {
+    "objectID": "talks/storage-requirements/storage-requirements.html#ballpark-estimate-for-level-9-13km",
+    "href": "talks/storage-requirements/storage-requirements.html#ballpark-estimate-for-level-9-13km",
+    "title": "Storage requirements",
+    "section": "Ballpark estimate for level 9 (13km)",
+    "text": "Ballpark estimate for level 9 (13km)\n\n\n\n\n\n\n\n\n\n\n\n\ntype\ncells / snap-shot\nMB / snap-shot1\nsnapshots\nGB / var\nvars\nGB total\n\n\n\n\n2D\n3 M\n6\n365*24\n52\n33\n1650\n\n\n2D2\n3 M\n6\n365*4\n13\n33\n275\n\n\n3D\n75 M\n150\n365*4\n220\n12\n2600\n\n\n\nAssuming 4-byte floats and 50% compressionFor consistent datasets",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Storage Requirements",
+      "Storage requirements"
+    ]
+  },
+  {
+    "objectID": "talks/storage-requirements/storage-requirements.html#making-things-useful",
+    "href": "talks/storage-requirements/storage-requirements.html#making-things-useful",
+    "title": "Storage requirements",
+    "section": "Making things useful",
+    "text": "Making things useful\n\nAdding the full HEALPix hierarchy adds 30%, and makes the dataset useful.\nAdd daily means (+25% w.r.t the 6-hourly data)\nTotal size per dataset at 13 km: 6.6TB\nDoubling the resolution multiplies the storage need by 4.\n3-hourly 3D fields increase the size to 10.6 TB",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Storage Requirements",
+      "Storage requirements"
+    ]
+  },
+  {
+    "objectID": "talks/storage-requirements/storage-requirements.html#totals",
+    "href": "talks/storage-requirements/storage-requirements.html#totals",
+    "title": "Storage requirements",
+    "section": "Totals",
+    "text": "Totals\n\n10 models at level 9 (13 km): 68 TB\n10 models at level 10 (6 km): 272 TB\n10 models at level 11 (3 km): 1.1 PB\n\n\n\n\n\nTalks page",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Storage Requirements",
+      "Storage requirements"
+    ]
+  },
+  {
+    "objectID": "talks/processing_needs/index.html#hardware",
+    "href": "talks/processing_needs/index.html#hardware",
+    "title": "Processing needs",
+    "section": "Hardware",
+    "text": "Hardware\n\na couple of dedicated analysis nodes in a SLURM partition (~32 at DKRZ, 10 above normal)\nreservations have proven less useful than simply expanding the interactive partition\nlimit of 2 nodes per participant (larger jobs are usually user error)",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Processing needs"
+    ]
+  },
+  {
+    "objectID": "talks/processing_needs/index.html#services",
+    "href": "talks/processing_needs/index.html#services",
+    "title": "Processing needs",
+    "section": "Services",
+    "text": "Services\n\nJupyterhub (or similar) is usually an appreciated entry point",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Processing needs"
+    ]
+  },
+  {
+    "objectID": "talks/processing_needs/index.html#python-environments",
+    "href": "talks/processing_needs/index.html#python-environments",
+    "title": "Processing needs",
+    "section": "Python environments",
+    "text": "Python environments\n\nit’s hard (if not impossible) to provide a single environment for all users\nCompromise: provide a lean python environment with packages available through mambaforge\nusers can install their exotic dependencies on top of that\nMake sure to use the forge version of conda things to avoid license issues.1\n\n\ntest access of data using the hackathon environment\n\n\n\n\n\nTalks page\n\n\nprefix.dev blog post ## Data",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Processing needs"
+    ]
+  },
+  {
+    "objectID": "talks/python_packages/index.html#the-basics",
+    "href": "talks/python_packages/index.html#the-basics",
+    "title": "Sharing is caring",
+    "section": "The basics",
+    "text": "The basics\n\nPython functions and classes can be organised in modules\nimport my_module\n\nmy_module.my_function(42)\nPackages allow for a hierarchical structuring of modules\nThe Python Package Index (PyPI) helps you find and install software1\npip install &lt;package_name&gt;\n\nauthors need to actively publish their code",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Sharing is caring"
+    ]
+  },
+  {
+    "objectID": "talks/python_packages/index.html#the-default-stack",
+    "href": "talks/python_packages/index.html#the-default-stack",
+    "title": "Sharing is caring",
+    "section": "The default stack",
+    "text": "The default stack\nThis talk will not cover the “usual suspects”1\nNumPy, SciPy, matplotlib, cartopy, netcdf4, xarray (+flox), …\nI expect those to be installed",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Sharing is caring"
+    ]
+  },
+  {
+    "objectID": "talks/python_packages/index.html#healpix",
+    "href": "talks/python_packages/index.html#healpix",
+    "title": "Sharing is caring",
+    "section": "healpix",
+    "text": "healpix\n\nimplements a lean set of routines for working with HEALPix\nhealpix.nside2npix(9)\nhealpix.ang2pix(nside=9, 52, 10, nest=True, lonlat=True)\nrequires only numpy, and can be installed using pip:\npython -m pip install healpix",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Sharing is caring"
+    ]
+  },
+  {
+    "objectID": "talks/python_packages/index.html#easygems",
+    "href": "talks/python_packages/index.html#easygems",
+    "title": "Sharing is caring",
+    "section": "easygems",
+    "text": "easygems\n\nprovides a (small) set of convenience functions to work with model output\neasygems.healpix.healpix_show(ds_daily.tas.sel(time=\"2024-09-10\"))\nstarted as a “bin” for functions used on easy.gems\ncan be installed using pip\npython -m pip install easygems",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Sharing is caring"
+    ]
+  },
+  {
+    "objectID": "talks/python_packages/index.html#gribscan",
+    "href": "talks/python_packages/index.html#gribscan",
+    "title": "Sharing is caring",
+    "section": "gribscan",
+    "text": "gribscan\n\nscan GRIB files and create zarr-compatible indices\ngribscan-index *.grib2\ngribscan-build --magician ifs --prefix $PWD *.index\nprovides the command-line tools gribscan-index and gribscan-build\nrequires an ecCodes version matching the output data\ncan be installed using pip\npython -m pip install gribscan\n\n\n\n\n\nTalks page",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Sharing is caring"
+    ]
+  },
+  {
+    "objectID": "talks/index.html",
+    "href": "talks/index.html",
+    "title": "Talks",
+    "section": "",
+    "text": "Building useful datasets for Earth System Model output\nStoring data\nPython packages\nProcessing needs",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks"
+    ]
+  },
+  {
+    "objectID": "talks/index.html#technical",
+    "href": "talks/index.html#technical",
+    "title": "Talks",
+    "section": "",
+    "text": "Building useful datasets for Earth System Model output\nStoring data\nPython packages\nProcessing needs",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks"
     ]
   },
   {
@@ -355,124 +524,6 @@
       "Hosting a hackathon site",
       "Talks",
       "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/index.html",
-    "href": "talks/index.html",
-    "title": "Talks",
-    "section": "",
-    "text": "Building useful datasets for Earth System Model output\nStoring data\nPython packages\nProcessing needs",
-    "crumbs": [
-      "Hosting a hackathon site",
-      "Talks"
-    ]
-  },
-  {
-    "objectID": "talks/index.html#technical",
-    "href": "talks/index.html#technical",
-    "title": "Talks",
-    "section": "",
-    "text": "Building useful datasets for Earth System Model output\nStoring data\nPython packages\nProcessing needs",
-    "crumbs": [
-      "Hosting a hackathon site",
-      "Talks"
-    ]
-  },
-  {
-    "objectID": "talks/python_packages/index.html#the-basics",
-    "href": "talks/python_packages/index.html#the-basics",
-    "title": "Sharing is caring",
-    "section": "The basics",
-    "text": "The basics\n\nPython functions and classes can be organised in modules\nimport my_module\n\nmy_module.my_function(42)\nPackages allow for a hierarchical structuring of modules\nThe Python Package Index (PyPI) helps you find and install software1\npip install &lt;package_name&gt;\n\nauthors need to actively publish their code",
-    "crumbs": [
-      "Hosting a hackathon site",
-      "Talks",
-      "Sharing is caring"
-    ]
-  },
-  {
-    "objectID": "talks/python_packages/index.html#the-default-stack",
-    "href": "talks/python_packages/index.html#the-default-stack",
-    "title": "Sharing is caring",
-    "section": "The default stack",
-    "text": "The default stack\nThis talk will not cover the “usual suspects”1\nNumPy, SciPy, matplotlib, cartopy, netcdf4, xarray (+flox), …\nI expect those to be installed",
-    "crumbs": [
-      "Hosting a hackathon site",
-      "Talks",
-      "Sharing is caring"
-    ]
-  },
-  {
-    "objectID": "talks/python_packages/index.html#healpix",
-    "href": "talks/python_packages/index.html#healpix",
-    "title": "Sharing is caring",
-    "section": "healpix",
-    "text": "healpix\n\nimplements a lean set of routines for working with HEALPix\nhealpix.nside2npix(9)\nhealpix.ang2pix(nside=9, 52, 10, nest=True, lonlat=True)\nrequires only numpy, and can be installed using pip:\npython -m pip install healpix",
-    "crumbs": [
-      "Hosting a hackathon site",
-      "Talks",
-      "Sharing is caring"
-    ]
-  },
-  {
-    "objectID": "talks/python_packages/index.html#easygems",
-    "href": "talks/python_packages/index.html#easygems",
-    "title": "Sharing is caring",
-    "section": "easygems",
-    "text": "easygems\n\nprovides a (small) set of convenience functions to work with model output\neasygems.healpix.healpix_show(ds_daily.tas.sel(time=\"2024-09-10\"))\nstarted as a “bin” for functions used on easy.gems\ncan be installed using pip\npython -m pip install easygems",
-    "crumbs": [
-      "Hosting a hackathon site",
-      "Talks",
-      "Sharing is caring"
-    ]
-  },
-  {
-    "objectID": "talks/python_packages/index.html#gribscan",
-    "href": "talks/python_packages/index.html#gribscan",
-    "title": "Sharing is caring",
-    "section": "gribscan",
-    "text": "gribscan\n\nscan GRIB files and create zarr-compatible indices\ngribscan-index *.grib2\ngribscan-build --magician ifs --prefix $PWD *.index\nprovides the command-line tools gribscan-index and gribscan-build\nrequires an ecCodes version matching the output data\ncan be installed using pip\npython -m pip install gribscan\n\n\n\n\n\nTalks page",
-    "crumbs": [
-      "Hosting a hackathon site",
-      "Talks",
-      "Sharing is caring"
-    ]
-  },
-  {
-    "objectID": "talks/processing_needs/index.html#hardware",
-    "href": "talks/processing_needs/index.html#hardware",
-    "title": "Processing needs",
-    "section": "Hardware",
-    "text": "Hardware\n\na couple of dedicated analysis nodes in a SLURM partition (~32 at DKRZ, 10 above normal)\nreservations have proven less useful than simply expanding the interactive partition\nlimit of 2 nodes per participant (larger jobs are usually user error)",
-    "crumbs": [
-      "Hosting a hackathon site",
-      "Talks",
-      "Processing needs"
-    ]
-  },
-  {
-    "objectID": "talks/processing_needs/index.html#services",
-    "href": "talks/processing_needs/index.html#services",
-    "title": "Processing needs",
-    "section": "Services",
-    "text": "Services\n\nJupyterhub (or similar) is usually an appreciated entry point",
-    "crumbs": [
-      "Hosting a hackathon site",
-      "Talks",
-      "Processing needs"
-    ]
-  },
-  {
-    "objectID": "talks/processing_needs/index.html#python-environments",
-    "href": "talks/processing_needs/index.html#python-environments",
-    "title": "Processing needs",
-    "section": "Python environments",
-    "text": "Python environments\n\nit’s hard (if not impossible) to provide a single environment for all users\nCompromise: provide a lean python environment with packages available through mambaforge\nusers can install their exotic dependencies on top of that\nMake sure to use the forge version of conda things to avoid license issues.1\n\n\ntest access of data using the hackathon environment\n\n\n\n\n\nTalks page\n\n\nprefix.dev blog post ## Data",
-    "crumbs": [
-      "Hosting a hackathon site",
-      "Talks",
-      "Processing needs"
     ]
   },
   {
