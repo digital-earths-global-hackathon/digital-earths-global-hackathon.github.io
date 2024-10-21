@@ -277,39 +277,193 @@
     ]
   },
   {
-    "objectID": "talks/processing_needs/index.html#hardware",
-    "href": "talks/processing_needs/index.html#hardware",
-    "title": "Processing needs",
-    "section": "Hardware",
-    "text": "Hardware\n\na couple of dedicated analysis nodes in a SLURM partition (~32 at DKRZ, 10 above normal)\nreservations have proven less useful than simply expanding the interactive partition\nlimit of 2 nodes per participant (larger jobs are usually user error)",
+    "objectID": "talks/catalogs/index.html#simplify-access-to-data",
+    "href": "talks/catalogs/index.html#simplify-access-to-data",
+    "title": "Catalogs",
+    "section": "simplify access to data",
+    "text": "simplify access to data\nimport os\nimport urllib.request\nimport xarray\nimport shutil\n\nif not os.path.exists(\"some_data\"):\n    urllib.request.urlretrieve(\"https://example.org/some_data.zip\", \"some_data.zip\")\n    shutil.unpack_archive(\"some_data.zip\", \"some_data\")\n\nds = xr.open_mfdataset(\"some_data/*.nc\")\nvs\nimport intake\ncat = intake.open_catalog(\"https://example.org/catalog.yaml\")\nds = cat[\"some_data\"].to_dask()",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
-      "Processing needs"
+      "Catalogs"
     ]
   },
   {
-    "objectID": "talks/processing_needs/index.html#services",
-    "href": "talks/processing_needs/index.html#services",
-    "title": "Processing needs",
-    "section": "Services",
-    "text": "Services\n\nJupyterhub (or similar) is usually an appreciated entry point",
+    "objectID": "talks/catalogs/index.html#make-datasets-findable",
+    "href": "talks/catalogs/index.html#make-datasets-findable",
+    "title": "Catalogs",
+    "section": "make datasets findable",
+    "text": "make datasets findable\ne.g. STAC datasets\nMetadata in catalogs can be accessed fasterthan when burried inside datasets.\nThis enables quick browse, search and quicklook tools.",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
-      "Processing needs"
+      "Catalogs"
     ]
   },
   {
-    "objectID": "talks/processing_needs/index.html#python-environments",
-    "href": "talks/processing_needs/index.html#python-environments",
-    "title": "Processing needs",
-    "section": "Python environments",
-    "text": "Python environments\n\nit’s hard (if not impossible) to provide a single environment for all users\nCompromise: provide a lean python environment with packages available through mambaforge\nusers can install their exotic dependencies on top of that\nMake sure to use the forge version of conda things to avoid license issues.1\n\n\ntest access of data using the hackathon environment\n\n\n\n\n\nTalks page\n\n\nprefix.dev blog post ## Data",
+    "objectID": "talks/catalogs/index.html#simplify-data-movement",
+    "href": "talks/catalogs/index.html#simplify-data-movement",
+    "title": "Catalogs",
+    "section": "simplify data movement",
+    "text": "simplify data movement\nOnce data is moved, just update the catalog and users seemlessly access data from new location.",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
-      "Processing needs"
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/catalogs/index.html#simplify-encoding-changes",
+    "href": "talks/catalogs/index.html#simplify-encoding-changes",
+    "title": "Catalogs",
+    "section": "simplify encoding changes",
+    "text": "simplify encoding changes\n\nCatalog describes how to open the data\ndata encoding can be changed (zipped CSV -&gt; HDF5 -&gt; Zarr)\nUsers automatically use new one after catalog update",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/catalogs/index.html#aid-with-distributed-access",
+    "href": "talks/catalogs/index.html#aid-with-distributed-access",
+    "title": "Catalogs",
+    "section": "aid with distributed access",
+    "text": "aid with distributed access\n\nReturned catalog entries may depend on user location\nUsers may use the same code to access data everywhere, but still can be directed to a copy in the local datacenter\nThis may even involve HDF5 on lustre in one datacenter and Zarr on S3 in another",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/catalogs/index.html#hack-around-broken-datasets",
+    "href": "talks/catalogs/index.html#hack-around-broken-datasets",
+    "title": "Catalogs",
+    "section": "hack around broken datasets",
+    "text": "hack around broken datasets\n😬\n\n\nComplex catalog entries can be used to concatenate, mix, slice etc… a collection of poorly prepared datasets.\nMay be better than nothing, but usually comes with bad performance impact.\n\n\n\nPlease don’t use this by design. It’s always better to fix the datasets upfront.",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/catalogs/index.html#catalog",
+    "href": "talks/catalogs/index.html#catalog",
+    "title": "Catalogs",
+    "section": "catalog",
+    "text": "catalog\nA list / tree / collection of catalog entries.\n\nMay be static, dynamic, searchable, etc.",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/catalogs/index.html#catalog-entry",
+    "href": "talks/catalogs/index.html#catalog-entry",
+    "title": "Catalogs",
+    "section": "catalog entry",
+    "text": "catalog entry\n\nhas an identity\ncan be retrieved\nlocates (or identifies) a dataset\ninstructs how to open a dataset\nmay carry additional metadata",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/catalogs/index.html#filesystem-directories",
+    "href": "talks/catalogs/index.html#filesystem-directories",
+    "title": "Catalogs",
+    "section": "filesystem directories",
+    "text": "filesystem directories\n\n✅ can be a simple option\n✅ support symlinks\n❌ not really a catalog (doesn’t aggregate metadata)\n❌ only shows what’s on the filesystem",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/catalogs/index.html#intake-yaml",
+    "href": "talks/catalogs/index.html#intake-yaml",
+    "title": "Catalogs",
+    "section": "Intake yaml",
+    "text": "Intake yaml\n\n✅ easy to create\n✅ compatible with any kind of data\n❌ limited to Python\n❌ unstable format (Intake 2 broke a lot of things)\n🤔 has room for creative hacks",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/catalogs/index.html#spatiotemporal-asset-catalogs-stac",
+    "href": "talks/catalogs/index.html#spatiotemporal-asset-catalogs-stac",
+    "title": "Catalogs",
+    "section": "SpatioTemporal Asset Catalogs (STAC)",
+    "text": "SpatioTemporal Asset Catalogs (STAC)\n\n✅ stable format\n✅ integrations for many languages\n✅ can be used with Intake\n❌ more complicated to create (but tools exist)\n❌ can only be used for spatio-temporal datasets",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/catalogs/index.html#intake-esm",
+    "href": "talks/catalogs/index.html#intake-esm",
+    "title": "Catalogs",
+    "section": "Intake ESM",
+    "text": "Intake ESM\n\nmade for CMIP6\naims at assembling big datasets out of many individual datasets, which I wouldn’t recommend",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/catalogs/index.html#thredds-dataset-inventory-catalogs",
+    "href": "talks/catalogs/index.html#thredds-dataset-inventory-catalogs",
+    "title": "Catalogs",
+    "section": "THREDDS Dataset Inventory Catalogs",
+    "text": "THREDDS Dataset Inventory Catalogs\n\nspecific catalog for THREDDS data server (e.g. OPeNDAP)\nexposes what’s available on that specific server",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/catalogs/index.html#ease-of-access",
+    "href": "talks/catalogs/index.html#ease-of-access",
+    "title": "Catalogs",
+    "section": "ease of access",
+    "text": "ease of access\nThere are many computing facilities.We want to work together.  \ncat = get_hackathon_catalog()\nds = cat.get_dataset(\"some_model_run_output_id\")\n\nconcise\nfast\nacross data centers\nno local code changes\nsupports different storage methods and formats\n\n\n\n\n\nTalks page",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/index.html",
+    "href": "talks/index.html",
+    "title": "Talks",
+    "section": "",
+    "text": "Building useful datasets for Earth System Model output\nStoring data\nCatalogs\nPython packages\nProcessing needs",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks"
+    ]
+  },
+  {
+    "objectID": "talks/index.html#technical",
+    "href": "talks/index.html#technical",
+    "title": "Talks",
+    "section": "",
+    "text": "Building useful datasets for Earth System Model output\nStoring data\nCatalogs\nPython packages\nProcessing needs",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks"
     ]
   },
   {
@@ -373,25 +527,39 @@
     ]
   },
   {
-    "objectID": "talks/index.html",
-    "href": "talks/index.html",
-    "title": "Talks",
-    "section": "",
-    "text": "Building useful datasets for Earth System Model output\nStoring data\nPython packages\nProcessing needs",
+    "objectID": "talks/processing_needs/index.html#hardware",
+    "href": "talks/processing_needs/index.html#hardware",
+    "title": "Processing needs",
+    "section": "Hardware",
+    "text": "Hardware\n\na couple of dedicated analysis nodes in a SLURM partition (~32 at DKRZ, 10 above normal)\nreservations have proven less useful than simply expanding the interactive partition\nlimit of 2 nodes per participant (larger jobs are usually user error)",
     "crumbs": [
       "Hosting a hackathon site",
-      "Talks"
+      "Talks",
+      "Processing needs"
     ]
   },
   {
-    "objectID": "talks/index.html#technical",
-    "href": "talks/index.html#technical",
-    "title": "Talks",
-    "section": "",
-    "text": "Building useful datasets for Earth System Model output\nStoring data\nPython packages\nProcessing needs",
+    "objectID": "talks/processing_needs/index.html#services",
+    "href": "talks/processing_needs/index.html#services",
+    "title": "Processing needs",
+    "section": "Services",
+    "text": "Services\n\nJupyterhub (or similar) is usually an appreciated entry point",
     "crumbs": [
       "Hosting a hackathon site",
-      "Talks"
+      "Talks",
+      "Processing needs"
+    ]
+  },
+  {
+    "objectID": "talks/processing_needs/index.html#python-environments",
+    "href": "talks/processing_needs/index.html#python-environments",
+    "title": "Processing needs",
+    "section": "Python environments",
+    "text": "Python environments\n\nit’s hard (if not impossible) to provide a single environment for all users\nCompromise: provide a lean python environment with packages available through mambaforge\nusers can install their exotic dependencies on top of that\nMake sure to use the forge version of conda things to avoid license issues.1\n\n\ntest access of data using the hackathon environment\n\n\n\n\n\nTalks page\n\n\nprefix.dev blog post ## Data",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Processing needs"
     ]
   },
   {
