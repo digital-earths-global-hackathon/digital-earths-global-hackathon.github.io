@@ -238,41 +238,38 @@
     ]
   },
   {
-    "objectID": "talks/storage-requirements/storage-requirements.html#ballpark-estimate-for-level-9-13km",
-    "href": "talks/storage-requirements/storage-requirements.html#ballpark-estimate-for-level-9-13km",
+    "objectID": "talks/storage-requirements/index.html#ballpark-estimate-for-level-9-13km",
+    "href": "talks/storage-requirements/index.html#ballpark-estimate-for-level-9-13km",
     "title": "Storage requirements",
     "section": "Ballpark estimate for level 9 (13km)",
     "text": "Ballpark estimate for level 9 (13km)\n\n\n\n\n\n\n\n\n\n\n\n\ntype\ncells / snap-shot\nMB / snap-shot1\nsnapshots\nGB / var\nvars\nGB total\n\n\n\n\n2D\n3 M\n6\n365*24\n52\n33\n1650\n\n\n2D2\n3 M\n6\n365*4\n13\n33\n275\n\n\n3D\n75 M\n150\n365*4\n220\n12\n2600\n\n\n\nAssuming 4-byte floats and 50% compressionFor consistent datasets",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
-      "Storage Requirements",
       "Storage requirements"
     ]
   },
   {
-    "objectID": "talks/storage-requirements/storage-requirements.html#making-things-useful",
-    "href": "talks/storage-requirements/storage-requirements.html#making-things-useful",
+    "objectID": "talks/storage-requirements/index.html#making-things-useful",
+    "href": "talks/storage-requirements/index.html#making-things-useful",
     "title": "Storage requirements",
     "section": "Making things useful",
     "text": "Making things useful\n\nAdding the full HEALPix hierarchy adds 30%, and makes the dataset useful.\nAdd daily means (+25% w.r.t the 6-hourly data)\nTotal size per dataset at 13 km: 6.6TB\nDoubling the resolution multiplies the storage need by 4.\n3-hourly 3D fields increase the size to 10.6 TB",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
-      "Storage Requirements",
       "Storage requirements"
     ]
   },
   {
-    "objectID": "talks/storage-requirements/storage-requirements.html#totals",
-    "href": "talks/storage-requirements/storage-requirements.html#totals",
+    "objectID": "talks/storage-requirements/index.html#totals",
+    "href": "talks/storage-requirements/index.html#totals",
     "title": "Storage requirements",
     "section": "Totals",
     "text": "Totals\n\n10 models at level 9 (13 km): 68 TB\n10 models at level 10 (6 km): 272 TB\n10 models at level 11 (3 km): 1.1 PB\n\n\n\n\n\nTalks page",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
-      "Storage Requirements",
       "Storage requirements"
     ]
   },
@@ -449,7 +446,7 @@
     "href": "talks/index.html",
     "title": "Talks",
     "section": "",
-    "text": "Building useful datasets for Earth System Model output\nStoring data\nCatalogs\nPython packages\nProcessing needs",
+    "text": "Building useful datasets for Earth System Model output\nStorage requirements\nCatalogs\nPython packages\nProcessing needs",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks"
@@ -460,7 +457,7 @@
     "href": "talks/index.html#technical",
     "title": "Talks",
     "section": "",
-    "text": "Building useful datasets for Earth System Model output\nStoring data\nCatalogs\nPython packages\nProcessing needs",
+    "text": "Building useful datasets for Earth System Model output\nStorage requirements\nCatalogs\nPython packages\nProcessing needs",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks"
@@ -987,7 +984,7 @@
     "href": "hosting/technical/meeting-2024-10-21.html",
     "title": "Preparation meeting on 2024-10-21/22",
     "section": "",
-    "text": "This will be a virtual meeting via zoom, and we will record the sessions / take notes to allow for those with conflicting schedules / time zones to follow the conversations.\nWe will hold the sessions in the afternoon to ease participation from the Americas.\nPlease register to receive the zoom link\n\n\n\n\n\n\n\n\nTime in CEST (UTC+2)\nWhat\nWho\n\n\n\n\nThe setting\n\n\n\n\n15:00\nRound of introductions, agenda , …\nall, Flo (DKRZ)\n\n\n15:20\nIdea and goals of the hackathon\nBjorn Stevens (MPI-M)\n\n\n15:45\nA typical hackathon agenda\nHeike Konow (MPI-M)\n\n\n16:00\nUseful datasets\nTobi (MPI-M)\n\n\n16:15\nRegional grids\nAndreas Prein (ETHZ)\n\n\n16:30\nThe experimental protocols\nDaisuke Takasuka (Tohoku Univ)\n\n\n17:00\nDiscussion on the setting and data\nall\n\n\n17:30\n☕️ Coffee break\nall\n\n\nData access\n\n\n\n\n17:45\nZarr and other stores\nFlo\n\n\n18:00\nCatalogs\nTobi (MPI-M)\n\n\n18:15\nStorage needs\nFlo (DKRZ)\n\n\n18:30\nOpen discussion\nall\n\n\n19:00\nEnd\nall\n\n\n\n\n\n\n\n\n\nTime in CEST (UTC+2)\nWhat\nWho\n\n\n\n\nWorking with the data\n\n\n\n\n15:00\nWelcome back and recap\nFlo\n\n\n15:15\nUxarray\nOrhan Eroglu / John Clyne (UCAR)\n\n\n15:30\neasygems and other python packages\nLukas (MPI-M)\n\n\n15:45\nStorm trackers\nPaul Ulrich (LLNL)\n\n\n16:00\nProcessing needs, incl. py envs,…\nLukas\n\n\nDocumentation and collaboration\n\n\n\n\n16:15\ndocumentation: Pythia, easy.gems.dkrz.de\nJohn Clyne (UCAR), Tobi?\n\n\n16:45\nCollecting code and results across nodes\nNikolay Koldunov (AWI)\n\n\n17:00\n☕️ Coffee break\n\n\n\nWorking from here\n\n\n\n\n17:30\nWhat’s open, next steps\nall, Flo\n\n\n19:00\nEnd",
+    "text": "This will be a virtual meeting via zoom, and we will record the sessions / take notes to allow for those with conflicting schedules / time zones to follow the conversations.\nWe will hold the sessions in the afternoon to ease participation from the Americas.\nPlease register to receive the zoom link\n\n\n\n\n\n\n\n\nTime in CEST (UTC+2)\nWhat\nWho\n\n\n\n\nThe setting\n\n\n\n\n15:00\nRound of introductions, agenda , …\nall, Flo (DKRZ)\n\n\n15:20\nIdea and goals of the hackathon\nBjorn Stevens (MPI-M)\n\n\n15:45\nA typical hackathon agenda\nHeike Konow (MPI-M)\n\n\n16:00\nUseful datasets\nTobi (MPI-M)\n\n\n16:15\nRegional grids\nAndreas Prein (ETHZ)\n\n\n16:30\nThe experimental protocols\nDaisuke Takasuka (Tohoku Univ)\n\n\n17:00\nDiscussion on the setting and data\nall\n\n\n17:30\n☕️ Coffee break\nall\n\n\nData access\n\n\n\n\n17:45\nZarr and other stores\nFlo\n\n\n18:00\nCatalogs\nTobi (MPI-M)\n\n\n18:15\nStorage requirements\nFlo (DKRZ)\n\n\n18:30\nOpen discussion\nall\n\n\n19:00\nEnd\nall\n\n\n\n\n\n\n\n\n\nTime in CEST (UTC+2)\nWhat\nWho\n\n\n\n\nWorking with the data\n\n\n\n\n15:00\nWelcome back and recap\nFlo\n\n\n15:15\nUxarray\nOrhan Eroglu / John Clyne (UCAR)\n\n\n15:30\neasygems and other python packages\nLukas (MPI-M)\n\n\n15:45\nStorm trackers\nPaul Ulrich (LLNL)\n\n\n16:00\nProcessing needs, incl. py envs,…\nLukas\n\n\nDocumentation and collaboration\n\n\n\n\n16:15\ndocumentation: Pythia, easy.gems.dkrz.de\nJohn Clyne (UCAR), Tobi?\n\n\n16:45\nCollecting code and results across nodes\nNikolay Koldunov (AWI)\n\n\n17:00\n☕️ Coffee break\n\n\n\nWorking from here\n\n\n\n\n17:30\nWhat’s open, next steps\nall, Flo\n\n\n19:00\nEnd",
     "crumbs": [
       "Hosting a hackathon site",
       "Technical details for host teams",
@@ -999,7 +996,7 @@
     "href": "hosting/technical/meeting-2024-10-21.html#monday-2024-10-21",
     "title": "Preparation meeting on 2024-10-21/22",
     "section": "",
-    "text": "Time in CEST (UTC+2)\nWhat\nWho\n\n\n\n\nThe setting\n\n\n\n\n15:00\nRound of introductions, agenda , …\nall, Flo (DKRZ)\n\n\n15:20\nIdea and goals of the hackathon\nBjorn Stevens (MPI-M)\n\n\n15:45\nA typical hackathon agenda\nHeike Konow (MPI-M)\n\n\n16:00\nUseful datasets\nTobi (MPI-M)\n\n\n16:15\nRegional grids\nAndreas Prein (ETHZ)\n\n\n16:30\nThe experimental protocols\nDaisuke Takasuka (Tohoku Univ)\n\n\n17:00\nDiscussion on the setting and data\nall\n\n\n17:30\n☕️ Coffee break\nall\n\n\nData access\n\n\n\n\n17:45\nZarr and other stores\nFlo\n\n\n18:00\nCatalogs\nTobi (MPI-M)\n\n\n18:15\nStorage needs\nFlo (DKRZ)\n\n\n18:30\nOpen discussion\nall\n\n\n19:00\nEnd\nall",
+    "text": "Time in CEST (UTC+2)\nWhat\nWho\n\n\n\n\nThe setting\n\n\n\n\n15:00\nRound of introductions, agenda , …\nall, Flo (DKRZ)\n\n\n15:20\nIdea and goals of the hackathon\nBjorn Stevens (MPI-M)\n\n\n15:45\nA typical hackathon agenda\nHeike Konow (MPI-M)\n\n\n16:00\nUseful datasets\nTobi (MPI-M)\n\n\n16:15\nRegional grids\nAndreas Prein (ETHZ)\n\n\n16:30\nThe experimental protocols\nDaisuke Takasuka (Tohoku Univ)\n\n\n17:00\nDiscussion on the setting and data\nall\n\n\n17:30\n☕️ Coffee break\nall\n\n\nData access\n\n\n\n\n17:45\nZarr and other stores\nFlo\n\n\n18:00\nCatalogs\nTobi (MPI-M)\n\n\n18:15\nStorage requirements\nFlo (DKRZ)\n\n\n18:30\nOpen discussion\nall\n\n\n19:00\nEnd\nall",
     "crumbs": [
       "Hosting a hackathon site",
       "Technical details for host teams",
