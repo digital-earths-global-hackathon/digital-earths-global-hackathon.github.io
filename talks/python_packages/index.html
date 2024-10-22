@@ -408,27 +408,27 @@ Lukas Kluft
 <section id="the-basics" class="slide level2 center">
 <h2>The basics</h2>
 <ul>
-<li><p>Python functions and classes can be organised in modules</p>
+<li><p>Python functions and classes can be organised in <a href="https://docs.python.org/3/tutorial/modules.html">modules</a></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource py number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="im">import</span> my_module</span>
 <span id="cb1-2"><a></a></span>
 <span id="cb1-3"><a></a>my_module.my_function(<span class="dv">42</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>Packages allow for a hierarchical structuring of modules</p></li>
-<li><p>The Python Package Index (PyPI) helps you find and install software<sup>1</sup></p>
+<li><p><a href="https://docs.python.org/3/tutorial/modules.html#packages">Packages</a> allow for a hierarchical structuring of modules</p></li>
+<li><p>The Python Package Index (<a href="https://pypi.org">PyPI</a>) helps you find and install software<sup>1</sup></p>
 <pre><code>pip install &lt;package_name&gt;</code></pre></li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>authors need to actively publish their code</p></li></ol></aside></section>
 <section id="the-default-stack" class="slide level2 center">
 <h2>The default stack</h2>
-<p>This talk will not cover the “usual suspects”<sup>1</sup></p>
-<p>NumPy, SciPy, matplotlib, cartopy, netcdf4, xarray (+flox), …</p>
-<aside><ol class="aside-footnotes"><li id="fn2"><p>I expect those to be installed</p></li></ol></aside></section>
-<section id="healpix" class="slide level2 center">
-<h2><a href="https://github.com/ntessore/healpix">healpix</a></h2>
+<p>This talk will not cover the “usual suspects”</p>
+<pre><code>NumPy, SciPy, matplotlib, cartopy, netcdf4, xarray (+flox), ...</code></pre>
+</section>
+<section id="healpix-not-healpy" class="slide level2 center">
+<h2><a href="https://github.com/ntessore/healpix">healpix</a> <span style="color: #555"><em>(not healpy)</em></span></h2>
 <ul>
 <li><p>implements a lean set of routines for working with HEALPix</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource py number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a></a>healpix.nside2npix(<span class="dv">9</span>)</span>
-<span id="cb3-2"><a></a>healpix.ang2pix(nside<span class="op">=</span><span class="dv">9</span>, <span class="dv">52</span>, <span class="dv">10</span>, nest<span class="op">=</span><span class="va">True</span>, lonlat<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>requires only numpy, and can be installed using pip:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource py number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a></a>healpix.nside2npix(<span class="dv">9</span>)</span>
+<span id="cb4-2"><a></a>healpix.ang2pix(nside<span class="op">=</span><span class="dv">9</span>, <span class="dv">52</span>, <span class="dv">10</span>, nest<span class="op">=</span><span class="va">True</span>, lonlat<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>requires only NumPy, and can be installed with pip:</p>
 <pre><code>python -m pip install healpix</code></pre></li>
 </ul>
 </section>
@@ -436,9 +436,9 @@ Lukas Kluft
 <h2><a href="https://github.com/mpimet/easygems">easygems</a></h2>
 <ul>
 <li><p>provides a (small) set of convenience functions to work with model output</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource py number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a>easygems.healpix.healpix_show(ds_daily.tas.sel(time<span class="op">=</span><span class="st">"2024-09-10"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>started as a “bin” for functions used on easy.gems</p></li>
-<li><p>can be installed using pip</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource py number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a>easygems.healpix.healpix_show(ds_daily.tas.sel(time<span class="op">=</span><span class="st">"2024-09-10"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>started as a “bin” for functions used on <a href="http://easy.gems.dkrz.de">easy.gems</a></p></li>
+<li><p>can be installed with pip</p>
 <pre><code>python -m pip install easygems</code></pre></li>
 </ul>
 </section>
@@ -446,11 +446,11 @@ Lukas Kluft
 <h2><a href="https://github.com/gribscan/gribscan">gribscan</a></h2>
 <ul>
 <li><p>scan GRIB files and create zarr-compatible indices</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="ex">gribscan-index</span> <span class="pp">*</span>.grib2</span>
-<span id="cb7-2"><a></a><span class="ex">gribscan-build</span> <span class="at">--magician</span> ifs <span class="at">--prefix</span> <span class="va">$PWD</span> <span class="pp">*</span>.index</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource sh number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="ex">gribscan-index</span> <span class="pp">*</span>.grib2</span>
+<span id="cb8-2"><a></a><span class="ex">gribscan-build</span> <span class="at">--magician</span> ifs <span class="at">--prefix</span> <span class="va">$PWD</span> <span class="pp">*</span>.index</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p>provides the command-line tools <code>gribscan-index</code> and <code>gribscan-build</code></p></li>
-<li><p>requires an ecCodes version matching the output data</p></li>
-<li><p>can be installed using pip</p>
+<li><p>requires an ecCodes version that matches the output data</p></li>
+<li><p>can be installed with pip <em>(apart from ecCodes)</em></p>
 <pre><code>python -m pip install gribscan</code></pre></li>
 </ul>
 
