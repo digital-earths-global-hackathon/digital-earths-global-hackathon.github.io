@@ -10,7 +10,7 @@
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.5.57">
 
-  <meta name="author" content="Lukas Kluft">
+  <meta name="author" content="Lukas Kluft, Florian Ziemen">
   <title>Digital Earths global hackathon 2025 – Processing needs</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -329,11 +329,12 @@
 
 <section id="title-slide" class="quarto-title-block center">
   <h1 class="title">Processing needs</h1>
+  <p class="subtitle">Lessons learned during previous hackathons</p>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Lukas Kluft 
+Lukas Kluft, Florian Ziemen 
 </div>
 </div>
 </div>
@@ -350,19 +351,31 @@ Lukas Kluft
 <section id="services" class="slide level2 center">
 <h2>Services</h2>
 <ul>
-<li>Jupyterhub (or similar) is usually an appreciated entry point</li>
+<li>interactive access to the computing resources</li>
+<li><a href="https://jupyter.org/hub">JupyterHub</a> (or similar) is usually an appreciated entry point</li>
 </ul>
 </section>
 <section id="python-environments" class="slide level2 center">
 <h2>Python environments</h2>
 <ul>
 <li>it’s hard (if not impossible) to provide a single environment for all users</li>
-<li><em>Compromise:</em> provide a lean python environment with packages available through <code>mambaforge</code></li>
+<li><em>Compromise:</em> provide a lean python environment with “common” scientific packages</li>
 <li>users can install their exotic dependencies on top of that</li>
-<li>Make sure to use the <em>forge</em> version of conda things to avoid license issues.<sup>1</sup></li>
 </ul>
+</section>
+<section id="our-recommendation" class="slide level2 center">
+<h2>Our recommendation</h2>
 <ul>
-<li>test access of data <strong>using the hackathon environment</strong></li>
+<li>use <a href="https://mamba.readthedocs.io/">micromamba</a><sup>1</sup> to manage a basic python environment</li>
+<li>we should maintain a single <code>environment.yaml</code> to provide <strong>common</strong> packages</li>
+<li>users may install more “exotic” packages on their own</li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>Faster than conda and circumvents <a href="https://prefix.dev/blog/towards_a_vendor_lock_in_free_conda_experience">license issues</a></p></li></ol></aside></section>
+<section id="data" class="slide level2 center">
+<h2>Data</h2>
+<ul>
+<li><em>state-of-the-art</em> compression can help to reduce <strong>both</strong> disk usage and access time (<a href="https://github.com/facebook/zstd"><code>zstd</code></a>, <a href="https://github.com/lz4/lz4"><code>lz4</code></a>)</li>
+<li>test access to data <strong>using the hackathon environment</strong></li>
 </ul>
 
 <div class="quarto-auto-generated-content">
@@ -371,7 +384,7 @@ Lukas Kluft
 <p><a href="../../talks">Talks page</a></p>
 </div>
 </div>
-<aside><ol class="aside-footnotes"><li id="fn1"><p><a href="https://prefix.dev/blog/towards_a_vendor_lock_in_free_conda_experience">prefix.dev blog post</a> ## Data</p></li></ol></aside></section>
+</section>
 
     </div>
   </div>

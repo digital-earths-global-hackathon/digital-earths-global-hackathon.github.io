@@ -540,7 +540,7 @@
     "href": "talks/processing_needs/index.html#services",
     "title": "Processing needs",
     "section": "Services",
-    "text": "Services\n\nJupyterhub (or similar) is usually an appreciated entry point",
+    "text": "Services\n\ninteractive access to the computing resources\nJupyterHub (or similar) is usually an appreciated entry point",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
@@ -552,7 +552,31 @@
     "href": "talks/processing_needs/index.html#python-environments",
     "title": "Processing needs",
     "section": "Python environments",
-    "text": "Python environments\n\nit’s hard (if not impossible) to provide a single environment for all users\nCompromise: provide a lean python environment with packages available through mambaforge\nusers can install their exotic dependencies on top of that\nMake sure to use the forge version of conda things to avoid license issues.1\n\n\ntest access of data using the hackathon environment\n\n\n\n\n\nTalks page\n\n\nprefix.dev blog post ## Data",
+    "text": "Python environments\n\nit’s hard (if not impossible) to provide a single environment for all users\nCompromise: provide a lean python environment with “common” scientific packages\nusers can install their exotic dependencies on top of that",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Processing needs"
+    ]
+  },
+  {
+    "objectID": "talks/processing_needs/index.html#our-recommendation",
+    "href": "talks/processing_needs/index.html#our-recommendation",
+    "title": "Processing needs",
+    "section": "Our recommendation",
+    "text": "Our recommendation\n\nuse micromamba1 to manage a basic python environment\nwe should maintain a single environment.yaml to provide common packages\nusers may install more “exotic” packages on their own\n\nFaster than conda and circumvents license issues",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Processing needs"
+    ]
+  },
+  {
+    "objectID": "talks/processing_needs/index.html#data",
+    "href": "talks/processing_needs/index.html#data",
+    "title": "Processing needs",
+    "section": "Data",
+    "text": "Data\n\nstate-of-the-art compression can help to reduce both disk usage and access time (zstd, lz4)\ntest access to data using the hackathon environment\n\n\n\n\n\nTalks page",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
