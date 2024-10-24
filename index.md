@@ -13,7 +13,7 @@ The Digital Earths Global Hackathon will bring together scientists from around t
 Participants will gather at one of a number of regional nodes for the hacking, each of which will provide access to a combined data-compute resource hosting the data and proximate computing capbility for its analysis.  Each node will host at least one full annual cycle of output data standardized on a common (HEALPix) grid.  Standardization will help participants share their analysis workflows with other teams analyzing other models at other nodes, and thereby build global communities around common interests. 
 
 <div class="framed-box">
-See the [Hackathon preparation meeting page](hosting/technical/meeting-2024-10-21.md) for the technical prep meeting on Oct 21/22.
+See the [List of planned monthly preparation meetings](hosting/meeting-dates-and-times.md).
 </div>
 
 ## Goals
