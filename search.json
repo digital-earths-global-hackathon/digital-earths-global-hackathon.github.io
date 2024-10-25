@@ -298,519 +298,497 @@
     ]
   },
   {
-    "objectID": "talks/useful_datasets/index.html#time-to-plot",
-    "href": "talks/useful_datasets/index.html#time-to-plot",
+    "objectID": "talks/technical/useful_datasets/index.html#time-to-plot",
+    "href": "talks/technical/useful_datasets/index.html#time-to-plot",
     "title": "Building useful datasets for  Earth System Model output",
     "section": "time to plot",
     "text": "time to plot\nthe time it takes until the analysis plot is ready\n\n\n\nunderstanding the data\ncoding the analysis\ngetting the data",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "talks/useful_datasets/index.html#section",
-    "href": "talks/useful_datasets/index.html#section",
+    "objectID": "talks/technical/useful_datasets/index.html#section",
+    "href": "talks/technical/useful_datasets/index.html#section",
     "title": "Building useful datasets for  Earth System Model output",
     "section": "",
     "text": "Useful output is  written once and  read at least once.",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "talks/useful_datasets/index.html#idea",
-    "href": "talks/useful_datasets/index.html#idea",
+    "objectID": "talks/technical/useful_datasets/index.html#idea",
+    "href": "talks/technical/useful_datasets/index.html#idea",
     "title": "Building useful datasets for  Earth System Model output",
     "section": "Idea",
     "text": "Idea\noptimize output for analysis \n\n(not write throughput)",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "talks/useful_datasets/index.html#datasets-are",
-    "href": "talks/useful_datasets/index.html#datasets-are",
+    "objectID": "talks/technical/useful_datasets/index.html#datasets-are",
+    "href": "talks/technical/useful_datasets/index.html#datasets-are",
     "title": "Building useful datasets for  Earth System Model output",
     "section": "datasets are",
     "text": "datasets are\n\n(for this talk)\n\n\n\nfigure from xarray documentation\n\n\n\n\nn-dimensional variables\nshared dimensions\n\n\n\ncoordinates\nattributes for metadata",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "talks/useful_datasets/index.html#datasets-are-not",
-    "href": "talks/useful_datasets/index.html#datasets-are-not",
+    "objectID": "talks/technical/useful_datasets/index.html#datasets-are-not",
+    "href": "talks/technical/useful_datasets/index.html#datasets-are-not",
     "title": "Building useful datasets for  Earth System Model output",
     "section": "datasets are not",
     "text": "datasets are not\n\na single file\na storage format\nshaped by storage & handling",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "talks/useful_datasets/index.html#we-had-unstructured-output",
-    "href": "talks/useful_datasets/index.html#we-had-unstructured-output",
+    "objectID": "talks/technical/useful_datasets/index.html#we-had-unstructured-output",
+    "href": "talks/technical/useful_datasets/index.html#we-had-unstructured-output",
     "title": "Building useful datasets for  Earth System Model output",
     "section": "we had: unstructured output",
     "text": "we had: unstructured output\n$ ls *.nc\nngc2009_atm_mon_20200329T000000Z.nc\nngc2009_oce_2d_1h_inst_20200329T000000Z.nc\nngc2009_atm_pl_6h_inst_20200329T000000Z.nc\nngc2009_lnd_tl_6h_inst_20200329T000000Z.nc\nngc2009_lnd_2d_30min_inst_20200329T000000Z.nc\nngc2009_atm_2d_30min_inst_20200329T000000Z.nc\nngc2009_oce_0-200m_3h_inst_1_20210329T000000Z.nc\nngc2009_oce_0-200m_3h_inst_2_20210329T000000Z.nc\nngc2009_oce_moc_1d_mean_20210329T000000Z.nc\nngc2009_oce_2d_1d_mean_20210329T000000Z.nc\nngc2009_oce_ml_1d_mean_20210329T000000Z.nc\nngc2009_oce_2d_1h_mean_20210329T000000Z.nc\n...\n$ ls *.nc | wc -l\n  12695",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "talks/useful_datasets/index.html#now-a-single-dataset",
-    "href": "talks/useful_datasets/index.html#now-a-single-dataset",
+    "objectID": "talks/technical/useful_datasets/index.html#now-a-single-dataset",
+    "href": "talks/technical/useful_datasets/index.html#now-a-single-dataset",
     "title": "Building useful datasets for  Earth System Model output",
     "section": "now: a single dataset",
     "text": "now: a single dataset\n\nprovides an easy-to-understand overview\nforces consistency across output\ncutting things is easier than glueing things\n\nds = cat.ICON.ngc4008.to_dask()",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "talks/useful_datasets/index.html#now-a-single-dataset-1",
-    "href": "talks/useful_datasets/index.html#now-a-single-dataset-1",
+    "objectID": "talks/technical/useful_datasets/index.html#now-a-single-dataset-1",
+    "href": "talks/technical/useful_datasets/index.html#now-a-single-dataset-1",
     "title": "Building useful datasets for  Earth System Model output",
     "section": "now: a single dataset",
     "text": "now: a single dataset",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "talks/useful_datasets/index.html#model-resolution",
-    "href": "talks/useful_datasets/index.html#model-resolution",
+    "objectID": "talks/technical/useful_datasets/index.html#model-resolution",
+    "href": "talks/technical/useful_datasets/index.html#model-resolution",
     "title": "Building useful datasets for  Earth System Model output",
     "section": "model resolution",
     "text": "model resolution\n\n\n\n\n\nGrid\nCells\n\n\n\n\n1° by 1°\n0.06M\n\n\n10 km\n5.1M\n\n\n5 km\n20M\n\n\n1 km\n510M\n\n\n200 m\n12750M\n\n\n\n\n\n\n\nScreen\nPixels\n\n\n\n\nVGA\n0.3M\n\n\nFull HD\n2.1M\n\n\nMacBook 13’\n4.1M\n\n\n4K\n8.8M\n\n\n8K\n35.4M\n\n\n\n\nIt’s impossible to look at the entire globe in full resolution.",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "talks/useful_datasets/index.html#different-regions-same-size",
-    "href": "talks/useful_datasets/index.html#different-regions-same-size",
+    "objectID": "talks/technical/useful_datasets/index.html#different-regions-same-size",
+    "href": "talks/technical/useful_datasets/index.html#different-regions-same-size",
     "title": "Building useful datasets for  Earth System Model output",
     "section": "different regions, same size",
     "text": "different regions, same size",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "talks/useful_datasets/index.html#we-had-over-loading",
-    "href": "talks/useful_datasets/index.html#we-had-over-loading",
+    "objectID": "talks/technical/useful_datasets/index.html#we-had-over-loading",
+    "href": "talks/technical/useful_datasets/index.html#we-had-over-loading",
     "title": "Building useful datasets for  Earth System Model output",
     "section": "we had: over-loading",
     "text": "we had: over-loading\n\n\n\n\n\n\nAnalysis scripts are forced to load way too much data.\n\nPlots by Marius Winkler & Hans Segura",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "talks/useful_datasets/index.html#now-aggregation",
-    "href": "talks/useful_datasets/index.html#now-aggregation",
+    "objectID": "talks/technical/useful_datasets/index.html#now-aggregation",
+    "href": "talks/technical/useful_datasets/index.html#now-aggregation",
     "title": "Building useful datasets for  Earth System Model output",
     "section": "now: aggregation",
     "text": "now: aggregation\n\n\nWe do that in time and space.",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "talks/useful_datasets/index.html#now-chunking",
-    "href": "talks/useful_datasets/index.html#now-chunking",
+    "objectID": "talks/technical/useful_datasets/index.html#now-chunking",
+    "href": "talks/technical/useful_datasets/index.html#now-chunking",
     "title": "Building useful datasets for  Earth System Model output",
     "section": "now: chunking",
     "text": "now: chunking",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "talks/useful_datasets/index.html#hierarchies",
-    "href": "talks/useful_datasets/index.html#hierarchies",
+    "objectID": "talks/technical/useful_datasets/index.html#hierarchies",
+    "href": "talks/technical/useful_datasets/index.html#hierarchies",
     "title": "Building useful datasets for  Earth System Model output",
     "section": "hierarchies",
     "text": "hierarchies\nscale analysis with screen size\n\n(instead of with model size)",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "talks/useful_datasets/index.html#about-healpix",
-    "href": "talks/useful_datasets/index.html#about-healpix",
+    "objectID": "talks/technical/useful_datasets/index.html#about-healpix",
+    "href": "talks/technical/useful_datasets/index.html#about-healpix",
     "title": "Building useful datasets for  Earth System Model output",
     "section": "about HEALPix",
     "text": "about HEALPix\n\n\n\nHierarchical\nEqual Area\nisoLatitude\n\n\n\n\nNot necessary for the aforementioned.\n… but aligns very well.",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "talks/useful_datasets/index.html#about-healpix-1",
-    "href": "talks/useful_datasets/index.html#about-healpix-1",
+    "objectID": "talks/technical/useful_datasets/index.html#about-healpix-1",
+    "href": "talks/technical/useful_datasets/index.html#about-healpix-1",
     "title": "Building useful datasets for  Earth System Model output",
     "section": "about HEALPix",
     "text": "about HEALPix\n… but aligns very well.\n\nexact 1:4 grid cell relation between levels\ndirect index computation from lat/lon\nindex is space-filling curve",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "talks/useful_datasets/index.html#dropsonde-vs-model",
-    "href": "talks/useful_datasets/index.html#dropsonde-vs-model",
+    "objectID": "talks/technical/useful_datasets/index.html#dropsonde-vs-model",
+    "href": "talks/technical/useful_datasets/index.html#dropsonde-vs-model",
     "title": "Building useful datasets for  Earth System Model output",
     "section": "dropsonde vs model",
     "text": "dropsonde vs model\nSelect ICON model output at alldropsonde locations during EUREC4A field campaign:\nsonde_pix = healpix.ang2pix(\n    icon.crs.healpix_nside, joanne.flight_lon, joanne.flight_lat,\n    lonlat=True, nest=True\n)\n\nicon_sondes = (\n    icon[[\"ua\", \"va\", \"ta\", \"hus\"]]\n    .sel(time=joanne.launch_time, method=\"nearest\")\n    .isel(cell=sonde_pix)\n    .compute()\n)\n\n(55 sec, 1GB, single thread, full code at easy.gems)",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "talks/useful_datasets/index.html#dropsonde-vs-model-1",
-    "href": "talks/useful_datasets/index.html#dropsonde-vs-model-1",
+    "objectID": "talks/technical/useful_datasets/index.html#dropsonde-vs-model-1",
+    "href": "talks/technical/useful_datasets/index.html#dropsonde-vs-model-1",
     "title": "Building useful datasets for  Earth System Model output",
     "section": "dropsonde vs model",
     "text": "dropsonde vs model",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "talks/useful_datasets/index.html#direct-output-1",
-    "href": "talks/useful_datasets/index.html#direct-output-1",
+    "objectID": "talks/technical/useful_datasets/index.html#direct-output-1",
+    "href": "talks/technical/useful_datasets/index.html#direct-output-1",
     "title": "Building useful datasets for  Earth System Model output",
     "section": "direct output",
     "text": "direct output\n\n\noutput process is coupled to the running model\nwrites entire hierarchy at once\ndataset is accessible as soon as the model starts",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "talks/useful_datasets/index.html#monitoring",
-    "href": "talks/useful_datasets/index.html#monitoring",
+    "objectID": "talks/technical/useful_datasets/index.html#monitoring",
+    "href": "talks/technical/useful_datasets/index.html#monitoring",
     "title": "Building useful datasets for  Earth System Model output",
     "section": "monitoring",
     "text": "monitoring\ncat.ICON.ngc4008(time=\"P1D\", zoom=\"0\").to_dask().tas.mean(\"cell\").plot()\n\n\n(100ms, 250MB, single thread)\ndemo",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "talks/useful_datasets/index.html#exploring-5km-global-output",
-    "href": "talks/useful_datasets/index.html#exploring-5km-global-output",
+    "objectID": "talks/technical/useful_datasets/index.html#exploring-5km-global-output",
+    "href": "talks/technical/useful_datasets/index.html#exploring-5km-global-output",
     "title": "Building useful datasets for  Earth System Model output",
     "section": "exploring 5km global output",
     "text": "exploring 5km global output",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "talks/useful_datasets/index.html#hackathons",
-    "href": "talks/useful_datasets/index.html#hackathons",
+    "objectID": "talks/technical/useful_datasets/index.html#hackathons",
+    "href": "talks/technical/useful_datasets/index.html#hackathons",
     "title": "Building useful datasets for  Earth System Model output",
     "section": "hackathons",
     "text": "hackathons\nOutput tested on multiple \\(\\mathcal{O}(\\textrm{PB})\\)-scale model runs, 100+ users:\n\nremarkably little issues raised\nvery positive general feedback\nenabled diagnostics which seemed impossible before\n\n\n\n\n\nTalks page",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "talks/storing_data/index.html#datasets-are",
-    "href": "talks/storing_data/index.html#datasets-are",
+    "objectID": "talks/technical/storing_data/index.html#datasets-are",
+    "href": "talks/technical/storing_data/index.html#datasets-are",
     "title": "Storing data",
     "section": "Datasets are",
     "text": "Datasets are\n\n(from xarray docs)\n\n\nn-dimensional variables\nshared dimensions\n\n\n\ncoordinates\nattributes for metadata",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Storing data"
     ]
   },
   {
-    "objectID": "talks/storing_data/index.html#datasets-are-not",
-    "href": "talks/storing_data/index.html#datasets-are-not",
+    "objectID": "talks/technical/storing_data/index.html#datasets-are-not",
+    "href": "talks/technical/storing_data/index.html#datasets-are-not",
     "title": "Storing data",
     "section": "Datasets are not",
     "text": "Datasets are not\n\na single file\na storage format\nshaped by storage & handling\n\n\nIn the past, people often designed datasets to match their file handling requirements. The resulting view on a dataset seems to be overly restrictive and leads to unfortunate usage patterns.",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Storing data"
     ]
   },
   {
-    "objectID": "talks/storing_data/index.html#access-to-subsets",
-    "href": "talks/storing_data/index.html#access-to-subsets",
+    "objectID": "talks/technical/storing_data/index.html#access-to-subsets",
+    "href": "talks/technical/storing_data/index.html#access-to-subsets",
     "title": "Storing data",
     "section": "Access to subsets",
     "text": "Access to subsets\n\n\n\n\n\n\nWithout subset access and hierarchies, analysis scripts are forced to load way too much data.",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Storing data"
     ]
   },
   {
-    "objectID": "talks/storing_data/index.html#align-the-ordering-of-data-with-read-patterns",
-    "href": "talks/storing_data/index.html#align-the-ordering-of-data-with-read-patterns",
+    "objectID": "talks/technical/storing_data/index.html#align-the-ordering-of-data-with-read-patterns",
+    "href": "talks/technical/storing_data/index.html#align-the-ordering-of-data-with-read-patterns",
     "title": "Storing data",
     "section": "Align the ordering of data with read patterns",
     "text": "Align the ordering of data with read patterns\n\nhttps://www.unidata.ucar.edu/blogs/developer/entry/chunking_data_why_it_mattersMake a compromise that’s okay-ish for everybody by chunking along all dimensions.",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Storing data"
     ]
   },
   {
-    "objectID": "talks/storing_data/index.html#compress-small-chunks",
-    "href": "talks/storing_data/index.html#compress-small-chunks",
+    "objectID": "talks/technical/storing_data/index.html#compress-small-chunks",
+    "href": "talks/technical/storing_data/index.html#compress-small-chunks",
     "title": "Storing data",
     "section": "Compress small chunks",
     "text": "Compress small chunks\n\nAny access will require uncompressing entire chunks.\nBy keeping them small to reduce the amount of data that will be uncompressed but not used.\nKeep them big enough for the compressor to do its job.\nUsually MB-ish blocks are a good compromise.",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Storing data"
     ]
   },
   {
-    "objectID": "talks/storing_data/index.html#use-fast-compressors",
-    "href": "talks/storing_data/index.html#use-fast-compressors",
+    "objectID": "talks/technical/storing_data/index.html#use-fast-compressors",
+    "href": "talks/technical/storing_data/index.html#use-fast-compressors",
     "title": "Storing data",
     "section": "Use fast compressors",
     "text": "Use fast compressors\n\ndeflate (gzip/…) is widely used but slow.\nlz4 and zstd are much faster.\nUse lz4 or zstd from blosc as a good standard.",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Storing data"
     ]
   },
   {
-    "objectID": "talks/storing_data/index.html#contents-of-a-dataset",
-    "href": "talks/storing_data/index.html#contents-of-a-dataset",
+    "objectID": "talks/technical/storing_data/index.html#contents-of-a-dataset",
+    "href": "talks/technical/storing_data/index.html#contents-of-a-dataset",
     "title": "Storing data",
     "section": "Contents of a dataset",
     "text": "Contents of a dataset\n\nMetadata\nn-d variables consisting of many numbers",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Storing data"
     ]
   },
   {
-    "objectID": "talks/storing_data/index.html#netcdf4-hdf5",
-    "href": "talks/storing_data/index.html#netcdf4-hdf5",
+    "objectID": "talks/technical/storing_data/index.html#netcdf4-hdf5",
+    "href": "talks/technical/storing_data/index.html#netcdf4-hdf5",
     "title": "Storing data",
     "section": "netCDF4 / HDF5",
     "text": "netCDF4 / HDF5\n\nnetCDF4, a.k.a. HDF5 stores metadata and chunks in one file.\nUsually a dataset is split across many of these files.\nLoading the dataset requires opening all files.1\n\nThere is the option of multi-file netCDF4/HDF5, but I have not seen this in practice.",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Storing data"
     ]
   },
   {
-    "objectID": "talks/storing_data/index.html#zarr-is-as-simple-as-it-gets.",
-    "href": "talks/storing_data/index.html#zarr-is-as-simple-as-it-gets.",
+    "objectID": "talks/technical/storing_data/index.html#zarr-is-as-simple-as-it-gets.",
+    "href": "talks/technical/storing_data/index.html#zarr-is-as-simple-as-it-gets.",
     "title": "Storing data",
     "section": "Zarr is as simple as it gets.",
     "text": "Zarr is as simple as it gets.\n\n.json files for the metadata\nbinary files for (compressed) chunks\n\nAs chunks are stored separately, this scales for any size of dataset. We are working with a 500 TB dataset in nextGEMS.",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Storing data"
     ]
   },
   {
-    "objectID": "talks/storing_data/index.html#kerchunk-fsspec",
-    "href": "talks/storing_data/index.html#kerchunk-fsspec",
+    "objectID": "talks/technical/storing_data/index.html#kerchunk-fsspec",
+    "href": "talks/technical/storing_data/index.html#kerchunk-fsspec",
     "title": "Storing data",
     "section": "Kerchunk + fsspec",
     "text": "Kerchunk + fsspec\n\nWe can index a multi-file HDF5 dataset with kerchunk, and then create a pseudo-filesystem zarr with fsspec in python.\nAllows to treat a set of netCDF4 files as one zarr dataset.\nDirect access only via python.\nA simple python web server can present it as zarr via https for other languages.",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Storing data"
     ]
   },
   {
-    "objectID": "talks/storing_data/index.html#performance-benchmarks-for-chunking",
-    "href": "talks/storing_data/index.html#performance-benchmarks-for-chunking",
+    "objectID": "talks/technical/storing_data/index.html#performance-benchmarks-for-chunking",
+    "href": "talks/technical/storing_data/index.html#performance-benchmarks-for-chunking",
     "title": "Storing data",
     "section": "Performance benchmarks for chunking",
     "text": "Performance benchmarks for chunking\n\n\n\n\n\n\n\n\n\n\nStorage layout, chunk shapes\nRead time series (sec)\nRead spatial slice (sec)\nPerformance bias (slowest / fastest)\n\n\n\n\nContiguous favoring time range\n0.013\n180\n14000\n\n\nContiguous favoring spatial slice\n200\n0.012\n17000\n\n\nDefault (all axes equal) chunks, 4673 x 12 x 16\n1.4\n34\n24\n\n\n36 KB chunks, 92 x 9 x 11\n2.4\n1.7\n1.4\n\n\n8 KB chunks, 46 x 6 x 8\n1.4\n1.1\n1.2\n\n\n\nsource: unidata blog\n\n\n\n\n\nTalks page",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Storing data"
     ]
   },
   {
-    "objectID": "talks/processing_needs/index.html#hardware",
-    "href": "talks/processing_needs/index.html#hardware",
+    "objectID": "talks/technical/processing_needs/index.html#hardware",
+    "href": "talks/technical/processing_needs/index.html#hardware",
     "title": "Processing needs",
     "section": "Hardware",
     "text": "Hardware\n\na couple of dedicated analysis nodes in a SLURM partition (~32 at DKRZ, 10 above normal)\nreservations have proven less useful than simply expanding the interactive partition\nlimit of 2 nodes per participant (larger jobs are usually user error)",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Processing needs"
     ]
   },
   {
-    "objectID": "talks/processing_needs/index.html#services",
-    "href": "talks/processing_needs/index.html#services",
+    "objectID": "talks/technical/processing_needs/index.html#services",
+    "href": "talks/technical/processing_needs/index.html#services",
     "title": "Processing needs",
     "section": "Services",
     "text": "Services\n\ninteractive access to the computing resources\nJupyterHub (or similar) is usually an appreciated entry point",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Processing needs"
     ]
   },
   {
-    "objectID": "talks/processing_needs/index.html#python-environments",
-    "href": "talks/processing_needs/index.html#python-environments",
+    "objectID": "talks/technical/processing_needs/index.html#python-environments",
+    "href": "talks/technical/processing_needs/index.html#python-environments",
     "title": "Processing needs",
     "section": "Python environments",
     "text": "Python environments\n\nit’s hard (if not impossible) to provide a single environment for all users\nCompromise: provide a lean python environment with “common” scientific packages\nusers can install their exotic dependencies on top of that",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Processing needs"
     ]
   },
   {
-    "objectID": "talks/processing_needs/index.html#our-recommendation",
-    "href": "talks/processing_needs/index.html#our-recommendation",
+    "objectID": "talks/technical/processing_needs/index.html#our-recommendation",
+    "href": "talks/technical/processing_needs/index.html#our-recommendation",
     "title": "Processing needs",
     "section": "Our recommendation",
     "text": "Our recommendation\n\nuse micromamba1 to manage a basic python environment\nwe should maintain a single environment.yaml to provide common packages\nusers may install more “exotic” packages on their own\n\nFaster than conda and circumvents license issues",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Processing needs"
     ]
   },
   {
-    "objectID": "talks/processing_needs/index.html#data",
-    "href": "talks/processing_needs/index.html#data",
+    "objectID": "talks/technical/processing_needs/index.html#data",
+    "href": "talks/technical/processing_needs/index.html#data",
     "title": "Processing needs",
     "section": "Data",
     "text": "Data\n\nstate-of-the-art compression can help to reduce both disk usage and access time (zstd, lz4)\ntest access to data using the hackathon environment\n\n\n\n\n\nTalks page",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Processing needs"
-    ]
-  },
-  {
-    "objectID": "talks/python_packages/index.html#the-basics",
-    "href": "talks/python_packages/index.html#the-basics",
-    "title": "Sharing is caring",
-    "section": "The basics",
-    "text": "The basics\n\nPython functions and classes can be organised in modules\nimport my_module\n\nmy_module.my_function(42)\nPackages allow for a hierarchical structuring of modules\nThe Python Package Index (PyPI) helps you find and install software1\npip install &lt;package_name&gt;\n\nauthors need to actively publish their code",
-    "crumbs": [
-      "Hosting a hackathon site",
-      "Talks",
-      "Sharing is caring"
-    ]
-  },
-  {
-    "objectID": "talks/python_packages/index.html#the-default-stack",
-    "href": "talks/python_packages/index.html#the-default-stack",
-    "title": "Sharing is caring",
-    "section": "The default stack",
-    "text": "The default stack\nThis talk will not cover the “usual suspects”\nNumPy, SciPy, matplotlib, cartopy, netcdf4, xarray (+flox), ...",
-    "crumbs": [
-      "Hosting a hackathon site",
-      "Talks",
-      "Sharing is caring"
-    ]
-  },
-  {
-    "objectID": "talks/python_packages/index.html#healpix-not-healpy",
-    "href": "talks/python_packages/index.html#healpix-not-healpy",
-    "title": "Sharing is caring",
-    "section": "healpix (not healpy)",
-    "text": "healpix (not healpy)\n\nimplements a lean set of routines for working with HEALPix\nhealpix.nside2npix(9)\nhealpix.ang2pix(nside=9, 52, 10, nest=True, lonlat=True)\nrequires only NumPy, and can be installed with pip:\npython -m pip install healpix",
-    "crumbs": [
-      "Hosting a hackathon site",
-      "Talks",
-      "Sharing is caring"
-    ]
-  },
-  {
-    "objectID": "talks/python_packages/index.html#easygems",
-    "href": "talks/python_packages/index.html#easygems",
-    "title": "Sharing is caring",
-    "section": "easygems",
-    "text": "easygems\n\nprovides a (small) set of convenience functions to work with model output\neasygems.healpix.healpix_show(ds_daily.tas.sel(time=\"2024-09-10\"))\nstarted as a “bin” for functions used on easy.gems\ncan be installed with pip\npython -m pip install easygems",
-    "crumbs": [
-      "Hosting a hackathon site",
-      "Talks",
-      "Sharing is caring"
-    ]
-  },
-  {
-    "objectID": "talks/python_packages/index.html#gribscan",
-    "href": "talks/python_packages/index.html#gribscan",
-    "title": "Sharing is caring",
-    "section": "gribscan",
-    "text": "gribscan\n\nscan GRIB files and create zarr-compatible indices\ngribscan-index *.grib2\ngribscan-build --magician ifs --prefix $PWD *.index\nprovides the command-line tools gribscan-index and gribscan-build\nrequires an ecCodes version that matches the output data\ncan be installed with pip (apart from ecCodes)\npython -m pip install gribscan\n\n\n\n\n\nTalks page",
-    "crumbs": [
-      "Hosting a hackathon site",
-      "Talks",
-      "Sharing is caring"
     ]
   },
   {
@@ -836,206 +814,288 @@
     ]
   },
   {
-    "objectID": "talks/catalogs/index.html#simplify-access-to-data",
-    "href": "talks/catalogs/index.html#simplify-access-to-data",
+    "objectID": "talks/technical/python_packages/index.html#the-basics",
+    "href": "talks/technical/python_packages/index.html#the-basics",
+    "title": "Sharing is caring",
+    "section": "The basics",
+    "text": "The basics\n\nPython functions and classes can be organised in modules\nimport my_module\n\nmy_module.my_function(42)\nPackages allow for a hierarchical structuring of modules\nThe Python Package Index (PyPI) helps you find and install software1\npip install &lt;package_name&gt;\n\nauthors need to actively publish their code",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Technical",
+      "Sharing is caring"
+    ]
+  },
+  {
+    "objectID": "talks/technical/python_packages/index.html#the-default-stack",
+    "href": "talks/technical/python_packages/index.html#the-default-stack",
+    "title": "Sharing is caring",
+    "section": "The default stack",
+    "text": "The default stack\nThis talk will not cover the “usual suspects”\nNumPy, SciPy, matplotlib, cartopy, netcdf4, xarray (+flox), ...",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Technical",
+      "Sharing is caring"
+    ]
+  },
+  {
+    "objectID": "talks/technical/python_packages/index.html#healpix-not-healpy",
+    "href": "talks/technical/python_packages/index.html#healpix-not-healpy",
+    "title": "Sharing is caring",
+    "section": "healpix (not healpy)",
+    "text": "healpix (not healpy)\n\nimplements a lean set of routines for working with HEALPix\nhealpix.nside2npix(9)\nhealpix.ang2pix(nside=9, 52, 10, nest=True, lonlat=True)\nrequires only NumPy, and can be installed with pip:\npython -m pip install healpix",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Technical",
+      "Sharing is caring"
+    ]
+  },
+  {
+    "objectID": "talks/technical/python_packages/index.html#easygems",
+    "href": "talks/technical/python_packages/index.html#easygems",
+    "title": "Sharing is caring",
+    "section": "easygems",
+    "text": "easygems\n\nprovides a (small) set of convenience functions to work with model output\neasygems.healpix.healpix_show(ds_daily.tas.sel(time=\"2024-09-10\"))\nstarted as a “bin” for functions used on easy.gems\ncan be installed with pip\npython -m pip install easygems",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Technical",
+      "Sharing is caring"
+    ]
+  },
+  {
+    "objectID": "talks/technical/python_packages/index.html#gribscan",
+    "href": "talks/technical/python_packages/index.html#gribscan",
+    "title": "Sharing is caring",
+    "section": "gribscan",
+    "text": "gribscan\n\nscan GRIB files and create zarr-compatible indices\ngribscan-index *.grib2\ngribscan-build --magician ifs --prefix $PWD *.index\nprovides the command-line tools gribscan-index and gribscan-build\nrequires an ecCodes version that matches the output data\ncan be installed with pip (apart from ecCodes)\npython -m pip install gribscan\n\n\n\n\n\nTalks page",
+    "crumbs": [
+      "Hosting a hackathon site",
+      "Talks",
+      "Technical",
+      "Sharing is caring"
+    ]
+  },
+  {
+    "objectID": "talks/technical/catalogs/index.html#simplify-access-to-data",
+    "href": "talks/technical/catalogs/index.html#simplify-access-to-data",
     "title": "Catalogs",
     "section": "simplify access to data",
     "text": "simplify access to data\nimport os\nimport urllib.request\nimport xarray\nimport shutil\n\nif not os.path.exists(\"some_data\"):\n    urllib.request.urlretrieve(\"https://example.org/some_data.zip\", \"some_data.zip\")\n    shutil.unpack_archive(\"some_data.zip\", \"some_data\")\n\nds = xr.open_mfdataset(\"some_data/*.nc\")\nvs\nimport intake\ncat = intake.open_catalog(\"https://example.org/catalog.yaml\")\nds = cat[\"some_data\"].to_dask()",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Catalogs"
     ]
   },
   {
-    "objectID": "talks/catalogs/index.html#make-datasets-findable",
-    "href": "talks/catalogs/index.html#make-datasets-findable",
+    "objectID": "talks/technical/catalogs/index.html#make-datasets-findable",
+    "href": "talks/technical/catalogs/index.html#make-datasets-findable",
     "title": "Catalogs",
     "section": "make datasets findable",
     "text": "make datasets findable\ne.g. STAC datasets\nMetadata in catalogs can be accessed fasterthan when burried inside datasets.\nThis enables quick browse, search and quicklook tools.",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Catalogs"
     ]
   },
   {
-    "objectID": "talks/catalogs/index.html#simplify-data-movement",
-    "href": "talks/catalogs/index.html#simplify-data-movement",
+    "objectID": "talks/technical/catalogs/index.html#simplify-data-movement",
+    "href": "talks/technical/catalogs/index.html#simplify-data-movement",
     "title": "Catalogs",
     "section": "simplify data movement",
     "text": "simplify data movement\nOnce data is moved, just update the catalog and users seemlessly access data from new location.",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Catalogs"
     ]
   },
   {
-    "objectID": "talks/catalogs/index.html#simplify-encoding-changes",
-    "href": "talks/catalogs/index.html#simplify-encoding-changes",
+    "objectID": "talks/technical/catalogs/index.html#simplify-encoding-changes",
+    "href": "talks/technical/catalogs/index.html#simplify-encoding-changes",
     "title": "Catalogs",
     "section": "simplify encoding changes",
     "text": "simplify encoding changes\n\nCatalog describes how to open the data\ndata encoding can be changed (zipped CSV -&gt; HDF5 -&gt; Zarr)\nUsers automatically use new one after catalog update",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Catalogs"
     ]
   },
   {
-    "objectID": "talks/catalogs/index.html#aid-with-distributed-access",
-    "href": "talks/catalogs/index.html#aid-with-distributed-access",
+    "objectID": "talks/technical/catalogs/index.html#aid-with-distributed-access",
+    "href": "talks/technical/catalogs/index.html#aid-with-distributed-access",
     "title": "Catalogs",
     "section": "aid with distributed access",
     "text": "aid with distributed access\n\nReturned catalog entries may depend on user location\nUsers may use the same code to access data everywhere, but still can be directed to a copy in the local datacenter\nThis may even involve HDF5 on lustre in one datacenter and Zarr on S3 in another",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Catalogs"
     ]
   },
   {
-    "objectID": "talks/catalogs/index.html#hack-around-broken-datasets",
-    "href": "talks/catalogs/index.html#hack-around-broken-datasets",
+    "objectID": "talks/technical/catalogs/index.html#hack-around-broken-datasets",
+    "href": "talks/technical/catalogs/index.html#hack-around-broken-datasets",
     "title": "Catalogs",
     "section": "hack around broken datasets",
     "text": "hack around broken datasets\n😬\n\n\nComplex catalog entries can be used to concatenate, mix, slice etc… a collection of poorly prepared datasets.\nMay be better than nothing, but usually comes with bad performance impact.\n\n\n\nPlease don’t use this by design. It’s always better to fix the datasets upfront.",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Catalogs"
     ]
   },
   {
-    "objectID": "talks/catalogs/index.html#catalog",
-    "href": "talks/catalogs/index.html#catalog",
+    "objectID": "talks/technical/catalogs/index.html#catalog",
+    "href": "talks/technical/catalogs/index.html#catalog",
     "title": "Catalogs",
     "section": "catalog",
     "text": "catalog\nA list / tree / collection of catalog entries.\n\nMay be static, dynamic, searchable, etc.",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Catalogs"
     ]
   },
   {
-    "objectID": "talks/catalogs/index.html#catalog-entry",
-    "href": "talks/catalogs/index.html#catalog-entry",
+    "objectID": "talks/technical/catalogs/index.html#catalog-entry",
+    "href": "talks/technical/catalogs/index.html#catalog-entry",
     "title": "Catalogs",
     "section": "catalog entry",
     "text": "catalog entry\n\nhas an identity\ncan be retrieved\nlocates (or identifies) a dataset\ninstructs how to open a dataset\nmay carry additional metadata",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Catalogs"
     ]
   },
   {
-    "objectID": "talks/catalogs/index.html#filesystem-directories",
-    "href": "talks/catalogs/index.html#filesystem-directories",
+    "objectID": "talks/technical/catalogs/index.html#filesystem-directories",
+    "href": "talks/technical/catalogs/index.html#filesystem-directories",
     "title": "Catalogs",
     "section": "filesystem directories",
     "text": "filesystem directories\n\n✅ can be a simple option\n✅ support symlinks\n❌ not really a catalog (doesn’t aggregate metadata)\n❌ only shows what’s on the filesystem",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Catalogs"
     ]
   },
   {
-    "objectID": "talks/catalogs/index.html#intake-yaml",
-    "href": "talks/catalogs/index.html#intake-yaml",
+    "objectID": "talks/technical/catalogs/index.html#intake-yaml",
+    "href": "talks/technical/catalogs/index.html#intake-yaml",
     "title": "Catalogs",
     "section": "Intake yaml",
     "text": "Intake yaml\n\n✅ easy to create\n✅ compatible with any kind of data\n❌ limited to Python\n❌ unstable format (Intake 2 broke a lot of things)\n🤔 has room for creative hacks",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Catalogs"
     ]
   },
   {
-    "objectID": "talks/catalogs/index.html#spatiotemporal-asset-catalogs-stac",
-    "href": "talks/catalogs/index.html#spatiotemporal-asset-catalogs-stac",
+    "objectID": "talks/technical/catalogs/index.html#spatiotemporal-asset-catalogs-stac",
+    "href": "talks/technical/catalogs/index.html#spatiotemporal-asset-catalogs-stac",
     "title": "Catalogs",
     "section": "SpatioTemporal Asset Catalogs (STAC)",
     "text": "SpatioTemporal Asset Catalogs (STAC)\n\n✅ stable format\n✅ integrations for many languages\n✅ can be used with Intake\n❌ more complicated to create (but tools exist)\n❌ can only be used for spatio-temporal datasets",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Catalogs"
     ]
   },
   {
-    "objectID": "talks/catalogs/index.html#intake-esm",
-    "href": "talks/catalogs/index.html#intake-esm",
+    "objectID": "talks/technical/catalogs/index.html#intake-esm",
+    "href": "talks/technical/catalogs/index.html#intake-esm",
     "title": "Catalogs",
     "section": "Intake ESM",
     "text": "Intake ESM\n\nmade for CMIP6\naims at assembling big datasets out of many individual datasets, which I wouldn’t recommend",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Catalogs"
     ]
   },
   {
-    "objectID": "talks/catalogs/index.html#thredds-dataset-inventory-catalogs",
-    "href": "talks/catalogs/index.html#thredds-dataset-inventory-catalogs",
+    "objectID": "talks/technical/catalogs/index.html#thredds-dataset-inventory-catalogs",
+    "href": "talks/technical/catalogs/index.html#thredds-dataset-inventory-catalogs",
     "title": "Catalogs",
     "section": "THREDDS Dataset Inventory Catalogs",
     "text": "THREDDS Dataset Inventory Catalogs\n\nspecific catalog for THREDDS data server (e.g. OPeNDAP)\nexposes what’s available on that specific server",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Catalogs"
     ]
   },
   {
-    "objectID": "talks/catalogs/index.html#ease-of-access",
-    "href": "talks/catalogs/index.html#ease-of-access",
+    "objectID": "talks/technical/catalogs/index.html#ease-of-access",
+    "href": "talks/technical/catalogs/index.html#ease-of-access",
     "title": "Catalogs",
     "section": "ease of access",
     "text": "ease of access\nThere are many computing facilities.We want to work together.  \ncat = get_hackathon_catalog()\nds = cat.get_dataset(\"some_model_run_output_id\")\n\nconcise\nfast\nacross data centers\nno local code changes\nsupports different storage methods and formats\n\n\n\n\n\nTalks page",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Catalogs"
     ]
   },
   {
-    "objectID": "talks/storage-requirements/index.html#ballpark-estimate-for-level-9-13km",
-    "href": "talks/storage-requirements/index.html#ballpark-estimate-for-level-9-13km",
+    "objectID": "talks/technical/storage-requirements/index.html#ballpark-estimate-for-level-9-13km",
+    "href": "talks/technical/storage-requirements/index.html#ballpark-estimate-for-level-9-13km",
     "title": "Storage requirements",
     "section": "Ballpark estimate for level 9 (13km)",
     "text": "Ballpark estimate for level 9 (13km)\n\n\n\n\n\n\n\n\n\n\n\n\ntype\ncells / snap-shot\nMB / snap-shot1\nsnapshots\nGB / var\nvars\nGB total\n\n\n\n\n2D\n3 M\n6\n365*24\n52\n33\n1650\n\n\n2D2\n3 M\n6\n365*4\n13\n33\n275\n\n\n3D\n75 M\n150\n365*4\n220\n12\n2600\n\n\n\nAssuming 4-byte floats and 50% compressionFor consistent datasets",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Storage requirements"
     ]
   },
   {
-    "objectID": "talks/storage-requirements/index.html#making-things-useful",
-    "href": "talks/storage-requirements/index.html#making-things-useful",
+    "objectID": "talks/technical/storage-requirements/index.html#making-things-useful",
+    "href": "talks/technical/storage-requirements/index.html#making-things-useful",
     "title": "Storage requirements",
     "section": "Making things useful",
     "text": "Making things useful\n\nAdding the full HEALPix hierarchy adds 30%, and makes the dataset useful.\nAdd daily means (+25% w.r.t the 6-hourly data)\nTotal size per dataset at 13 km: 6.6TB\nDoubling the resolution multiplies the storage need by 4.\n3-hourly 3D fields increase the size to 10.6 TB",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Storage requirements"
     ]
   },
   {
-    "objectID": "talks/storage-requirements/index.html#totals",
-    "href": "talks/storage-requirements/index.html#totals",
+    "objectID": "talks/technical/storage-requirements/index.html#totals",
+    "href": "talks/technical/storage-requirements/index.html#totals",
     "title": "Storage requirements",
     "section": "Totals",
     "text": "Totals\n\n10 models at level 9 (13 km): 68 TB\n10 models at level 10 (6 km): 272 TB\n10 models at level 11 (3 km): 1.1 PB\n\n\n\n\n\nTalks page",
     "crumbs": [
       "Hosting a hackathon site",
       "Talks",
+      "Technical",
       "Storage requirements"
     ]
   },
