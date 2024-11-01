@@ -209,601 +209,111 @@
     ]
   },
   {
-    "objectID": "simulations/index.html",
-    "href": "simulations/index.html",
-    "title": "Simulations",
+    "objectID": "simulations/UnifiedModel.html",
+    "href": "simulations/UnifiedModel.html",
+    "title": "Unified Model",
     "section": "",
-    "text": "Team\nModel\ndomain and resolution\nhost team\ncontact\ncomments\n\n\n\n\nDOE Energy Exascale Earth System Model Project\nSCREAM with E3SM Land Model (ELM)\n3.25 km global grid with 128 vertical levels up to 40 km\nNERSC\nPeter Caldwell, Chris Terai\n\n\n\nNICAM team\nNICAM\nglobal 3.5 km\nJP\nMasaki Satoh, Daisuke Takasuka\na part of 10-year simulation (2011-2020); additional short-term high-resolution simulation may be provided (1.7km, 870m)",
-    "crumbs": [
-      "Preparation meetings",
-      "Simulations"
-    ]
-  },
-  {
-    "objectID": "simulations/index.html#planned",
-    "href": "simulations/index.html#planned",
-    "title": "Simulations",
-    "section": "",
-    "text": "Team\nModel\ndomain and resolution\nhost team\ncontact\ncomments\n\n\n\n\nDOE Energy Exascale Earth System Model Project\nSCREAM with E3SM Land Model (ELM)\n3.25 km global grid with 128 vertical levels up to 40 km\nNERSC\nPeter Caldwell, Chris Terai\n\n\n\nNICAM team\nNICAM\nglobal 3.5 km\nJP\nMasaki Satoh, Daisuke Takasuka\na part of 10-year simulation (2011-2020); additional short-term high-resolution simulation may be provided (1.7km, 870m)",
-    "crumbs": [
-      "Preparation meetings",
-      "Simulations"
-    ]
-  },
-  {
-    "objectID": "simulations/scream.html",
-    "href": "simulations/scream.html",
-    "title": "SCREAM",
-    "section": "",
-    "text": "DOE Energy Exascale Earth System Model Project\n\n\n\nSCREAM with E3SM Land Model (ELM)\n\n\n\n3.25 km global grid with 128 vertical levels up to 40 km\n\n\nSCREAM\n\n\n\n\n\n\n\n\n\n\nChris Terai",
+    "text": "Met Office and National Centre for Atmospheric Science\n\n\n\nUnified Model with JULES land surface model (JULES).\nThe specific N2560 configuration to be used in the WCRP global hackathon is describre in Tomassini et al. 2023. This configuration includes specific settings for convective parametrisation suitable for sub-10km simulations.\nAs background information, the typical model chain for climate simulations at multiple resolutions is described in this article: Roberts et al. 2019. The specific configuration for DYAMOND simulations at 5km is contained in the DYAMOND paper series. ## Setups\n5km global grid (N2560) with 85 vertical levels up to 85 km 5km to 2km tropical channel (k-scale configurations)\n\n\nUnified Model\n\n\n\n\n\n\n\n\n\n\nP.L. Viale",
     "crumbs": [
       "Preparation meetings",
       "Simulations",
-      "SCREAM"
+      "Unified Model"
     ]
   },
   {
-    "objectID": "simulations/scream.html#the-team",
-    "href": "simulations/scream.html#the-team",
-    "title": "SCREAM",
+    "objectID": "simulations/UnifiedModel.html#the-team",
+    "href": "simulations/UnifiedModel.html#the-team",
+    "title": "Unified Model",
     "section": "",
-    "text": "DOE Energy Exascale Earth System Model Project",
+    "text": "Met Office and National Centre for Atmospheric Science",
     "crumbs": [
       "Preparation meetings",
       "Simulations",
-      "SCREAM"
+      "Unified Model"
     ]
   },
   {
-    "objectID": "simulations/scream.html#model-description",
-    "href": "simulations/scream.html#model-description",
-    "title": "SCREAM",
+    "objectID": "simulations/UnifiedModel.html#model-description",
+    "href": "simulations/UnifiedModel.html#model-description",
+    "title": "Unified Model",
     "section": "",
-    "text": "SCREAM with E3SM Land Model (ELM)",
+    "text": "Unified Model with JULES land surface model (JULES).\nThe specific N2560 configuration to be used in the WCRP global hackathon is describre in Tomassini et al. 2023. This configuration includes specific settings for convective parametrisation suitable for sub-10km simulations.\nAs background information, the typical model chain for climate simulations at multiple resolutions is described in this article: Roberts et al. 2019. The specific configuration for DYAMOND simulations at 5km is contained in the DYAMOND paper series. ## Setups\n5km global grid (N2560) with 85 vertical levels up to 85 km 5km to 2km tropical channel (k-scale configurations)\n\n\nUnified Model",
     "crumbs": [
       "Preparation meetings",
       "Simulations",
-      "SCREAM"
+      "Unified Model"
     ]
   },
   {
-    "objectID": "simulations/scream.html#setups",
-    "href": "simulations/scream.html#setups",
-    "title": "SCREAM",
+    "objectID": "simulations/UnifiedModel.html#contact-for-further-inquiries",
+    "href": "simulations/UnifiedModel.html#contact-for-further-inquiries",
+    "title": "Unified Model",
     "section": "",
-    "text": "3.25 km global grid with 128 vertical levels up to 40 km\n\n\nSCREAM",
+    "text": "P.L. Viale",
     "crumbs": [
       "Preparation meetings",
       "Simulations",
-      "SCREAM"
+      "Unified Model"
     ]
   },
   {
-    "objectID": "simulations/scream.html#contact-for-further-inquiries",
-    "href": "simulations/scream.html#contact-for-further-inquiries",
-    "title": "SCREAM",
+    "objectID": "simulations/nicam.html",
+    "href": "simulations/nicam.html",
+    "title": "NICAM",
     "section": "",
-    "text": "Chris Terai",
+    "text": "AORI, The University of Tokyo; Tohoku University; JAMSTEC; NIES; RIKEN\n\n\n\nNICAM (Nonhydrostatic Icosahedral Atmospheric Model)\n\n\n\na part of 10-year simulation (2011-2020); additional short-term high-resolution simulation may be provided (1.7km, 870m)\n\n\n\n\n\n\n\n\n\n\n\n\nMasaki Satoh, Daisuke Takasuka",
     "crumbs": [
       "Preparation meetings",
       "Simulations",
-      "SCREAM"
+      "NICAM"
     ]
   },
   {
-    "objectID": "talks/technical/storage-requirements/index.html#ballpark-estimate-for-level-9-13km",
-    "href": "talks/technical/storage-requirements/index.html#ballpark-estimate-for-level-9-13km",
-    "title": "Storage requirements",
-    "section": "Ballpark estimate for level 9 (13km)",
-    "text": "Ballpark estimate for level 9 (13km)\n\n\n\n\n\n\n\n\n\n\n\n\ntype\ncells / snap-shot\nMB / snap-shot1\nsnapshots\nGB / var\nvars\nGB total\n\n\n\n\n2D\n3 M\n6\n365*24\n52\n33\n1650\n\n\n2D2\n3 M\n6\n365*4\n13\n33\n275\n\n\n3D\n75 M\n150\n365*4\n220\n12\n2600\n\n\n\nAssuming 4-byte floats and 50% compressionFor consistent datasets",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Storage requirements"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storage-requirements/index.html#making-things-useful",
-    "href": "talks/technical/storage-requirements/index.html#making-things-useful",
-    "title": "Storage requirements",
-    "section": "Making things useful",
-    "text": "Making things useful\n\nAdding the full HEALPix hierarchy adds 30%, and makes the dataset useful.\nAdd daily means (+25% w.r.t the 6-hourly data)\nTotal size per dataset at 13 km: 6.6TB\nDoubling the resolution multiplies the storage need by 4.\n3-hourly 3D fields increase the size to 10.6 TB",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Storage requirements"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storage-requirements/index.html#totals",
-    "href": "talks/technical/storage-requirements/index.html#totals",
-    "title": "Storage requirements",
-    "section": "Totals",
-    "text": "Totals\n\n10 models at level 9 (13 km): 68 TB\n10 models at level 10 (6 km): 272 TB\n10 models at level 11 (3 km): 1.1 PB\n\n\n\n\n\nTalks page",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Storage requirements"
-    ]
-  },
-  {
-    "objectID": "talks/technical/catalogs/index.html#simplify-access-to-data",
-    "href": "talks/technical/catalogs/index.html#simplify-access-to-data",
-    "title": "Catalogs",
-    "section": "simplify access to data",
-    "text": "simplify access to data\nimport os\nimport urllib.request\nimport xarray\nimport shutil\n\nif not os.path.exists(\"some_data\"):\n    urllib.request.urlretrieve(\"https://example.org/some_data.zip\", \"some_data.zip\")\n    shutil.unpack_archive(\"some_data.zip\", \"some_data\")\n\nds = xr.open_mfdataset(\"some_data/*.nc\")\nvs\nimport intake\ncat = intake.open_catalog(\"https://example.org/catalog.yaml\")\nds = cat[\"some_data\"].to_dask()",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Catalogs"
-    ]
-  },
-  {
-    "objectID": "talks/technical/catalogs/index.html#make-datasets-findable",
-    "href": "talks/technical/catalogs/index.html#make-datasets-findable",
-    "title": "Catalogs",
-    "section": "make datasets findable",
-    "text": "make datasets findable\ne.g. STAC datasets\nMetadata in catalogs can be accessed fasterthan when burried inside datasets.\nThis enables quick browse, search and quicklook tools.",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Catalogs"
-    ]
-  },
-  {
-    "objectID": "talks/technical/catalogs/index.html#simplify-data-movement",
-    "href": "talks/technical/catalogs/index.html#simplify-data-movement",
-    "title": "Catalogs",
-    "section": "simplify data movement",
-    "text": "simplify data movement\nOnce data is moved, just update the catalog and users seemlessly access data from new location.",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Catalogs"
-    ]
-  },
-  {
-    "objectID": "talks/technical/catalogs/index.html#simplify-encoding-changes",
-    "href": "talks/technical/catalogs/index.html#simplify-encoding-changes",
-    "title": "Catalogs",
-    "section": "simplify encoding changes",
-    "text": "simplify encoding changes\n\nCatalog describes how to open the data\ndata encoding can be changed (zipped CSV -&gt; HDF5 -&gt; Zarr)\nUsers automatically use new one after catalog update",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Catalogs"
-    ]
-  },
-  {
-    "objectID": "talks/technical/catalogs/index.html#aid-with-distributed-access",
-    "href": "talks/technical/catalogs/index.html#aid-with-distributed-access",
-    "title": "Catalogs",
-    "section": "aid with distributed access",
-    "text": "aid with distributed access\n\nReturned catalog entries may depend on user location\nUsers may use the same code to access data everywhere, but still can be directed to a copy in the local datacenter\nThis may even involve HDF5 on lustre in one datacenter and Zarr on S3 in another",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Catalogs"
-    ]
-  },
-  {
-    "objectID": "talks/technical/catalogs/index.html#hack-around-broken-datasets",
-    "href": "talks/technical/catalogs/index.html#hack-around-broken-datasets",
-    "title": "Catalogs",
-    "section": "hack around broken datasets",
-    "text": "hack around broken datasets\n😬\n\n\nComplex catalog entries can be used to concatenate, mix, slice etc… a collection of poorly prepared datasets.\nMay be better than nothing, but usually comes with bad performance impact.\n\n\n\nPlease don’t use this by design. It’s always better to fix the datasets upfront.",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Catalogs"
-    ]
-  },
-  {
-    "objectID": "talks/technical/catalogs/index.html#catalog",
-    "href": "talks/technical/catalogs/index.html#catalog",
-    "title": "Catalogs",
-    "section": "catalog",
-    "text": "catalog\nA list / tree / collection of catalog entries.\n\nMay be static, dynamic, searchable, etc.",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Catalogs"
-    ]
-  },
-  {
-    "objectID": "talks/technical/catalogs/index.html#catalog-entry",
-    "href": "talks/technical/catalogs/index.html#catalog-entry",
-    "title": "Catalogs",
-    "section": "catalog entry",
-    "text": "catalog entry\n\nhas an identity\ncan be retrieved\nlocates (or identifies) a dataset\ninstructs how to open a dataset\nmay carry additional metadata",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Catalogs"
-    ]
-  },
-  {
-    "objectID": "talks/technical/catalogs/index.html#filesystem-directories",
-    "href": "talks/technical/catalogs/index.html#filesystem-directories",
-    "title": "Catalogs",
-    "section": "filesystem directories",
-    "text": "filesystem directories\n\n✅ can be a simple option\n✅ support symlinks\n❌ not really a catalog (doesn’t aggregate metadata)\n❌ only shows what’s on the filesystem",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Catalogs"
-    ]
-  },
-  {
-    "objectID": "talks/technical/catalogs/index.html#intake-yaml",
-    "href": "talks/technical/catalogs/index.html#intake-yaml",
-    "title": "Catalogs",
-    "section": "Intake yaml",
-    "text": "Intake yaml\n\n✅ easy to create\n✅ compatible with any kind of data\n❌ limited to Python\n❌ unstable format (Intake 2 broke a lot of things)\n🤔 has room for creative hacks",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Catalogs"
-    ]
-  },
-  {
-    "objectID": "talks/technical/catalogs/index.html#spatiotemporal-asset-catalogs-stac",
-    "href": "talks/technical/catalogs/index.html#spatiotemporal-asset-catalogs-stac",
-    "title": "Catalogs",
-    "section": "SpatioTemporal Asset Catalogs (STAC)",
-    "text": "SpatioTemporal Asset Catalogs (STAC)\n\n✅ stable format\n✅ integrations for many languages\n✅ can be used with Intake\n❌ more complicated to create (but tools exist)\n❌ can only be used for spatio-temporal datasets",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Catalogs"
-    ]
-  },
-  {
-    "objectID": "talks/technical/catalogs/index.html#intake-esm",
-    "href": "talks/technical/catalogs/index.html#intake-esm",
-    "title": "Catalogs",
-    "section": "Intake ESM",
-    "text": "Intake ESM\n\nmade for CMIP6\naims at assembling big datasets out of many individual datasets, which I wouldn’t recommend",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Catalogs"
-    ]
-  },
-  {
-    "objectID": "talks/technical/catalogs/index.html#thredds-dataset-inventory-catalogs",
-    "href": "talks/technical/catalogs/index.html#thredds-dataset-inventory-catalogs",
-    "title": "Catalogs",
-    "section": "THREDDS Dataset Inventory Catalogs",
-    "text": "THREDDS Dataset Inventory Catalogs\n\nspecific catalog for THREDDS data server (e.g. OPeNDAP)\nexposes what’s available on that specific server",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Catalogs"
-    ]
-  },
-  {
-    "objectID": "talks/technical/catalogs/index.html#ease-of-access",
-    "href": "talks/technical/catalogs/index.html#ease-of-access",
-    "title": "Catalogs",
-    "section": "ease of access",
-    "text": "ease of access\nThere are many computing facilities.We want to work together.  \ncat = get_hackathon_catalog()\nds = cat.get_dataset(\"some_model_run_output_id\")\n\nconcise\nfast\nacross data centers\nno local code changes\nsupports different storage methods and formats\n\n\n\n\n\nTalks page",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Catalogs"
-    ]
-  },
-  {
-    "objectID": "talks/technical/python_packages/index.html#the-basics",
-    "href": "talks/technical/python_packages/index.html#the-basics",
-    "title": "Sharing is caring",
-    "section": "The basics",
-    "text": "The basics\n\nPython functions and classes can be organised in modules\nimport my_module\n\nmy_module.my_function(42)\nPackages allow for a hierarchical structuring of modules\nThe Python Package Index (PyPI) helps you find and install software1\npip install &lt;package_name&gt;\n\nauthors need to actively publish their code",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Sharing is caring"
-    ]
-  },
-  {
-    "objectID": "talks/technical/python_packages/index.html#the-default-stack",
-    "href": "talks/technical/python_packages/index.html#the-default-stack",
-    "title": "Sharing is caring",
-    "section": "The default stack",
-    "text": "The default stack\nThis talk will not cover the “usual suspects”\nNumPy, SciPy, matplotlib, cartopy, netcdf4, xarray (+flox), ...",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Sharing is caring"
-    ]
-  },
-  {
-    "objectID": "talks/technical/python_packages/index.html#healpix-not-healpy",
-    "href": "talks/technical/python_packages/index.html#healpix-not-healpy",
-    "title": "Sharing is caring",
-    "section": "healpix (not healpy)",
-    "text": "healpix (not healpy)\n\nimplements a lean set of routines for working with HEALPix\nhealpix.nside2npix(9)\nhealpix.ang2pix(nside=9, 52, 10, nest=True, lonlat=True)\nrequires only NumPy, and can be installed with pip:\npython -m pip install healpix",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Sharing is caring"
-    ]
-  },
-  {
-    "objectID": "talks/technical/python_packages/index.html#easygems",
-    "href": "talks/technical/python_packages/index.html#easygems",
-    "title": "Sharing is caring",
-    "section": "easygems",
-    "text": "easygems\n\nprovides a (small) set of convenience functions to work with model output\neasygems.healpix.healpix_show(ds_daily.tas.sel(time=\"2024-09-10\"))\nstarted as a “bin” for functions used on easy.gems\ncan be installed with pip\npython -m pip install easygems",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Sharing is caring"
-    ]
-  },
-  {
-    "objectID": "talks/technical/python_packages/index.html#gribscan",
-    "href": "talks/technical/python_packages/index.html#gribscan",
-    "title": "Sharing is caring",
-    "section": "gribscan",
-    "text": "gribscan\n\nscan GRIB files and create zarr-compatible indices\ngribscan-index *.grib2\ngribscan-build --magician ifs --prefix $PWD *.index\nprovides the command-line tools gribscan-index and gribscan-build\nrequires an ecCodes version that matches the output data\ncan be installed with pip (apart from ecCodes)\npython -m pip install gribscan\n\n\n\n\n\nTalks page",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Sharing is caring"
-    ]
-  },
-  {
-    "objectID": "talks/index.html",
-    "href": "talks/index.html",
-    "title": "Talks",
+    "objectID": "simulations/nicam.html#the-team",
+    "href": "simulations/nicam.html#the-team",
+    "title": "NICAM",
     "section": "",
-    "text": "Building useful datasets for Earth System Model output\nStorage requirements\nCatalogs\nPython packages\nProcessing needs",
+    "text": "AORI, The University of Tokyo; Tohoku University; JAMSTEC; NIES; RIKEN",
     "crumbs": [
       "Preparation meetings",
-      "Talks"
+      "Simulations",
+      "NICAM"
     ]
   },
   {
-    "objectID": "talks/index.html#technical",
-    "href": "talks/index.html#technical",
-    "title": "Talks",
+    "objectID": "simulations/nicam.html#model-description",
+    "href": "simulations/nicam.html#model-description",
+    "title": "NICAM",
     "section": "",
-    "text": "Building useful datasets for Earth System Model output\nStorage requirements\nCatalogs\nPython packages\nProcessing needs",
+    "text": "NICAM (Nonhydrostatic Icosahedral Atmospheric Model)",
     "crumbs": [
       "Preparation meetings",
-      "Talks"
+      "Simulations",
+      "NICAM"
     ]
   },
   {
-    "objectID": "talks/technical/processing_needs/index.html#hardware",
-    "href": "talks/technical/processing_needs/index.html#hardware",
-    "title": "Processing needs",
-    "section": "Hardware",
-    "text": "Hardware\n\na couple of dedicated analysis nodes in a SLURM partition (~32 at DKRZ, 10 above normal)\nreservations have proven less useful than simply expanding the interactive partition\nlimit of 2 nodes per participant (larger jobs are usually user error)",
+    "objectID": "simulations/nicam.html#setups",
+    "href": "simulations/nicam.html#setups",
+    "title": "NICAM",
+    "section": "",
+    "text": "a part of 10-year simulation (2011-2020); additional short-term high-resolution simulation may be provided (1.7km, 870m)",
     "crumbs": [
       "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Processing needs"
+      "Simulations",
+      "NICAM"
     ]
   },
   {
-    "objectID": "talks/technical/processing_needs/index.html#services",
-    "href": "talks/technical/processing_needs/index.html#services",
-    "title": "Processing needs",
-    "section": "Services",
-    "text": "Services\n\ninteractive access to the computing resources\nJupyterHub (or similar) is usually an appreciated entry point",
+    "objectID": "simulations/nicam.html#contact-for-further-inquiries",
+    "href": "simulations/nicam.html#contact-for-further-inquiries",
+    "title": "NICAM",
+    "section": "",
+    "text": "Masaki Satoh, Daisuke Takasuka",
     "crumbs": [
       "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Processing needs"
-    ]
-  },
-  {
-    "objectID": "talks/technical/processing_needs/index.html#python-environments",
-    "href": "talks/technical/processing_needs/index.html#python-environments",
-    "title": "Processing needs",
-    "section": "Python environments",
-    "text": "Python environments\n\nit’s hard (if not impossible) to provide a single environment for all users\nCompromise: provide a lean python environment with “common” scientific packages\nusers can install their exotic dependencies on top of that",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Processing needs"
-    ]
-  },
-  {
-    "objectID": "talks/technical/processing_needs/index.html#our-recommendation",
-    "href": "talks/technical/processing_needs/index.html#our-recommendation",
-    "title": "Processing needs",
-    "section": "Our recommendation",
-    "text": "Our recommendation\n\nuse micromamba1 to manage a basic python environment\nwe should maintain a single environment.yaml to provide common packages\nusers may install more “exotic” packages on their own\n\nFaster than conda and circumvents license issues",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Processing needs"
-    ]
-  },
-  {
-    "objectID": "talks/technical/processing_needs/index.html#data",
-    "href": "talks/technical/processing_needs/index.html#data",
-    "title": "Processing needs",
-    "section": "Data",
-    "text": "Data\n\nstate-of-the-art compression can help to reduce both disk usage and access time (zstd, lz4)\ntest access to data using the hackathon environment\n\n\n\n\n\nTalks page",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Processing needs"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#datasets-are",
-    "href": "talks/technical/storing_data/index.html#datasets-are",
-    "title": "Storing data",
-    "section": "Datasets are",
-    "text": "Datasets are\n\n(from xarray docs)\n\n\nn-dimensional variables\nshared dimensions\n\n\n\ncoordinates\nattributes for metadata",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#datasets-are-not",
-    "href": "talks/technical/storing_data/index.html#datasets-are-not",
-    "title": "Storing data",
-    "section": "Datasets are not",
-    "text": "Datasets are not\n\na single file\na storage format\nshaped by storage & handling\n\n\nIn the past, people often designed datasets to match their file handling requirements. The resulting view on a dataset seems to be overly restrictive and leads to unfortunate usage patterns.",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#access-to-subsets",
-    "href": "talks/technical/storing_data/index.html#access-to-subsets",
-    "title": "Storing data",
-    "section": "Access to subsets",
-    "text": "Access to subsets\n\n\n\n\n\n\nWithout subset access and hierarchies, analysis scripts are forced to load way too much data.",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#align-the-ordering-of-data-with-read-patterns",
-    "href": "talks/technical/storing_data/index.html#align-the-ordering-of-data-with-read-patterns",
-    "title": "Storing data",
-    "section": "Align the ordering of data with read patterns",
-    "text": "Align the ordering of data with read patterns\n\nhttps://www.unidata.ucar.edu/blogs/developer/entry/chunking_data_why_it_mattersMake a compromise that’s okay-ish for everybody by chunking along all dimensions.",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#compress-small-chunks",
-    "href": "talks/technical/storing_data/index.html#compress-small-chunks",
-    "title": "Storing data",
-    "section": "Compress small chunks",
-    "text": "Compress small chunks\n\nAny access will require uncompressing entire chunks.\nBy keeping them small to reduce the amount of data that will be uncompressed but not used.\nKeep them big enough for the compressor to do its job.\nUsually MB-ish blocks are a good compromise.",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#use-fast-compressors",
-    "href": "talks/technical/storing_data/index.html#use-fast-compressors",
-    "title": "Storing data",
-    "section": "Use fast compressors",
-    "text": "Use fast compressors\n\ndeflate (gzip/…) is widely used but slow.\nlz4 and zstd are much faster.\nUse lz4 or zstd from blosc as a good standard.",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#contents-of-a-dataset",
-    "href": "talks/technical/storing_data/index.html#contents-of-a-dataset",
-    "title": "Storing data",
-    "section": "Contents of a dataset",
-    "text": "Contents of a dataset\n\nMetadata\nn-d variables consisting of many numbers",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#netcdf4-hdf5",
-    "href": "talks/technical/storing_data/index.html#netcdf4-hdf5",
-    "title": "Storing data",
-    "section": "netCDF4 / HDF5",
-    "text": "netCDF4 / HDF5\n\nnetCDF4, a.k.a. HDF5 stores metadata and chunks in one file.\nUsually a dataset is split across many of these files.\nLoading the dataset requires opening all files.1\n\nThere is the option of multi-file netCDF4/HDF5, but I have not seen this in practice.",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#zarr-is-as-simple-as-it-gets.",
-    "href": "talks/technical/storing_data/index.html#zarr-is-as-simple-as-it-gets.",
-    "title": "Storing data",
-    "section": "Zarr is as simple as it gets.",
-    "text": "Zarr is as simple as it gets.\n\n.json files for the metadata\nbinary files for (compressed) chunks\n\nAs chunks are stored separately, this scales for any size of dataset. We are working with a 500 TB dataset in nextGEMS.",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#kerchunk-fsspec",
-    "href": "talks/technical/storing_data/index.html#kerchunk-fsspec",
-    "title": "Storing data",
-    "section": "Kerchunk + fsspec",
-    "text": "Kerchunk + fsspec\n\nWe can index a multi-file HDF5 dataset with kerchunk, and then create a pseudo-filesystem zarr with fsspec in python.\nAllows to treat a set of netCDF4 files as one zarr dataset.\nDirect access only via python.\nA simple python web server can present it as zarr via https for other languages.",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#performance-benchmarks-for-chunking",
-    "href": "talks/technical/storing_data/index.html#performance-benchmarks-for-chunking",
-    "title": "Storing data",
-    "section": "Performance benchmarks for chunking",
-    "text": "Performance benchmarks for chunking\n\n\n\n\n\n\n\n\n\n\nStorage layout, chunk shapes\nRead time series (sec)\nRead spatial slice (sec)\nPerformance bias (slowest / fastest)\n\n\n\n\nContiguous favoring time range\n0.013\n180\n14000\n\n\nContiguous favoring spatial slice\n200\n0.012\n17000\n\n\nDefault (all axes equal) chunks, 4673 x 12 x 16\n1.4\n34\n24\n\n\n36 KB chunks, 92 x 9 x 11\n2.4\n1.7\n1.4\n\n\n8 KB chunks, 46 x 6 x 8\n1.4\n1.1\n1.2\n\n\n\nsource: unidata blog\n\n\n\n\n\nTalks page",
-    "crumbs": [
-      "Preparation meetings",
-      "Talks",
-      "Technical",
-      "Storing data"
+      "Simulations",
+      "NICAM"
     ]
   },
   {
@@ -1093,63 +603,601 @@
     ]
   },
   {
-    "objectID": "simulations/nicam.html",
-    "href": "simulations/nicam.html",
-    "title": "NICAM",
-    "section": "",
-    "text": "AORI, The University of Tokyo; Tohoku University; JAMSTEC; NIES; RIKEN\n\n\n\nNICAM (Nonhydrostatic Icosahedral Atmospheric Model)\n\n\n\na part of 10-year simulation (2011-2020); additional short-term high-resolution simulation may be provided (1.7km, 870m)\n\n\n\n\n\n\n\n\n\n\n\n\nMasaki Satoh, Daisuke Takasuka",
+    "objectID": "talks/technical/storing_data/index.html#datasets-are",
+    "href": "talks/technical/storing_data/index.html#datasets-are",
+    "title": "Storing data",
+    "section": "Datasets are",
+    "text": "Datasets are\n\n(from xarray docs)\n\n\nn-dimensional variables\nshared dimensions\n\n\n\ncoordinates\nattributes for metadata",
     "crumbs": [
       "Preparation meetings",
-      "Simulations",
-      "NICAM"
+      "Talks",
+      "Technical",
+      "Storing data"
     ]
   },
   {
-    "objectID": "simulations/nicam.html#the-team",
-    "href": "simulations/nicam.html#the-team",
-    "title": "NICAM",
-    "section": "",
-    "text": "AORI, The University of Tokyo; Tohoku University; JAMSTEC; NIES; RIKEN",
+    "objectID": "talks/technical/storing_data/index.html#datasets-are-not",
+    "href": "talks/technical/storing_data/index.html#datasets-are-not",
+    "title": "Storing data",
+    "section": "Datasets are not",
+    "text": "Datasets are not\n\na single file\na storage format\nshaped by storage & handling\n\n\nIn the past, people often designed datasets to match their file handling requirements. The resulting view on a dataset seems to be overly restrictive and leads to unfortunate usage patterns.",
     "crumbs": [
       "Preparation meetings",
-      "Simulations",
-      "NICAM"
+      "Talks",
+      "Technical",
+      "Storing data"
     ]
   },
   {
-    "objectID": "simulations/nicam.html#model-description",
-    "href": "simulations/nicam.html#model-description",
-    "title": "NICAM",
-    "section": "",
-    "text": "NICAM (Nonhydrostatic Icosahedral Atmospheric Model)",
+    "objectID": "talks/technical/storing_data/index.html#access-to-subsets",
+    "href": "talks/technical/storing_data/index.html#access-to-subsets",
+    "title": "Storing data",
+    "section": "Access to subsets",
+    "text": "Access to subsets\n\n\n\n\n\n\nWithout subset access and hierarchies, analysis scripts are forced to load way too much data.",
     "crumbs": [
       "Preparation meetings",
-      "Simulations",
-      "NICAM"
+      "Talks",
+      "Technical",
+      "Storing data"
     ]
   },
   {
-    "objectID": "simulations/nicam.html#setups",
-    "href": "simulations/nicam.html#setups",
-    "title": "NICAM",
-    "section": "",
-    "text": "a part of 10-year simulation (2011-2020); additional short-term high-resolution simulation may be provided (1.7km, 870m)",
+    "objectID": "talks/technical/storing_data/index.html#align-the-ordering-of-data-with-read-patterns",
+    "href": "talks/technical/storing_data/index.html#align-the-ordering-of-data-with-read-patterns",
+    "title": "Storing data",
+    "section": "Align the ordering of data with read patterns",
+    "text": "Align the ordering of data with read patterns\n\nhttps://www.unidata.ucar.edu/blogs/developer/entry/chunking_data_why_it_mattersMake a compromise that’s okay-ish for everybody by chunking along all dimensions.",
     "crumbs": [
       "Preparation meetings",
-      "Simulations",
-      "NICAM"
+      "Talks",
+      "Technical",
+      "Storing data"
     ]
   },
   {
-    "objectID": "simulations/nicam.html#contact-for-further-inquiries",
-    "href": "simulations/nicam.html#contact-for-further-inquiries",
-    "title": "NICAM",
+    "objectID": "talks/technical/storing_data/index.html#compress-small-chunks",
+    "href": "talks/technical/storing_data/index.html#compress-small-chunks",
+    "title": "Storing data",
+    "section": "Compress small chunks",
+    "text": "Compress small chunks\n\nAny access will require uncompressing entire chunks.\nBy keeping them small to reduce the amount of data that will be uncompressed but not used.\nKeep them big enough for the compressor to do its job.\nUsually MB-ish blocks are a good compromise.",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storing_data/index.html#use-fast-compressors",
+    "href": "talks/technical/storing_data/index.html#use-fast-compressors",
+    "title": "Storing data",
+    "section": "Use fast compressors",
+    "text": "Use fast compressors\n\ndeflate (gzip/…) is widely used but slow.\nlz4 and zstd are much faster.\nUse lz4 or zstd from blosc as a good standard.",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storing_data/index.html#contents-of-a-dataset",
+    "href": "talks/technical/storing_data/index.html#contents-of-a-dataset",
+    "title": "Storing data",
+    "section": "Contents of a dataset",
+    "text": "Contents of a dataset\n\nMetadata\nn-d variables consisting of many numbers",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storing_data/index.html#netcdf4-hdf5",
+    "href": "talks/technical/storing_data/index.html#netcdf4-hdf5",
+    "title": "Storing data",
+    "section": "netCDF4 / HDF5",
+    "text": "netCDF4 / HDF5\n\nnetCDF4, a.k.a. HDF5 stores metadata and chunks in one file.\nUsually a dataset is split across many of these files.\nLoading the dataset requires opening all files.1\n\nThere is the option of multi-file netCDF4/HDF5, but I have not seen this in practice.",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storing_data/index.html#zarr-is-as-simple-as-it-gets.",
+    "href": "talks/technical/storing_data/index.html#zarr-is-as-simple-as-it-gets.",
+    "title": "Storing data",
+    "section": "Zarr is as simple as it gets.",
+    "text": "Zarr is as simple as it gets.\n\n.json files for the metadata\nbinary files for (compressed) chunks\n\nAs chunks are stored separately, this scales for any size of dataset. We are working with a 500 TB dataset in nextGEMS.",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storing_data/index.html#kerchunk-fsspec",
+    "href": "talks/technical/storing_data/index.html#kerchunk-fsspec",
+    "title": "Storing data",
+    "section": "Kerchunk + fsspec",
+    "text": "Kerchunk + fsspec\n\nWe can index a multi-file HDF5 dataset with kerchunk, and then create a pseudo-filesystem zarr with fsspec in python.\nAllows to treat a set of netCDF4 files as one zarr dataset.\nDirect access only via python.\nA simple python web server can present it as zarr via https for other languages.",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storing_data/index.html#performance-benchmarks-for-chunking",
+    "href": "talks/technical/storing_data/index.html#performance-benchmarks-for-chunking",
+    "title": "Storing data",
+    "section": "Performance benchmarks for chunking",
+    "text": "Performance benchmarks for chunking\n\n\n\n\n\n\n\n\n\n\nStorage layout, chunk shapes\nRead time series (sec)\nRead spatial slice (sec)\nPerformance bias (slowest / fastest)\n\n\n\n\nContiguous favoring time range\n0.013\n180\n14000\n\n\nContiguous favoring spatial slice\n200\n0.012\n17000\n\n\nDefault (all axes equal) chunks, 4673 x 12 x 16\n1.4\n34\n24\n\n\n36 KB chunks, 92 x 9 x 11\n2.4\n1.7\n1.4\n\n\n8 KB chunks, 46 x 6 x 8\n1.4\n1.1\n1.2\n\n\n\nsource: unidata blog\n\n\n\n\n\nTalks page",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/technical/processing_needs/index.html#hardware",
+    "href": "talks/technical/processing_needs/index.html#hardware",
+    "title": "Processing needs",
+    "section": "Hardware",
+    "text": "Hardware\n\na couple of dedicated analysis nodes in a SLURM partition (~32 at DKRZ, 10 above normal)\nreservations have proven less useful than simply expanding the interactive partition\nlimit of 2 nodes per participant (larger jobs are usually user error)",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Processing needs"
+    ]
+  },
+  {
+    "objectID": "talks/technical/processing_needs/index.html#services",
+    "href": "talks/technical/processing_needs/index.html#services",
+    "title": "Processing needs",
+    "section": "Services",
+    "text": "Services\n\ninteractive access to the computing resources\nJupyterHub (or similar) is usually an appreciated entry point",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Processing needs"
+    ]
+  },
+  {
+    "objectID": "talks/technical/processing_needs/index.html#python-environments",
+    "href": "talks/technical/processing_needs/index.html#python-environments",
+    "title": "Processing needs",
+    "section": "Python environments",
+    "text": "Python environments\n\nit’s hard (if not impossible) to provide a single environment for all users\nCompromise: provide a lean python environment with “common” scientific packages\nusers can install their exotic dependencies on top of that",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Processing needs"
+    ]
+  },
+  {
+    "objectID": "talks/technical/processing_needs/index.html#our-recommendation",
+    "href": "talks/technical/processing_needs/index.html#our-recommendation",
+    "title": "Processing needs",
+    "section": "Our recommendation",
+    "text": "Our recommendation\n\nuse micromamba1 to manage a basic python environment\nwe should maintain a single environment.yaml to provide common packages\nusers may install more “exotic” packages on their own\n\nFaster than conda and circumvents license issues",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Processing needs"
+    ]
+  },
+  {
+    "objectID": "talks/technical/processing_needs/index.html#data",
+    "href": "talks/technical/processing_needs/index.html#data",
+    "title": "Processing needs",
+    "section": "Data",
+    "text": "Data\n\nstate-of-the-art compression can help to reduce both disk usage and access time (zstd, lz4)\ntest access to data using the hackathon environment\n\n\n\n\n\nTalks page",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Processing needs"
+    ]
+  },
+  {
+    "objectID": "talks/index.html",
+    "href": "talks/index.html",
+    "title": "Talks",
     "section": "",
-    "text": "Masaki Satoh, Daisuke Takasuka",
+    "text": "Building useful datasets for Earth System Model output\nStorage requirements\nCatalogs\nPython packages\nProcessing needs",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks"
+    ]
+  },
+  {
+    "objectID": "talks/index.html#technical",
+    "href": "talks/index.html#technical",
+    "title": "Talks",
+    "section": "",
+    "text": "Building useful datasets for Earth System Model output\nStorage requirements\nCatalogs\nPython packages\nProcessing needs",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks"
+    ]
+  },
+  {
+    "objectID": "talks/technical/python_packages/index.html#the-basics",
+    "href": "talks/technical/python_packages/index.html#the-basics",
+    "title": "Sharing is caring",
+    "section": "The basics",
+    "text": "The basics\n\nPython functions and classes can be organised in modules\nimport my_module\n\nmy_module.my_function(42)\nPackages allow for a hierarchical structuring of modules\nThe Python Package Index (PyPI) helps you find and install software1\npip install &lt;package_name&gt;\n\nauthors need to actively publish their code",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Sharing is caring"
+    ]
+  },
+  {
+    "objectID": "talks/technical/python_packages/index.html#the-default-stack",
+    "href": "talks/technical/python_packages/index.html#the-default-stack",
+    "title": "Sharing is caring",
+    "section": "The default stack",
+    "text": "The default stack\nThis talk will not cover the “usual suspects”\nNumPy, SciPy, matplotlib, cartopy, netcdf4, xarray (+flox), ...",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Sharing is caring"
+    ]
+  },
+  {
+    "objectID": "talks/technical/python_packages/index.html#healpix-not-healpy",
+    "href": "talks/technical/python_packages/index.html#healpix-not-healpy",
+    "title": "Sharing is caring",
+    "section": "healpix (not healpy)",
+    "text": "healpix (not healpy)\n\nimplements a lean set of routines for working with HEALPix\nhealpix.nside2npix(9)\nhealpix.ang2pix(nside=9, 52, 10, nest=True, lonlat=True)\nrequires only NumPy, and can be installed with pip:\npython -m pip install healpix",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Sharing is caring"
+    ]
+  },
+  {
+    "objectID": "talks/technical/python_packages/index.html#easygems",
+    "href": "talks/technical/python_packages/index.html#easygems",
+    "title": "Sharing is caring",
+    "section": "easygems",
+    "text": "easygems\n\nprovides a (small) set of convenience functions to work with model output\neasygems.healpix.healpix_show(ds_daily.tas.sel(time=\"2024-09-10\"))\nstarted as a “bin” for functions used on easy.gems\ncan be installed with pip\npython -m pip install easygems",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Sharing is caring"
+    ]
+  },
+  {
+    "objectID": "talks/technical/python_packages/index.html#gribscan",
+    "href": "talks/technical/python_packages/index.html#gribscan",
+    "title": "Sharing is caring",
+    "section": "gribscan",
+    "text": "gribscan\n\nscan GRIB files and create zarr-compatible indices\ngribscan-index *.grib2\ngribscan-build --magician ifs --prefix $PWD *.index\nprovides the command-line tools gribscan-index and gribscan-build\nrequires an ecCodes version that matches the output data\ncan be installed with pip (apart from ecCodes)\npython -m pip install gribscan\n\n\n\n\n\nTalks page",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Sharing is caring"
+    ]
+  },
+  {
+    "objectID": "talks/technical/catalogs/index.html#simplify-access-to-data",
+    "href": "talks/technical/catalogs/index.html#simplify-access-to-data",
+    "title": "Catalogs",
+    "section": "simplify access to data",
+    "text": "simplify access to data\nimport os\nimport urllib.request\nimport xarray\nimport shutil\n\nif not os.path.exists(\"some_data\"):\n    urllib.request.urlretrieve(\"https://example.org/some_data.zip\", \"some_data.zip\")\n    shutil.unpack_archive(\"some_data.zip\", \"some_data\")\n\nds = xr.open_mfdataset(\"some_data/*.nc\")\nvs\nimport intake\ncat = intake.open_catalog(\"https://example.org/catalog.yaml\")\nds = cat[\"some_data\"].to_dask()",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/technical/catalogs/index.html#make-datasets-findable",
+    "href": "talks/technical/catalogs/index.html#make-datasets-findable",
+    "title": "Catalogs",
+    "section": "make datasets findable",
+    "text": "make datasets findable\ne.g. STAC datasets\nMetadata in catalogs can be accessed fasterthan when burried inside datasets.\nThis enables quick browse, search and quicklook tools.",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/technical/catalogs/index.html#simplify-data-movement",
+    "href": "talks/technical/catalogs/index.html#simplify-data-movement",
+    "title": "Catalogs",
+    "section": "simplify data movement",
+    "text": "simplify data movement\nOnce data is moved, just update the catalog and users seemlessly access data from new location.",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/technical/catalogs/index.html#simplify-encoding-changes",
+    "href": "talks/technical/catalogs/index.html#simplify-encoding-changes",
+    "title": "Catalogs",
+    "section": "simplify encoding changes",
+    "text": "simplify encoding changes\n\nCatalog describes how to open the data\ndata encoding can be changed (zipped CSV -&gt; HDF5 -&gt; Zarr)\nUsers automatically use new one after catalog update",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/technical/catalogs/index.html#aid-with-distributed-access",
+    "href": "talks/technical/catalogs/index.html#aid-with-distributed-access",
+    "title": "Catalogs",
+    "section": "aid with distributed access",
+    "text": "aid with distributed access\n\nReturned catalog entries may depend on user location\nUsers may use the same code to access data everywhere, but still can be directed to a copy in the local datacenter\nThis may even involve HDF5 on lustre in one datacenter and Zarr on S3 in another",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/technical/catalogs/index.html#hack-around-broken-datasets",
+    "href": "talks/technical/catalogs/index.html#hack-around-broken-datasets",
+    "title": "Catalogs",
+    "section": "hack around broken datasets",
+    "text": "hack around broken datasets\n😬\n\n\nComplex catalog entries can be used to concatenate, mix, slice etc… a collection of poorly prepared datasets.\nMay be better than nothing, but usually comes with bad performance impact.\n\n\n\nPlease don’t use this by design. It’s always better to fix the datasets upfront.",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/technical/catalogs/index.html#catalog",
+    "href": "talks/technical/catalogs/index.html#catalog",
+    "title": "Catalogs",
+    "section": "catalog",
+    "text": "catalog\nA list / tree / collection of catalog entries.\n\nMay be static, dynamic, searchable, etc.",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/technical/catalogs/index.html#catalog-entry",
+    "href": "talks/technical/catalogs/index.html#catalog-entry",
+    "title": "Catalogs",
+    "section": "catalog entry",
+    "text": "catalog entry\n\nhas an identity\ncan be retrieved\nlocates (or identifies) a dataset\ninstructs how to open a dataset\nmay carry additional metadata",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/technical/catalogs/index.html#filesystem-directories",
+    "href": "talks/technical/catalogs/index.html#filesystem-directories",
+    "title": "Catalogs",
+    "section": "filesystem directories",
+    "text": "filesystem directories\n\n✅ can be a simple option\n✅ support symlinks\n❌ not really a catalog (doesn’t aggregate metadata)\n❌ only shows what’s on the filesystem",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/technical/catalogs/index.html#intake-yaml",
+    "href": "talks/technical/catalogs/index.html#intake-yaml",
+    "title": "Catalogs",
+    "section": "Intake yaml",
+    "text": "Intake yaml\n\n✅ easy to create\n✅ compatible with any kind of data\n❌ limited to Python\n❌ unstable format (Intake 2 broke a lot of things)\n🤔 has room for creative hacks",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/technical/catalogs/index.html#spatiotemporal-asset-catalogs-stac",
+    "href": "talks/technical/catalogs/index.html#spatiotemporal-asset-catalogs-stac",
+    "title": "Catalogs",
+    "section": "SpatioTemporal Asset Catalogs (STAC)",
+    "text": "SpatioTemporal Asset Catalogs (STAC)\n\n✅ stable format\n✅ integrations for many languages\n✅ can be used with Intake\n❌ more complicated to create (but tools exist)\n❌ can only be used for spatio-temporal datasets",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/technical/catalogs/index.html#intake-esm",
+    "href": "talks/technical/catalogs/index.html#intake-esm",
+    "title": "Catalogs",
+    "section": "Intake ESM",
+    "text": "Intake ESM\n\nmade for CMIP6\naims at assembling big datasets out of many individual datasets, which I wouldn’t recommend",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/technical/catalogs/index.html#thredds-dataset-inventory-catalogs",
+    "href": "talks/technical/catalogs/index.html#thredds-dataset-inventory-catalogs",
+    "title": "Catalogs",
+    "section": "THREDDS Dataset Inventory Catalogs",
+    "text": "THREDDS Dataset Inventory Catalogs\n\nspecific catalog for THREDDS data server (e.g. OPeNDAP)\nexposes what’s available on that specific server",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/technical/catalogs/index.html#ease-of-access",
+    "href": "talks/technical/catalogs/index.html#ease-of-access",
+    "title": "Catalogs",
+    "section": "ease of access",
+    "text": "ease of access\nThere are many computing facilities.We want to work together.  \ncat = get_hackathon_catalog()\nds = cat.get_dataset(\"some_model_run_output_id\")\n\nconcise\nfast\nacross data centers\nno local code changes\nsupports different storage methods and formats\n\n\n\n\n\nTalks page",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Catalogs"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storage-requirements/index.html#ballpark-estimate-for-level-9-13km",
+    "href": "talks/technical/storage-requirements/index.html#ballpark-estimate-for-level-9-13km",
+    "title": "Storage requirements",
+    "section": "Ballpark estimate for level 9 (13km)",
+    "text": "Ballpark estimate for level 9 (13km)\n\n\n\n\n\n\n\n\n\n\n\n\ntype\ncells / snap-shot\nMB / snap-shot1\nsnapshots\nGB / var\nvars\nGB total\n\n\n\n\n2D\n3 M\n6\n365*24\n52\n33\n1650\n\n\n2D2\n3 M\n6\n365*4\n13\n33\n275\n\n\n3D\n75 M\n150\n365*4\n220\n12\n2600\n\n\n\nAssuming 4-byte floats and 50% compressionFor consistent datasets",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Storage requirements"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storage-requirements/index.html#making-things-useful",
+    "href": "talks/technical/storage-requirements/index.html#making-things-useful",
+    "title": "Storage requirements",
+    "section": "Making things useful",
+    "text": "Making things useful\n\nAdding the full HEALPix hierarchy adds 30%, and makes the dataset useful.\nAdd daily means (+25% w.r.t the 6-hourly data)\nTotal size per dataset at 13 km: 6.6TB\nDoubling the resolution multiplies the storage need by 4.\n3-hourly 3D fields increase the size to 10.6 TB",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Storage requirements"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storage-requirements/index.html#totals",
+    "href": "talks/technical/storage-requirements/index.html#totals",
+    "title": "Storage requirements",
+    "section": "Totals",
+    "text": "Totals\n\n10 models at level 9 (13 km): 68 TB\n10 models at level 10 (6 km): 272 TB\n10 models at level 11 (3 km): 1.1 PB\n\n\n\n\n\nTalks page",
+    "crumbs": [
+      "Preparation meetings",
+      "Talks",
+      "Technical",
+      "Storage requirements"
+    ]
+  },
+  {
+    "objectID": "simulations/scream.html",
+    "href": "simulations/scream.html",
+    "title": "SCREAM",
+    "section": "",
+    "text": "DOE Energy Exascale Earth System Model Project\n\n\n\nSCREAM with E3SM Land Model (ELM)\n\n\n\n3.25 km global grid with 128 vertical levels up to 40 km\n\n\nSCREAM\n\n\n\n\n\n\n\n\n\n\nChris Terai",
     "crumbs": [
       "Preparation meetings",
       "Simulations",
-      "NICAM"
+      "SCREAM"
+    ]
+  },
+  {
+    "objectID": "simulations/scream.html#the-team",
+    "href": "simulations/scream.html#the-team",
+    "title": "SCREAM",
+    "section": "",
+    "text": "DOE Energy Exascale Earth System Model Project",
+    "crumbs": [
+      "Preparation meetings",
+      "Simulations",
+      "SCREAM"
+    ]
+  },
+  {
+    "objectID": "simulations/scream.html#model-description",
+    "href": "simulations/scream.html#model-description",
+    "title": "SCREAM",
+    "section": "",
+    "text": "SCREAM with E3SM Land Model (ELM)",
+    "crumbs": [
+      "Preparation meetings",
+      "Simulations",
+      "SCREAM"
+    ]
+  },
+  {
+    "objectID": "simulations/scream.html#setups",
+    "href": "simulations/scream.html#setups",
+    "title": "SCREAM",
+    "section": "",
+    "text": "3.25 km global grid with 128 vertical levels up to 40 km\n\n\nSCREAM",
+    "crumbs": [
+      "Preparation meetings",
+      "Simulations",
+      "SCREAM"
+    ]
+  },
+  {
+    "objectID": "simulations/scream.html#contact-for-further-inquiries",
+    "href": "simulations/scream.html#contact-for-further-inquiries",
+    "title": "SCREAM",
+    "section": "",
+    "text": "Chris Terai",
+    "crumbs": [
+      "Preparation meetings",
+      "Simulations",
+      "SCREAM"
+    ]
+  },
+  {
+    "objectID": "simulations/index.html",
+    "href": "simulations/index.html",
+    "title": "Simulations",
+    "section": "",
+    "text": "Team\nModel\ndomain and resolution\nhost team\ncontact\ncomments\n\n\n\n\nDOE Energy Exascale Earth System Model Project\nSCREAM with E3SM Land Model (ELM)\n3.25 km global grid with 128 vertical levels up to 40 km\nNERSC\nPeter Caldwell, Chris Terai\n\n\n\nNICAM team\nNICAM\nglobal 3.5 km\nJP\nMasaki Satoh, Daisuke Takasuka\na part of 10-year simulation (2011-2020); additional short-term high-resolution simulation may be provided (1.7km, 870m)",
+    "crumbs": [
+      "Preparation meetings",
+      "Simulations"
+    ]
+  },
+  {
+    "objectID": "simulations/index.html#planned",
+    "href": "simulations/index.html#planned",
+    "title": "Simulations",
+    "section": "",
+    "text": "Team\nModel\ndomain and resolution\nhost team\ncontact\ncomments\n\n\n\n\nDOE Energy Exascale Earth System Model Project\nSCREAM with E3SM Land Model (ELM)\n3.25 km global grid with 128 vertical levels up to 40 km\nNERSC\nPeter Caldwell, Chris Terai\n\n\n\nNICAM team\nNICAM\nglobal 3.5 km\nJP\nMasaki Satoh, Daisuke Takasuka\na part of 10-year simulation (2011-2020); additional short-term high-resolution simulation may be provided (1.7km, 870m)",
+    "crumbs": [
+      "Preparation meetings",
+      "Simulations"
     ]
   },
   {

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Hosting a hackathon site – Digital Earths global hackathon 2025</title>
+<title>unifiedmodel – Digital Earths global hackathon 2025</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -112,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../hosting/index.html">Hosting a hackathon site</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../simulations/index.html">Simulations</a></li><li class="breadcrumb-item"><a href="../simulations/UnifiedModel.html">Unified Model</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -225,7 +225,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../simulations/UnifiedModel.html" class="sidebar-item-text sidebar-link">
+  <a href="../simulations/UnifiedModel.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Unified Model</span></a>
   </div>
 </li>
@@ -233,7 +233,7 @@ ul.task-list li input[type="checkbox"] {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../hosting/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../hosting/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Hosting a hackathon site</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
@@ -305,33 +305,61 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#unified-model" id="toc-unified-model" class="nav-link active" data-scroll-target="#unified-model">Unified Model</a>
+  <ul class="collapse">
+  <li><a href="#the-team" id="toc-the-team" class="nav-link" data-scroll-target="#the-team">The team</a></li>
+  <li><a href="#model-description" id="toc-model-description" class="nav-link" data-scroll-target="#model-description">Model description</a>
+  <ul class="collapse">
+  <li><a href="#code-version-and-availability" id="toc-code-version-and-availability" class="nav-link" data-scroll-target="#code-version-and-availability">Code version and availability</a></li>
+  <li><a href="#forcing-and-initialization-used" id="toc-forcing-and-initialization-used" class="nav-link" data-scroll-target="#forcing-and-initialization-used">Forcing and initialization used</a></li>
+  </ul></li>
+  <li><a href="#notes-on-output-variables" id="toc-notes-on-output-variables" class="nav-link" data-scroll-target="#notes-on-output-variables">Notes on output variables</a></li>
+  <li><a href="#contact-for-further-inquiries" id="toc-contact-for-further-inquiries" class="nav-link" data-scroll-target="#contact-for-further-inquiries">Contact for further inquiries</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Hosting a hackathon site</h1>
-</div>
 
 
 
-<div class="quarto-title-meta">
+<section id="unified-model" class="level1">
+<h1>Unified Model</h1>
+<section id="the-team" class="level2">
+<h2 class="anchored" data-anchor-id="the-team">The team</h2>
+<p>Met Office and National Centre for Atmospheric Science</p>
+</section>
+<section id="model-description" class="level2">
+<h2 class="anchored" data-anchor-id="model-description">Model description</h2>
+<p><a href="https://www.metoffice.gov.uk/research/approach/modelling-systems/unified-model/climate-models/hadgem3">Unified Model</a> with <a href="https://jules.jchmr.org">JULES</a> land surface model (JULES).</p>
+<p>The specific N2560 configuration to be used in the WCRP global hackathon is describre in <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2022MS003418">Tomassini et al.&nbsp;2023</a>. This configuration includes specific settings for convective parametrisation suitable for sub-10km simulations.</p>
+<p>As background information, the typical model chain for climate simulations at multiple resolutions is described in this article: <a href="https://gmd.copernicus.org/articles/12/4999/2019/">Roberts et al.&nbsp;2019</a>. The specific configuration for DYAMOND simulations at 5km is contained in the DYAMOND paper series. ## Setups</p>
+<p>5km global grid (N2560) with 85 vertical levels up to 85 km 5km to 2km tropical channel (k-scale configurations)</p>
+<section id="code-version-and-availability" class="level3">
+<h3 class="anchored" data-anchor-id="code-version-and-availability">Code version and availability</h3>
+<p><a href="https://code.metoffice.gov.uk/self-service/XUI/?realm=/mo-realm-1&amp;goto=https://code.metoffice.gov.uk/self-service/oauth2/authorize?state%3DECCOoWUwMJvD-ixTVpBbCwxgYDI%26nonce%3Ddg3VbyLMHfBmqCda%26response_mode%3Dform_post%26redirect_uri%3Dhttps://code.metoffice.gov.uk:443/agent/cdsso-oauth2%26response_type%3Did_token%26scope%3Dopenid%26client_id%3Dapache_trac%26agent_provider%3Dtrue%26agent_realm%3D/mo-realm-1#login/">Unified Model</a></p>
+</section>
+<section id="forcing-and-initialization-used" class="level3">
+<h3 class="anchored" data-anchor-id="forcing-and-initialization-used">Forcing and initialization used</h3>
+</section>
+</section>
+<section id="notes-on-output-variables" class="level2">
+<h2 class="anchored" data-anchor-id="notes-on-output-variables">Notes on output variables</h2>
+</section>
+<section id="contact-for-further-inquiries" class="level2">
+<h2 class="anchored" data-anchor-id="contact-for-further-inquiries">Contact for further inquiries</h2>
+<p><a href="mailto:p.l.vidale@reading.ac.uk">P.L. Viale</a></p>
 
-    
-  
-    
-  </div>
-  
 
-
-</header>
-
-
-
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
