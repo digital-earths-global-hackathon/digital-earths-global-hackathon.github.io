@@ -213,7 +213,7 @@
     "href": "simulations/UnifiedModel.html",
     "title": "Unified Model",
     "section": "",
-    "text": "Met Office and National Centre for Atmospheric Science\n\n\n\nUnified Model with JULES land surface model (JULES).\nThe specific N2560 configuration to be used in the WCRP global hackathon is describre in Tomassini et al. 2023. This configuration includes specific settings for convective parametrisation suitable for sub-10km simulations.\nAs background information, the typical model chain for climate simulations at multiple resolutions is described in this article: Roberts et al. 2019. The specific configuration for DYAMOND simulations at 5km is contained in the DYAMOND paper series. ## Setups\n5km global grid (N2560) with 85 vertical levels up to 85 km 5km to 2km tropical channel (k-scale configurations)\n\n\nUnified Model\n\n\n\n\n\n\n\n\n\n\nP.L. Viale",
+    "text": "Met Office and National Centre for Atmospheric Science\n\n\n\nUnified Model with JULES land surface model (JULES).\nThe specific N2560 configuration to be used in the WCRP global hackathon is described in Tomassini et al. 2023. This configuration includes specific settings for convective parametrisation suitable for sub-10km simulations.\nAs background information, the typical model chain for climate simulations at multiple resolutions is described in this article: Roberts et al. 2019. The specific configuration for DYAMOND simulations at 5km is contained in the DYAMOND paper series. ## Setups\n5km global grid (N2560) with 85 vertical levels up to 85 km 5km to 2km tropical channel (k-scale configurations)\n\n\nUnified Model\n\n\n\n\n\n\n\n\n\n\nP.L. Vidale",
     "crumbs": [
       "Preparation meetings",
       "Simulations",
@@ -237,7 +237,7 @@
     "href": "simulations/UnifiedModel.html#model-description",
     "title": "Unified Model",
     "section": "",
-    "text": "Unified Model with JULES land surface model (JULES).\nThe specific N2560 configuration to be used in the WCRP global hackathon is describre in Tomassini et al. 2023. This configuration includes specific settings for convective parametrisation suitable for sub-10km simulations.\nAs background information, the typical model chain for climate simulations at multiple resolutions is described in this article: Roberts et al. 2019. The specific configuration for DYAMOND simulations at 5km is contained in the DYAMOND paper series. ## Setups\n5km global grid (N2560) with 85 vertical levels up to 85 km 5km to 2km tropical channel (k-scale configurations)\n\n\nUnified Model",
+    "text": "Unified Model with JULES land surface model (JULES).\nThe specific N2560 configuration to be used in the WCRP global hackathon is described in Tomassini et al. 2023. This configuration includes specific settings for convective parametrisation suitable for sub-10km simulations.\nAs background information, the typical model chain for climate simulations at multiple resolutions is described in this article: Roberts et al. 2019. The specific configuration for DYAMOND simulations at 5km is contained in the DYAMOND paper series. ## Setups\n5km global grid (N2560) with 85 vertical levels up to 85 km 5km to 2km tropical channel (k-scale configurations)\n\n\nUnified Model",
     "crumbs": [
       "Preparation meetings",
       "Simulations",
@@ -249,7 +249,7 @@
     "href": "simulations/UnifiedModel.html#contact-for-further-inquiries",
     "title": "Unified Model",
     "section": "",
-    "text": "P.L. Viale",
+    "text": "P.L. Vidale",
     "crumbs": [
       "Preparation meetings",
       "Simulations",
