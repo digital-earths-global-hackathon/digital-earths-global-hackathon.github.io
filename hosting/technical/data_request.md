@@ -96,7 +96,7 @@ For some models, the hydrometeor categories may not map directly onto the specif
 | toa_incoming_longwave_flux | rldt | W m-2 | |
 | surface_upwelling_longwave_flux_in_air | rlus | W m-2| |
 | surface_upwelling_longwave_flux_in_air_clear_sky | rluscs | W m-2| |
-| surface_downwelling_longwave_flux_in_air | rldt | W m-2| |
+| surface_downwelling_longwave_flux_in_air | rlds | W m-2| |
 | surface_downwelling_longwave_flux_in_air_clear_sky | rldscs | W m-2| |
 | toa_outgoing_shortwave_flux | rsut | W m-2| |
 | toa_outgoing_shortwave_flux_clear_sky | rsutcs | W m-2| |
