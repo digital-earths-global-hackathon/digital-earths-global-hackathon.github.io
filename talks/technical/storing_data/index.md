@@ -42,35 +42,15 @@ aliases:
 
 ::::
 
-## Datasets are not
-
-* a single file
-* a storage format
-* shaped by storage & handling
-
-::: {.notes}
-In the past, people often designed datasets to match their file handling requirements.
-The resulting view on a dataset seems to be overly restrictive and leads to unfortunate usage patterns.
-:::
-
 # Storage and access
 
-## Access to subsets
+## Support standard tools
 
-:::: {.columns}
-
-::: {.column width="50%"}
-![](data_usage_1.png)
-:::
-
-::: {.column width="50%"}
-![](data_usage_2.png)
-:::
-
-::::
-
-Without subset access and hierarchies, analysis scripts are **forced** to load way too much data.
-
+* Wide usage of python (xarray / ...), supports pretty much anything
+* Traditional usage of libnetCDF in C/F programs, supports
+  netCDF3, HDF5 (*netCDF4*), zarr 2
+* Painful heritage of GRIB from weather services.
+* Some usage of javascript / ...
 
 ## Align the ordering of data with read patterns
 
@@ -114,12 +94,31 @@ Make a compromise that's okay-ish for everybody by chunking along all dimensions
 
 As chunks are stored separately, this scales for any size of dataset. We are working with a 500 TB dataset in nextGEMS.
 
+## Finding byte offsets
+
+* zarr 2: `tas/3/5`: regional chunk 5 of time chunk 3 is in file `tas/3/5` -- the file system needs to store the positions of all chunks. (roughly 10**8 for 1 PB of data)
+* netCDF: `atm_2d_3_2020-01-01-2020-02-01.nc`: byte offsets for chunks of atm variable block 3 for January are stored in the header of `atm_2d_3_2020-01-01-2020-02-01.nc`. FS needs to handle ~20 k files for 1 PB.
+* zarr 3 can group a set of chunks into one shard with byte offsets at the start.
+
+## Kerchunk indexes byte offsets
+
+Kerchunk collects the byte offsets of one dataset in one big table.
+
+* Data can be stored in pretty much any format as long as the chunks are left intact and there is a method of generating the table.
+* Works with HDF5 and zarr in tar.
+* Requires tools that understand this table for reading the data.
+
 ## Kerchunk + fsspec
 
 * We can index a multi-file HDF5 dataset with [kerchunk](https://github.com/fsspec/kerchunk), and then create a pseudo-filesystem zarr with [fsspec](https://github.com/fsspec) in python.
 * Allows to treat a set of netCDF4 files as one zarr dataset.
 * Direct access only via python.
 * A simple python web server can present it as zarr via https for other languages.
+
+## Storing the table
+
+* JSON works for small tables.
+* parquet with lazy loading works for big tables.
 
 # Appendix
 
