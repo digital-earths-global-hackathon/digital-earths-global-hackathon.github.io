@@ -10,6 +10,11 @@ order: 10
   + Coordination issues on websites and advertising we raised at meeting with ESMO on 24 October
   + Finalizing the data request (see also the Mattermost discussion of Trackers)
   + Set up a test run and assessment of one regional HEALPix conversion
+  + Handling of finances by each node individually
+    + participation fees
+    + stipend
+  + Outreach activities (daily blog, videos, ...)
+  + Streaming one presentation per day per node, ideally also recording it
 + 19 Dec 2024
 + 9  Jan 2025
 + 11  Feb 2025
