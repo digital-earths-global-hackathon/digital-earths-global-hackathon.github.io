@@ -116,7 +116,7 @@ For some models, the hydrometeor categories may not map directly onto the specif
 | surface_downwelling_shortwave_flux_in_air           |       rsds |      W m-2 |                                                        |
 | surface_downwelling_shortwave_flux_in_air_clear_sky |     rsdscs |      W m-2 |                                                        |
 | precipitation_flux                                  |         pr | kg m-2 s-1 |                                                        |
-| snowfall_flux                                       |       prsn | kg m-2 s-1 |              includes all forms of solid precipitation |
+| solid_precipitation_flux                            |        prs | kg m-2 s-1 |              includes all forms of solid precipitation |
 | atmosphere_mass_content_of_water_vapor              |        prw | kg m-2 s-1 |                                                        |
 | surface_air_pressure                                |         ps |         Pa |                                                        |
 | air_pressure_at_mean_sea_level                      |        psl |         Pa |                                                        |
