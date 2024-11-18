@@ -14,7 +14,7 @@ This data request still is in a draft stadium. To improve it, please [open an is
 * We request data on a hierarchy of HEALPix grids instead of 0.25 degree resolution.
 * We added snowfall_flux, liquid_water_content_of_surface_snow, snow_area_fraction_viewable_from_above, soil_liquid_water_content to the request.
 * We specify variable names.
-* We specify that hourly 2D data should be instantaneous.
+* We specify that hourly 2D data should be time means.
 :::
 
 ## Data grid and vertical levels
