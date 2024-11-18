@@ -5,7 +5,17 @@ aliases:
 
 # Draft Data request
 
-This data request still is in a draft stadium. To improve it, please [open an issue](https://github.com/digital-earths-global-hackathon/planning/issues) (and a matching pull request).
+This data request still is in a draft stadium. To improve it, please [open an issue](https://github.com/digital-earths-global-hackathon/planning/issues) (and a matching pull request). It is based on the [Dyamond phase 3 request](https://www.researchsquare.com/article/rs-4458164/v1).
+
+
+::: {.callout-note}
+## The main differences to the DYAMOND 3 data request
+
+* We request data on a hierarchy of HEALPix grids instead of 0.25 degree resolution.
+* We added snowfall_flux, liquid_water_content_of_surface_snow, snow_area_fraction_viewable_from_above, soil_liquid_water_content to the request.
+* We specify variable names.
+* We specify that hourly 2D data should be instantaneous.
+:::
 
 ## Data grid and vertical levels
 
@@ -89,8 +99,8 @@ For some models, the hydrometeor categories may not map directly onto the specif
 | :-------------------------------------------------- | ---------: | ---------: | -----------------------------------------------------: |
 | atmosphere_mass_content_of_cloud_condensed_water    |      clwvi |     kg m-2 |                                                        |
 | atmosphere_mass_content_of_cloud_ice                |      clivi |     kg m-2 |                                                        |
-| surface_downward_latent_heat_flux                   |      hflsd |      W m-2 |                                                        |
-| surface_downward_sensible_heat_flux                 |      hfssd |      W m-2 |                                                        |
+| surface_downward_latent_heat_flux                   |      hflsd |      W m-2 |                       direction included in short name |
+| surface_downward_sensible_heat_flux                 |      hfssd |      W m-2 |                       direction included in short name |
 | toa_outgoing_longwave_flux                          |       rlut |      W m-2 |                                                        |
 | toa_outgoing_longwave_flux_clear_sky                |     rlutcs |      W m-2 |                                                        |
 | toa_incoming_longwave_flux                          |       rldt |      W m-2 |                                                        |
