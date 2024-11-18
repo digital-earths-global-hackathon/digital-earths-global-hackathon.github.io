@@ -77,20 +77,20 @@ For some models, the hydrometeor categories may not map directly onto the specif
 
 ### 3D Output Variables, write instantaneous values at 6hr interval
 
-| CF standard name                           | short name | units |
-| :----------------------------------------- | ---------: | ----: |
-| geopotential height                        |         zg |     m |
-| eastward_wind                              |         ua |   m/s |
-| northtward_wind                            |         va |   m/s |
-| upward_air_velocity                        |         wa |   m/s |
-| temperature                                |         ta |     K |
-| relative_humidity                          |        hur |     - |
-| specific_humidity                          |        hus | kg/kg |
-| mass_fraction_of_cloud_liquid_water_in_air |        clw | kg/kg |
-| mass_fraction_of_cloud_ice_in_air          |        cli | kg/kg |
-| mass_fraction_of_rain_in_air               |         qr | kg/kg |
-| mass_fraction_of_snow_water_in_air         |         qs | kg/kg |
-| mass_fraction_of_graupel_in_air            |         qg | kg/kg |
+| CF standard name                           | short name |   units |
+| :----------------------------------------- | ---------: | ------: |
+| geopotential height                        |         zg |       m |
+| eastward_wind                              |         ua |   m s-1 |
+| northtward_wind                            |         va |   m/s-1 |
+| upward_air_velocity                        |         wa |   m/s-1 |
+| temperature                                |         ta |       K |
+| relative_humidity                          |        hur |       - |
+| specific_humidity                          |        hus | kg kg-1 |
+| mass_fraction_of_cloud_liquid_water_in_air |        clw | kg kg-1 |
+| mass_fraction_of_cloud_ice_in_air          |        cli | kg kg-1 |
+| mass_fraction_of_rain_in_air               |         qr | kg kg-1 |
+| mass_fraction_of_snow_water_in_air         |         qs | kg kg-1 |
+| mass_fraction_of_graupel_in_air            |         qg | kg kg-1 |
 
 
 ### 2D Output Variables, write at 1hr interval as mean values
