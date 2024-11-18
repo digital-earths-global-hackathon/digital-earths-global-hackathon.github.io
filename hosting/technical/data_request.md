@@ -131,6 +131,15 @@ For some models, the hydrometeor categories may not map directly onto the specif
 | liquid_water_content_of_surface_snow                |        swe |     kg m-2 |                                    short name invented |
 | snow_area_fraction_viewable_from_above              |     sncvfa |          1 | short name based on snc for surface_snow_area_fraction |
 | soil_liquid_water_content                           |       mrso |     kg m-2 |                                    short name invented |
+| sea_ice_area_fraction                               |     siconc |          1 |                                                        |
+
+### 2D time-constant Variables
+
+| CF standard name       | short name | units | comment |
+| :--------------------- | ---------: | ----: | ------: |
+| land_area_fraction     |      sftlf |     1 |         |
+| land_ice_area_fraction |     sftgif |     1 |         |
+| surface_altitude       |       orog |     m |         |
 
 ## Code for computing the data volume
 
