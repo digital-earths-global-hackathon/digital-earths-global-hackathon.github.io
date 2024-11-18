@@ -89,8 +89,8 @@ For some models, the hydrometeor categories may not map directly onto the specif
 |:------------------|------------:|-------:|--------:|
 | atmosphere_mass_content_of_cloud_condensed_water| clwvi  | kg m-2| |
 | atmosphere_mass_content_of_cloud_ice| clivi  | kg m-2| |
-| surface_upward_latent_heat_flux | hfls | W m-2| defined downward in paper |
-| surface_upward_sensible_heat_flux | hfss | W m-2| defined downward in paper |
+| surface_downward_latent_heat_flux | hflsd | W m-2|  |
+| surface_downward_sensible_heat_flux | hfssd | W m-2| |
 | toa_outgoing_longwave_flux | rlut | W m-2 | |
 | toa_outgoing_longwave_flux_clear_sky | rlutcs | W m-2| |
 | toa_incoming_longwave_flux | rldt | W m-2 | |
@@ -116,7 +116,7 @@ For some models, the hydrometeor categories may not map directly onto the specif
 | surface_temperature | ts  | K | |
 | surface_downward_eastward_stress | tauu | N m-2 | |
 | surface_downward_northward_stress | tauv | N m-2 | | 
-|  cloud_area_fraction | clt  | 1 | |
+| cloud_area_fraction | clt  | 1 | |
 | liquid_water_content_of_surface_snow | swe | kg m-2| short name invented|
 | snow_area_fraction_viewable_from_above | sncvfa|1 | short name based on snc for surface_snow_area_fraction |
 | soil_liquid_water_content | mrso|kg m-2 | short name invented|
