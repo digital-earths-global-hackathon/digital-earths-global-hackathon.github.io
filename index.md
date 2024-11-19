@@ -6,7 +6,7 @@ aliases:
 css: styles.css
 ---
 
-**May 12-18 2025 -- Beijing, Boulder, Oxford, Sao Paulo, Stockholm, Tokyo**
+**May 12-18 2025 -- Beijing, Boulder, Oxford, Sao Paulo, Hamburg, Tokyo**
 
 The Digital Earths Global Hackathon will bring together scientists from around the world to jointly analyze the first ever coordinated experiments of climate models simulating a full annual cycle with horizontal grid spacings of 5 km or less).  
 
