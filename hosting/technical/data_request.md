@@ -44,8 +44,8 @@ The totals for storing this data (assuming 4 bytes/float, and 50% compression) a
 
 ```
 3D: 4.2TB
-2D: 2.7TB
-total: 6.8TB
+2D: 2.8TB
+total: 7.0TB
 ```
 
 See [below](#code-for-computing-the-volume) for the code.
@@ -145,7 +145,7 @@ For some models, the hydrometeor categories may not map directly onto the specif
 
 ```python
 vars_3d = 12
-vars_2d = 33
+vars_2d = 35
 interval_3d = 6/24.
 interval_2d = 1/24.
 interval_daily = 1.
