@@ -18,6 +18,15 @@ order: 10
   + Outreach activities (daily blog, videos, ...)
   + Streaming one presentation per day per node, ideally also recording it
 + 19 Dec 2024
+  + Sendai Protocol paper and adaptations for the hackathon
+  + Update on global registrations so far
+  + Reports on progress with initial data processing, re-gridding etc.
+  + Status update from each node:
+    + Plans for mini science conferences to design node-specific objectives and actions
+    + Logistics (data repositories, compute, venue)
+    + Run status
+    + Software stack
+    + Local web sites for each node's organisation and registration
 + 9  Jan 2025
 + 11  Feb 2025
 + 10 Mar 2025
