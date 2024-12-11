@@ -17,8 +17,10 @@ order: 10
     + stipends
   + Outreach activities (daily blog, videos, ...)
   + Streaming one presentation per day per node, ideally also recording it
-+ 19 Dec 2024
-  + Sendai Protocol paper and adaptations for the hackathon
++ ## 19 Dec 2024
+  + Sendai Protocol paper
+    + published today in Progress in Earth and Planetary Science. https://doi.org/10.1186/s40645-024-00668-1
+    + a few adaptations for the hackathon need to be made, given the reality of which simulations exist: map here
   + Update on global registrations so far
   + Reports on progress with initial data processing, re-gridding etc.
   + Status update from each node:
