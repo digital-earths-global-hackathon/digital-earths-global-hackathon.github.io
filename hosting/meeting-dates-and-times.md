@@ -43,4 +43,4 @@ Each meeting will cover:
 ### Everyone involved will receive Zoom invites with the relevant monthly links via e-mail.
 
 ## A few milestones from Oct 2024 until 12 May 2025
-![Hackaton Gantt](./Gantt_hackathon_new.png)
+![Hackaton Gantt](./Gantt_hackathon.png)
