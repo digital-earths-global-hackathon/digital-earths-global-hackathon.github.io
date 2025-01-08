@@ -34,6 +34,13 @@ order: 10
   + Local web sites for each node's organisation and registration
 
 ### 9  Jan 2025
++ Discussion on the draft science plan: [https://pad.gwdg.de/x2j-DW8tSc-GZ2pvfD8_1g?both]
++ Mind map of working groups and intended invesigations: ![Hackathon Mind Map](./Global Hackathon mindmap.png)
++ Status of data requests
++ Readiness status of:
+  + Node web pages + registration
+  + Data at nodes
+    + Softare stacks at nodes
 
 ### 11  Feb 2025
 
