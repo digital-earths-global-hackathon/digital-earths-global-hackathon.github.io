@@ -700,6 +700,97 @@
     ]
   },
   {
+    "objectID": "simulations/UnifiedModel.html",
+    "href": "simulations/UnifiedModel.html",
+    "title": "Unified Model",
+    "section": "",
+    "text": "Met Office and National Centre for Atmospheric Science\n\n\n\nUnified Model with JULES land surface model (JULES).\nThe specific N2560 configuration to be used in the WCRP global hackathon is described in Tomassini et al. 2023. This configuration includes specific settings for convective parametrisation suitable for sub-10km simulations.\nAs background information, the typical model chain for climate simulations at multiple resolutions is described in this article: Roberts et al. 2019. The specific configuration for DYAMOND simulations at 5km is contained in the DYAMOND paper series. ## Setups\n5km global grid (N2560) with 85 vertical levels up to 85 km 5km to 2km tropical channel (k-scale configurations)\n\n\nUnified Model\n\n\n\n\n\n\n\n\n\n\nP.L. Vidale",
+    "crumbs": [
+      "Preparation meetings",
+      "Simulations",
+      "Unified Model"
+    ]
+  },
+  {
+    "objectID": "simulations/UnifiedModel.html#the-team",
+    "href": "simulations/UnifiedModel.html#the-team",
+    "title": "Unified Model",
+    "section": "",
+    "text": "Met Office and National Centre for Atmospheric Science",
+    "crumbs": [
+      "Preparation meetings",
+      "Simulations",
+      "Unified Model"
+    ]
+  },
+  {
+    "objectID": "simulations/UnifiedModel.html#model-description",
+    "href": "simulations/UnifiedModel.html#model-description",
+    "title": "Unified Model",
+    "section": "",
+    "text": "Unified Model with JULES land surface model (JULES).\nThe specific N2560 configuration to be used in the WCRP global hackathon is described in Tomassini et al. 2023. This configuration includes specific settings for convective parametrisation suitable for sub-10km simulations.\nAs background information, the typical model chain for climate simulations at multiple resolutions is described in this article: Roberts et al. 2019. The specific configuration for DYAMOND simulations at 5km is contained in the DYAMOND paper series. ## Setups\n5km global grid (N2560) with 85 vertical levels up to 85 km 5km to 2km tropical channel (k-scale configurations)\n\n\nUnified Model",
+    "crumbs": [
+      "Preparation meetings",
+      "Simulations",
+      "Unified Model"
+    ]
+  },
+  {
+    "objectID": "simulations/UnifiedModel.html#contact-for-further-inquiries",
+    "href": "simulations/UnifiedModel.html#contact-for-further-inquiries",
+    "title": "Unified Model",
+    "section": "",
+    "text": "P.L. Vidale",
+    "crumbs": [
+      "Preparation meetings",
+      "Simulations",
+      "Unified Model"
+    ]
+  },
+  {
+    "objectID": "simulations/index.html",
+    "href": "simulations/index.html",
+    "title": "Simulations",
+    "section": "",
+    "text": "Team\nModel\ndomain and resolution\nhost team\ncontact\ncomments\n\n\n\n\nDOE Energy Exascale Earth System Model Project\nSCREAM with E3SM Land Model (ELM)\n3.25 km global grid with 128 vertical levels up to 40 km\nNERSC\nPeter Caldwell, Chris Terai\n\n\n\nMPI-M\nICON\nGlobal, 2.5 km\nEU\nDaniel Klocke\n\n\n\nNICAM team\nNICAM\nglobal 3.5 km\nJP\nMasaki Satoh, Daisuke Takasuka\na part of 10-year simulation (2011-2020); additional short-term high-resolution simulation may be provided (1.7km, 870m)\n\n\nUK HRCM (MO+NCAS)\nUnified Model\nglobal 10km (CP and not) and 5km (CP)\nUK HRCM\nP.L. Vidale, Huw Lewis\nMO is providing regional (tropical channel and multiple regional domains), also run through the DYAMOND protocols",
+    "crumbs": [
+      "Preparation meetings",
+      "Simulations"
+    ]
+  },
+  {
+    "objectID": "simulations/index.html#planned",
+    "href": "simulations/index.html#planned",
+    "title": "Simulations",
+    "section": "",
+    "text": "Team\nModel\ndomain and resolution\nhost team\ncontact\ncomments\n\n\n\n\nDOE Energy Exascale Earth System Model Project\nSCREAM with E3SM Land Model (ELM)\n3.25 km global grid with 128 vertical levels up to 40 km\nNERSC\nPeter Caldwell, Chris Terai\n\n\n\nMPI-M\nICON\nGlobal, 2.5 km\nEU\nDaniel Klocke\n\n\n\nNICAM team\nNICAM\nglobal 3.5 km\nJP\nMasaki Satoh, Daisuke Takasuka\na part of 10-year simulation (2011-2020); additional short-term high-resolution simulation may be provided (1.7km, 870m)\n\n\nUK HRCM (MO+NCAS)\nUnified Model\nglobal 10km (CP and not) and 5km (CP)\nUK HRCM\nP.L. Vidale, Huw Lewis\nMO is providing regional (tropical channel and multiple regional domains), also run through the DYAMOND protocols",
+    "crumbs": [
+      "Preparation meetings",
+      "Simulations"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Digital Earths – Global Hackathon",
+    "section": "",
+    "text": "May 12-18 2025 – Beijing, Boulder, Oxford, Sao Paulo, Hamburg, Tokyo\nThe Digital Earths Global Hackathon will bring together scientists from around the world to jointly analyze the first ever coordinated experiments of climate models simulating a full annual cycle with horizontal grid spacings of 5 km or less).\nParticipants will gather at one of a number of regional nodes for the hacking, each of which will provide access to a combined data-compute resource hosting the data and proximate computing capbility for its analysis. Each node will host at least one full annual cycle of output data standardized on a common (HEALPix) grid. Standardization will help participants share their analysis workflows with other teams analyzing other models at other nodes, and thereby build global communities around common interests."
+  },
+  {
+    "objectID": "index.html#goals",
+    "href": "index.html#goals",
+    "title": "Digital Earths – Global Hackathon",
+    "section": "Goals",
+    "text": "Goals\n\naccelerate the improvement and analysis of km-scale climate models (including regional models)\nsocialize best practices in coding and data intensive applications (infrastructure and workflows)\nestablish and disseminate the advantages of adopting common standards for km-scale climate information\nbuild solidarity and open access to resources\n\nIn addition individual centers may provide access to additional resources to supplement the standardized model outputs. This could include output from km-scale regional models or km-scale satellite data all of which would ideally be standardized similarly to the global models. Likewise computing capabilities could be augmented to support the application of machine learning."
+  },
+  {
+    "objectID": "index.html#organization",
+    "href": "index.html#organization",
+    "title": "Digital Earths – Global Hackathon",
+    "section": "Organization",
+    "text": "Organization\nA scientific steering committee will be responsible for the organization and will be supported by sub-committees for technical and logistical issues.\nParticipating teams around the world will assign someone to the sub-committees and is welcome to nominate a member for the scientific steering committee."
+  },
+  {
     "objectID": "simulations/scream.html",
     "href": "simulations/scream.html",
     "title": "SCREAM",
@@ -760,94 +851,63 @@
     ]
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Digital Earths – Global Hackathon",
+    "objectID": "simulations/icon.html",
+    "href": "simulations/icon.html",
+    "title": "ICON",
     "section": "",
-    "text": "May 12-18 2025 – Beijing, Boulder, Oxford, Sao Paulo, Hamburg, Tokyo\nThe Digital Earths Global Hackathon will bring together scientists from around the world to jointly analyze the first ever coordinated experiments of climate models simulating a full annual cycle with horizontal grid spacings of 5 km or less).\nParticipants will gather at one of a number of regional nodes for the hacking, each of which will provide access to a combined data-compute resource hosting the data and proximate computing capbility for its analysis. Each node will host at least one full annual cycle of output data standardized on a common (HEALPix) grid. Standardization will help participants share their analysis workflows with other teams analyzing other models at other nodes, and thereby build global communities around common interests."
-  },
-  {
-    "objectID": "index.html#goals",
-    "href": "index.html#goals",
-    "title": "Digital Earths – Global Hackathon",
-    "section": "Goals",
-    "text": "Goals\n\naccelerate the improvement and analysis of km-scale climate models (including regional models)\nsocialize best practices in coding and data intensive applications (infrastructure and workflows)\nestablish and disseminate the advantages of adopting common standards for km-scale climate information\nbuild solidarity and open access to resources\n\nIn addition individual centers may provide access to additional resources to supplement the standardized model outputs. This could include output from km-scale regional models or km-scale satellite data all of which would ideally be standardized similarly to the global models. Likewise computing capabilities could be augmented to support the application of machine learning."
-  },
-  {
-    "objectID": "index.html#organization",
-    "href": "index.html#organization",
-    "title": "Digital Earths – Global Hackathon",
-    "section": "Organization",
-    "text": "Organization\nA scientific steering committee will be responsible for the organization and will be supported by sub-committees for technical and logistical issues.\nParticipating teams around the world will assign someone to the sub-committees and is welcome to nominate a member for the scientific steering committee."
-  },
-  {
-    "objectID": "simulations/index.html",
-    "href": "simulations/index.html",
-    "title": "Simulations",
-    "section": "",
-    "text": "Team\nModel\ndomain and resolution\nhost team\ncontact\ncomments\n\n\n\n\nDOE Energy Exascale Earth System Model Project\nSCREAM with E3SM Land Model (ELM)\n3.25 km global grid with 128 vertical levels up to 40 km\nNERSC\nPeter Caldwell, Chris Terai\n\n\n\nNICAM team\nNICAM\nglobal 3.5 km\nJP\nMasaki Satoh, Daisuke Takasuka\na part of 10-year simulation (2011-2020); additional short-term high-resolution simulation may be provided (1.7km, 870m)\n\n\nUK HRCM (MO+NCAS)\nUnified Model\nglobal 10km (CP and not) and 5km (CP)\nUK HRCM\nP.L. Vidale, Huw Lewis\nMO is providing regional (tropical channel and multiple regional domains), also run through the DYAMOND protocols",
-    "crumbs": [
-      "Preparation meetings",
-      "Simulations"
-    ]
-  },
-  {
-    "objectID": "simulations/index.html#planned",
-    "href": "simulations/index.html#planned",
-    "title": "Simulations",
-    "section": "",
-    "text": "Team\nModel\ndomain and resolution\nhost team\ncontact\ncomments\n\n\n\n\nDOE Energy Exascale Earth System Model Project\nSCREAM with E3SM Land Model (ELM)\n3.25 km global grid with 128 vertical levels up to 40 km\nNERSC\nPeter Caldwell, Chris Terai\n\n\n\nNICAM team\nNICAM\nglobal 3.5 km\nJP\nMasaki Satoh, Daisuke Takasuka\na part of 10-year simulation (2011-2020); additional short-term high-resolution simulation may be provided (1.7km, 870m)\n\n\nUK HRCM (MO+NCAS)\nUnified Model\nglobal 10km (CP and not) and 5km (CP)\nUK HRCM\nP.L. Vidale, Huw Lewis\nMO is providing regional (tropical channel and multiple regional domains), also run through the DYAMOND protocols",
-    "crumbs": [
-      "Preparation meetings",
-      "Simulations"
-    ]
-  },
-  {
-    "objectID": "simulations/UnifiedModel.html",
-    "href": "simulations/UnifiedModel.html",
-    "title": "Unified Model",
-    "section": "",
-    "text": "Met Office and National Centre for Atmospheric Science\n\n\n\nUnified Model with JULES land surface model (JULES).\nThe specific N2560 configuration to be used in the WCRP global hackathon is described in Tomassini et al. 2023. This configuration includes specific settings for convective parametrisation suitable for sub-10km simulations.\nAs background information, the typical model chain for climate simulations at multiple resolutions is described in this article: Roberts et al. 2019. The specific configuration for DYAMOND simulations at 5km is contained in the DYAMOND paper series. ## Setups\n5km global grid (N2560) with 85 vertical levels up to 85 km 5km to 2km tropical channel (k-scale configurations)\n\n\nUnified Model\n\n\n\n\n\n\n\n\n\n\nP.L. Vidale",
+    "text": "Max Planck Institute for Meteorology\n\n\n\nICON (Icosahedral Nonhydrostatic Model)\n\n\n\n2.5 km resolution global simulation\n\n\n\n\n\n\n\n\n\n\n\n\nDaniel Klocke",
     "crumbs": [
       "Preparation meetings",
       "Simulations",
-      "Unified Model"
+      "ICON"
     ]
   },
   {
-    "objectID": "simulations/UnifiedModel.html#the-team",
-    "href": "simulations/UnifiedModel.html#the-team",
-    "title": "Unified Model",
+    "objectID": "simulations/icon.html#the-team",
+    "href": "simulations/icon.html#the-team",
+    "title": "ICON",
     "section": "",
-    "text": "Met Office and National Centre for Atmospheric Science",
+    "text": "Max Planck Institute for Meteorology",
     "crumbs": [
       "Preparation meetings",
       "Simulations",
-      "Unified Model"
+      "ICON"
     ]
   },
   {
-    "objectID": "simulations/UnifiedModel.html#model-description",
-    "href": "simulations/UnifiedModel.html#model-description",
-    "title": "Unified Model",
+    "objectID": "simulations/icon.html#model-description",
+    "href": "simulations/icon.html#model-description",
+    "title": "ICON",
     "section": "",
-    "text": "Unified Model with JULES land surface model (JULES).\nThe specific N2560 configuration to be used in the WCRP global hackathon is described in Tomassini et al. 2023. This configuration includes specific settings for convective parametrisation suitable for sub-10km simulations.\nAs background information, the typical model chain for climate simulations at multiple resolutions is described in this article: Roberts et al. 2019. The specific configuration for DYAMOND simulations at 5km is contained in the DYAMOND paper series. ## Setups\n5km global grid (N2560) with 85 vertical levels up to 85 km 5km to 2km tropical channel (k-scale configurations)\n\n\nUnified Model",
+    "text": "ICON (Icosahedral Nonhydrostatic Model)",
     "crumbs": [
       "Preparation meetings",
       "Simulations",
-      "Unified Model"
+      "ICON"
     ]
   },
   {
-    "objectID": "simulations/UnifiedModel.html#contact-for-further-inquiries",
-    "href": "simulations/UnifiedModel.html#contact-for-further-inquiries",
-    "title": "Unified Model",
+    "objectID": "simulations/icon.html#setups",
+    "href": "simulations/icon.html#setups",
+    "title": "ICON",
     "section": "",
-    "text": "P.L. Vidale",
+    "text": "2.5 km resolution global simulation",
     "crumbs": [
       "Preparation meetings",
       "Simulations",
-      "Unified Model"
+      "ICON"
+    ]
+  },
+  {
+    "objectID": "simulations/icon.html#contact-for-further-inquiries",
+    "href": "simulations/icon.html#contact-for-further-inquiries",
+    "title": "ICON",
+    "section": "",
+    "text": "Daniel Klocke",
+    "crumbs": [
+      "Preparation meetings",
+      "Simulations",
+      "ICON"
     ]
   },
   {
