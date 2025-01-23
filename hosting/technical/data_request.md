@@ -78,15 +78,14 @@ For some models, the hydrometeor categories may not map directly onto the specif
 
 ### 3D Output Variables, write instantaneous values at 6hr interval
 
-
-| standard name              | short name | units |        comment |
-| :------------------------- | ---------: | ----: | -------------: |
-| geopotential height        |         zg |     m |                |
-| eastward_wind              |         ua |   m/s |                |
-| northward_wind             |         va |   m/s |                |
-| upward_air_velocity        |         wa |   m/s |                |
-| temperature                |         ta |     K |                |
-| relative_humidity          |        hur |     - |                |
+| standard name              | short name |   units |        comment |
+| :------------------------- | ---------: | ------: | -------------: |
+| geopotential height        |         zg |       m |                |
+| eastward_wind              |         ua |     m/s |                |
+| northward_wind             |         va |     m/s |                |
+| upward_air_velocity        |         wa |     m/s |                |
+| temperature                |         ta |       K |                |
+| relative_humidity          |        hur |       - |                |
 | specific_humidity          |        hur | kg kg-1 |                |
 | mass_fraction_hydrometeors |       qall | kg kg-1 | names invented |
 
@@ -135,15 +134,15 @@ For some models, the hydrometeor categories may not map directly onto the specif
 
 This list is designed to include key outputs like accumulated precipitation, surface temperature and surface wind speed, as well as other features desired for trackers of convective storms and MCS. Other features requiring vertical information are suggested to be done 6 hourly.
 
-| CF standard name                                    | short name |      units |                                                comment |
-| :-------------------------------------------------- | ---------: | ---------: | -----------------------------------------------------: |
-| toa_outgoing_longwave_flux                          |       rlut |      W m-2 |                                                        |
-| toa_outgoing_shortwave_flux                         |       rsut |      W m-2 |                                                        |
-| precipitation_flux                                  |         pr | kg m-2 s-1 |                accumulated                             |
-| air_pressure_at_mean_sea_level                      |        psl |         Pa |                                                        |
-| eastward_wind                                       |        uas |      m s-1 |                                       10m above ground |
-| northward_wind                                      |        vas |      m s-1 |                                       10m above ground |
-| surface_temperature                                 |         ts |          K |                                                        |
+| CF standard name               | short name |      units |          comment |
+| :----------------------------- | ---------: | ---------: | ---------------: |
+| toa_outgoing_longwave_flux     |       rlut |      W m-2 |                  |
+| toa_outgoing_shortwave_flux    |       rsut |      W m-2 |                  |
+| precipitation_flux             |         pr | kg m-2 s-1 |      accumulated |
+| air_pressure_at_mean_sea_level |        psl |         Pa |                  |
+| eastward_wind                  |        uas |      m s-1 | 10m above ground |
+| northward_wind                 |        vas |      m s-1 | 10m above ground |
+| surface_temperature            |         ts |          K |                  |
 
 ### 2D time-constant Variables
 
