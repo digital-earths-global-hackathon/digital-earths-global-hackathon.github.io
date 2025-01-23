@@ -7,14 +7,14 @@ aliases:
 
 This data request still is in a draft stadium. To improve it, please [open an issue](https://github.com/digital-earths-global-hackathon/planning/issues) (and a matching pull request). It is based on the [Dyamond phase 3 request](https://www.researchsquare.com/article/rs-4458164/v1).
 
-
 ::: {.callout-note}
 ## The main differences to the DYAMOND 3 data request
 
 * We request data on a hierarchy of HEALPix grids instead of 0.25 degree resolution.
 * We added snowfall_flux, liquid_water_content_of_surface_snow, snow_area_fraction_viewable_from_above, soil_liquid_water_content to the request.
 * We specify variable names.
-* We specify that hourly 2D data should be time means.
+* We request most 2D fields only as 3-hourly means.
+* We specify that hourly 2D data should be instantaneous.
 :::
 
 ## Data grid and vertical levels
@@ -42,10 +42,10 @@ For level 9 and all lower levels together, about 4 million floats are needed per
 Furthermore, we want the 2D fields on 6-hourly interval as well, and all fields also daily.
 The totals for storing this data (assuming 4 bytes/float, and 50% compression) are
 
-```
-3D: 4.2TB
-2D: 2.8TB
-total: 7.0TB
+```raw
+3D: 2.8TB
+2D: 1.7TB 
+total: 4.5TB
 ```
 
 See [below](#code-for-computing-the-volume) for the code.
@@ -62,7 +62,8 @@ Without the hierarchy, the requirements are:
 Note that for any additional healpix level, the requirements grow by a factor of 4, so a ~6km resolution dataset (HEALPix level 10) already consumes about 20 TB.
 
 ## File formats
-In principle any file format that is compatible with standard software could be used. However, zarr has proven very advantageous, as it allows to 
+
+In principle any file format that is compatible with standard software could be used. However, zarr has proven very advantageous, as it allows to
 
 * build large datasets covering anything up to an entire simulation output
 * chunk data in all dimensions
@@ -77,23 +78,19 @@ For some models, the hydrometeor categories may not map directly onto the specif
 
 ### 3D Output Variables, write instantaneous values at 6hr interval
 
-| CF standard name                           | short name |   units |
-| :----------------------------------------- | ---------: | ------: |
-| geopotential height                        |         zg |       m |
-| eastward_wind                              |         ua |   m s-1 |
-| northtward_wind                            |         va |   m s-1 |
-| upward_air_velocity                        |         wa |   m s-1 |
-| temperature                                |         ta |       K |
-| relative_humidity                          |        hur |       - |
-| specific_humidity                          |        hus | kg kg-1 |
-| mass_fraction_of_cloud_liquid_water_in_air |        clw | kg kg-1 |
-| mass_fraction_of_cloud_ice_in_air          |        cli | kg kg-1 |
-| mass_fraction_of_rain_in_air               |         qr | kg kg-1 |
-| mass_fraction_of_snow_water_in_air         |         qs | kg kg-1 |
-| mass_fraction_of_graupel_in_air            |         qg | kg kg-1 |
+| standard name              | short name |   units |        comment |
+| :------------------------- | ---------: | ------: | -------------: |
+| geopotential height        |         zg |       m |                |
+| eastward_wind              |         ua |     m/s |                |
+| northward_wind             |         va |     m/s |                |
+| upward_air_velocity        |         wa |     m/s |                |
+| temperature                |         ta |       K |                |
+| relative_humidity          |        hur |       - |                |
+| specific_humidity          |        hur | kg kg-1 |                |
+| mass_fraction_hydrometeors |       qall | kg kg-1 | names invented |
 
 
-### 2D Output Variables, write at 1hr interval as mean values
+### 2D Output Variables, write averages at 3hr interval
 
 | CF standard name                                    | short name |      units |                                                comment |
 | :-------------------------------------------------- | ---------: | ---------: | -----------------------------------------------------: |
@@ -106,7 +103,7 @@ For some models, the hydrometeor categories may not map directly onto the specif
 | toa_incoming_longwave_flux                          |       rldt |      W m-2 |                                                        |
 | surface_upwelling_longwave_flux_in_air              |       rlus |      W m-2 |                                                        |
 | surface_upwelling_longwave_flux_in_air_clear_sky    |     rluscs |      W m-2 |                                                        |
-| surface_downwelling_longwave_flux_in_air            |       rldt |      W m-2 |                                                        |
+| surface_downwelling_longwave_flux_in_air            |       rlds |      W m-2 |                                                        |
 | surface_downwelling_longwave_flux_in_air_clear_sky  |     rldscs |      W m-2 |                                                        |
 | toa_outgoing_shortwave_flux                         |       rsut |      W m-2 |                                                        |
 | toa_outgoing_shortwave_flux_clear_sky               |     rsutcs |      W m-2 |                                                        |
@@ -115,7 +112,7 @@ For some models, the hydrometeor categories may not map directly onto the specif
 | surface_upwelling_shortwave_flux_in_air_clear_sky   |     rsuscs |      W m-2 |                                                        |
 | surface_downwelling_shortwave_flux_in_air           |       rsds |      W m-2 |                                                        |
 | surface_downwelling_shortwave_flux_in_air_clear_sky |     rsdscs |      W m-2 |                                                        |
-| precipitation_flux                                  |         pr | kg m-2 s-1 |                                                        |
+| precipitation_flux                                  |         pr | kg m-2 s-1 |                    includes all forms of precipitation |
 | solid_precipitation_flux                            |        prs | kg m-2 s-1 |              includes all forms of solid precipitation |
 | atmosphere_mass_content_of_water_vapor              |        prw | kg m-2 s-1 |                                                        |
 | surface_air_pressure                                |         ps |         Pa |                                                        |
@@ -133,6 +130,20 @@ For some models, the hydrometeor categories may not map directly onto the specif
 | soil_liquid_water_content                           |       mrso |     kg m-2 |                                    short name invented |
 | sea_ice_area_fraction                               |     siconc |          1 |                                                        |
 
+### 2D Output Variables, write at 1hr interval as instantaneous
+
+This list is designed to include key outputs like accumulated precipitation, surface temperature and surface wind speed, as well as other features desired for trackers of convective storms and MCS. Other features requiring vertical information are suggested to be done 6 hourly.
+
+| CF standard name               | short name |      units |          comment |
+| :----------------------------- | ---------: | ---------: | ---------------: |
+| toa_outgoing_longwave_flux     |       rlut |      W m-2 |                  |
+| toa_outgoing_shortwave_flux    |       rsut |      W m-2 |                  |
+| precipitation_flux             |         pr | kg m-2 s-1 | sum of all modes |
+| air_pressure_at_mean_sea_level |        psl |         Pa |                  |
+| eastward_wind                  |        uas |      m s-1 | 10m above ground |
+| northward_wind                 |        vas |      m s-1 | 10m above ground |
+| surface_temperature            |         ts |          K |                  |
+
 ### 2D time-constant Variables
 
 | CF standard name       | short name | units | comment |
@@ -144,10 +155,12 @@ For some models, the hydrometeor categories may not map directly onto the specif
 ## Code for computing the data volume
 
 ```python
-vars_3d = 12
-vars_2d = 35
+vars_3d = 8
+vars_2d_3h = 35
+vars_2d_1h = 7
 interval_3d = 6/24.
-interval_2d = 1/24.
+interval_2d_3h = 1/8.
+interval_2d_1h = 1/24.
 interval_daily = 1.
 levels_3d = 25
 
@@ -163,8 +176,9 @@ def compute_volume(var_count, levels, interval, max_healpix_level, duration, flo
 
 volume_3d = ( compute_volume(var_count=vars_3d, levels=levels_3d, interval=interval_3d, **params) +
 compute_volume(var_count=vars_3d, levels=levels_3d, interval=interval_daily, **params))
-volume_2d = (compute_volume(var_count=vars_2d, levels=1, interval = interval_2d, **params) + 
-            compute_volume(var_count=vars_2d, levels=1, interval = interval_3d, **params) + 
-            compute_volume(var_count=vars_2d, levels=1, interval = interval_daily, **params))
-print (f'3D: {volume_3d/1024**4:.1f}TB\n2D: {volume_2d/1024**4:.1f}TB\ntotal: {(volume_3d+volume_2d)/1024**4:.1f}TB')
+volume_2d_3h = (compute_volume(var_count=vars_2d_3h, levels=1, interval = interval_2d_3h, **params) +
+            compute_volume(var_count=vars_2d_3h, levels=1, interval = interval_3d, **params) +
+            compute_volume(var_count=vars_2d_3h, levels=1, interval = interval_daily, **params))
+volume_2d_1h = (compute_volume(var_count=vars_2d_1h, levels=1, interval = interval_2d_1h, **params))
+print (f'3D: {volume_3d/1024**4:.1f}TB\n2D: {(volume_2d_3h+volume_2d_1h)/1024**4:.1f}TB \ntotal: {(volume_3d+(volume_2d_3h+volume_2d_1h))/1024**4:.1f}TB')
 ```
