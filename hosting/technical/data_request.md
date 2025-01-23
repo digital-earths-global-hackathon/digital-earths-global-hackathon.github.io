@@ -112,7 +112,7 @@ For some models, the hydrometeor categories may not map directly onto the specif
 | surface_upwelling_shortwave_flux_in_air_clear_sky   |     rsuscs |      W m-2 |                                                        |
 | surface_downwelling_shortwave_flux_in_air           |       rsds |      W m-2 |                                                        |
 | surface_downwelling_shortwave_flux_in_air_clear_sky |     rsdscs |      W m-2 |                                                        |
-| precipitation_flux                                  |         pr | kg m-2 s-1 |                                                        |
+| precipitation_flux                                  |         pr | kg m-2 s-1 |                    includes all forms of precipitation |
 | solid_precipitation_flux                            |        prs | kg m-2 s-1 |              includes all forms of solid precipitation |
 | atmosphere_mass_content_of_water_vapor              |        prw | kg m-2 s-1 |                                                        |
 | surface_air_pressure                                |         ps |         Pa |                                                        |
@@ -138,7 +138,7 @@ This list is designed to include key outputs like accumulated precipitation, sur
 | :----------------------------- | ---------: | ---------: | ---------------: |
 | toa_outgoing_longwave_flux     |       rlut |      W m-2 |                  |
 | toa_outgoing_shortwave_flux    |       rsut |      W m-2 |                  |
-| precipitation_flux             |         pr | kg m-2 s-1 |      accumulated |
+| precipitation_flux             |         pr | kg m-2 s-1 | sum of all modes |
 | air_pressure_at_mean_sea_level |        psl |         Pa |                  |
 | eastward_wind                  |        uas |      m s-1 | 10m above ground |
 | northward_wind                 |        vas |      m s-1 | 10m above ground |
