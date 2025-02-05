@@ -83,7 +83,8 @@ For some models, the hydrometeor categories may not map directly onto the specif
 | geopotential height        |         zg |       m |                |
 | eastward_wind              |         ua |     m/s |                |
 | northward_wind             |         va |     m/s |                |
-| upward_air_velocity        |         wa |     m/s |                |
+| upward_air_velocity        |         wa |     m/s |  (pick appropriate unit for model)               |
+|                            |        wap |    pa/s |                |
 | temperature                |         ta |       K |                |
 | relative_humidity          |        hur |       - |                |
 | specific_humidity          |        hur | kg kg-1 |                |
@@ -144,6 +145,7 @@ This list is designed to include key outputs like accumulated precipitation, sur
 | northward_wind                 |        vas |      m s-1 | 10m above ground |
 | surface_temperature            |         ts |          K |                  |
 
+
 ### 2D time-constant Variables
 
 | CF standard name       | short name | units | comment |
@@ -151,6 +153,17 @@ This list is designed to include key outputs like accumulated precipitation, sur
 | land_area_fraction     |      sftlf |     1 |         |
 | land_ice_area_fraction |     sftgif |     1 |         |
 | surface_altitude       |       orog |     m |         |
+
+
+### Optional: Specific Requests
+
+#### 2D Instantaneous 3 hourly
+| CF standard name               | short name |      units |          comment |
+| :----------------------------- | ---------: | ---------: | ---------------: |
+| atmosphere_relative_vorticity 300hPa  |        rva300|         s-1          |
+| atmosphere_relative_vorticity 500hPa  |        rva500|         s-1          |
+| atmosphere_relative_vorticity 850hPa  |        rva850|         s-1          |
+
 
 ## Code for computing the data volume
 
