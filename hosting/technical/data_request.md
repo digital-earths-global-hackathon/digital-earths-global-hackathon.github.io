@@ -83,7 +83,8 @@ For some models, the hydrometeor categories may not map directly onto the specif
 | geopotential height        |         zg |       m |                |
 | eastward_wind              |         ua |     m/s |                |
 | northward_wind             |         va |     m/s |                |
-| upward_air_velocity        |         wa |     m/s | or omega in pa/s|
+| upward_air_velocity        |         wa |     m/s |  (pick appropriate unit for model)               |
+|                            |        wap |    pa/s |                |
 | temperature                |         ta |       K |                |
 | relative_humidity          |        hur |       - |                |
 | specific_humidity          |        hur | kg kg-1 |                |
