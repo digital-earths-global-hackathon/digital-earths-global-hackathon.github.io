@@ -16,4 +16,4 @@ Once the changes are merged into the `main` branch, the CI will run, and update 
 
 ## Adding pages and sections
 
-To add a page, simply create a `.qmd` file with your desired content.
+To add a page, simply create a `.md` file with your desired content.

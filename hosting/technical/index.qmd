@@ -1,5 +1,7 @@
 ---
 title: "Technical details for host teams"
+aliases: 
+  - /planning/hosting/technical/index.html
 ---
 
 # Requirements (rough):
@@ -7,4 +9,22 @@ title: "Technical details for host teams"
 - Combined data and compute to support at least 100 users analyzing at least 100 TB data sets.
 - 1PB data resource (100TB minimum)
 - Large (1000) multi-core analysis platforms with fast access to data resource (could be separate from meeting place) and JUPYTER support.
-- One DYAMOND-Annual Simulation on HEALPIX (other data and other formats can be hosted as desired, but each participatn must host at least one standardized dataset).
+- One DYAMOND-Annual Simulation on HEALPIX (other data and other formats can be hosted as desired, but each participant must host at least one standardized dataset).
+
+# Providing the data
+
+For providing the data at hackathons, a hierarchy of resolutions in space and time has proven very useful, where data that is available at a fine spatial or temporal resolution is also available on equivalent grids at all coarser resolution levels. See [the nextGEMS blog](https://nextgems-h2020.eu/of-hierarchies-chunking-and-healpix/) or [easy.gems](https://easy.gems.dkrz.de/Processing/healpix/index.html) for more details.
+
+## The data request
+
+The [Data request is under development](data_request.md), and we are [working on a python script](https://github.com/digital-earths-global-hackathon/tools/pull/1) to verify that a dataset matches the request.
+
+## Grids
+The [HEALPix grid (Górski et al., 2004)](https://iopscience.iop.org/article/10.1086/427976/pdf) has proven very useful for providing the data, as it features equal area cells, on isolatitude bands and yields itself naturally to a hierarchy of resolutions. It also features the option of using a cell ordering (*nest*) that represents the hierarchy and thus regions that are close in index space, usually also are close in geographical space. This eases reading only a region of a dataset from disks. See [easy.gems](https://easy.gems.dkrz.de/Processing/healpix/index.html) for more info.
+
+## Catalogs
+
+Grouping the datasets in catalogs allows to abstract from file system paths, and eases later dataset updates and migrations. [Intake](https://intake.readthedocs.io/en/latest/) has proven useful here - mind that there are version one and two and that the two versions are not necessarily compatible.
+
+See [easy.gems](https://easy.gems.dkrz.de/Processing/Intake/index.html) for examples of the use of intake in the context of previous hackathons.
+

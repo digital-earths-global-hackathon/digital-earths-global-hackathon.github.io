@@ -1,0 +1,24 @@
+on:
+    workflow_dispatch:
+    push:
+    pull_request:
+      branches: 
+        - main
+  
+name: Quarto build
+  
+jobs:
+    build:
+      runs-on: ubuntu-latest
+      permissions:
+        contents: read
+      steps:
+        - name: Check out repository
+          uses: actions/checkout@v4
+  
+        - name: Set up Quarto
+          uses: quarto-dev/quarto-actions/setup@v2
+  
+        - name: Render
+          uses: quarto-dev/quarto-actions/render@v2
+  

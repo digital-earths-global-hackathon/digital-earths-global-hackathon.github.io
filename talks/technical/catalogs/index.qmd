@@ -1,0 +1,156 @@
+---
+title: Catalogs
+format:
+  revealjs:
+    transition: slide
+    slide-number: true
+    code-background: true
+    logo: /static/logos.png
+    footer: "[Talks page](/talks)"
+    theme: [default, ../../custom.scss]
+    chalkboard:
+      buttons: true
+    navigation-mode: linear
+    auto-stretch: true
+    center: true
+    mermaid:
+      theme: default
+author:
+  - name: Tobias Kölling
+date: 2024-10-20
+---
+
+# Catalogs, why?
+
+# for users
+
+## simplify access to data
+
+```python
+import os
+import urllib.request
+import xarray
+import shutil
+
+if not os.path.exists("some_data"):
+    urllib.request.urlretrieve("https://example.org/some_data.zip", "some_data.zip")
+    shutil.unpack_archive("some_data.zip", "some_data")
+
+ds = xr.open_mfdataset("some_data/*.nc")
+```
+vs
+```python
+import intake
+cat = intake.open_catalog("https://example.org/catalog.yaml")
+ds = cat["some_data"].to_dask()
+```
+
+## make datasets findable
+
+e.g. [STAC datasets](https://stacspec.org/en/about/datasets/)
+
+Metadata in catalogs can be accessed faster<br/>than when burried inside datasets.
+
+This enables quick browse, search and quicklook tools.
+
+# for dataset providers
+
+## simplify data movement
+
+Once data is moved, just update the catalog and users seemlessly access data from new location.
+
+## simplify encoding changes
+
+* Catalog describes how to open the data
+* data encoding can be changed (zipped CSV -> HDF5 -> Zarr)
+* Users automatically use new one after catalog update
+
+## aid with distributed access
+
+* Returned catalog entries may depend on user location
+* Users may use the same code to access data everywhere, but still can be directed to a copy in the local datacenter
+* This may even involve HDF5 on lustre in one datacenter and Zarr on S3 in another
+
+## hack around broken datasets
+😬
+
+::: {.fragment}
+* Complex catalog entries can be used to concatenate, mix, slice etc... a collection of poorly prepared datasets.
+
+* May be better than nothing, but usually comes with bad performance impact.
+:::
+
+::: {.notes}
+Please don't use this by design. It's always better to fix the datasets upfront.
+:::
+
+# catalog basics
+
+## catalog
+
+A list / tree / collection of catalog entries.
+
+:::{.fragment}
+May be static, dynamic, searchable, etc.
+:::
+
+## catalog entry
+
+* has an identity
+* can be retrieved
+* locates (or identifies) a dataset
+* instructs how to open a dataset
+* may carry additional metadata
+
+# implementations
+
+## filesystem directories
+
+* ✅ can be a simple option
+* ✅ support symlinks
+* ❌ not really a catalog (doesn't aggregate metadata)
+* ❌ only shows what's on the filesystem
+
+## [Intake yaml](https://intake.readthedocs.io/en/latest/catalog.html#yaml-format)
+
+* ✅ easy to create
+* ✅ compatible with any kind of data
+* ❌ limited to Python
+* ❌ unstable format (Intake 2 broke a lot of things)
+* 🤔 has room for creative hacks
+
+## [SpatioTemporal Asset Catalogs (STAC)](https://stacspec.org/)
+
+* ✅ stable format
+* ✅ [integrations for many languages](https://stacspec.org/en/about/tools-resources/)
+* ✅ can be used with Intake
+* ❌ more complicated to create (but tools exist)
+* ❌ can only be used for spatio-temporal datasets
+
+## [Intake ESM](https://intake-esm.readthedocs.io/en/stable/index.html)
+
+* made for CMIP6
+* aims at assembling big datasets out of many individual datasets, which [I wouldn't recommend](../useful_datasets/#/now-a-single-dataset)
+
+## [THREDDS Dataset Inventory Catalogs](https://docs.unidata.ucar.edu/tds/current/userguide/basic_config_catalog.html)
+
+* specific catalog for THREDDS data server (e.g. OPeNDAP)
+* exposes what's available on that specific server
+
+# for the hackathon
+
+## ease of access
+
+There are many computing facilities.<br/>We want to work together.
+<br/>
+<br/>
+```python
+cat = get_hackathon_catalog()
+ds = cat.get_dataset("some_model_run_output_id")
+```
+
+* concise
+* fast
+* across data centers
+* no local code changes
+* supports different storage methods and formats

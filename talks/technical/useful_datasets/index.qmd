@@ -1,0 +1,337 @@
+---
+title: Building useful datasets for <br/> Earth System Model output
+format:
+  revealjs:
+    transition: slide
+    slide-number: true
+    code-background: true
+    logo: /static/logos.png
+    footer: "[Talks page](/talks)"
+    theme: [default, ../../custom.scss]
+    chalkboard:
+      buttons: true
+    navigation-mode: linear
+    auto-stretch: true
+    center: true
+    mermaid:
+      theme: default
+    css: slides.css
+author:
+  - name: Tobias Kölling
+  - name: Lukas Kluft
+date: 2024-10-20
+aliases: 
+  - /talks/useful_datasets/index.html
+---
+
+# analysing <br/> high-resolution model output <br/> can be slow
+
+:::{.notes}
+
+* if you think it's old: it is. But the particular application is useful.
+:::
+
+## time to plot
+
+*the time it takes until the analysis plot is ready*
+
+:::{.fragment}
+<br/>
+
+* **understanding** the data
+* **coding** the analysis
+* **getting** the data
+:::
+
+##
+
+::: {.bigger}
+Useful output is <br> written once and <br> read **at least** once.
+:::
+
+## Idea
+
+*optimize output for **analysis** *
+
+::: {.smaller}
+(not write throughput)
+:::
+
+# understanding the data
+
+
+## datasets are
+
+::: {.smaller}
+*(for this talk)*
+:::
+
+![](dataset_schema.png)
+
+::: {.attribution}
+figure from [xarray documentation](https://docs.xarray.dev/en/stable/user-guide/data-structures.html)
+:::
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+* n-dimensional variables
+* shared dimensions
+:::
+
+::: {.column width="50%"}
+* coordinates
+* attributes for metadata
+:::
+
+::::
+
+## datasets are not
+
+* a single file
+* a storage format
+* shaped by storage & handling
+
+## we had: unstructured output
+
+```
+$ ls *.nc
+ngc2009_atm_mon_20200329T000000Z.nc
+ngc2009_oce_2d_1h_inst_20200329T000000Z.nc
+ngc2009_atm_pl_6h_inst_20200329T000000Z.nc
+ngc2009_lnd_tl_6h_inst_20200329T000000Z.nc
+ngc2009_lnd_2d_30min_inst_20200329T000000Z.nc
+ngc2009_atm_2d_30min_inst_20200329T000000Z.nc
+ngc2009_oce_0-200m_3h_inst_1_20210329T000000Z.nc
+ngc2009_oce_0-200m_3h_inst_2_20210329T000000Z.nc
+ngc2009_oce_moc_1d_mean_20210329T000000Z.nc
+ngc2009_oce_2d_1d_mean_20210329T000000Z.nc
+ngc2009_oce_ml_1d_mean_20210329T000000Z.nc
+ngc2009_oce_2d_1h_mean_20210329T000000Z.nc
+...
+```
+
+```
+$ ls *.nc | wc -l
+  12695
+```
+
+## now: a single dataset
+
+* provides an easy-to-understand overview
+* forces consistency across output
+* cutting things is easier than glueing things
+
+```python
+ds = cat.ICON.ngc4008.to_dask()
+```
+
+## now: a single dataset {.scrollable}
+
+![](dataset.png){.nostretch fig-align="center" width="80%"}
+
+
+# getting the data
+
+## model resolution
+
+:::: {.columns}
+
+::: {.column width="50%"}
+|   Grid   |  Cells  |
+|---------:|--------:|
+| 1° by 1° |   0.06M |
+|    10 km |    5.1M |
+|     5 km |     20M |
+|     1 km |    510M |
+|   200  m |  12750M |
+:::
+
+::: {.column width="50%"}
+| Screen      |  Pixels |
+|------------:|--------:|
+| VGA         |    0.3M |
+| Full HD     |    2.1M |
+| MacBook 13' |    4.1M |
+| 4K          |    8.8M |
+| 8K          |   35.4M |
+:::
+
+::::
+
+It's **impossible** to look at the entire globe in full resolution.
+
+## different regions, same size
+:::: {.columns}
+
+::: {.column width="33%"}
+![](example_globe.png)
+:::
+
+::: {.column width="33%"}
+![](example_intermediate.png)
+:::
+
+::: {.column width="33%"}
+![](example_europe.png)
+:::
+
+::::
+
+## we had: over-loading
+
+:::: {.columns}
+
+::: {.column width="50%" style="margin: 0;"}
+![](data_usage_1.png)
+:::
+
+::: {.column width="50%" style="margin: 0;"}
+![](data_usage_2.png)
+:::
+
+::::
+
+Analysis scripts are **forced** to load way too much data.
+
+::: {.attribution}
+Plots by Marius Winkler & Hans Segura
+:::
+
+## now: aggregation
+
+![](hierarchies-1.png)
+
+:::{.notes}
+We do that in **time** and **space**.
+:::
+
+## now: chunking
+
+![](hierarchies-2.png)
+
+## hierarchies
+
+*scale analysis with screen size*
+
+:::{.smaller}
+(instead of with model size)
+:::
+
+## about HEALPix {auto-animate=true}
+
+:::: {.columns .v-center-container}
+
+::: {.column width="50%"}
+* **H**ierarchical
+* **E**qual **A**rea
+* iso**L**atitude
+:::
+
+::: {.column width="50%"}
+![](healpix_earth.png){width="50%"}
+:::
+
+::::
+
+Not necessary for the aforementioned.
+
+... but aligns **very** well.
+
+## about HEALPix {auto-animate=true}
+
+... but aligns **very** well.
+
+* exact 1:4 grid cell relation between levels
+* direct index computation from lat/lon
+* index is space-filling curve
+
+# coding the analysis
+
+## dropsonde vs model {auto-animate=true}
+
+Select ICON model output at all<br/>dropsonde locations during [EUREC4A](https://eurec4a.eu/) field campaign:
+
+```{.python}
+sonde_pix = healpix.ang2pix(
+    icon.crs.healpix_nside, joanne.flight_lon, joanne.flight_lat,
+    lonlat=True, nest=True
+)
+
+icon_sondes = (
+    icon[["ua", "va", "ta", "hus"]]
+    .sel(time=joanne.launch_time, method="nearest")
+    .isel(cell=sonde_pix)
+    .compute()
+)
+```
+:::{.smaller}
+(55 sec, 1GB, single thread, full code at [easy.gems](https://easy.gems.dkrz.de/Processing/healpix/joanne_comparison.html))
+:::
+
+<!-- apparently the following does execute, but so far, the result's seem to be different / wrong... -->
+<!--
+## dropsonde vs model {auto-animate=true}
+
+Select ICON model output at all<br/>dropsonde locations during [EUREC4A](https://eurec4a.eu/) field campaign:
+
+```{.python}
+icon_sondes = (
+    icon[["ua", "va", "ta", "hus"]]
+    .sel(time=joanne.launch_time, method="nearest")
+    .dggs.sel_latlon(joanne.flight_lat, joanne.flight_lon)
+    .compute()
+)
+```
+:::{.smaller}
+with XDGGS (?)
+:::
+-->
+
+## dropsonde vs model
+
+![](dropsonde_comparison.png)
+
+
+# direct output
+
+## direct output
+
+<!--
+![](static/scalable_output.png)
+-->
+
+* output process is coupled to the running model
+* writes entire hierarchy at once
+* dataset is accessible as soon as the model **starts**
+
+
+# does it really work?
+
+## monitoring
+
+```python
+cat.ICON.ngc4008(time="P1D", zoom="0").to_dask().tas.mean("cell").plot()
+```
+
+![](tas_monitor_ngc4008.png)
+
+
+::: {.smaller}
+(100ms, 250MB, single thread)
+
+[demo](https://swift.dkrz.de/v1/dkrz_ef1a174f-7d03-40f1-ab09-88250c8398ec/runmon/index.html)
+:::
+
+## exploring 5km global output
+
+{{< video ngc3_selection.mp4 >}}
+
+## hackathons
+
+Output tested on multiple $\mathcal{O}(\textrm{PB})$-scale model runs, 100+ users:
+
+* remarkably little issues raised
+* very positive general feedback
+* enabled diagnostics which seemed impossible before

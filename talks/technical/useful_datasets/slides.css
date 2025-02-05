@@ -1,0 +1,11 @@
+.quarto-title-block h1 {
+    font-size: 1.5em;
+    padding: 0.5em 1.5em;
+}
+
+div.columns.v-center-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+}
