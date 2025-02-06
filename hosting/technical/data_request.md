@@ -175,6 +175,7 @@ This list is designed to include key outputs like accumulated precipitation, sur
 
 A request to provide 2-4 days of output (with a re-run if needed) for two periods at 15-minute resolution.
 Suggested first week of February and first week of August. This will enable tracking individual convective cell evolution.
+Instantaneous 15-min data is needed.
 
 | CF standard name               | short name |      units |          comment |
 | :----------------------------- | ---------: | ---------: | ---------------: |
