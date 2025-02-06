@@ -398,7 +398,7 @@ The main differences to the DYAMOND 3 data request
 </div>
 <section id="data-grid-and-vertical-levels" class="level2">
 <h2 class="anchored" data-anchor-id="data-grid-and-vertical-levels">Data grid and vertical levels</h2>
-<p>The data from global models should be provided on the <a href="https://easy.gems.dkrz.de/Processing/healpix/index.html">HEALPix</a> grid on zoom level 9 or higher (effective cell size of 13 km). To ease analysis, please provide all HEALPix levels up to this level.</p>
+<p>The data from global models should be provided on the <a href="https://easy.gems.dkrz.de/Processing/healpix/index.html">HEALPix</a> grid on zoom level 10 (effective cell size of 6 km) or zoom 9 (13km). To ease analysis, please provide all HEALPix levels up to this level.</p>
 <p>For regional models, we will need further discussion with teams that have a strong experience in intercomparisons of regional models.</p>
 <p><strong>3D Output Levels:</strong></p>
 <p>The output should be interpolated to the following 25 pressure levels:</p>
@@ -878,8 +878,7 @@ total: 4.5TB</code></pre>
 </section>
 <section id="optional-specific-requests" class="level3">
 <h3 class="anchored" data-anchor-id="optional-specific-requests">Optional: Specific Requests</h3>
-<section id="d-instantaneous-3-hourly" class="level4">
-<h4 class="anchored" data-anchor-id="d-instantaneous-3-hourly">2D Instantaneous 3 hourly</h4>
+<p>#### Baroclinicity in Storms (Maro Giorgetta, MPI-Met) The purpose of the requested relative vorticity with instantaneous values is to be able to track storms and to assess their baroclinicity. Three levels at 300, 500, and 850 hPa would make it possible. Instantaneous 3 hourly data is needed.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 45%">
@@ -913,6 +912,39 @@ total: 4.5TB</code></pre>
 <td style="text-align: right;">rva850</td>
 <td style="text-align: right;">s-1</td>
 <td style="text-align: right;"></td>
+</tr>
+</tbody>
+</table>
+<section id="individual-convective-cell-tracking-zhe-feng-pnnl-mathilde-oxford" class="level4">
+<h4 class="anchored" data-anchor-id="individual-convective-cell-tracking-zhe-feng-pnnl-mathilde-oxford">Individual Convective Cell Tracking (Zhe Feng, PNNL : Mathilde, Oxford)</h4>
+<p>A request to provide 2-4 days of output (with a re-run if needed) for two periods at 15-minute resolution. Suggested first week of February and first week of August. This will enable tracking individual convective cell evolution. Instantaneous 15-min data is needed.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 15%">
+<col style="width: 15%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">CF standard name</th>
+<th style="text-align: right;">short name</th>
+<th style="text-align: right;">units</th>
+<th style="text-align: right;">comment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">toa_outgoing_longwave_flux</td>
+<td style="text-align: right;">rlut</td>
+<td style="text-align: right;">W m-2</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">precipitation_flux</td>
+<td style="text-align: right;">pr</td>
+<td style="text-align: right;">kg m-2 s-1</td>
+<td style="text-align: right;">sum of all modes</td>
 </tr>
 </tbody>
 </table>
