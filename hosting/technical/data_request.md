@@ -159,7 +159,7 @@ This list is designed to include key outputs like accumulated precipitation, sur
 ### Optional: Specific Requests
 
 
- #### Baroclinicity in Storms (Maro Giorgetta, MPI-Met) 
+#### Baroclinicity in Storms (Maro Giorgetta, MPI-Met) 
  The purpose of the requested relative vorticity with instantaneous values 
  is to be able to track storms and to assess their baroclinicity. Three levels at 300, 500, and 850 hPa would make it possible. 
  Instantaneous 3 hourly data is needed.
@@ -175,7 +175,7 @@ This list is designed to include key outputs like accumulated precipitation, sur
 
 A request to provide 2-4 days of output (with a re-run if needed) for two periods at 15-minute resolution.
 Suggested first week of February and first week of August. This will enable tracking individual convective cell evolution.
-Instantaneous 15-min data is needed.
+Instantaneous 15-min data is requested.
 
 | CF standard name               | short name |      units |          comment |
 | :----------------------------- | ---------: | ---------: | ---------------: |
