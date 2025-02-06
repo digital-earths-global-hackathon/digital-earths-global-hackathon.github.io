@@ -19,7 +19,8 @@ This data request still is in a draft stadium. To improve it, please [open an is
 
 ## Data grid and vertical levels
 
- The data from global models should be provided on the [HEALPix](https://easy.gems.dkrz.de/Processing/healpix/index.html) grid on zoom level 9 or higher (effective cell size of 13 km). To ease analysis, please provide all HEALPix levels up to this level.
+ The data from global models should be provided on the [HEALPix](https://easy.gems.dkrz.de/Processing/healpix/index.html) 
+ grid on zoom level 10 (effective cell size of 6 km) or zoom 9 (13km). To ease analysis, please provide all HEALPix levels up to this level.
 
  For regional models, we will need further discussion with teams that have a strong experience in intercomparisons of regional models.
 
@@ -157,12 +158,28 @@ This list is designed to include key outputs like accumulated precipitation, sur
 
 ### Optional: Specific Requests
 
-#### 2D Instantaneous 3 hourly
+
+ #### Baroclinicity in Storms (Maro Giorgetta, MPI-Met) 
+ The purpose of the requested relative vorticity with instantaneous values 
+ is to be able to track storms and to assess their baroclinicity. Three levels at 300, 500, and 850 hPa would make it possible. 
+ Instantaneous 3 hourly data is needed.
+
 | CF standard name               | short name |      units |          comment |
 | :----------------------------- | ---------: | ---------: | ---------------: |
 | atmosphere_relative_vorticity 300hPa  |        rva300|         s-1          |
 | atmosphere_relative_vorticity 500hPa  |        rva500|         s-1          |
 | atmosphere_relative_vorticity 850hPa  |        rva850|         s-1          |
+
+
+#### Individual Convective Cell Tracking (Zhe Feng, PNNL : Mathilde, Oxford)
+
+A request to provide 2-4 days of output (with a re-run if needed) for two periods at 15-minute resolution.
+Suggested first week of February and first week of August. This will enable tracking individual convective cell evolution.
+
+| CF standard name               | short name |      units |          comment |
+| :----------------------------- | ---------: | ---------: | ---------------: |
+| toa_outgoing_longwave_flux     |       rlut |      W m-2 |                  |
+| precipitation_flux             |         pr | kg m-2 s-1 | sum of all modes |
 
 
 ## Code for computing the data volume
