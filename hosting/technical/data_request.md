@@ -88,7 +88,7 @@ For some models, the hydrometeor categories may not map directly onto the specif
 |                            |        wap |    pa/s |                |
 | temperature                |         ta |       K |                |
 | relative_humidity          |        hur |       - |                |
-| specific_humidity          |        hur | kg kg-1 |                |
+| specific_humidity          |        hus | kg kg-1 |                |
 | mass_fraction_hydrometeors |       qall | kg kg-1 | names invented |
 
 
