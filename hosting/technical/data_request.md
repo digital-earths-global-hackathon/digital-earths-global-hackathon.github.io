@@ -187,7 +187,7 @@ For convective cell tracking and case studies, a short re-run is requested:
 15 minute instantaneous output is requested at zoom level 9/10 if available. 
 Two 24 or 48 hour periods? Beginning 2020/2/1 and 2020/8/1
 
-### 2D instantaneous every 15-minutes
+### 2D instantaneous every 15 minutes
 
 | CF standard name               | short name |      units |          comment |
 | :----------------------------- | ---------: | ---------: | ---------------: |
@@ -199,7 +199,7 @@ Two 24 or 48 hour periods? Beginning 2020/2/1 and 2020/8/1
 | northward_wind                 |        vas |      m s-1 | 10m above ground |
 | surface_temperature            |         ts |          K |                  |
 
-### 3D Output Variables, write instantaneous values at 6hr interval
+### 3D Output Variables, write instantaneous values every 15 minutes
 
 | standard name              | short name |   units |        comment |
 | :------------------------- | ---------: | ------: | -------------: |
