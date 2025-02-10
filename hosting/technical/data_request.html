@@ -361,7 +361,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#d-output-variables-write-averages-at-3hr-interval" id="toc-d-output-variables-write-averages-at-3hr-interval" class="nav-link" data-scroll-target="#d-output-variables-write-averages-at-3hr-interval">2D Output Variables, write averages at 3hr interval</a></li>
   <li><a href="#d-output-variables-write-at-1hr-interval-as-instantaneous" id="toc-d-output-variables-write-at-1hr-interval-as-instantaneous" class="nav-link" data-scroll-target="#d-output-variables-write-at-1hr-interval-as-instantaneous">2D Output Variables, write at 1hr interval as instantaneous</a></li>
   <li><a href="#d-time-constant-variables" id="toc-d-time-constant-variables" class="nav-link" data-scroll-target="#d-time-constant-variables">2D time-constant Variables</a></li>
-  <li><a href="#optional-specific-requests" id="toc-optional-specific-requests" class="nav-link" data-scroll-target="#optional-specific-requests">Optional: Specific Requests</a></li>
+  </ul></li>
+  <li><a href="#optional-specific-requests" id="toc-optional-specific-requests" class="nav-link" data-scroll-target="#optional-specific-requests">Optional: Specific Requests</a>
+  <ul class="collapse">
+  <li><a href="#baroclinicity-in-storms-maro-giorgetta-mpi-met" id="toc-baroclinicity-in-storms-maro-giorgetta-mpi-met" class="nav-link" data-scroll-target="#baroclinicity-in-storms-maro-giorgetta-mpi-met">Baroclinicity in Storms (Maro Giorgetta, MPI-Met)</a></li>
+  </ul></li>
+  <li><a href="#individual-convective-cell-tracking-zhe-feng-pnnl-will-jones-oxford" id="toc-individual-convective-cell-tracking-zhe-feng-pnnl-will-jones-oxford" class="nav-link" data-scroll-target="#individual-convective-cell-tracking-zhe-feng-pnnl-will-jones-oxford">Individual Convective Cell Tracking (Zhe Feng, PNNL : Will Jones, Oxford)</a>
+  <ul class="collapse">
+  <li><a href="#d-instantaneous-every-15-minutes" id="toc-d-instantaneous-every-15-minutes" class="nav-link" data-scroll-target="#d-instantaneous-every-15-minutes">2D instantaneous every 15 minutes</a></li>
+  <li><a href="#d-output-variables-write-instantaneous-values-every-15-minutes" id="toc-d-output-variables-write-instantaneous-values-every-15-minutes" class="nav-link" data-scroll-target="#d-output-variables-write-instantaneous-values-every-15-minutes">3D Output Variables, write instantaneous values every 15 minutes</a></li>
   </ul></li>
   <li><a href="#code-for-computing-the-data-volume" id="toc-code-for-computing-the-data-volume" class="nav-link" data-scroll-target="#code-for-computing-the-data-volume">Code for computing the data volume</a></li>
   </ul></li>
@@ -811,7 +819,7 @@ total: 4.5TB</code></pre>
 <td style="text-align: right;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">precipitation_flux</td>
+<td style="text-align: left;">precipitation_flux*</td>
 <td style="text-align: right;">pr</td>
 <td style="text-align: right;">kg m-2 s-1</td>
 <td style="text-align: right;">sum of all modes</td>
@@ -842,6 +850,9 @@ total: 4.5TB</code></pre>
 </tr>
 </tbody>
 </table>
+<ul>
+<li>Average precipitation flux (rate) over the hour is requested. Instantaneous rate for a timestep is okay if that is produced. Please specify.</li>
+</ul>
 </section>
 <section id="d-time-constant-variables" class="level3">
 <h3 class="anchored" data-anchor-id="d-time-constant-variables">2D time-constant Variables</h3>
@@ -876,10 +887,12 @@ total: 4.5TB</code></pre>
 </tbody>
 </table>
 </section>
-<section id="optional-specific-requests" class="level3">
-<h3 class="anchored" data-anchor-id="optional-specific-requests">Optional: Specific Requests</h3>
-<section id="baroclinicity-in-storms-maro-giorgetta-mpi-met" class="level4">
-<h4 class="anchored" data-anchor-id="baroclinicity-in-storms-maro-giorgetta-mpi-met">Baroclinicity in Storms (Maro Giorgetta, MPI-Met)</h4>
+</section>
+<section id="optional-specific-requests" class="level2">
+<h2 class="anchored" data-anchor-id="optional-specific-requests">Optional: Specific Requests</h2>
+<p>Several additional requests by specific people have been made. Models are requested to provide them as computer and human time allow.</p>
+<section id="baroclinicity-in-storms-maro-giorgetta-mpi-met" class="level3">
+<h3 class="anchored" data-anchor-id="baroclinicity-in-storms-maro-giorgetta-mpi-met">Baroclinicity in Storms (Maro Giorgetta, MPI-Met)</h3>
 <p>The purpose of the requested relative vorticity with instantaneous values is to be able to track storms and to assess their baroclinicity. Three levels at 300, 500, and 850 hPa would make it possible. Instantaneous 3 hourly data is needed.</p>
 <table class="caption-top table">
 <colgroup>
@@ -918,9 +931,12 @@ total: 4.5TB</code></pre>
 </tbody>
 </table>
 </section>
-<section id="individual-convective-cell-tracking-zhe-feng-pnnl-mathilde-oxford" class="level4">
-<h4 class="anchored" data-anchor-id="individual-convective-cell-tracking-zhe-feng-pnnl-mathilde-oxford">Individual Convective Cell Tracking (Zhe Feng, PNNL : Mathilde, Oxford)</h4>
-<p>A request to provide 2-4 days of output (with a re-run if needed) for two periods at 15-minute resolution. Suggested first week of February and first week of August. This will enable tracking individual convective cell evolution. Instantaneous 15-min data is requested.</p>
+</section>
+<section id="individual-convective-cell-tracking-zhe-feng-pnnl-will-jones-oxford" class="level2">
+<h2 class="anchored" data-anchor-id="individual-convective-cell-tracking-zhe-feng-pnnl-will-jones-oxford">Individual Convective Cell Tracking (Zhe Feng, PNNL : Will Jones, Oxford)</h2>
+<p>For convective cell tracking and case studies, a short re-run is requested: 15 minute instantaneous output is requested at zoom level 9/10 if available. Two 24 or 48 hour periods? Beginning 2020/2/1 and 2020/8/1</p>
+<section id="d-instantaneous-every-15-minutes" class="level3">
+<h3 class="anchored" data-anchor-id="d-instantaneous-every-15-minutes">2D instantaneous every 15 minutes</h3>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 45%">
@@ -944,14 +960,118 @@ total: 4.5TB</code></pre>
 <td style="text-align: right;"></td>
 </tr>
 <tr class="even">
+<td style="text-align: left;">toa_outgoing_shortwave_flux</td>
+<td style="text-align: right;">rsut</td>
+<td style="text-align: right;">W m-2</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
 <td style="text-align: left;">precipitation_flux</td>
 <td style="text-align: right;">pr</td>
 <td style="text-align: right;">kg m-2 s-1</td>
 <td style="text-align: right;">sum of all modes</td>
 </tr>
+<tr class="even">
+<td style="text-align: left;">air_pressure_at_mean_sea_level</td>
+<td style="text-align: right;">psl</td>
+<td style="text-align: right;">Pa</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">eastward_wind</td>
+<td style="text-align: right;">uas</td>
+<td style="text-align: right;">m s-1</td>
+<td style="text-align: right;">10m above ground</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">northward_wind</td>
+<td style="text-align: right;">vas</td>
+<td style="text-align: right;">m s-1</td>
+<td style="text-align: right;">10m above ground</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">surface_temperature</td>
+<td style="text-align: right;">ts</td>
+<td style="text-align: right;">K</td>
+<td style="text-align: right;"></td>
+</tr>
 </tbody>
 </table>
 </section>
+<section id="d-output-variables-write-instantaneous-values-every-15-minutes" class="level3">
+<h3 class="anchored" data-anchor-id="d-output-variables-write-instantaneous-values-every-15-minutes">3D Output Variables, write instantaneous values every 15 minutes</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 45%">
+<col style="width: 17%">
+<col style="width: 12%">
+<col style="width: 24%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">standard name</th>
+<th style="text-align: right;">short name</th>
+<th style="text-align: right;">units</th>
+<th style="text-align: right;">comment</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">geopotential height</td>
+<td style="text-align: right;">zg</td>
+<td style="text-align: right;">m</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">eastward_wind</td>
+<td style="text-align: right;">ua</td>
+<td style="text-align: right;">m/s</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">northward_wind</td>
+<td style="text-align: right;">va</td>
+<td style="text-align: right;">m/s</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">upward_air_velocity</td>
+<td style="text-align: right;">wa</td>
+<td style="text-align: right;">m/s</td>
+<td style="text-align: right;">(pick appropriate unit for model)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"></td>
+<td style="text-align: right;">wap</td>
+<td style="text-align: right;">pa/s</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">temperature</td>
+<td style="text-align: right;">ta</td>
+<td style="text-align: right;">K</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">relative_humidity</td>
+<td style="text-align: right;">hur</td>
+<td style="text-align: right;">-</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">specific_humidity</td>
+<td style="text-align: right;">hus</td>
+<td style="text-align: right;">kg kg-1</td>
+<td style="text-align: right;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">mass_fraction_hydrometeors</td>
+<td style="text-align: right;">qall</td>
+<td style="text-align: right;">kg kg-1</td>
+<td style="text-align: right;">names invented</td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 <section id="code-for-computing-the-data-volume" class="level2">
