@@ -167,7 +167,8 @@ Several additional requests by specific people have been made.
 Models are requested to provide them as computer and human time allow. 
 
 
-#### Baroclinicity in Storms (Maro Giorgetta, MPI-Met) 
+### Baroclinicity in Storms (Maro Giorgetta, MPI-Met)
+
  The purpose of the requested relative vorticity with instantaneous values 
  is to be able to track storms and to assess their baroclinicity. 
  Three levels at 300, 500, and 850 hPa would make it possible. 
@@ -180,13 +181,14 @@ Models are requested to provide them as computer and human time allow.
 | atmosphere_relative_vorticity 850hPa  |        rva850|         s-1          |
 
 
-#### Individual Convective Cell Tracking (Zhe Feng, PNNL : Will Jones, Oxford)
+## Individual Convective Cell Tracking (Zhe Feng, PNNL : Will Jones, Oxford)
 
-For conevective cell tracking and case studies, a short re-run is requested:
+For convective cell tracking and case studies, a short re-run is requested:
 15 minute instantaneous output is requested at zoom level 9/10 if available. 
 Two 24 or 48 hour periods? Beginning 2020/2/1 and 2020/8/1
 
-##### 2D instnataneous every 15-minutes
+### 2D instantaneous every 15-minutes
+
 | CF standard name               | short name |      units |          comment |
 | :----------------------------- | ---------: | ---------: | ---------------: |
 | toa_outgoing_longwave_flux     |       rlut |      W m-2 |                  |
@@ -197,7 +199,7 @@ Two 24 or 48 hour periods? Beginning 2020/2/1 and 2020/8/1
 | northward_wind                 |        vas |      m s-1 | 10m above ground |
 | surface_temperature            |         ts |          K |                  |
 
-##### 3D Output Variables, write instantaneous values at 6hr interval
+### 3D Output Variables, write instantaneous values at 6hr interval
 
 | standard name              | short name |   units |        comment |
 | :------------------------- | ---------: | ------: | -------------: |
@@ -210,7 +212,6 @@ Two 24 or 48 hour periods? Beginning 2020/2/1 and 2020/8/1
 | relative_humidity          |        hur |       - |                |
 | specific_humidity          |        hus | kg kg-1 |                |
 | mass_fraction_hydrometeors |       qall | kg kg-1 | names invented |
-
 
 ## Code for computing the data volume
 
