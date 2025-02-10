@@ -134,17 +134,22 @@ For some models, the hydrometeor categories may not map directly onto the specif
 
 ### 2D Output Variables, write at 1hr interval as instantaneous
 
-This list is designed to include key outputs like accumulated precipitation, surface temperature and surface wind speed, as well as other features desired for trackers of convective storms and MCS. Other features requiring vertical information are suggested to be done 6 hourly.
+This list is designed to include key outputs like accumulated precipitation, surface temperature and surface wind speed, 
+as well as other features desired for trackers of convective storms and MCS. 
+Other features requiring vertical information are suggested to be done 6 hourly.
 
 | CF standard name               | short name |      units |          comment |
 | :----------------------------- | ---------: | ---------: | ---------------: |
 | toa_outgoing_longwave_flux     |       rlut |      W m-2 |                  |
 | toa_outgoing_shortwave_flux    |       rsut |      W m-2 |                  |
-| precipitation_flux             |         pr | kg m-2 s-1 | sum of all modes |
+| precipitation_flux*            |         pr | kg m-2 s-1 | sum of all modes |
 | air_pressure_at_mean_sea_level |        psl |         Pa |                  |
 | eastward_wind                  |        uas |      m s-1 | 10m above ground |
 | northward_wind                 |        vas |      m s-1 | 10m above ground |
 | surface_temperature            |         ts |          K |                  |
+
+* Average precipitation flux (rate) over the hour is requested. 
+Instantaneous rate for a timestep is okay if that is produced. Please specify.
 
 
 ### 2D time-constant Variables
@@ -156,12 +161,17 @@ This list is designed to include key outputs like accumulated precipitation, sur
 | surface_altitude       |       orog |     m |         |
 
 
-### Optional: Specific Requests
+## Optional: Specific Requests
+
+Several additional requests by specific people have been made. 
+Models are requested to provide them as computer and human time allow. 
 
 
-#### Baroclinicity in Storms (Maro Giorgetta, MPI-Met) 
+### Baroclinicity in Storms (Maro Giorgetta, MPI-Met)
+
  The purpose of the requested relative vorticity with instantaneous values 
- is to be able to track storms and to assess their baroclinicity. Three levels at 300, 500, and 850 hPa would make it possible. 
+ is to be able to track storms and to assess their baroclinicity. 
+ Three levels at 300, 500, and 850 hPa would make it possible. 
  Instantaneous 3 hourly data is needed.
 
 | CF standard name               | short name |      units |          comment |
@@ -171,17 +181,37 @@ This list is designed to include key outputs like accumulated precipitation, sur
 | atmosphere_relative_vorticity 850hPa  |        rva850|         s-1          |
 
 
-#### Individual Convective Cell Tracking (Zhe Feng, PNNL : Mathilde, Oxford)
+## Individual Convective Cell Tracking (Zhe Feng, PNNL : Will Jones, Oxford)
 
-A request to provide 2-4 days of output (with a re-run if needed) for two periods at 15-minute resolution.
-Suggested first week of February and first week of August. This will enable tracking individual convective cell evolution.
-Instantaneous 15-min data is requested.
+For convective cell tracking and case studies, a short re-run is requested:
+15 minute instantaneous output is requested at zoom level 9/10 if available. 
+Two 24 or 48 hour periods? Beginning 2020/2/1 and 2020/8/1
+
+### 2D instantaneous every 15 minutes
 
 | CF standard name               | short name |      units |          comment |
 | :----------------------------- | ---------: | ---------: | ---------------: |
 | toa_outgoing_longwave_flux     |       rlut |      W m-2 |                  |
+| toa_outgoing_shortwave_flux    |       rsut |      W m-2 |                  |
 | precipitation_flux             |         pr | kg m-2 s-1 | sum of all modes |
+| air_pressure_at_mean_sea_level |        psl |         Pa |                  |
+| eastward_wind                  |        uas |      m s-1 | 10m above ground |
+| northward_wind                 |        vas |      m s-1 | 10m above ground |
+| surface_temperature            |         ts |          K |                  |
 
+### 3D Output Variables, write instantaneous values every 15 minutes
+
+| standard name              | short name |   units |        comment |
+| :------------------------- | ---------: | ------: | -------------: |
+| geopotential height        |         zg |       m |                |
+| eastward_wind              |         ua |     m/s |                |
+| northward_wind             |         va |     m/s |                |
+| upward_air_velocity        |         wa |     m/s |  (pick appropriate unit for model)               |
+|                            |        wap |    pa/s |                |
+| temperature                |         ta |       K |                |
+| relative_humidity          |        hur |       - |                |
+| specific_humidity          |        hus | kg kg-1 |                |
+| mass_fraction_hydrometeors |       qall | kg kg-1 | names invented |
 
 ## Code for computing the data volume
 
