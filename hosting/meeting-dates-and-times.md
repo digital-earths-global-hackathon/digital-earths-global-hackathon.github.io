@@ -6,19 +6,18 @@ order: 10
 
 ## Meeting dates
 
-### 18 Nov 2024
+### 11  Feb 2025
 
-+ Coordination of websites and advertising
-+ Finalizing the [data request](technical/data_request.md) (see also the Mattermost discussion of Trackers)
-+ Set up a test run and assessment of one regional HEALPix conversion
-  + Lukas Kluft is working on transforming an ICON regional simulation.
-+ Handling of finances
-  + by each node individually
-  + participation fees depend on local costs and funding
-  + stipends
-+ Outreach activities (daily blog, videos, ...)
-+ Streaming one presentation per day per node, ideally also recording it
+### 9  Jan 2025
 
++ Discussion on the [draft science plan](https://pad.gwdg.de/x2j-DW8tSc-GZ2pvfD8_1g?both)
++ Mind map of working groups and intended investigations: ![Hackathon Mind Map](./Global Hackathon mindmap.png)
++ Status of data requests
++ Readiness status of:
+  + Node web pages + registration
+  + Data at nodes
+    + Software stacks at nodes
+  
 ### 19 Dec 2024
 
 + Sendai Protocol paper
@@ -33,16 +32,18 @@ order: 10
   + Software stack
   + Local web sites for each node's organisation and registration
 
-### 9  Jan 2025
-+ Discussion on the [draft science plan](https://pad.gwdg.de/x2j-DW8tSc-GZ2pvfD8_1g?both)
-+ Mind map of working groups and intended investigations: ![Hackathon Mind Map](./Global Hackathon mindmap.png)
-+ Status of data requests
-+ Readiness status of:
-  + Node web pages + registration
-  + Data at nodes
-    + Softare stacks at nodes
+### 18 Nov 2024
 
-### 11  Feb 2025
++ Coordination of websites and advertising
++ Finalizing the [data request](technical/data_request.md) (see also the Mattermost discussion of Trackers)
++ Set up a test run and assessment of one regional HEALPix conversion
+  + Lukas Kluft is working on transforming an ICON regional simulation.
++ Handling of finances
+  + by each node individually
+  + participation fees depend on local costs and funding
+  + stipends
++ Outreach activities (daily blog, videos, ...)
++ Streaming one presentation per day per node, ideally also recording it
 
 ### 10 Mar 2025
 
