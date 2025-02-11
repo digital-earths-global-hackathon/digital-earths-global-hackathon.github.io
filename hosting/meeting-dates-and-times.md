@@ -8,6 +8,14 @@ order: 10
 
 ### 11  Feb 2025
 
+* Summary of progress from each node, including run status
+* Storm trackers
+* Copying data between nodes
+* Shared notebooks with examples
+* WCRP webinar talk by Andrew Gettelman
+* Agenda for the hackathon and cross-site collaboration
+  * Opening (probably by the Australian team)
+
 ### 9  Jan 2025
 
 + Discussion on the [draft science plan](https://pad.gwdg.de/x2j-DW8tSc-GZ2pvfD8_1g?both)
