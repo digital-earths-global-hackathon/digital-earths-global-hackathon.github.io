@@ -6,6 +6,23 @@ order: 10
 
 ## Meeting dates
 
+### 15 Apr 2025
+
+### 10 Mar 2025
+
++ Brief reports from each node
+  + local science plans
+  + data and software status
+  + status of registrations  
++ A few updates on the overall programme for the week of 12-17 May
+  + Opening by easternmost node: Australia, Monday 12 May (Sunday for many, recorded)
+  + Opening keynote lecture by Tim Palmer on Monday 12 May, St Hugh's, Oxford
+  + Demonstration session with WCRP JSC, Paris, Tuesday 13 May, 21:00 Paris time
+  + Closing ceremony by westernmost node: West US, Friday 17 May
++ WMO sponsorship: last call for requests for support
++ Plans for broadcasting from nodes at the end of each day
++ AOB
+
 ### 11  Feb 2025
 
 * Summary of progress from each node, including run status
@@ -52,23 +69,6 @@ order: 10
   + stipends
 + Outreach activities (daily blog, videos, ...)
 + Streaming one presentation per day per node, ideally also recording it
-
-### 10 Mar 2025
-
-+ Brief reports from each node
-  + local science plans
-  + data and software status
-  + status of registrations  
-+ A few updates on the overal programme for the week of 12-17 May
-  + Opening by easternmost node: Australia, Monday 12 May (Sunday for many, recorded)
-  + Opening keynote lecture by Tim Palmer on Monday 12 May, St Hugh's, Oxford
-  + Demonstration session with WCRP JSC, Paris, Tuesday 13 May, 21:00 Paris time
-  + Closing ceremony by westernmost node: West US, Friday 17 May
-+ WMO sponsorship: last call for requests for support
-+ Plans for broadcasting from nodes at the end of each day
-+ AOB
-
-### 15 Apr 2025
 
 ## Meeting times
 
