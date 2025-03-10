@@ -1,4 +1,4 @@
-# MCS Tracking for Global Hackathon
+# MCS Tracking
 
 ## Participants
 
