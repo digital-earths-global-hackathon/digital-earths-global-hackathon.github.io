@@ -16,4 +16,4 @@ This is a table with the known participating institutions and teams, including p
 | [UK](https://digital-earths-global-hackathon-uk.github.io/)     | JASMIN     | Univ Oxford | [Pier Luigi Vidale](https://research.reading.ac.uk/meteorology/people/pier-luigi-vidale/)  | [Fatima Chami](https://people.ncas.ac.uk/people/view/372) | [Philip Stier](https://www.physics.ox.ac.uk/our-people/stier)| |
 | [US-Central (NSF/NCAR)](https://www.cisl.ucar.edu/events/digital-earths-global-hackathon)  | NCAR-NWSC | NCAR | [Brian Medeiros](https://staff.ucar.edu/users/brianpm) / [Bill Skamarock](https://staff.ucar.edu/users/skamaroc) | TBD | TBD | 
 | US-East (GFDL?) | TBD | TBD | TBD | TBD | TBD |  |
-| US-West (DOE) | NERSC/LBL | LBL/Berkeley? | [Andrew Gettelman](https://www.pnnl.gov/people/andrew-gettelman) / [Paul Ullrich](https://people.llnl.gov/ullrich4) | TBD | TBD |  |
+| [US-West (DOE)]( https://sites.google.com/lbl.gov/uswest-hackathon/home) | NERSC/LBL | LBL/Berkeley | [Andrew Gettelman](https://www.pnnl.gov/people/andrew-gettelman) / [Paul Ullrich](https://people.llnl.gov/ullrich4) | TBD | TBD |  |
