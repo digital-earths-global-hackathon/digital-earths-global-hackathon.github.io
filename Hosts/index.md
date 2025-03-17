@@ -7,7 +7,7 @@ This is a table with the known participating institutions and teams, including p
 
 | Team | Computing facility | Meeting location | Steering group member | Technical committee | Logistics committee | *Associated Project(s)* |
 | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
-| [AR](https://forms.gle/TSDNpGWY7UnQhr4u5) | CIMA/IFAECI| [CIMA](https://www.cima.fcen.uba.ar/) | [Lluís Fita Borrell](https://orcid.org/0000-0002-6046-4806) | [Lluís Fita Borrell](https://orcid.org/0000-0002-6046-4806) | [Lluís Fita Borrell](https://orcid.org/0000-0002-6046-4806)| |
+| [AR](https://forms.gle/TSDNpGWY7UnQhr4u5) | CIMA/IFAECI| [CIMA](https://www.cima.fcen.uba.ar/) | [Lluís Fita Borrell](https://orcid.org/0000-0002-6046-4806) | [Gabriel Vieytes](https://www.cima.fcen.uba.ar/ppersonal.php?p=59) | [Lluís Fita Borrell](https://orcid.org/0000-0002-6046-4806)| |
 | [AU](https://www.21centuryweather.org.au/graduate-colloquium-wcrp-hackathon/) | ?NCI | ANU Canberra | [Christian Jakob](https://research.monash.edu/en/persons/christian-jakob) | [Ben Evans](https://opus.nci.org.au/spaces/~bje900/pages/114884924/Dr+Ben+Evans) | [Melissa Hart](https://research.unsw.edu.au/people/associate-professor-melissa-anne-hart)  | [ARC Centre of Excellence for the Weather of the 21st Century](https://www.21centuryweather.org.au/) |
 | [BR](https://hackathonsaopaulo.iag.usp.br) | INPE | USP | [Rosmeri Porfirio da Rocha](https://www.incline.iag.usp.br/membros/detalhes/2.html) | [Sebastião Antonio](https://www.iag.usp.br/node/55044)  | [Rosmeri Porfirio da Rocha](https://www.incline.iag.usp.br/membros/detalhes/2.html) |  |
 | [CN](https://earthlab.iap.ac.cn/en/hackathon2025/) | Earthlab | IAP | Ying Yang |  |  |  |
