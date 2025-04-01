@@ -80,17 +80,17 @@ For some models, the hydrometeor categories may not map directly onto the specif
 
 ### 3D Output Variables, write instantaneous values at 6hr interval
 
-| standard name              | short name |   units |        comment |
+| CF standard name           | short name |   units |        comment |
 | :------------------------- | ---------: | ------: | -------------: |
-| geopotential height        |         zg |       m |                |
+| geopotential_height        |         zg |       m |                |
 | eastward_wind              |         ua |     m/s |                |
 | northward_wind             |         va |     m/s |                |
 | upward_air_velocity        |         wa |     m/s |  (pick appropriate unit for model)               |
-|                            |        wap |    pa/s |                |
-| temperature                |         ta |       K |                |
-| relative_humidity          |        hur |       - |                |
+| lagrangian_tendency_of_air_pressure |        wap |    pa/s |                |
+| air_temperature            |         ta |       K |                |
+| relative_humidity          |        hur |       1 |                |
 | specific_humidity          |        hus | kg kg-1 |                |
-| mass_fraction_hydrometeors |       qall | kg kg-1 | names invented |
+| mass_fraction_of_water_in_air |       qall | kg kg-1 | |
 
 
 ### 2D Output Variables, write averages at 3hr interval
@@ -102,21 +102,21 @@ For some models, the hydrometeor categories may not map directly onto the specif
 | surface_downward_latent_heat_flux                   |      hflsd |      W m-2 |                       direction included in short name |
 | surface_downward_sensible_heat_flux                 |      hfssd |      W m-2 |                       direction included in short name |
 | toa_outgoing_longwave_flux                          |       rlut |      W m-2 |                                                        |
-| toa_outgoing_longwave_flux_clear_sky                |     rlutcs |      W m-2 |                                                        |
+| toa_outgoing_longwave_flux_assuming_clear_sky       |     rlutcs |      W m-2 |                                                        |
 | surface_upwelling_longwave_flux_in_air              |       rlus |      W m-2 |                                                        |
-| surface_upwelling_longwave_flux_in_air_clear_sky    |     rluscs |      W m-2 |                                                        |
+| surface_upwelling_longwave_flux_in_air_assuming_clear_sky    |     rluscs |      W m-2 |                                                        |
 | surface_downwelling_longwave_flux_in_air            |       rlds |      W m-2 |                                                        |
-| surface_downwelling_longwave_flux_in_air_clear_sky  |     rldscs |      W m-2 |                                                        |
+| surface_downwelling_longwave_flux_in_air_assuming_clear_sky  |     rldscs |      W m-2 |                                                        |
 | toa_outgoing_shortwave_flux                         |       rsut |      W m-2 |                                                        |
-| toa_outgoing_shortwave_flux_clear_sky               |     rsutcs |      W m-2 |                                                        |
+| toa_outgoing_shortwave_flux_assuming_clear_sky               |     rsutcs |      W m-2 |                                                        |
 | toa_incoming_shortwave_flux                         |       rsdt |      W m-2 |                                                        |
 | surface_upwelling_shortwave_flux_in_air             |       rsus |      W m-2 |                                                        |
-| surface_upwelling_shortwave_flux_in_air_clear_sky   |     rsuscs |      W m-2 |                                                        |
+| surface_upwelling_shortwave_flux_in_air_assuming_clear_sky   |     rsuscs |      W m-2 |                                                        |
 | surface_downwelling_shortwave_flux_in_air           |       rsds |      W m-2 |                                                        |
-| surface_downwelling_shortwave_flux_in_air_clear_sky |     rsdscs |      W m-2 |                                                        |
+| surface_downwelling_shortwave_flux_in_air_assuming_clear_sky |     rsdscs |      W m-2 |                                                        |
 | precipitation_flux                                  |         pr | kg m-2 s-1 |                    includes all forms of precipitation |
 | solid_precipitation_flux                            |        prs | kg m-2 s-1 |              includes all forms of solid precipitation |
-| atmosphere_mass_content_of_water_vapor              |        prw | kg m-2 s-1 |                                                        |
+| atmosphere_mass_content_of_water_vapor              |        prw | kg m-2 |                                                        |
 | surface_air_pressure                                |         ps |         Pa |                                                        |
 | air_pressure_at_mean_sea_level                      |        psl |         Pa |                                                        |
 | specific_humidity                                   |       huss |    kg kg-1 |                                        2m above ground |
@@ -142,7 +142,7 @@ Other features requiring vertical information are suggested to be done 6 hourly.
 | :----------------------------- | ---------: | ---------: | ---------------: |
 | toa_outgoing_longwave_flux     |       rlut |      W m-2 |                  |
 | toa_outgoing_shortwave_flux    |       rsut |      W m-2 |                  |
-| precipitation_flux*            |         pr | kg m-2 s-1 | sum of all modes |
+| precipitation_flux (*)         |         pr | kg m-2 s-1 | sum of all modes |
 | air_pressure_at_mean_sea_level |        psl |         Pa |                  |
 | eastward_wind                  |        uas |      m s-1 | 10m above ground |
 | northward_wind                 |        vas |      m s-1 | 10m above ground |
@@ -203,15 +203,15 @@ Two 24 or 48 hour periods? Beginning 2020/2/1 and 2020/8/1
 
 | standard name              | short name |   units |        comment |
 | :------------------------- | ---------: | ------: | -------------: |
-| geopotential height        |         zg |       m |                |
+| geopotential_height        |         zg |       m |                |
 | eastward_wind              |         ua |     m/s |                |
 | northward_wind             |         va |     m/s |                |
 | upward_air_velocity        |         wa |     m/s |  (pick appropriate unit for model)               |
-|                            |        wap |    pa/s |                |
+| lagrangian_tendency_of_air_pressure |        wap |    pa/s |                |
 | temperature                |         ta |       K |                |
 | relative_humidity          |        hur |       - |                |
 | specific_humidity          |        hus | kg kg-1 |                |
-| mass_fraction_hydrometeors |       qall | kg kg-1 | names invented |
+| mass_fraction_of_water_in_air |       qall | kg kg-1 | |
 
 ## Code for computing the data volume
 
