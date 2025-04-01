@@ -15,6 +15,7 @@ This data request still is in a draft stadium. To improve it, please [open an is
 * We specify variable names.
 * We request most 2D fields only as 3-hourly means.
 * We specify that hourly 2D data should be instantaneous.
+* We remove "Downward LW radiation at the TOA", as it is 0 anyways.
 :::
 
 ## Data grid and vertical levels
@@ -102,7 +103,6 @@ For some models, the hydrometeor categories may not map directly onto the specif
 | surface_downward_sensible_heat_flux                 |      hfssd |      W m-2 |                       direction included in short name |
 | toa_outgoing_longwave_flux                          |       rlut |      W m-2 |                                                        |
 | toa_outgoing_longwave_flux_assuming_clear_sky       |     rlutcs |      W m-2 |                                                        |
-| toa_incoming_longwave_flux                          |       rldt |      W m-2 |                                                        |
 | surface_upwelling_longwave_flux_in_air              |       rlus |      W m-2 |                                                        |
 | surface_upwelling_longwave_flux_in_air_assuming_clear_sky    |     rluscs |      W m-2 |                                                        |
 | surface_downwelling_longwave_flux_in_air            |       rlds |      W m-2 |                                                        |
