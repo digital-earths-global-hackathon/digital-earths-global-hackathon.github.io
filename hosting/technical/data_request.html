@@ -412,6 +412,7 @@ The main differences to the DYAMOND 3 data request
 <li>We specify variable names.</li>
 <li>We request most 2D fields only as 3-hourly means.</li>
 <li>We specify that hourly 2D data should be instantaneous.</li>
+<li>We remove “Downward LW radiation at the TOA”, as it is 0 anyways.</li>
 </ul>
 </div>
 </div>
@@ -622,174 +623,168 @@ total: 4.5TB</code></pre>
 <td style="text-align: right;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">toa_incoming_longwave_flux</td>
-<td style="text-align: right;">rldt</td>
-<td style="text-align: right;">W m-2</td>
-<td style="text-align: right;"></td>
-</tr>
-<tr class="even">
 <td style="text-align: left;">surface_upwelling_longwave_flux_in_air</td>
 <td style="text-align: right;">rlus</td>
 <td style="text-align: right;">W m-2</td>
 <td style="text-align: right;"></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">surface_upwelling_longwave_flux_in_air_assuming_clear_sky</td>
 <td style="text-align: right;">rluscs</td>
 <td style="text-align: right;">W m-2</td>
 <td style="text-align: right;"></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">surface_downwelling_longwave_flux_in_air</td>
 <td style="text-align: right;">rlds</td>
 <td style="text-align: right;">W m-2</td>
 <td style="text-align: right;"></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">surface_downwelling_longwave_flux_in_air_assuming_clear_sky</td>
 <td style="text-align: right;">rldscs</td>
 <td style="text-align: right;">W m-2</td>
 <td style="text-align: right;"></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">toa_outgoing_shortwave_flux</td>
 <td style="text-align: right;">rsut</td>
 <td style="text-align: right;">W m-2</td>
 <td style="text-align: right;"></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">toa_outgoing_shortwave_flux_assuming_clear_sky</td>
 <td style="text-align: right;">rsutcs</td>
 <td style="text-align: right;">W m-2</td>
 <td style="text-align: right;"></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">toa_incoming_shortwave_flux</td>
 <td style="text-align: right;">rsdt</td>
 <td style="text-align: right;">W m-2</td>
 <td style="text-align: right;"></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">surface_upwelling_shortwave_flux_in_air</td>
 <td style="text-align: right;">rsus</td>
 <td style="text-align: right;">W m-2</td>
 <td style="text-align: right;"></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">surface_upwelling_shortwave_flux_in_air_assuming_clear_sky</td>
 <td style="text-align: right;">rsuscs</td>
 <td style="text-align: right;">W m-2</td>
 <td style="text-align: right;"></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">surface_downwelling_shortwave_flux_in_air</td>
 <td style="text-align: right;">rsds</td>
 <td style="text-align: right;">W m-2</td>
 <td style="text-align: right;"></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">surface_downwelling_shortwave_flux_in_air_assuming_clear_sky</td>
 <td style="text-align: right;">rsdscs</td>
 <td style="text-align: right;">W m-2</td>
 <td style="text-align: right;"></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">precipitation_flux</td>
 <td style="text-align: right;">pr</td>
 <td style="text-align: right;">kg m-2 s-1</td>
 <td style="text-align: right;">includes all forms of precipitation</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">solid_precipitation_flux</td>
 <td style="text-align: right;">prs</td>
 <td style="text-align: right;">kg m-2 s-1</td>
 <td style="text-align: right;">includes all forms of solid precipitation</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">atmosphere_mass_content_of_water_vapor</td>
 <td style="text-align: right;">prw</td>
 <td style="text-align: right;">kg m-2</td>
 <td style="text-align: right;"></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">surface_air_pressure</td>
 <td style="text-align: right;">ps</td>
 <td style="text-align: right;">Pa</td>
 <td style="text-align: right;"></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">air_pressure_at_mean_sea_level</td>
 <td style="text-align: right;">psl</td>
 <td style="text-align: right;">Pa</td>
 <td style="text-align: right;"></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">specific_humidity</td>
 <td style="text-align: right;">huss</td>
 <td style="text-align: right;">kg kg-1</td>
 <td style="text-align: right;">2m above ground</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">air_temperature</td>
 <td style="text-align: right;">tas</td>
 <td style="text-align: right;">K</td>
 <td style="text-align: right;">2m above ground</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">eastward_wind</td>
 <td style="text-align: right;">uas</td>
 <td style="text-align: right;">m s-1</td>
 <td style="text-align: right;">10m above ground</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">northward_wind</td>
 <td style="text-align: right;">vas</td>
 <td style="text-align: right;">m s-1</td>
 <td style="text-align: right;">10m above ground</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">surface_temperature</td>
 <td style="text-align: right;">ts</td>
 <td style="text-align: right;">K</td>
 <td style="text-align: right;"></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">surface_downward_eastward_stress</td>
 <td style="text-align: right;">tauu</td>
 <td style="text-align: right;">N m-2</td>
 <td style="text-align: right;"></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">surface_downward_northward_stress</td>
 <td style="text-align: right;">tauv</td>
 <td style="text-align: right;">N m-2</td>
 <td style="text-align: right;"></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">cloud_area_fraction</td>
 <td style="text-align: right;">clt</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;"></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">liquid_water_content_of_surface_snow</td>
 <td style="text-align: right;">swe</td>
 <td style="text-align: right;">kg m-2</td>
 <td style="text-align: right;">short name invented</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">snow_area_fraction_viewable_from_above</td>
 <td style="text-align: right;">sncvfa</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">short name based on snc for surface_snow_area_fraction</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">soil_liquid_water_content</td>
 <td style="text-align: right;">mrso</td>
 <td style="text-align: right;">kg m-2</td>
 <td style="text-align: right;">short name invented</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">sea_ice_area_fraction</td>
 <td style="text-align: right;">siconc</td>
 <td style="text-align: right;">1</td>
