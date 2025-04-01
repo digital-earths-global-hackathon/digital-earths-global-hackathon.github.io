@@ -503,7 +503,7 @@ total: 4.5TB</code></pre>
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">standard name</th>
+<th style="text-align: left;">CF standard name</th>
 <th style="text-align: right;">short name</th>
 <th style="text-align: right;">units</th>
 <th style="text-align: right;">comment</th>
@@ -511,7 +511,7 @@ total: 4.5TB</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">geopotential height</td>
+<td style="text-align: left;">geopotential_height</td>
 <td style="text-align: right;">zg</td>
 <td style="text-align: right;">m</td>
 <td style="text-align: right;"></td>
@@ -535,13 +535,13 @@ total: 4.5TB</code></pre>
 <td style="text-align: right;">(pick appropriate unit for model)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"></td>
+<td style="text-align: left;">lagrangian_tendency_of_air_pressure</td>
 <td style="text-align: right;">wap</td>
 <td style="text-align: right;">pa/s</td>
 <td style="text-align: right;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">temperature</td>
+<td style="text-align: left;">air_temperature</td>
 <td style="text-align: right;">ta</td>
 <td style="text-align: right;">K</td>
 <td style="text-align: right;"></td>
@@ -549,7 +549,7 @@ total: 4.5TB</code></pre>
 <tr class="odd">
 <td style="text-align: left;">relative_humidity</td>
 <td style="text-align: right;">hur</td>
-<td style="text-align: right;">-</td>
+<td style="text-align: right;">1</td>
 <td style="text-align: right;"></td>
 </tr>
 <tr class="even">
@@ -559,10 +559,10 @@ total: 4.5TB</code></pre>
 <td style="text-align: right;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">mass_fraction_hydrometeors</td>
+<td style="text-align: left;">mass_fraction_of_water_in_air</td>
 <td style="text-align: right;">qall</td>
 <td style="text-align: right;">kg kg-1</td>
-<td style="text-align: right;">names invented</td>
+<td style="text-align: right;"></td>
 </tr>
 </tbody>
 </table>
@@ -616,7 +616,7 @@ total: 4.5TB</code></pre>
 <td style="text-align: right;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">toa_outgoing_longwave_flux_clear_sky</td>
+<td style="text-align: left;">toa_outgoing_longwave_flux_assuming_clear_sky</td>
 <td style="text-align: right;">rlutcs</td>
 <td style="text-align: right;">W m-2</td>
 <td style="text-align: right;"></td>
@@ -634,7 +634,7 @@ total: 4.5TB</code></pre>
 <td style="text-align: right;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">surface_upwelling_longwave_flux_in_air_clear_sky</td>
+<td style="text-align: left;">surface_upwelling_longwave_flux_in_air_assuming_clear_sky</td>
 <td style="text-align: right;">rluscs</td>
 <td style="text-align: right;">W m-2</td>
 <td style="text-align: right;"></td>
@@ -646,7 +646,7 @@ total: 4.5TB</code></pre>
 <td style="text-align: right;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">surface_downwelling_longwave_flux_in_air_clear_sky</td>
+<td style="text-align: left;">surface_downwelling_longwave_flux_in_air_assuming_clear_sky</td>
 <td style="text-align: right;">rldscs</td>
 <td style="text-align: right;">W m-2</td>
 <td style="text-align: right;"></td>
@@ -658,7 +658,7 @@ total: 4.5TB</code></pre>
 <td style="text-align: right;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">toa_outgoing_shortwave_flux_clear_sky</td>
+<td style="text-align: left;">toa_outgoing_shortwave_flux_assuming_clear_sky</td>
 <td style="text-align: right;">rsutcs</td>
 <td style="text-align: right;">W m-2</td>
 <td style="text-align: right;"></td>
@@ -676,7 +676,7 @@ total: 4.5TB</code></pre>
 <td style="text-align: right;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">surface_upwelling_shortwave_flux_in_air_clear_sky</td>
+<td style="text-align: left;">surface_upwelling_shortwave_flux_in_air_assuming_clear_sky</td>
 <td style="text-align: right;">rsuscs</td>
 <td style="text-align: right;">W m-2</td>
 <td style="text-align: right;"></td>
@@ -688,7 +688,7 @@ total: 4.5TB</code></pre>
 <td style="text-align: right;"></td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">surface_downwelling_shortwave_flux_in_air_clear_sky</td>
+<td style="text-align: left;">surface_downwelling_shortwave_flux_in_air_assuming_clear_sky</td>
 <td style="text-align: right;">rsdscs</td>
 <td style="text-align: right;">W m-2</td>
 <td style="text-align: right;"></td>
@@ -708,7 +708,7 @@ total: 4.5TB</code></pre>
 <tr class="odd">
 <td style="text-align: left;">atmosphere_mass_content_of_water_vapor</td>
 <td style="text-align: right;">prw</td>
-<td style="text-align: right;">kg m-2 s-1</td>
+<td style="text-align: right;">kg m-2</td>
 <td style="text-align: right;"></td>
 </tr>
 <tr class="even">
@@ -830,7 +830,7 @@ total: 4.5TB</code></pre>
 <td style="text-align: right;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">precipitation_flux*</td>
+<td style="text-align: left;">precipitation_flux (*)</td>
 <td style="text-align: right;">pr</td>
 <td style="text-align: right;">kg m-2 s-1</td>
 <td style="text-align: right;">sum of all modes</td>
@@ -1028,7 +1028,7 @@ total: 4.5TB</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">geopotential height</td>
+<td style="text-align: left;">geopotential_height</td>
 <td style="text-align: right;">zg</td>
 <td style="text-align: right;">m</td>
 <td style="text-align: right;"></td>
@@ -1052,7 +1052,7 @@ total: 4.5TB</code></pre>
 <td style="text-align: right;">(pick appropriate unit for model)</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;"></td>
+<td style="text-align: left;">lagrangian_tendency_of_air_pressure</td>
 <td style="text-align: right;">wap</td>
 <td style="text-align: right;">pa/s</td>
 <td style="text-align: right;"></td>
@@ -1076,10 +1076,10 @@ total: 4.5TB</code></pre>
 <td style="text-align: right;"></td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">mass_fraction_hydrometeors</td>
+<td style="text-align: left;">mass_fraction_of_water_in_air</td>
 <td style="text-align: right;">qall</td>
 <td style="text-align: right;">kg kg-1</td>
-<td style="text-align: right;">names invented</td>
+<td style="text-align: right;"></td>
 </tr>
 </tbody>
 </table>
