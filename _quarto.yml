@@ -8,6 +8,8 @@ website:
   navbar:
     background: "#627797"
     left:
+      - href: http://digital-earths-global-hackathon.github.io/hk25/
+        text: Hacking plan
       - href: hosting/meeting-dates-and-times.md
     right:
       - href: https://www.dkrz.de/de/about/kontakt/impressum
