@@ -7,6 +7,30 @@ order: 10
 ## Meeting dates
 
 ### 15 Apr 2025
++ Status of each node
+   + data readiness
+   + data catalogues (intake format)
+   + software, starting from introductory notebooks
+   + science plans
+
++ Affiliate nodes:
+   + ECMWF
+   + ESA/EarthCare
+   + Inception (UAE)
+   + NVIDIA
+   + PNNL
+
++ Science teams concept
+
++ General Programme
+  
++ Communications plan
+  + Key people at each node
+  + Zoom and social media contacts
+  + Enlisting people in Mattermost   
+
++ Tutorial sessions
+  + When and how 
 
 ### 10 Mar 2025
 
