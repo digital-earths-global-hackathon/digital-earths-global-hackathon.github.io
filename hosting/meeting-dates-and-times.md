@@ -6,6 +6,18 @@ order: 10
 
 ## Meeting dates
 
+### 29 Apr 2025
++ Latest Updates on status of each node
+   + data readiness
+   + Top-level intake catalogue
+      + examples of how to use 
+   + software, starting from introductory notebooks
+   + science plans
++ Communications plan
+  + Key people at each node
+  + Zoom and social media contacts
+  + Enlisting people in Mattermost   
+
 ### 15 Apr 2025
 + Status of each node
    + data readiness
