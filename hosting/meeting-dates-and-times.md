@@ -11,12 +11,14 @@ order: 10
    + data readiness
    + Top-level intake catalogue
       + examples of how to use 
+   + system readiness (jupyter hub server, environments)
    + software, starting from introductory notebooks
    + science plans
 + Communications plan
   + Key people at each node
   + Zoom and social media contacts
-  + Enlisting people in Mattermost   
+  + Enlisting people in Mattermost
++ Coordinated Activites and Common Events  
 
 ### 15 Apr 2025
 + Status of each node
