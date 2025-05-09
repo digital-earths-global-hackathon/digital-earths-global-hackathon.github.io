@@ -1,11 +1,11 @@
 ---
-aliases: 
+aliases:
   - /planning/hosting/technical/data_request.html
 ---
 
-# Draft Data request
+# Data request
 
-This data request still is in a draft stadium. To improve it, please [open an issue](https://github.com/digital-earths-global-hackathon/planning/issues) (and a matching pull request). It is based on the [Dyamond phase 3 request](https://www.researchsquare.com/article/rs-4458164/v1).
+This data request is based on the Dyamond phase 3 protocol by [Takasuka, D. et al. (2024)](https://doi.org/10.1186/s40645-024-00668-1).
 
 ::: {.callout-note}
 ## The main differences to the DYAMOND 3 data request
