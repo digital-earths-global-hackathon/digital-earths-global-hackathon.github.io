@@ -1,0 +1,292 @@
+---
+title: Hacking
+format:
+  revealjs:
+    transition: slide
+    slide-number: true
+    code-background: true
+    logo: /static/logos.png
+    footer: "[Talks page](/talks)"
+    theme: [default, ../../custom.scss]
+    chalkboard:
+      buttons: true
+    navigation-mode: linear
+    auto-stretch: true
+    center: true
+author:
+  - name: Florian Ziemen
+  - name: Tobias Kölling 
+  - name: Lukas Kluft
+date: 2025-05-12
+---
+
+# Have fun <br/>and <br/>learn about Earth
+
+## Smooth workflows for km-scale data
+
+{{< video ../useful_datasets/ngc3_selection.mp4 >}}
+
+([Code](https://gitlab.gwdg.de/ican/hiopy/-/snippets/640))
+
+## Made possible by 
+
+. . . 
+
+Loading less data
+
+## Load only the data you need
+:::: {.columns}
+
+::: {.column width="50%"}
+![](../useful_datasets/example_europe.png)
+:::
+::: {.column width="50%"}
+![](../useful_datasets/example_globe.png)
+:::
+::::
+Both plots have the same number of pixels. 
+
+You should load the same amount of data to make them.
+
+## Our approach
+
+* HEALPix Grid
+* Resolution hierarchies
+* Chunked storage (you'll probably not see much of this)
+* Catalogs grouping the datasets
+
+## HEALPix
+
+:::: {.columns}
+
+::: {.column width="50%"}
+* **H**ierarchical
+* **E**qual **A**rea
+* iso**L**atitude
+
+**Pix**elation
+
+
+[Górski et al., 2004](https://iopscience.iop.org/article/10.1086/427976/pdf)
+:::
+
+::: {.column width="50%"}
+![](../useful_datasets/healpix_earth.png)
+:::
+
+::::
+
+## HEALPix features
+
+:::: {.columns}
+
+::: {.column width="80%"}
+* Uniform coverage of Earth
+* Direct translation between lat/lon and pixel ID
+* Cells arranged in isolatitude bands
+* Index is a space-filling curve
+:::
+
+::: {.column width="20%"}
+![](../useful_datasets/healpix_earth.png)
+:::
+
+::::
+
+## Healpix hierarchy
+
+Refinement by splitting each cell into four finer cells
+
+![](../useful_datasets/hierarchies-2.png)
+
+
+## Load only the data you need
+
+* Global mean -> Level 0 (12 cells)
+* Test a global map -> Level 5 (12288 cells)
+* Fill a screen -> Level 9 (3M cells)
+* Analyze a detail -> load only the region
+
+
+## Catalogs and phone books
+
+* Basically your phone's list of contacts
+* You ask for a name, it will *call* the dataset
+* Update it when the phone number of your contact changes
+* No update needed when your contact gets a new phone
+* *share* it in the team, and save effort updating
+
+## Catalogs 
+
+* Call it by its name, not by the location
+
+  `cat["casesm2_10km_cumulus"].to_dask()` 
+  
+  instead of 
+  
+  `xr.open_dataset("/lustre/persons_name/experiments/attempt7/outdata/data_*_74_b.nc")`
+* No need to know where data is.
+* Parameterize variants 
+
+  `cat["casesm2_10km_cumulus"](zoom=5, time="PT3H")`
+
+# Let's get real
+
+# Working with the catalog
+
+## Index generated from the catalog
+
+![[https://digital-earths-global-hackathon.github.io/catalog/](https://digital-earths-global-hackathon.github.io/catalog/)](catalog-overview.png)
+
+## Locations and datasets
+
+* Our catalog has two dimensions
+  * Location
+  * Dataset
+* Any dataset can be hosted at different locations
+* Online datasets are availabe at all locations
+* Local copies are preferred
+
+## Load the catalog
+```python
+import intake
+cat_url = "https://digital-earths-global-hackathon.github.io/catalog/catalog.yaml"
+node = "CN"
+cat = intake.open_catalog(cat_url)[node]
+```
+
+## Get the phone number of a dataset
+
+```python
+name = "casesm2_10km_cumulus"
+cat[name].urlpath
+```
+```
+'/data2/share/florain/CAS-ESM2_10km_cumulus_3d6h_z9.zarr'
+```
+## *Call* the dataset directly
+ ```python
+cat[name].to_dask()
+```
+![](cas-nocum-6h.png)
+
+## Look at the possible parameters
+```python
+import pandas as pd
+pd.DataFrame(cat[name].describe()['user_parameters'])
+```
+![](user-parameters.png)
+
+
+## Load a specific variant
+
+```python
+ds = cat[name](zoom=5, time="PT3H").to_dask()
+ds
+```
+![](cas-nocum-pt3h.png)
+# Mapmaking
+
+
+## A simple world map
+
+```python
+import easygems.healpix as egh
+var = "tas"
+plot_time = "2020-05-12T09:00:00"
+cmap = "inferno"
+egh.healpix_show(ds[var].sel(time=plot_time), cmap=cmap) 
+```
+![](tas-level5.png)
+
+## increasing the resolution
+
+```python
+ds = cat[name](zoom=7, time="PT3H").to_dask()
+egh.healpix_show(ds[var].sel(time=plot_time), cmap=cmap) 
+```
+![](tas-level7.png)
+
+## Zooming in
+
+```python
+import cartopy.crs as ccrs
+import cartopy.feature as cf
+
+ds = cat[name](zoom=9, time="PT3H").to_dask()
+projection = ccrs.Robinson(central_longitude=120)
+fig, ax = plt.subplots(
+  figsize=(8, 4), 
+  subplot_kw={"projection": projection}, 
+  constrained_layout=True
+)
+ax.set_extent([70, 150, 18, 55], crs=ccrs.PlateCarree())
+egh.healpix_show(ds.tas.isel(time=0), 
+  ax=ax, 
+  cmap=cmap)
+ax.add_feature(cf.COASTLINE, linewidth=0.8)
+ax.add_feature(cf.BORDERS, linewidth=0.4)
+```
+## Zooming in
+
+![](china-japan.png)
+
+## More map examples on easy.gems
+
+[https://easy.gems.dkrz.de/Processing/healpix/healpix_cartopy.html](https://easy.gems.dkrz.de/Processing/healpix/healpix_cartopy.html)
+
+## Zonal means
+```python
+ds = cat[name](zoom=5, time="PT3H").to_dask().pipe(egh.attach_coords)
+pr = ds['pr'].mean(dim='time').groupby(ds.lat).mean()
+pr.plot()
+```
+![](pr.png)
+
+## Zonal section
+```python
+import matplotlib.pyplot as plt
+ds = cat[name](zoom=5, time="PT6H").to_dask().pipe(egh.attach_coords)
+ua = ds['ua'].mean(dim='time').groupby(ds.lat).mean()
+ua.plot()
+plt.ylim(plt.ylim()[::-1])
+plt.title (f"Zonal mean zonal wind speed (m/s)")
+```
+![](zonal_mean_wind.png)
+
+## Space-time diagram
+```python
+ds = cat[name](zoom=7, time="PT3H").to_dask().pipe(egh.attach_coords)
+Slim, Nlim = -15.0, 35.0
+pr = (
+    ds['pr']
+    .where((ds["lat"] > Slim) & (ds["lat"] < Nlim), drop=True)
+    .groupby("lat")
+    .mean()
+).coarsen(time=8).mean().transpose().compute()
+pr.plot(cmap="Blues", vmax=0.0001)
+plt.title(f"zonal mean precipitation (kg m-2 s-1)")
+```
+![](pr-hovm.png)
+
+## More on time-space diagrams
+
+[https://easy.gems.dkrz.de/Processing/healpix/time-space.html](https://easy.gems.dkrz.de/Processing/healpix/time-space.html)
+
+# 黑客马拉松圆满成功
+
+# A few words on datasets and Catalogs
+
+
+## Build clean datasets
+* All variables together that fit together
+* Cutting parts out is easier than gluing together
+* Time spent on making them clean is saved during analysis
+* Variants for coarsening should follow a logic
+
+## Catalogs arrange datasets logically
+
+* Group dataset by topic
+* Tree-Style catalogs allow for nesting
+* Try to have exactly one catalog with good location
+* Catalogs can be nested
