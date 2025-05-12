@@ -240,10 +240,38 @@ pr = ds['pr'].mean(dim='time').groupby(ds.lat).mean()
 pr.plot()
 ```
 ![](pr.png)
+
 ## Zonal section
+```python
+import matplotlib.pyplot as plt
+ds = cat[name](zoom=5, time="PT6H").to_dask().pipe(egh.attach_coords)
+ua = ds['ua'].mean(dim='time').groupby(ds.lat).mean()
+ua.plot()
+plt.ylim(plt.ylim()[::-1])
+plt.title (f"Zonal mean zonal wind speed (m/s)")
+```
+![](zonal_mean_wind.png)
 
 ## Space-time diagram
+```python
+ds = cat[name](zoom=7, time="PT3H").to_dask().pipe(egh.attach_coords)
+Slim, Nlim = -15.0, 35.0
+pr = (
+    ds['pr']
+    .where((ds["lat"] > Slim) & (ds["lat"] < Nlim), drop=True)
+    .groupby("lat")
+    .mean()
+).coarsen(time=8).mean().transpose().compute()
+pr.plot(cmap="Blues", vmax=0.0001)
+plt.title(f"zonal mean precipitation (kg m-2 s-1)")
+```
+![](pr-hovm.png)
 
+## More on time-space diagrams
+
+[https://easy.gems.dkrz.de/Processing/healpix/time-space.html](https://easy.gems.dkrz.de/Processing/healpix/time-space.html)
+
+# 黑客马拉松圆满成功
 
 # A few words on datasets and Catalogs
 
