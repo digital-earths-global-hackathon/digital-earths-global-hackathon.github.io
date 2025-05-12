@@ -403,250 +403,68 @@
     ]
   },
   {
-    "objectID": "talks/technical/storage-requirements/index.html#ballpark-estimate-for-level-9-13km",
-    "href": "talks/technical/storage-requirements/index.html#ballpark-estimate-for-level-9-13km",
-    "title": "Storage requirements",
-    "section": "Ballpark estimate for level 9 (13km)",
-    "text": "Ballpark estimate for level 9 (13km)\n\n\n\n\n\n\n\n\n\n\n\n\ntype\ncells / snap-shot\nMB / snap-shot1\nsnapshots\nGB / var\nvars\nGB total\n\n\n\n\n2D\n3 M\n6\n365*24\n52\n33\n1650\n\n\n2D2\n3 M\n6\n365*4\n13\n33\n275\n\n\n3D\n75 M\n150\n365*4\n220\n12\n2600\n\n\n\nAssuming 4-byte floats and 50% compressionFor consistent datasets",
+    "objectID": "talks/technical/processing_needs/index.html#hardware",
+    "href": "talks/technical/processing_needs/index.html#hardware",
+    "title": "Processing needs",
+    "section": "Hardware",
+    "text": "Hardware\n\na couple of dedicated analysis nodes in a SLURM partition (~32 at DKRZ, 10 above normal)\nreservations have proven less useful than simply expanding the interactive partition\nlimit of 2 nodes per participant (larger jobs are usually user error)",
     "crumbs": [
       "Hacking plan",
       "Talks",
       "Technical",
-      "Storage requirements"
+      "Processing needs"
     ]
   },
   {
-    "objectID": "talks/technical/storage-requirements/index.html#making-things-useful",
-    "href": "talks/technical/storage-requirements/index.html#making-things-useful",
-    "title": "Storage requirements",
-    "section": "Making things useful",
-    "text": "Making things useful\n\nAdding the full HEALPix hierarchy adds 30%, and makes the dataset useful.\nAdd daily means (+25% w.r.t the 6-hourly data)\nTotal size per dataset at 13 km: 6.6TB\nDoubling the resolution multiplies the storage need by 4.\n3-hourly 3D fields increase the size to 10.6 TB",
+    "objectID": "talks/technical/processing_needs/index.html#services",
+    "href": "talks/technical/processing_needs/index.html#services",
+    "title": "Processing needs",
+    "section": "Services",
+    "text": "Services\n\ninteractive access to the computing resources\nJupyterHub (or similar) is usually an appreciated entry point",
     "crumbs": [
       "Hacking plan",
       "Talks",
       "Technical",
-      "Storage requirements"
+      "Processing needs"
     ]
   },
   {
-    "objectID": "talks/technical/storage-requirements/index.html#totals",
-    "href": "talks/technical/storage-requirements/index.html#totals",
-    "title": "Storage requirements",
-    "section": "Totals",
-    "text": "Totals\n\n10 models at level 9 (13 km): 68 TB\n10 models at level 10 (6 km): 272 TB\n10 models at level 11 (3 km): 1.1 PB",
+    "objectID": "talks/technical/processing_needs/index.html#python-environments",
+    "href": "talks/technical/processing_needs/index.html#python-environments",
+    "title": "Processing needs",
+    "section": "Python environments",
+    "text": "Python environments\n\nit’s hard (if not impossible) to provide a single environment for all users\nCompromise: provide a lean python environment with “common” scientific packages\nusers can install their exotic dependencies on top of that",
     "crumbs": [
       "Hacking plan",
       "Talks",
       "Technical",
-      "Storage requirements"
+      "Processing needs"
     ]
   },
   {
-    "objectID": "talks/technical/python_packages/index.html#the-basics",
-    "href": "talks/technical/python_packages/index.html#the-basics",
-    "title": "Sharing is caring",
-    "section": "The basics",
-    "text": "The basics\n\nPython functions and classes can be organised in modules\nimport my_module\n\nmy_module.my_function(42)\nPackages allow for a hierarchical structuring of modules\nThe Python Package Index (PyPI) helps you find and install software1\npip install &lt;package_name&gt;\n\nauthors need to actively publish their code",
+    "objectID": "talks/technical/processing_needs/index.html#our-recommendation",
+    "href": "talks/technical/processing_needs/index.html#our-recommendation",
+    "title": "Processing needs",
+    "section": "Our recommendation",
+    "text": "Our recommendation\n\nuse micromamba1 to manage a basic python environment\nwe should maintain a single environment.yaml to provide common packages\nusers may install more “exotic” packages on their own\n\nFaster than conda and circumvents license issues",
     "crumbs": [
       "Hacking plan",
       "Talks",
       "Technical",
-      "Sharing is caring"
+      "Processing needs"
     ]
   },
   {
-    "objectID": "talks/technical/python_packages/index.html#the-default-stack",
-    "href": "talks/technical/python_packages/index.html#the-default-stack",
-    "title": "Sharing is caring",
-    "section": "The default stack",
-    "text": "The default stack\nThis talk will not cover the “usual suspects”\nNumPy, SciPy, matplotlib, cartopy, netcdf4, xarray (+flox), ...",
+    "objectID": "talks/technical/processing_needs/index.html#data",
+    "href": "talks/technical/processing_needs/index.html#data",
+    "title": "Processing needs",
+    "section": "Data",
+    "text": "Data\n\nstate-of-the-art compression can help to reduce both disk usage and access time (zstd, lz4)\ntest access to data using the hackathon environment",
     "crumbs": [
       "Hacking plan",
       "Talks",
       "Technical",
-      "Sharing is caring"
-    ]
-  },
-  {
-    "objectID": "talks/technical/python_packages/index.html#healpix-not-healpy",
-    "href": "talks/technical/python_packages/index.html#healpix-not-healpy",
-    "title": "Sharing is caring",
-    "section": "healpix (not healpy)",
-    "text": "healpix (not healpy)\n\nimplements a lean set of routines for working with HEALPix\nhealpix.nside2npix(9)\nhealpix.ang2pix(nside=9, 52, 10, nest=True, lonlat=True)\nrequires only NumPy, and can be installed with pip:\npython -m pip install healpix",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Sharing is caring"
-    ]
-  },
-  {
-    "objectID": "talks/technical/python_packages/index.html#easygems",
-    "href": "talks/technical/python_packages/index.html#easygems",
-    "title": "Sharing is caring",
-    "section": "easygems",
-    "text": "easygems\n\nprovides a (small) set of convenience functions to work with model output\neasygems.healpix.healpix_show(ds_daily.tas.sel(time=\"2024-09-10\"))\nstarted as a “bin” for functions used on easy.gems\ncan be installed with pip\npython -m pip install easygems",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Sharing is caring"
-    ]
-  },
-  {
-    "objectID": "talks/technical/python_packages/index.html#gribscan",
-    "href": "talks/technical/python_packages/index.html#gribscan",
-    "title": "Sharing is caring",
-    "section": "gribscan",
-    "text": "gribscan\n\nscan GRIB files and create zarr-compatible indices\ngribscan-index *.grib2\ngribscan-build --magician ifs --prefix $PWD *.index\nprovides the command-line tools gribscan-index and gribscan-build\nrequires an ecCodes version that matches the output data\ncan be installed with pip (apart from ecCodes)\npython -m pip install gribscan",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Sharing is caring"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#datasets-are",
-    "href": "talks/technical/storing_data/index.html#datasets-are",
-    "title": "Storing data",
-    "section": "Datasets are",
-    "text": "Datasets are\n\n(from xarray docs)\n\n\nn-dimensional variables\nshared dimensions\n\n\n\ncoordinates\nattributes for metadata",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#datasets-are-not",
-    "href": "talks/technical/storing_data/index.html#datasets-are-not",
-    "title": "Storing data",
-    "section": "Datasets are not",
-    "text": "Datasets are not\n\na single file\na storage format\nshaped by storage & handling\n\n\nIn the past, people often designed datasets to match their file handling requirements. The resulting view on a dataset seems to be overly restrictive and leads to unfortunate usage patterns.",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#access-to-subsets",
-    "href": "talks/technical/storing_data/index.html#access-to-subsets",
-    "title": "Storing data",
-    "section": "Access to subsets",
-    "text": "Access to subsets\n\n\n\n\n\n\nWithout subset access and hierarchies, analysis scripts are forced to load way too much data.",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#align-the-ordering-of-data-with-read-patterns",
-    "href": "talks/technical/storing_data/index.html#align-the-ordering-of-data-with-read-patterns",
-    "title": "Storing data",
-    "section": "Align the ordering of data with read patterns",
-    "text": "Align the ordering of data with read patterns\n\nhttps://www.unidata.ucar.edu/blogs/developer/entry/chunking_data_why_it_mattersMake a compromise that’s okay-ish for everybody by chunking along all dimensions.",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#compress-small-chunks",
-    "href": "talks/technical/storing_data/index.html#compress-small-chunks",
-    "title": "Storing data",
-    "section": "Compress small chunks",
-    "text": "Compress small chunks\n\nAny access will require uncompressing entire chunks.\nBy keeping them small to reduce the amount of data that will be uncompressed but not used.\nKeep them big enough for the compressor to do its job.\nUsually MB-ish blocks are a good compromise.",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#use-fast-compressors",
-    "href": "talks/technical/storing_data/index.html#use-fast-compressors",
-    "title": "Storing data",
-    "section": "Use fast compressors",
-    "text": "Use fast compressors\n\ndeflate (gzip/…) is widely used but slow.\nlz4 and zstd are much faster.\nUse lz4 or zstd from blosc as a good standard.",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#contents-of-a-dataset",
-    "href": "talks/technical/storing_data/index.html#contents-of-a-dataset",
-    "title": "Storing data",
-    "section": "Contents of a dataset",
-    "text": "Contents of a dataset\n\nMetadata\nn-d variables consisting of many numbers",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#netcdf4-hdf5",
-    "href": "talks/technical/storing_data/index.html#netcdf4-hdf5",
-    "title": "Storing data",
-    "section": "netCDF4 / HDF5",
-    "text": "netCDF4 / HDF5\n\nnetCDF4, a.k.a. HDF5 stores metadata and chunks in one file.\nUsually a dataset is split across many of these files.\nLoading the dataset requires opening all files.1\n\nThere is the option of multi-file netCDF4/HDF5, but I have not seen this in practice.",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#zarr-is-as-simple-as-it-gets.",
-    "href": "talks/technical/storing_data/index.html#zarr-is-as-simple-as-it-gets.",
-    "title": "Storing data",
-    "section": "Zarr is as simple as it gets.",
-    "text": "Zarr is as simple as it gets.\n\n.json files for the metadata\nbinary files for (compressed) chunks\n\nAs chunks are stored separately, this scales for any size of dataset. We are working with a 500 TB dataset in nextGEMS.",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#kerchunk-fsspec",
-    "href": "talks/technical/storing_data/index.html#kerchunk-fsspec",
-    "title": "Storing data",
-    "section": "Kerchunk + fsspec",
-    "text": "Kerchunk + fsspec\n\nWe can index a multi-file HDF5 dataset with kerchunk, and then create a pseudo-filesystem zarr with fsspec in python.\nAllows to treat a set of netCDF4 files as one zarr dataset.\nDirect access only via python.\nA simple python web server can present it as zarr via https for other languages.",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#performance-benchmarks-for-chunking",
-    "href": "talks/technical/storing_data/index.html#performance-benchmarks-for-chunking",
-    "title": "Storing data",
-    "section": "Performance benchmarks for chunking",
-    "text": "Performance benchmarks for chunking\n\n\n\n\n\n\n\n\n\n\nStorage layout, chunk shapes\nRead time series (sec)\nRead spatial slice (sec)\nPerformance bias (slowest / fastest)\n\n\n\n\nContiguous favoring time range\n0.013\n180\n14000\n\n\nContiguous favoring spatial slice\n200\n0.012\n17000\n\n\nDefault (all axes equal) chunks, 4673 x 12 x 16\n1.4\n34\n24\n\n\n36 KB chunks, 92 x 9 x 11\n2.4\n1.7\n1.4\n\n\n8 KB chunks, 46 x 6 x 8\n1.4\n1.1\n1.2\n\n\n\nsource: unidata blog",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Storing data"
+      "Processing needs"
     ]
   },
   {
@@ -936,68 +754,614 @@
     ]
   },
   {
-    "objectID": "talks/technical/processing_needs/index.html#hardware",
-    "href": "talks/technical/processing_needs/index.html#hardware",
-    "title": "Processing needs",
-    "section": "Hardware",
-    "text": "Hardware\n\na couple of dedicated analysis nodes in a SLURM partition (~32 at DKRZ, 10 above normal)\nreservations have proven less useful than simply expanding the interactive partition\nlimit of 2 nodes per participant (larger jobs are usually user error)",
+    "objectID": "talks/technical/storing_data/index.html#datasets-are",
+    "href": "talks/technical/storing_data/index.html#datasets-are",
+    "title": "Storing data",
+    "section": "Datasets are",
+    "text": "Datasets are\n\n(from xarray docs)\n\n\nn-dimensional variables\nshared dimensions\n\n\n\ncoordinates\nattributes for metadata",
     "crumbs": [
       "Hacking plan",
       "Talks",
       "Technical",
-      "Processing needs"
+      "Storing data"
     ]
   },
   {
-    "objectID": "talks/technical/processing_needs/index.html#services",
-    "href": "talks/technical/processing_needs/index.html#services",
-    "title": "Processing needs",
-    "section": "Services",
-    "text": "Services\n\ninteractive access to the computing resources\nJupyterHub (or similar) is usually an appreciated entry point",
+    "objectID": "talks/technical/storing_data/index.html#datasets-are-not",
+    "href": "talks/technical/storing_data/index.html#datasets-are-not",
+    "title": "Storing data",
+    "section": "Datasets are not",
+    "text": "Datasets are not\n\na single file\na storage format\nshaped by storage & handling\n\n\nIn the past, people often designed datasets to match their file handling requirements. The resulting view on a dataset seems to be overly restrictive and leads to unfortunate usage patterns.",
     "crumbs": [
       "Hacking plan",
       "Talks",
       "Technical",
-      "Processing needs"
+      "Storing data"
     ]
   },
   {
-    "objectID": "talks/technical/processing_needs/index.html#python-environments",
-    "href": "talks/technical/processing_needs/index.html#python-environments",
-    "title": "Processing needs",
-    "section": "Python environments",
-    "text": "Python environments\n\nit’s hard (if not impossible) to provide a single environment for all users\nCompromise: provide a lean python environment with “common” scientific packages\nusers can install their exotic dependencies on top of that",
+    "objectID": "talks/technical/storing_data/index.html#access-to-subsets",
+    "href": "talks/technical/storing_data/index.html#access-to-subsets",
+    "title": "Storing data",
+    "section": "Access to subsets",
+    "text": "Access to subsets\n\n\n\n\n\n\nWithout subset access and hierarchies, analysis scripts are forced to load way too much data.",
     "crumbs": [
       "Hacking plan",
       "Talks",
       "Technical",
-      "Processing needs"
+      "Storing data"
     ]
   },
   {
-    "objectID": "talks/technical/processing_needs/index.html#our-recommendation",
-    "href": "talks/technical/processing_needs/index.html#our-recommendation",
-    "title": "Processing needs",
-    "section": "Our recommendation",
-    "text": "Our recommendation\n\nuse micromamba1 to manage a basic python environment\nwe should maintain a single environment.yaml to provide common packages\nusers may install more “exotic” packages on their own\n\nFaster than conda and circumvents license issues",
+    "objectID": "talks/technical/storing_data/index.html#align-the-ordering-of-data-with-read-patterns",
+    "href": "talks/technical/storing_data/index.html#align-the-ordering-of-data-with-read-patterns",
+    "title": "Storing data",
+    "section": "Align the ordering of data with read patterns",
+    "text": "Align the ordering of data with read patterns\n\nhttps://www.unidata.ucar.edu/blogs/developer/entry/chunking_data_why_it_mattersMake a compromise that’s okay-ish for everybody by chunking along all dimensions.",
     "crumbs": [
       "Hacking plan",
       "Talks",
       "Technical",
-      "Processing needs"
+      "Storing data"
     ]
   },
   {
-    "objectID": "talks/technical/processing_needs/index.html#data",
-    "href": "talks/technical/processing_needs/index.html#data",
-    "title": "Processing needs",
-    "section": "Data",
-    "text": "Data\n\nstate-of-the-art compression can help to reduce both disk usage and access time (zstd, lz4)\ntest access to data using the hackathon environment",
+    "objectID": "talks/technical/storing_data/index.html#compress-small-chunks",
+    "href": "talks/technical/storing_data/index.html#compress-small-chunks",
+    "title": "Storing data",
+    "section": "Compress small chunks",
+    "text": "Compress small chunks\n\nAny access will require uncompressing entire chunks.\nBy keeping them small to reduce the amount of data that will be uncompressed but not used.\nKeep them big enough for the compressor to do its job.\nUsually MB-ish blocks are a good compromise.",
     "crumbs": [
       "Hacking plan",
       "Talks",
       "Technical",
-      "Processing needs"
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storing_data/index.html#use-fast-compressors",
+    "href": "talks/technical/storing_data/index.html#use-fast-compressors",
+    "title": "Storing data",
+    "section": "Use fast compressors",
+    "text": "Use fast compressors\n\ndeflate (gzip/…) is widely used but slow.\nlz4 and zstd are much faster.\nUse lz4 or zstd from blosc as a good standard.",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storing_data/index.html#contents-of-a-dataset",
+    "href": "talks/technical/storing_data/index.html#contents-of-a-dataset",
+    "title": "Storing data",
+    "section": "Contents of a dataset",
+    "text": "Contents of a dataset\n\nMetadata\nn-d variables consisting of many numbers",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storing_data/index.html#netcdf4-hdf5",
+    "href": "talks/technical/storing_data/index.html#netcdf4-hdf5",
+    "title": "Storing data",
+    "section": "netCDF4 / HDF5",
+    "text": "netCDF4 / HDF5\n\nnetCDF4, a.k.a. HDF5 stores metadata and chunks in one file.\nUsually a dataset is split across many of these files.\nLoading the dataset requires opening all files.1\n\nThere is the option of multi-file netCDF4/HDF5, but I have not seen this in practice.",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storing_data/index.html#zarr-is-as-simple-as-it-gets.",
+    "href": "talks/technical/storing_data/index.html#zarr-is-as-simple-as-it-gets.",
+    "title": "Storing data",
+    "section": "Zarr is as simple as it gets.",
+    "text": "Zarr is as simple as it gets.\n\n.json files for the metadata\nbinary files for (compressed) chunks\n\nAs chunks are stored separately, this scales for any size of dataset. We are working with a 500 TB dataset in nextGEMS.",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storing_data/index.html#kerchunk-fsspec",
+    "href": "talks/technical/storing_data/index.html#kerchunk-fsspec",
+    "title": "Storing data",
+    "section": "Kerchunk + fsspec",
+    "text": "Kerchunk + fsspec\n\nWe can index a multi-file HDF5 dataset with kerchunk, and then create a pseudo-filesystem zarr with fsspec in python.\nAllows to treat a set of netCDF4 files as one zarr dataset.\nDirect access only via python.\nA simple python web server can present it as zarr via https for other languages.",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storing_data/index.html#performance-benchmarks-for-chunking",
+    "href": "talks/technical/storing_data/index.html#performance-benchmarks-for-chunking",
+    "title": "Storing data",
+    "section": "Performance benchmarks for chunking",
+    "text": "Performance benchmarks for chunking\n\n\n\n\n\n\n\n\n\n\nStorage layout, chunk shapes\nRead time series (sec)\nRead spatial slice (sec)\nPerformance bias (slowest / fastest)\n\n\n\n\nContiguous favoring time range\n0.013\n180\n14000\n\n\nContiguous favoring spatial slice\n200\n0.012\n17000\n\n\nDefault (all axes equal) chunks, 4673 x 12 x 16\n1.4\n34\n24\n\n\n36 KB chunks, 92 x 9 x 11\n2.4\n1.7\n1.4\n\n\n8 KB chunks, 46 x 6 x 8\n1.4\n1.1\n1.2\n\n\n\nsource: unidata blog",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/technical/python_packages/index.html#the-basics",
+    "href": "talks/technical/python_packages/index.html#the-basics",
+    "title": "Sharing is caring",
+    "section": "The basics",
+    "text": "The basics\n\nPython functions and classes can be organised in modules\nimport my_module\n\nmy_module.my_function(42)\nPackages allow for a hierarchical structuring of modules\nThe Python Package Index (PyPI) helps you find and install software1\npip install &lt;package_name&gt;\n\nauthors need to actively publish their code",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Sharing is caring"
+    ]
+  },
+  {
+    "objectID": "talks/technical/python_packages/index.html#the-default-stack",
+    "href": "talks/technical/python_packages/index.html#the-default-stack",
+    "title": "Sharing is caring",
+    "section": "The default stack",
+    "text": "The default stack\nThis talk will not cover the “usual suspects”\nNumPy, SciPy, matplotlib, cartopy, netcdf4, xarray (+flox), ...",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Sharing is caring"
+    ]
+  },
+  {
+    "objectID": "talks/technical/python_packages/index.html#healpix-not-healpy",
+    "href": "talks/technical/python_packages/index.html#healpix-not-healpy",
+    "title": "Sharing is caring",
+    "section": "healpix (not healpy)",
+    "text": "healpix (not healpy)\n\nimplements a lean set of routines for working with HEALPix\nhealpix.nside2npix(9)\nhealpix.ang2pix(nside=9, 52, 10, nest=True, lonlat=True)\nrequires only NumPy, and can be installed with pip:\npython -m pip install healpix",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Sharing is caring"
+    ]
+  },
+  {
+    "objectID": "talks/technical/python_packages/index.html#easygems",
+    "href": "talks/technical/python_packages/index.html#easygems",
+    "title": "Sharing is caring",
+    "section": "easygems",
+    "text": "easygems\n\nprovides a (small) set of convenience functions to work with model output\neasygems.healpix.healpix_show(ds_daily.tas.sel(time=\"2024-09-10\"))\nstarted as a “bin” for functions used on easy.gems\ncan be installed with pip\npython -m pip install easygems",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Sharing is caring"
+    ]
+  },
+  {
+    "objectID": "talks/technical/python_packages/index.html#gribscan",
+    "href": "talks/technical/python_packages/index.html#gribscan",
+    "title": "Sharing is caring",
+    "section": "gribscan",
+    "text": "gribscan\n\nscan GRIB files and create zarr-compatible indices\ngribscan-index *.grib2\ngribscan-build --magician ifs --prefix $PWD *.index\nprovides the command-line tools gribscan-index and gribscan-build\nrequires an ecCodes version that matches the output data\ncan be installed with pip (apart from ecCodes)\npython -m pip install gribscan",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Sharing is caring"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storage-requirements/index.html#ballpark-estimate-for-level-9-13km",
+    "href": "talks/technical/storage-requirements/index.html#ballpark-estimate-for-level-9-13km",
+    "title": "Storage requirements",
+    "section": "Ballpark estimate for level 9 (13km)",
+    "text": "Ballpark estimate for level 9 (13km)\n\n\n\n\n\n\n\n\n\n\n\n\ntype\ncells / snap-shot\nMB / snap-shot1\nsnapshots\nGB / var\nvars\nGB total\n\n\n\n\n2D\n3 M\n6\n365*24\n52\n33\n1650\n\n\n2D2\n3 M\n6\n365*4\n13\n33\n275\n\n\n3D\n75 M\n150\n365*4\n220\n12\n2600\n\n\n\nAssuming 4-byte floats and 50% compressionFor consistent datasets",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Storage requirements"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storage-requirements/index.html#making-things-useful",
+    "href": "talks/technical/storage-requirements/index.html#making-things-useful",
+    "title": "Storage requirements",
+    "section": "Making things useful",
+    "text": "Making things useful\n\nAdding the full HEALPix hierarchy adds 30%, and makes the dataset useful.\nAdd daily means (+25% w.r.t the 6-hourly data)\nTotal size per dataset at 13 km: 6.6TB\nDoubling the resolution multiplies the storage need by 4.\n3-hourly 3D fields increase the size to 10.6 TB",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Storage requirements"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storage-requirements/index.html#totals",
+    "href": "talks/technical/storage-requirements/index.html#totals",
+    "title": "Storage requirements",
+    "section": "Totals",
+    "text": "Totals\n\n10 models at level 9 (13 km): 68 TB\n10 models at level 10 (6 km): 272 TB\n10 models at level 11 (3 km): 1.1 PB",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Storage requirements"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#smooth-workflows-for-km-scale-data",
+    "href": "talks/technical/hacking/index.html#smooth-workflows-for-km-scale-data",
+    "title": "Hacking",
+    "section": "Smooth workflows for km-scale data",
+    "text": "Smooth workflows for km-scale data\n\n(Code)",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#made-possible-by",
+    "href": "talks/technical/hacking/index.html#made-possible-by",
+    "title": "Hacking",
+    "section": "Made possible by",
+    "text": "Made possible by\n\nLoading less data",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#load-only-the-data-you-need",
+    "href": "talks/technical/hacking/index.html#load-only-the-data-you-need",
+    "title": "Hacking",
+    "section": "Load only the data you need",
+    "text": "Load only the data you need\n\n\n\n\n\n\nBoth plots have the same number of pixels.\nYou should load the same amount of data to make them.",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#our-approach",
+    "href": "talks/technical/hacking/index.html#our-approach",
+    "title": "Hacking",
+    "section": "Our approach",
+    "text": "Our approach\n\nHEALPix Grid\nResolution hierarchies\nChunked storage (you’ll probably not see much of this)\nCatalogs grouping the datasets",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#healpix",
+    "href": "talks/technical/hacking/index.html#healpix",
+    "title": "Hacking",
+    "section": "HEALPix",
+    "text": "HEALPix\n\n\n\nHierarchical\nEqual Area\nisoLatitude\n\nPixelation\nGórski et al., 2004",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#healpix-features",
+    "href": "talks/technical/hacking/index.html#healpix-features",
+    "title": "Hacking",
+    "section": "HEALPix features",
+    "text": "HEALPix features\n\n\n\nUniform coverage of Earth\nDirect translation between lat/lon and pixel ID\nCells arranged in isolatitude bands\nIndex is a space-filling curve",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#healpix-hierarchy",
+    "href": "talks/technical/hacking/index.html#healpix-hierarchy",
+    "title": "Hacking",
+    "section": "Healpix hierarchy",
+    "text": "Healpix hierarchy\nRefinement by splitting each cell into four finer cells",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#load-only-the-data-you-need-1",
+    "href": "talks/technical/hacking/index.html#load-only-the-data-you-need-1",
+    "title": "Hacking",
+    "section": "Load only the data you need",
+    "text": "Load only the data you need\n\nGlobal mean -&gt; Level 0 (12 cells)\nTest a global map -&gt; Level 5 (12288 cells)\nFill a screen -&gt; Level 9 (3M cells)\nAnalyze a detail -&gt; load only the region",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#catalogs-and-phone-books",
+    "href": "talks/technical/hacking/index.html#catalogs-and-phone-books",
+    "title": "Hacking",
+    "section": "Catalogs and phone books",
+    "text": "Catalogs and phone books\n\nBasically your phone’s list of contacts\nYou ask for a name, it will call the dataset\nUpdate it when the phone number of your contact changes\nNo update needed when your contact gets a new phone\nshare it in the team, and save effort updating",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#catalogs",
+    "href": "talks/technical/hacking/index.html#catalogs",
+    "title": "Hacking",
+    "section": "Catalogs",
+    "text": "Catalogs\n\nCall it by its name, not by the location\ncat[\"casesm2_10km_cumulus\"].to_dask()\ninstead of\nxr.open_dataset(\"/lustre/persons_name/experiments/attempt7/outdata/data_*_74_b.nc\")\nNo need to know where data is.\nParameterize variants\ncat[\"casesm2_10km_cumulus\"](zoom=5, time=\"PT3H\")",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#index-generated-from-the-catalog",
+    "href": "talks/technical/hacking/index.html#index-generated-from-the-catalog",
+    "title": "Hacking",
+    "section": "Index generated from the catalog",
+    "text": "Index generated from the catalog\n\nhttps://digital-earths-global-hackathon.github.io/catalog/",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#locations-and-datasets",
+    "href": "talks/technical/hacking/index.html#locations-and-datasets",
+    "title": "Hacking",
+    "section": "Locations and datasets",
+    "text": "Locations and datasets\n\nOur catalog has two dimensions\n\nLocation\nDataset\n\nAny dataset can be hosted at different locations\nOnline datasets are availabe at all locations\nLocal copies are preferred",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#load-the-catalog",
+    "href": "talks/technical/hacking/index.html#load-the-catalog",
+    "title": "Hacking",
+    "section": "Load the catalog",
+    "text": "Load the catalog\nimport intake\ncat_url = \"https://digital-earths-global-hackathon.github.io/catalog/catalog.yaml\"\nnode = \"CN\"\ncat = intake.open_catalog(cat_url)[node]",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#get-the-phone-number-of-a-dataset",
+    "href": "talks/technical/hacking/index.html#get-the-phone-number-of-a-dataset",
+    "title": "Hacking",
+    "section": "Get the phone number of a dataset",
+    "text": "Get the phone number of a dataset\nname = \"casesm2_10km_cumulus\"\ncat[name].urlpath\n'/data2/share/florain/CAS-ESM2_10km_cumulus_3d6h_z9.zarr'",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#call-the-dataset-directly",
+    "href": "talks/technical/hacking/index.html#call-the-dataset-directly",
+    "title": "Hacking",
+    "section": "Call the dataset directly",
+    "text": "Call the dataset directly\ncat[name].to_dask()",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#look-at-the-possible-parameters",
+    "href": "talks/technical/hacking/index.html#look-at-the-possible-parameters",
+    "title": "Hacking",
+    "section": "Look at the possible parameters",
+    "text": "Look at the possible parameters\nimport pandas as pd\npd.DataFrame(cat[name].describe()['user_parameters'])",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#load-a-specific-variant",
+    "href": "talks/technical/hacking/index.html#load-a-specific-variant",
+    "title": "Hacking",
+    "section": "Load a specific variant",
+    "text": "Load a specific variant\nds = cat[name](zoom=5, time=\"PT3H\").to_dask()\nds\n # Mapmaking",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#a-simple-world-map",
+    "href": "talks/technical/hacking/index.html#a-simple-world-map",
+    "title": "Hacking",
+    "section": "A simple world map",
+    "text": "A simple world map\nimport easygems.healpix as egh\nvar = \"tas\"\nplot_time = \"2020-05-12T09:00:00\"\ncmap = \"inferno\"\negh.healpix_show(ds[var].sel(time=plot_time), cmap=cmap)",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#increasing-the-resolution",
+    "href": "talks/technical/hacking/index.html#increasing-the-resolution",
+    "title": "Hacking",
+    "section": "increasing the resolution",
+    "text": "increasing the resolution\nds = cat[name](zoom=7, time=\"PT3H\").to_dask()\negh.healpix_show(ds[var].sel(time=plot_time), cmap=cmap)",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#zooming-in",
+    "href": "talks/technical/hacking/index.html#zooming-in",
+    "title": "Hacking",
+    "section": "Zooming in",
+    "text": "Zooming in\nimport cartopy.crs as ccrs\nimport cartopy.feature as cf\n\nds = cat[name](zoom=9, time=\"PT3H\").to_dask()\nprojection = ccrs.Robinson(central_longitude=120)\nfig, ax = plt.subplots(\n  figsize=(8, 4), \n  subplot_kw={\"projection\": projection}, \n  constrained_layout=True\n)\nax.set_extent([70, 150, 18, 55], crs=ccrs.PlateCarree())\negh.healpix_show(ds.tas.isel(time=0), \n  ax=ax, \n  cmap=cmap)\nax.add_feature(cf.COASTLINE, linewidth=0.8)\nax.add_feature(cf.BORDERS, linewidth=0.4)",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#zooming-in-1",
+    "href": "talks/technical/hacking/index.html#zooming-in-1",
+    "title": "Hacking",
+    "section": "Zooming in",
+    "text": "Zooming in",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#more-map-examples-on-easy.gems",
+    "href": "talks/technical/hacking/index.html#more-map-examples-on-easy.gems",
+    "title": "Hacking",
+    "section": "More map examples on easy.gems",
+    "text": "More map examples on easy.gems\nhttps://easy.gems.dkrz.de/Processing/healpix/healpix_cartopy.html",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#zonal-means",
+    "href": "talks/technical/hacking/index.html#zonal-means",
+    "title": "Hacking",
+    "section": "Zonal means",
+    "text": "Zonal means\nds = cat[name](zoom=5, time=\"PT3H\").to_dask().pipe(egh.attach_coords)\npr = ds['pr'].mean(dim='time').groupby(ds.lat).mean()\npr.plot()",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#zonal-section",
+    "href": "talks/technical/hacking/index.html#zonal-section",
+    "title": "Hacking",
+    "section": "Zonal section",
+    "text": "Zonal section\nimport matplotlib.pyplot as plt\nds = cat[name](zoom=5, time=\"PT6H\").to_dask().pipe(egh.attach_coords)\nua = ds['ua'].mean(dim='time').groupby(ds.lat).mean()\nua.plot()\nplt.ylim(plt.ylim()[::-1])\nplt.title (f\"Zonal mean zonal wind speed (m/s)\")",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#space-time-diagram",
+    "href": "talks/technical/hacking/index.html#space-time-diagram",
+    "title": "Hacking",
+    "section": "Space-time diagram",
+    "text": "Space-time diagram\nds = cat[name](zoom=7, time=\"PT3H\").to_dask().pipe(egh.attach_coords)\nSlim, Nlim = -15.0, 35.0\npr = (\n    ds['pr']\n    .where((ds[\"lat\"] &gt; Slim) & (ds[\"lat\"] &lt; Nlim), drop=True)\n    .groupby(\"lat\")\n    .mean()\n).coarsen(time=8).mean().transpose().compute()\npr.plot(cmap=\"Blues\", vmax=0.0001)\nplt.title(f\"zonal mean precipitation (kg m-2 s-1)\")",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#more-on-time-space-diagrams",
+    "href": "talks/technical/hacking/index.html#more-on-time-space-diagrams",
+    "title": "Hacking",
+    "section": "More on time-space diagrams",
+    "text": "More on time-space diagrams\nhttps://easy.gems.dkrz.de/Processing/healpix/time-space.html",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#build-clean-datasets",
+    "href": "talks/technical/hacking/index.html#build-clean-datasets",
+    "title": "Hacking",
+    "section": "Build clean datasets",
+    "text": "Build clean datasets\n\nAll variables together that fit together\nCutting parts out is easier than gluing together\nTime spent on making them clean is saved during analysis\nVariants for coarsening should follow a logic",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
+    ]
+  },
+  {
+    "objectID": "talks/technical/hacking/index.html#catalogs-arrange-datasets-logically",
+    "href": "talks/technical/hacking/index.html#catalogs-arrange-datasets-logically",
+    "title": "Hacking",
+    "section": "Catalogs arrange datasets logically",
+    "text": "Catalogs arrange datasets logically\n\nGroup dataset by topic\nTree-Style catalogs allow for nesting\nTry to have exactly one catalog with good location\nCatalogs can be nested",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Hacking"
     ]
   },
   {
