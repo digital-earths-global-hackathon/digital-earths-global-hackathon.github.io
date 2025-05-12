@@ -26,6 +26,8 @@ date: 2025-05-12
 
 {{< video ../useful_datasets/ngc3_selection.mp4 >}}
 
+([Code](https://gitlab.gwdg.de/ican/hiopy/-/snippets/640))
+
 ## Made possible by 
 
 . . . 
@@ -62,7 +64,7 @@ You should load the same amount of data to make them.
 * **E**qual **A**rea
 * iso**L**atitude
 
-Pixelation
+**Pix**elation
 
 
 [Górski et al., 2004](https://iopscience.iop.org/article/10.1086/427976/pdf)
