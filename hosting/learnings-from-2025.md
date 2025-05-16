@@ -7,7 +7,7 @@ All in all, this was surprisingly successful. There were some technical issues t
 ## Overall organization
 
 * Andrew, Pier-Luigi, Sara and Yuting did a great job at holding things together
-* Bjorn did a great job at shaking up structures and moving pushing things forward
+* Bjorn did a great job at shaking up structures and pushing things forward
 * Tobi, Lukas, Mark M, and others made technical magic possibble.
 
 ## Schedule
@@ -54,6 +54,11 @@ All in all, this was surprisingly successful. There were some technical issues t
 * Stac has no concept for loading the data
 * The combined multi-node offline/online mix worked well
 
-### Libraries (e.g. easygems, uxarray)
+### Libraries and tools (e.g. easygems, uxarray)
 * `ds = cat['ERA5'].to_dask().pipe(attach_crs, zoom=zoom).drop_vars(["lat", "lon"], errors="ignore")`
+* Full uptake of python at Beijing node
+* `egh.healpix_view` was very popular
+* Much of the work started with regional remaps to lat/lon (for MCS tracking / ...). Would be good to provide tools for this.
+
+
 
