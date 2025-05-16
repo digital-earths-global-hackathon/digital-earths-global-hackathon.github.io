@@ -49,6 +49,10 @@ All in all, this was surprisingly successful. There were some technical issues t
 * 
 
 ### Catalogs
+* intake0.7 did the trick, but we need a new concept, that again includes loading the data
+* intake0.7 is outdated and will increasingly collide with python environments
+* Stac has no concept for loading the data
+* The combined multi-node offline/online mix worked well
 
 ### Libraries (e.g. easygems, uxarray)
 * `ds = cat['ERA5'].to_dask().pipe(attach_crs, zoom=zoom).drop_vars(["lat", "lon"], errors="ignore")`
