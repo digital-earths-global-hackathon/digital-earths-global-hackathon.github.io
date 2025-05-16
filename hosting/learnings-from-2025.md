@@ -1,7 +1,5 @@
 # Learnings from the 2025 Hackathon
 
-I'll start this as a random collections of thoughts, and hope we'll be able to evolve it into something more structured and issues
-
 All in all, this was surprisingly successful. There were some technical issues though.
 
 ## Overall organization
