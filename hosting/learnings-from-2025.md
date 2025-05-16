@@ -7,7 +7,8 @@ All in all, this was surprisingly successful. There were some technical issues t
 ## Overall organization
 
 * Andrew, Pier-Luigi, Sara and Yuting did a great job at holding things together
-* Bjorn did a great job at shuking up structures and moving pushing things forward
+* Bjorn did a great job at shaking up structures and moving pushing things forward
+* Tobi, Lukas, Mark M, and others made technical magic possibble.
 
 ## Schedule
 
