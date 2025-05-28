@@ -8,7 +8,21 @@ All in all, this was surprisingly successful. There were some technical issues t
 * Bjorn did a great job at shaking up structures and pushing things forward
 * Tobi, Lukas, Mark M, and others made technical magic possibble.
 
+### Local node organization
+
+* Important things to cover: Enough space for the group work (ideally all groups should be in one big room which lowers the physical barrier in interaction across groups).
+* Eventually, a couple of small rooms for small group discussions or Zoom meetings.
+* Very important: Snack and coffee/ tea breaks in-between for networking.
+
 ## Schedule
+
+* General impression: The general [agenda](https://digital-earths-global-hackathon.github.io/hosting/logistics/agenda_template.html) from past hackathons was a good orientation point. Each node had their own additional programm with key notes or tutorials according to their needs.
+* An idea came up to use some time before, for a "Mini-preparation workshop". I.e. if the hackathon starts in the afternoon, the morning of the same day could be used for example for data training or the science teams lead could meet to discuss how to organize themselves.
+* Pan-node syncs were semi-successful. We should promote the syncs more and also identify the targeted audience (for every participant or just among the node organizers...) or the purpose of these syncs.
+
+## Outreach
+
+* LinkedIn was quite lively. We've created [a sub-page](https://www.linkedin.com/showcase/wcrp-global-km-scale-hackathon-2025/) and started this one month before the event started with some introdutory posts. During and after the event, we had a really active engagement rate, not only by the page itself but also from individual people and institutions reacting, reposting and mentioning hk25.
 
 ## Inter-node communication
 
@@ -27,6 +41,7 @@ All in all, this was surprisingly successful. There were some technical issues t
 
 * Did not really line up with the schedules (at least at some nodes). Would need earlier planning to be incorporated into the local schedules.
 * Goals should be very clear.
+* There were some difficulties in being and changing the host. This led to complications in recording or opening breakout rooms.
 
 ### GitHub and Code sharing
 
