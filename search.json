@@ -7,41 +7,51 @@
     "text": "May 12-16 2025 [UTC] – Canberra, São Paulo, Buenoes Aires, Beijing, Hamburg, Tokyo, Oxford, Boulder, Princeton, Berkley\nThe Digital Earths Global Hackathon will bring together scientists from around the world to jointly analyze the first ever coordinated experiments of climate models simulating a full annual cycle with horizontal grid spacings of 5 km or less).\nParticipants will gather at one of a number of regional nodes for the hacking, each of which will provide access to a combined data-compute resource hosting the data and proximate computing capbility for its analysis. Each node will host at least one full annual cycle of output data standardized on a common (HEALPix) grid. Standardization will help participants share their analysis workflows with other teams analyzing other models at other nodes, and thereby build global communities around common interests.\n\n\nOfficial Global Hackathon website\nWCRP Announcement"
   },
   {
-    "objectID": "hosting/time_line.html",
-    "href": "hosting/time_line.html",
-    "title": "Organization time line",
+    "objectID": "hosting/learnings-from-2025.html",
+    "href": "hosting/learnings-from-2025.html",
+    "title": "Learnings from the 2025 Hackathon",
     "section": "",
-    "text": "This is an idealized time line until when tasks need to be completed. Tasks could be completed earlier of course.\n\nas soon as possible\n\ndecide on locations (for people and data)\nwhich projects want to be involved?\nannounce dates to the community, with reference to basic website?\ncome up with a cool title\nwhat budget do we have for location costs, etc.? are there any sponsors?\n\n9 months before the event (August 2024)\n\ndecide on rough agenda, potential keynote speakers\n\n8 months before the event (September 2024)\n\nbook meeting venues\n\n7 months before the event (October 2024)\n6 months before the event (November 2024)\n\nplan possible side events at each location (tours)? social events, world cafe, etc.?\ndefine terms of reference (TOR) for hackathon participation (is necessary for nextGEMS)\n\n5 months before the event (December 2024)\n\nwebsite online\nregistration page(s) set up\nannounce hackathon\npublish schedule\nopen registration (1 Jan)\n\n4 months before the event (January 2025)\n\napplication deadline for travel support (15 Jan)\ninvitation letters for visa applications to be sent out\n\n3 months before the event (February 2025)\n\nregistration closes (1 Feb)\ndecision on participant numbers / can we accept all registrations?\nsend out confirmation about travel support (1 Feb)\nsend out registration confirmation (14 Feb)\nopen payment options (14 Feb)\n\n2 months before the event (March 2025)\n\nset up communication channels for the hackathon (Mattermost, mailing list(s))\nsimulations ready\n\n1 month before the event (April 2025)\n\nworkflow for data access\nparticipation fee payment deadline (15 April)\nsend NDAs to participants\n\nlast weeks before the event\n\nbadges\nsigns",
+    "text": "All in all, this was surprisingly successful. There were some technical issues though.\n\n\n\nAndrew, Pier-Luigi, Sara and Yuting did a great job at holding things together\nBjorn did a great job at shaking up structures and pushing things forward\nTobi, Lukas, Mark M, and others made technical magic possibble.\n\n\n\n\n\n\n\n\n\n\nWorks\nInvite more people earlier in the process\nChina uses WeChat for most communication (in Chinese, but with auto-translation)\n\n\n\n\n\nDouble Telcos are tiring but necessary.\nDid anybody read the nodes / watch the recordings?\n\n\n\n\n\nDid not really line up with the schedules (at least at some nodes). Would need earlier planning to be incorporated into the local schedules.\nGoals should be very clear.\n\n\n\n\n\nGitHub seems to provide a bit of a barrier for sharing code.\nNeed a concept that scales to 500 people contributing at the same time without established teams or time for learning.\nIf we really want collaboration, we need to train people before the hackathon.\nPossible rules:\n\nNo Jupyter notebooks, just plain python scripts to avoid GB-size repo. # %% syntax is fine\nCommit and merge frequently\nDifferentiate between libraries, examples, and dumpster\n\n\n\n\n\n\n\n\n\nActually have a real team with members from all nodes\nMeet with this team at EGU/AGU if possible at all\nDistribute tech team members more widely to foster connections?\nMight be worth hiring one person to oversee things / fully commit to running this\nHave a clear contact for each node who leads the preparations and actually is there during the hackathon\n\n\n\n\n\nProvide default chunk settings for 2D/3D datasets\nZarr with small (regional) Chunks works well.\n\nThe IFS GRIB datasets were very popular in China despite access via EERIE cloud being difficult. This is due to IFS being popular, not b/c of GRIB being popular.\n\nPrepare more uniform conversion scripts for better sharing among the teams\nTry to get datasets ready weeks before the hackathon (maybe practice with sample datesets to get the scripts right if teams are into last-minute simulations)\nCreate scripts for consistency checks (e.g. do they have crs set?), and encourage their use\nA suite of common analysis could be applied to catch obvious errors - perhaps timeseries/zonal means.\n\n\n\n\n\nPrepare and share instructions on how to work with the data\nPre-hackathon telcos on node-basis would be good (for most ppl. participating this is the 1st and not the 10th hackathon…)\n\n\n\n\n\nSet up proxies at all nodes and test them with all remote datasets (under fire) before the hackathon\nSpread users across different slurm-jobs\n\n\n\n\n\nintake0.7 did the trick, but we need a new concept, that again includes loading the data\nintake0.7 is outdated and will increasingly collide with python environments\nStac has no concept for loading the data\nThe combined multi-node offline/online mix worked well\nIdeally, the catalog could do the cascading.\n\n\n\n\n\nds = cat['ERA5'].to_dask().pipe(attach_crs, zoom=zoom).drop_vars([\"lat\", \"lon\"], errors=\"ignore\")\nCF Standard for HEALPix might improve things in the future.\nXDGGS will help with hierarchies.\nFull uptake of python at Beijing node\negh.healpix_view was very popular\nMuch of the work started with regional remaps to lat/lon (for MCS tracking / …). Would be good to provide tools for this.",
     "crumbs": [
       "Hacking plan",
       "Hosting a hackathon site",
-      "Organization time line"
+      "Learnings from the 2025 Hackathon"
     ]
   },
   {
-    "objectID": "hosting/logistics/agenda_template.html",
-    "href": "hosting/logistics/agenda_template.html",
-    "title": "Agenda template",
+    "objectID": "hosting/learnings-from-2025.html#overall-organization",
+    "href": "hosting/learnings-from-2025.html#overall-organization",
+    "title": "Learnings from the 2025 Hackathon",
     "section": "",
-    "text": "This is a draft agenda based on the experiences from the nextGEMS hackathons. Details might need to change for this hackathon. It might also be necessary to have an additional time slot for data handling introductions in the beginning of the event.",
+    "text": "Andrew, Pier-Luigi, Sara and Yuting did a great job at holding things together\nBjorn did a great job at shaking up structures and pushing things forward\nTobi, Lukas, Mark M, and others made technical magic possibble.",
     "crumbs": [
       "Hacking plan",
       "Hosting a hackathon site",
-      "Logistics for hosting a hackathon site",
-      "Agenda template"
+      "Learnings from the 2025 Hackathon"
     ]
   },
   {
-    "objectID": "hosting/logistics/agenda_template.html#draft-agenda",
-    "href": "hosting/logistics/agenda_template.html#draft-agenda",
-    "title": "Agenda template",
-    "section": "Draft agenda",
-    "text": "Draft agenda\n\nbreak times (catering) are exemplary and might change during the planning process;\nbeginning and end of each day depends also on room availability\n\n\n\n\nMonday\n\nroom(s)\n\n\n\n\n12:00 – 15:00\npreparation\n\n\n\n13:00 – 15:00\nregistration\ne.g. foyer\n\n\n15:00 – 18:00\nwelcome session\nlarge auditorium\n\n\nevening\npotential ice breaker event\nfoyer/off-site\n\n\n\n\n\n\n\nTuesday\n\n\n\n\n09:00 – 20:00\ngroup work\ngroup rooms\n\n\n\n\n\n\n\n11:00 – 11:30\ncoffee break\ne.g. foyer\n\n\n13:00 – 14:30\nlunch\nfoyer/off-site\n\n\n16:00 – 16:30\ncoffee break\ne.g. foyer\n\n\n\n\n\n\n\nWednesday\n\n\n\n\n09:00 – 20:00\ngroup work\ngroup rooms\n\n\n\n\n\n\n\n11:00 – 11:30\ncoffee break\ne.g. foyer\n\n\n13:00 – 14:30\nlunch\nfoyer/off-site\n\n\n16:00 – 16:30\ncoffee break\ne.g. foyer\n\n\n\n\n\n\n\n18:30 – 20:00\npotential keynote talk\nlarge auditorium\n\n\n\n\n\n\n\nThursday\n\n\n\n\n09:00 – 20:00\ngroup work\ngroup rooms\n\n\n\n\n\n\n\n11:00 – 11:30\ncoffee break\ne.g. foyer\n\n\n13:00 – 14:30\nlunch\nfoyer/off-site\n\n\n16:00 – 16:30\ncoffee break\ne.g. foyer\n\n\n\n\n\n\n\nFriday\n\n\n\n\n09:00 – 13:00\nclosing session\nlarge auditorium\n\n\n\n\n\n\n\n10:30 – 11:00\ncoffee break\ne.g. foyer\n\n\n13:00 – 14:30\nlunch\nfoyer/off-site",
+    "objectID": "hosting/learnings-from-2025.html#inter-node-communication",
+    "href": "hosting/learnings-from-2025.html#inter-node-communication",
+    "title": "Learnings from the 2025 Hackathon",
+    "section": "",
+    "text": "Works\nInvite more people earlier in the process\nChina uses WeChat for most communication (in Chinese, but with auto-translation)\n\n\n\n\n\nDouble Telcos are tiring but necessary.\nDid anybody read the nodes / watch the recordings?\n\n\n\n\n\nDid not really line up with the schedules (at least at some nodes). Would need earlier planning to be incorporated into the local schedules.\nGoals should be very clear.\n\n\n\n\n\nGitHub seems to provide a bit of a barrier for sharing code.\nNeed a concept that scales to 500 people contributing at the same time without established teams or time for learning.\nIf we really want collaboration, we need to train people before the hackathon.\nPossible rules:\n\nNo Jupyter notebooks, just plain python scripts to avoid GB-size repo. # %% syntax is fine\nCommit and merge frequently\nDifferentiate between libraries, examples, and dumpster",
     "crumbs": [
       "Hacking plan",
       "Hosting a hackathon site",
-      "Logistics for hosting a hackathon site",
-      "Agenda template"
+      "Learnings from the 2025 Hackathon"
+    ]
+  },
+  {
+    "objectID": "hosting/learnings-from-2025.html#technical-aspects",
+    "href": "hosting/learnings-from-2025.html#technical-aspects",
+    "title": "Learnings from the 2025 Hackathon",
+    "section": "",
+    "text": "Actually have a real team with members from all nodes\nMeet with this team at EGU/AGU if possible at all\nDistribute tech team members more widely to foster connections?\nMight be worth hiring one person to oversee things / fully commit to running this\nHave a clear contact for each node who leads the preparations and actually is there during the hackathon\n\n\n\n\n\nProvide default chunk settings for 2D/3D datasets\nZarr with small (regional) Chunks works well.\n\nThe IFS GRIB datasets were very popular in China despite access via EERIE cloud being difficult. This is due to IFS being popular, not b/c of GRIB being popular.\n\nPrepare more uniform conversion scripts for better sharing among the teams\nTry to get datasets ready weeks before the hackathon (maybe practice with sample datesets to get the scripts right if teams are into last-minute simulations)\nCreate scripts for consistency checks (e.g. do they have crs set?), and encourage their use\nA suite of common analysis could be applied to catch obvious errors - perhaps timeseries/zonal means.\n\n\n\n\n\nPrepare and share instructions on how to work with the data\nPre-hackathon telcos on node-basis would be good (for most ppl. participating this is the 1st and not the 10th hackathon…)\n\n\n\n\n\nSet up proxies at all nodes and test them with all remote datasets (under fire) before the hackathon\nSpread users across different slurm-jobs\n\n\n\n\n\nintake0.7 did the trick, but we need a new concept, that again includes loading the data\nintake0.7 is outdated and will increasingly collide with python environments\nStac has no concept for loading the data\nThe combined multi-node offline/online mix worked well\nIdeally, the catalog could do the cascading.\n\n\n\n\n\nds = cat['ERA5'].to_dask().pipe(attach_crs, zoom=zoom).drop_vars([\"lat\", \"lon\"], errors=\"ignore\")\nCF Standard for HEALPix might improve things in the future.\nXDGGS will help with hierarchies.\nFull uptake of python at Beijing node\negh.healpix_view was very popular\nMuch of the work started with regional remaps to lat/lon (for MCS tracking / …). Would be good to provide tools for this.",
+    "crumbs": [
+      "Hacking plan",
+      "Hosting a hackathon site",
+      "Learnings from the 2025 Hackathon"
     ]
   },
   {
@@ -93,131 +103,233 @@
     ]
   },
   {
-    "objectID": "hosting/technical/data_request.html",
-    "href": "hosting/technical/data_request.html",
-    "title": "Data request",
+    "objectID": "hosting/technical/transforming_to_healpix.html",
+    "href": "hosting/technical/transforming_to_healpix.html",
+    "title": "Transforming data to healpix",
     "section": "",
-    "text": "This data request is based on the Dyamond phase 3 protocol by Takasuka, D. et al. (2024).\n\n\n\n\n\n\nThe main differences to the DYAMOND 3 data request\n\n\n\n\nWe request data on a hierarchy of HEALPix grids instead of 0.25 degree resolution.\nWe added snowfall_flux, liquid_water_content_of_surface_snow, snow_area_fraction_viewable_from_above, soil_liquid_water_content to the request.\nWe specify variable names.\nWe request most 2D fields only as 3-hourly means.\nWe specify that hourly 2D data should be instantaneous.\nWe remove “Downward LW radiation at the TOA”, as it is 0 anyways.\n\n\n\n\n\nThe data from global models should be provided on the HEALPix grid on zoom level 10 (effective cell size of 6 km) or zoom 9 (13km). To ease analysis, please provide all HEALPix levels up to this level.\nFor regional models, we will need further discussion with teams that have a strong experience in intercomparisons of regional models.\n3D Output Levels:\nThe output should be interpolated to the following 25 pressure levels:\nimport numpy as np\ntr = np.arange(100,900,100)\nlt = np.arange(850,1025,25)\nua = np.arange(10,90,20)\nlevels = sorted({1,5,20,150,250,750}.union(tr,lt,ua))\n\n\n\nHEALPix grids have 12*4**level cells, so a level 9 HEALPix grid consists of roughly 3 million cells. It has proven very beneficial for the analysis to also store all lower grid resolutions. This adds approximately 30% to the output volume, and allows prototyping analyses at lower resolution, or generating maps from an amount of data that actually matches the pixels in a plot. For level 9 and all lower levels together, about 4 million floats are needed per 2D slice. Furthermore, we want the 2D fields on 6-hourly interval as well, and all fields also daily. The totals for storing this data (assuming 4 bytes/float, and 50% compression) are\n3D: 2.8TB\n2D: 1.7TB \ntotal: 4.5TB\nSee below for the code.\nWithout the hierarchy, the requirements are:\n\n\n\n\n\n\n\n\n\n\n\n\ntype\ncells / snapshot\nMB / snap-shot1\nsnapshots\nGB / var\nvars\nGB total\n\n\n\n\n2D\n3 M\n6\n365*24\n52\n33\n1650\n\n\n3D\n75 M\n150\n365*4\n220\n12\n2600\n\n\n\nNote that for any additional healpix level, the requirements grow by a factor of 4, so a ~6km resolution dataset (HEALPix level 10) already consumes about 20 TB.\n\n\n\nIn principle any file format that is compatible with standard software could be used. However, zarr has proven very advantageous, as it allows to\n\nbuild large datasets covering anything up to an entire simulation output\nchunk data in all dimensions\n\nIf plain zarr 2 is used, data can be read in many programming languages. For C-based software, a recent libnetcdf will do the trick. The downside of this approach is a lot of small files, which can be problematic on HPC systems, especially with inode quota.\nOther possible approaches include the use of kerchunk in python for grouping data chunks in (netCDF/HDF5) files into unified datasets that look like zarr to python. Other programming languages / codes can then still make use of the underlying netCDF files.\n\n\n\nFor some models, the hydrometeor categories may not map directly onto the specified output. In these cases hydrometeor habits can be left out (for instance if snow and cloud ice are not distinguished), or additional information can be added, e.g., for models with hail. In such cases, please try to follow the CF conventions, and open an issue, so we can amend the table and keep the naming consistent among all teams.\n\n\n\n\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\ngeopotential_height\nzg\nm\n\n\n\neastward_wind\nua\nm/s\n\n\n\nnorthward_wind\nva\nm/s\n\n\n\nupward_air_velocity\nwa\nm/s\n(pick appropriate unit for model)\n\n\nlagrangian_tendency_of_air_pressure\nwap\npa/s\n\n\n\nair_temperature\nta\nK\n\n\n\nrelative_humidity\nhur\n1\n\n\n\nspecific_humidity\nhus\nkg kg-1\n\n\n\nmass_fraction_of_water_in_air\nqall\nkg kg-1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\natmosphere_mass_content_of_cloud_condensed_water\nclwvi\nkg m-2\n\n\n\natmosphere_mass_content_of_cloud_ice\nclivi\nkg m-2\n\n\n\nsurface_downward_latent_heat_flux\nhflsd\nW m-2\ndirection included in short name\n\n\nsurface_downward_sensible_heat_flux\nhfssd\nW m-2\ndirection included in short name\n\n\ntoa_outgoing_longwave_flux\nrlut\nW m-2\n\n\n\ntoa_outgoing_longwave_flux_assuming_clear_sky\nrlutcs\nW m-2\n\n\n\nsurface_upwelling_longwave_flux_in_air\nrlus\nW m-2\n\n\n\nsurface_upwelling_longwave_flux_in_air_assuming_clear_sky\nrluscs\nW m-2\n\n\n\nsurface_downwelling_longwave_flux_in_air\nrlds\nW m-2\n\n\n\nsurface_downwelling_longwave_flux_in_air_assuming_clear_sky\nrldscs\nW m-2\n\n\n\ntoa_outgoing_shortwave_flux\nrsut\nW m-2\n\n\n\ntoa_outgoing_shortwave_flux_assuming_clear_sky\nrsutcs\nW m-2\n\n\n\ntoa_incoming_shortwave_flux\nrsdt\nW m-2\n\n\n\nsurface_upwelling_shortwave_flux_in_air\nrsus\nW m-2\n\n\n\nsurface_upwelling_shortwave_flux_in_air_assuming_clear_sky\nrsuscs\nW m-2\n\n\n\nsurface_downwelling_shortwave_flux_in_air\nrsds\nW m-2\n\n\n\nsurface_downwelling_shortwave_flux_in_air_assuming_clear_sky\nrsdscs\nW m-2\n\n\n\nprecipitation_flux\npr\nkg m-2 s-1\nincludes all forms of precipitation\n\n\nsolid_precipitation_flux\nprs\nkg m-2 s-1\nincludes all forms of solid precipitation\n\n\natmosphere_mass_content_of_water_vapor\nprw\nkg m-2\n\n\n\nsurface_air_pressure\nps\nPa\n\n\n\nair_pressure_at_mean_sea_level\npsl\nPa\n\n\n\nspecific_humidity\nhuss\nkg kg-1\n2m above ground\n\n\nair_temperature\ntas\nK\n2m above ground\n\n\neastward_wind\nuas\nm s-1\n10m above ground\n\n\nnorthward_wind\nvas\nm s-1\n10m above ground\n\n\nsurface_temperature\nts\nK\n\n\n\nsurface_downward_eastward_stress\ntauu\nN m-2\n\n\n\nsurface_downward_northward_stress\ntauv\nN m-2\n\n\n\ncloud_area_fraction\nclt\n1\n\n\n\nliquid_water_content_of_surface_snow\nswe\nkg m-2\nshort name invented\n\n\nsnow_area_fraction_viewable_from_above\nsncvfa\n1\nshort name based on snc for surface_snow_area_fraction\n\n\nsoil_liquid_water_content\nmrso\nkg m-2\nshort name invented\n\n\nsea_ice_area_fraction\nsiconc\n1\n\n\n\n\n\n\n\nThis list is designed to include key outputs like accumulated precipitation, surface temperature and surface wind speed, as well as other features desired for trackers of convective storms and MCS. Other features requiring vertical information are suggested to be done 6 hourly.\n\n\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\ntoa_outgoing_longwave_flux\nrlut\nW m-2\n\n\n\ntoa_outgoing_shortwave_flux\nrsut\nW m-2\n\n\n\nprecipitation_flux (*)\npr\nkg m-2 s-1\nsum of all modes\n\n\nair_pressure_at_mean_sea_level\npsl\nPa\n\n\n\neastward_wind\nuas\nm s-1\n10m above ground\n\n\nnorthward_wind\nvas\nm s-1\n10m above ground\n\n\nsurface_temperature\nts\nK\n\n\n\n\n\nAverage precipitation flux (rate) over the hour is requested. Instantaneous rate for a timestep is okay if that is produced. Please specify.\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\nland_area_fraction\nsftlf\n1\n\n\n\nland_ice_area_fraction\nsftgif\n1\n\n\n\nsurface_altitude\norog\nm\n\n\n\n\n\n\n\n\nSeveral additional requests by specific people have been made. Models are requested to provide them as computer and human time allow.\n\n\nThe purpose of the requested relative vorticity with instantaneous values is to be able to track storms and to assess their baroclinicity. Three levels at 300, 500, and 850 hPa would make it possible. Instantaneous 3 hourly data is needed.\n\n\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\natmosphere_relative_vorticity 300hPa\nrva300\ns-1\n\n\n\natmosphere_relative_vorticity 500hPa\nrva500\ns-1\n\n\n\natmosphere_relative_vorticity 850hPa\nrva850\ns-1\n\n\n\n\n\n\n\n\nFor convective cell tracking and case studies, a short re-run is requested: 15 minute instantaneous output is requested at zoom level 9/10 if available. Two 24 or 48 hour periods? Beginning 2020/2/1 and 2020/8/1\n\n\n\n\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\ntoa_outgoing_longwave_flux\nrlut\nW m-2\n\n\n\ntoa_outgoing_shortwave_flux\nrsut\nW m-2\n\n\n\nprecipitation_flux\npr\nkg m-2 s-1\nsum of all modes\n\n\nair_pressure_at_mean_sea_level\npsl\nPa\n\n\n\neastward_wind\nuas\nm s-1\n10m above ground\n\n\nnorthward_wind\nvas\nm s-1\n10m above ground\n\n\nsurface_temperature\nts\nK\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nstandard name\nshort name\nunits\ncomment\n\n\n\n\ngeopotential_height\nzg\nm\n\n\n\neastward_wind\nua\nm/s\n\n\n\nnorthward_wind\nva\nm/s\n\n\n\nupward_air_velocity\nwa\nm/s\n(pick appropriate unit for model)\n\n\nlagrangian_tendency_of_air_pressure\nwap\npa/s\n\n\n\ntemperature\nta\nK\n\n\n\nrelative_humidity\nhur\n-\n\n\n\nspecific_humidity\nhus\nkg kg-1\n\n\n\nmass_fraction_of_water_in_air\nqall\nkg kg-1\n\n\n\n\n\n\n\n\nvars_3d = 8\nvars_2d_3h = 35\nvars_2d_1h = 7\ninterval_3d = 6/24.\ninterval_2d_3h = 1/8.\ninterval_2d_1h = 1/24.\ninterval_daily = 1.\nlevels_3d = 25\n\nparams = dict ( \n    max_healpix_level = 9,\n    duration = 365,\n    float_precision = 4,\n    float_compression = .5,\n)\ndef compute_volume(var_count, levels, interval, max_healpix_level, duration, float_precision, float_compression):\n    cells = sum (12 * 4** level for level in range (max_healpix_level + 1))\n    return cells * var_count * levels * duration / interval * float_precision * float_compression\n\nvolume_3d = ( compute_volume(var_count=vars_3d, levels=levels_3d, interval=interval_3d, **params) +\ncompute_volume(var_count=vars_3d, levels=levels_3d, interval=interval_daily, **params))\nvolume_2d_3h = (compute_volume(var_count=vars_2d_3h, levels=1, interval = interval_2d_3h, **params) +\n            compute_volume(var_count=vars_2d_3h, levels=1, interval = interval_3d, **params) +\n            compute_volume(var_count=vars_2d_3h, levels=1, interval = interval_daily, **params))\nvolume_2d_1h = (compute_volume(var_count=vars_2d_1h, levels=1, interval = interval_2d_1h, **params))\nprint (f'3D: {volume_3d/1024**4:.1f}TB\\n2D: {(volume_2d_3h+volume_2d_1h)/1024**4:.1f}TB \\ntotal: {(volume_3d+(volume_2d_3h+volume_2d_1h))/1024**4:.1f}TB')",
+    "text": "Healpix has kind-of-strange curved cell boundaries, so conservative remaps are not trivial. A more trivial approach is nearest-neighbor remapping.\nIf you put emphasis on conservation properties, you can do a nearest-neighbor remap to a higher-resolution healpix grid, and then coarsen again. Possibly all in the same processing pipeline.\nThere needs to be some attention paid to missing values when coarsening (averaging 4 cells together) from a fine to a coarser grid.\n\n\n\n\n\nThe simplest way to convert a file to a healpix level 9 netCDF probably is using a recent cdo version and calling\ncdo -f nc4 -k auto -z zstd -remapnn,hpz9 INFILE OUTFILE\nTo create zarr, first create an .ncrc file specifying that you want the dimension separator to be a / instead of ..\necho &gt;&gt; ~/.ncrc\necho ZARR.DIMENSION_SEPARATOR=/ &gt;&gt; ~/.ncrc\nThen use\ncdo -f nczarr -k auto -z zstd -remapnn,hpz9 INFILE \\\n    file://OUTFILE.zarr#mode=zarr,file\nHowever, cdo does not really produce the optimal chunking, so going via python might be better for production. For testing, this should actually work pretty well.",
     "crumbs": [
       "Hacking plan",
       "Hosting a hackathon site",
       "Technical details for host teams",
-      "Data request"
+      "Transforming data to healpix"
     ]
   },
   {
-    "objectID": "hosting/technical/data_request.html#data-grid-and-vertical-levels",
-    "href": "hosting/technical/data_request.html#data-grid-and-vertical-levels",
-    "title": "Data request",
+    "objectID": "hosting/technical/transforming_to_healpix.html#interpolation-methods",
+    "href": "hosting/technical/transforming_to_healpix.html#interpolation-methods",
+    "title": "Transforming data to healpix",
     "section": "",
-    "text": "The data from global models should be provided on the HEALPix grid on zoom level 10 (effective cell size of 6 km) or zoom 9 (13km). To ease analysis, please provide all HEALPix levels up to this level.\nFor regional models, we will need further discussion with teams that have a strong experience in intercomparisons of regional models.\n3D Output Levels:\nThe output should be interpolated to the following 25 pressure levels:\nimport numpy as np\ntr = np.arange(100,900,100)\nlt = np.arange(850,1025,25)\nua = np.arange(10,90,20)\nlevels = sorted({1,5,20,150,250,750}.union(tr,lt,ua))",
+    "text": "Healpix has kind-of-strange curved cell boundaries, so conservative remaps are not trivial. A more trivial approach is nearest-neighbor remapping.\nIf you put emphasis on conservation properties, you can do a nearest-neighbor remap to a higher-resolution healpix grid, and then coarsen again. Possibly all in the same processing pipeline.\nThere needs to be some attention paid to missing values when coarsening (averaging 4 cells together) from a fine to a coarser grid.",
     "crumbs": [
       "Hacking plan",
       "Hosting a hackathon site",
       "Technical details for host teams",
-      "Data request"
+      "Transforming data to healpix"
     ]
   },
   {
-    "objectID": "hosting/technical/data_request.html#data-volume",
-    "href": "hosting/technical/data_request.html#data-volume",
-    "title": "Data request",
+    "objectID": "hosting/technical/transforming_to_healpix.html#tools",
+    "href": "hosting/technical/transforming_to_healpix.html#tools",
+    "title": "Transforming data to healpix",
     "section": "",
-    "text": "HEALPix grids have 12*4**level cells, so a level 9 HEALPix grid consists of roughly 3 million cells. It has proven very beneficial for the analysis to also store all lower grid resolutions. This adds approximately 30% to the output volume, and allows prototyping analyses at lower resolution, or generating maps from an amount of data that actually matches the pixels in a plot. For level 9 and all lower levels together, about 4 million floats are needed per 2D slice. Furthermore, we want the 2D fields on 6-hourly interval as well, and all fields also daily. The totals for storing this data (assuming 4 bytes/float, and 50% compression) are\n3D: 2.8TB\n2D: 1.7TB \ntotal: 4.5TB\nSee below for the code.\nWithout the hierarchy, the requirements are:\n\n\n\n\n\n\n\n\n\n\n\n\ntype\ncells / snapshot\nMB / snap-shot1\nsnapshots\nGB / var\nvars\nGB total\n\n\n\n\n2D\n3 M\n6\n365*24\n52\n33\n1650\n\n\n3D\n75 M\n150\n365*4\n220\n12\n2600\n\n\n\nNote that for any additional healpix level, the requirements grow by a factor of 4, so a ~6km resolution dataset (HEALPix level 10) already consumes about 20 TB.",
+    "text": "The simplest way to convert a file to a healpix level 9 netCDF probably is using a recent cdo version and calling\ncdo -f nc4 -k auto -z zstd -remapnn,hpz9 INFILE OUTFILE\nTo create zarr, first create an .ncrc file specifying that you want the dimension separator to be a / instead of ..\necho &gt;&gt; ~/.ncrc\necho ZARR.DIMENSION_SEPARATOR=/ &gt;&gt; ~/.ncrc\nThen use\ncdo -f nczarr -k auto -z zstd -remapnn,hpz9 INFILE \\\n    file://OUTFILE.zarr#mode=zarr,file\nHowever, cdo does not really produce the optimal chunking, so going via python might be better for production. For testing, this should actually work pretty well.",
     "crumbs": [
       "Hacking plan",
       "Hosting a hackathon site",
       "Technical details for host teams",
-      "Data request"
+      "Transforming data to healpix"
     ]
   },
   {
-    "objectID": "hosting/technical/data_request.html#file-formats",
-    "href": "hosting/technical/data_request.html#file-formats",
-    "title": "Data request",
+    "objectID": "hosting/logistics/agenda_template.html",
+    "href": "hosting/logistics/agenda_template.html",
+    "title": "Agenda template",
     "section": "",
-    "text": "In principle any file format that is compatible with standard software could be used. However, zarr has proven very advantageous, as it allows to\n\nbuild large datasets covering anything up to an entire simulation output\nchunk data in all dimensions\n\nIf plain zarr 2 is used, data can be read in many programming languages. For C-based software, a recent libnetcdf will do the trick. The downside of this approach is a lot of small files, which can be problematic on HPC systems, especially with inode quota.\nOther possible approaches include the use of kerchunk in python for grouping data chunks in (netCDF/HDF5) files into unified datasets that look like zarr to python. Other programming languages / codes can then still make use of the underlying netCDF files.",
+    "text": "This is a draft agenda based on the experiences from the nextGEMS hackathons. Details might need to change for this hackathon. It might also be necessary to have an additional time slot for data handling introductions in the beginning of the event.",
     "crumbs": [
       "Hacking plan",
       "Hosting a hackathon site",
-      "Technical details for host teams",
-      "Data request"
+      "Logistics for hosting a hackathon site",
+      "Agenda template"
     ]
   },
   {
-    "objectID": "hosting/technical/data_request.html#variables",
-    "href": "hosting/technical/data_request.html#variables",
-    "title": "Data request",
-    "section": "",
-    "text": "For some models, the hydrometeor categories may not map directly onto the specified output. In these cases hydrometeor habits can be left out (for instance if snow and cloud ice are not distinguished), or additional information can be added, e.g., for models with hail. In such cases, please try to follow the CF conventions, and open an issue, so we can amend the table and keep the naming consistent among all teams.\n\n\n\n\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\ngeopotential_height\nzg\nm\n\n\n\neastward_wind\nua\nm/s\n\n\n\nnorthward_wind\nva\nm/s\n\n\n\nupward_air_velocity\nwa\nm/s\n(pick appropriate unit for model)\n\n\nlagrangian_tendency_of_air_pressure\nwap\npa/s\n\n\n\nair_temperature\nta\nK\n\n\n\nrelative_humidity\nhur\n1\n\n\n\nspecific_humidity\nhus\nkg kg-1\n\n\n\nmass_fraction_of_water_in_air\nqall\nkg kg-1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\natmosphere_mass_content_of_cloud_condensed_water\nclwvi\nkg m-2\n\n\n\natmosphere_mass_content_of_cloud_ice\nclivi\nkg m-2\n\n\n\nsurface_downward_latent_heat_flux\nhflsd\nW m-2\ndirection included in short name\n\n\nsurface_downward_sensible_heat_flux\nhfssd\nW m-2\ndirection included in short name\n\n\ntoa_outgoing_longwave_flux\nrlut\nW m-2\n\n\n\ntoa_outgoing_longwave_flux_assuming_clear_sky\nrlutcs\nW m-2\n\n\n\nsurface_upwelling_longwave_flux_in_air\nrlus\nW m-2\n\n\n\nsurface_upwelling_longwave_flux_in_air_assuming_clear_sky\nrluscs\nW m-2\n\n\n\nsurface_downwelling_longwave_flux_in_air\nrlds\nW m-2\n\n\n\nsurface_downwelling_longwave_flux_in_air_assuming_clear_sky\nrldscs\nW m-2\n\n\n\ntoa_outgoing_shortwave_flux\nrsut\nW m-2\n\n\n\ntoa_outgoing_shortwave_flux_assuming_clear_sky\nrsutcs\nW m-2\n\n\n\ntoa_incoming_shortwave_flux\nrsdt\nW m-2\n\n\n\nsurface_upwelling_shortwave_flux_in_air\nrsus\nW m-2\n\n\n\nsurface_upwelling_shortwave_flux_in_air_assuming_clear_sky\nrsuscs\nW m-2\n\n\n\nsurface_downwelling_shortwave_flux_in_air\nrsds\nW m-2\n\n\n\nsurface_downwelling_shortwave_flux_in_air_assuming_clear_sky\nrsdscs\nW m-2\n\n\n\nprecipitation_flux\npr\nkg m-2 s-1\nincludes all forms of precipitation\n\n\nsolid_precipitation_flux\nprs\nkg m-2 s-1\nincludes all forms of solid precipitation\n\n\natmosphere_mass_content_of_water_vapor\nprw\nkg m-2\n\n\n\nsurface_air_pressure\nps\nPa\n\n\n\nair_pressure_at_mean_sea_level\npsl\nPa\n\n\n\nspecific_humidity\nhuss\nkg kg-1\n2m above ground\n\n\nair_temperature\ntas\nK\n2m above ground\n\n\neastward_wind\nuas\nm s-1\n10m above ground\n\n\nnorthward_wind\nvas\nm s-1\n10m above ground\n\n\nsurface_temperature\nts\nK\n\n\n\nsurface_downward_eastward_stress\ntauu\nN m-2\n\n\n\nsurface_downward_northward_stress\ntauv\nN m-2\n\n\n\ncloud_area_fraction\nclt\n1\n\n\n\nliquid_water_content_of_surface_snow\nswe\nkg m-2\nshort name invented\n\n\nsnow_area_fraction_viewable_from_above\nsncvfa\n1\nshort name based on snc for surface_snow_area_fraction\n\n\nsoil_liquid_water_content\nmrso\nkg m-2\nshort name invented\n\n\nsea_ice_area_fraction\nsiconc\n1\n\n\n\n\n\n\n\nThis list is designed to include key outputs like accumulated precipitation, surface temperature and surface wind speed, as well as other features desired for trackers of convective storms and MCS. Other features requiring vertical information are suggested to be done 6 hourly.\n\n\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\ntoa_outgoing_longwave_flux\nrlut\nW m-2\n\n\n\ntoa_outgoing_shortwave_flux\nrsut\nW m-2\n\n\n\nprecipitation_flux (*)\npr\nkg m-2 s-1\nsum of all modes\n\n\nair_pressure_at_mean_sea_level\npsl\nPa\n\n\n\neastward_wind\nuas\nm s-1\n10m above ground\n\n\nnorthward_wind\nvas\nm s-1\n10m above ground\n\n\nsurface_temperature\nts\nK\n\n\n\n\n\nAverage precipitation flux (rate) over the hour is requested. Instantaneous rate for a timestep is okay if that is produced. Please specify.\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\nland_area_fraction\nsftlf\n1\n\n\n\nland_ice_area_fraction\nsftgif\n1\n\n\n\nsurface_altitude\norog\nm",
+    "objectID": "hosting/logistics/agenda_template.html#draft-agenda",
+    "href": "hosting/logistics/agenda_template.html#draft-agenda",
+    "title": "Agenda template",
+    "section": "Draft agenda",
+    "text": "Draft agenda\n\nbreak times (catering) are exemplary and might change during the planning process;\nbeginning and end of each day depends also on room availability\n\n\n\n\nMonday\n\nroom(s)\n\n\n\n\n12:00 – 15:00\npreparation\n\n\n\n13:00 – 15:00\nregistration\ne.g. foyer\n\n\n15:00 – 18:00\nwelcome session\nlarge auditorium\n\n\nevening\npotential ice breaker event\nfoyer/off-site\n\n\n\n\n\n\n\nTuesday\n\n\n\n\n09:00 – 20:00\ngroup work\ngroup rooms\n\n\n\n\n\n\n\n11:00 – 11:30\ncoffee break\ne.g. foyer\n\n\n13:00 – 14:30\nlunch\nfoyer/off-site\n\n\n16:00 – 16:30\ncoffee break\ne.g. foyer\n\n\n\n\n\n\n\nWednesday\n\n\n\n\n09:00 – 20:00\ngroup work\ngroup rooms\n\n\n\n\n\n\n\n11:00 – 11:30\ncoffee break\ne.g. foyer\n\n\n13:00 – 14:30\nlunch\nfoyer/off-site\n\n\n16:00 – 16:30\ncoffee break\ne.g. foyer\n\n\n\n\n\n\n\n18:30 – 20:00\npotential keynote talk\nlarge auditorium\n\n\n\n\n\n\n\nThursday\n\n\n\n\n09:00 – 20:00\ngroup work\ngroup rooms\n\n\n\n\n\n\n\n11:00 – 11:30\ncoffee break\ne.g. foyer\n\n\n13:00 – 14:30\nlunch\nfoyer/off-site\n\n\n16:00 – 16:30\ncoffee break\ne.g. foyer\n\n\n\n\n\n\n\nFriday\n\n\n\n\n09:00 – 13:00\nclosing session\nlarge auditorium\n\n\n\n\n\n\n\n10:30 – 11:00\ncoffee break\ne.g. foyer\n\n\n13:00 – 14:30\nlunch\nfoyer/off-site",
     "crumbs": [
       "Hacking plan",
       "Hosting a hackathon site",
-      "Technical details for host teams",
-      "Data request"
+      "Logistics for hosting a hackathon site",
+      "Agenda template"
     ]
   },
   {
-    "objectID": "hosting/technical/data_request.html#optional-specific-requests",
-    "href": "hosting/technical/data_request.html#optional-specific-requests",
-    "title": "Data request",
+    "objectID": "talks/index.html",
+    "href": "talks/index.html",
+    "title": "Talks",
     "section": "",
-    "text": "Several additional requests by specific people have been made. Models are requested to provide them as computer and human time allow.\n\n\nThe purpose of the requested relative vorticity with instantaneous values is to be able to track storms and to assess their baroclinicity. Three levels at 300, 500, and 850 hPa would make it possible. Instantaneous 3 hourly data is needed.\n\n\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\natmosphere_relative_vorticity 300hPa\nrva300\ns-1\n\n\n\natmosphere_relative_vorticity 500hPa\nrva500\ns-1\n\n\n\natmosphere_relative_vorticity 850hPa\nrva850\ns-1",
+    "text": "Building useful datasets for Earth System Model output\nStorage requirements\nCatalogs\nPython packages\nProcessing needs",
     "crumbs": [
       "Hacking plan",
-      "Hosting a hackathon site",
-      "Technical details for host teams",
-      "Data request"
+      "Talks"
     ]
   },
   {
-    "objectID": "hosting/technical/data_request.html#individual-convective-cell-tracking-zhe-feng-pnnl-will-jones-oxford",
-    "href": "hosting/technical/data_request.html#individual-convective-cell-tracking-zhe-feng-pnnl-will-jones-oxford",
-    "title": "Data request",
+    "objectID": "talks/index.html#technical",
+    "href": "talks/index.html#technical",
+    "title": "Talks",
     "section": "",
-    "text": "For convective cell tracking and case studies, a short re-run is requested: 15 minute instantaneous output is requested at zoom level 9/10 if available. Two 24 or 48 hour periods? Beginning 2020/2/1 and 2020/8/1\n\n\n\n\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\ntoa_outgoing_longwave_flux\nrlut\nW m-2\n\n\n\ntoa_outgoing_shortwave_flux\nrsut\nW m-2\n\n\n\nprecipitation_flux\npr\nkg m-2 s-1\nsum of all modes\n\n\nair_pressure_at_mean_sea_level\npsl\nPa\n\n\n\neastward_wind\nuas\nm s-1\n10m above ground\n\n\nnorthward_wind\nvas\nm s-1\n10m above ground\n\n\nsurface_temperature\nts\nK\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nstandard name\nshort name\nunits\ncomment\n\n\n\n\ngeopotential_height\nzg\nm\n\n\n\neastward_wind\nua\nm/s\n\n\n\nnorthward_wind\nva\nm/s\n\n\n\nupward_air_velocity\nwa\nm/s\n(pick appropriate unit for model)\n\n\nlagrangian_tendency_of_air_pressure\nwap\npa/s\n\n\n\ntemperature\nta\nK\n\n\n\nrelative_humidity\nhur\n-\n\n\n\nspecific_humidity\nhus\nkg kg-1\n\n\n\nmass_fraction_of_water_in_air\nqall\nkg kg-1",
+    "text": "Building useful datasets for Earth System Model output\nStorage requirements\nCatalogs\nPython packages\nProcessing needs",
     "crumbs": [
       "Hacking plan",
-      "Hosting a hackathon site",
-      "Technical details for host teams",
-      "Data request"
+      "Talks"
     ]
   },
   {
-    "objectID": "hosting/technical/data_request.html#code-for-computing-the-data-volume",
-    "href": "hosting/technical/data_request.html#code-for-computing-the-data-volume",
-    "title": "Data request",
-    "section": "",
-    "text": "vars_3d = 8\nvars_2d_3h = 35\nvars_2d_1h = 7\ninterval_3d = 6/24.\ninterval_2d_3h = 1/8.\ninterval_2d_1h = 1/24.\ninterval_daily = 1.\nlevels_3d = 25\n\nparams = dict ( \n    max_healpix_level = 9,\n    duration = 365,\n    float_precision = 4,\n    float_compression = .5,\n)\ndef compute_volume(var_count, levels, interval, max_healpix_level, duration, float_precision, float_compression):\n    cells = sum (12 * 4** level for level in range (max_healpix_level + 1))\n    return cells * var_count * levels * duration / interval * float_precision * float_compression\n\nvolume_3d = ( compute_volume(var_count=vars_3d, levels=levels_3d, interval=interval_3d, **params) +\ncompute_volume(var_count=vars_3d, levels=levels_3d, interval=interval_daily, **params))\nvolume_2d_3h = (compute_volume(var_count=vars_2d_3h, levels=1, interval = interval_2d_3h, **params) +\n            compute_volume(var_count=vars_2d_3h, levels=1, interval = interval_3d, **params) +\n            compute_volume(var_count=vars_2d_3h, levels=1, interval = interval_daily, **params))\nvolume_2d_1h = (compute_volume(var_count=vars_2d_1h, levels=1, interval = interval_2d_1h, **params))\nprint (f'3D: {volume_3d/1024**4:.1f}TB\\n2D: {(volume_2d_3h+volume_2d_1h)/1024**4:.1f}TB \\ntotal: {(volume_3d+(volume_2d_3h+volume_2d_1h))/1024**4:.1f}TB')",
+    "objectID": "talks/technical/storing_data/index.html#datasets-are",
+    "href": "talks/technical/storing_data/index.html#datasets-are",
+    "title": "Storing data",
+    "section": "Datasets are",
+    "text": "Datasets are\n\n(from xarray docs)\n\n\nn-dimensional variables\nshared dimensions\n\n\n\ncoordinates\nattributes for metadata",
     "crumbs": [
       "Hacking plan",
-      "Hosting a hackathon site",
-      "Technical details for host teams",
-      "Data request"
+      "Talks",
+      "Technical",
+      "Storing data"
     ]
   },
   {
-    "objectID": "hosting/technical/data_request.html#footnotes",
-    "href": "hosting/technical/data_request.html#footnotes",
-    "title": "Data request",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nAssuming 4-byte floats and 50% compression↩︎",
+    "objectID": "talks/technical/storing_data/index.html#datasets-are-not",
+    "href": "talks/technical/storing_data/index.html#datasets-are-not",
+    "title": "Storing data",
+    "section": "Datasets are not",
+    "text": "Datasets are not\n\na single file\na storage format\nshaped by storage & handling\n\n\nIn the past, people often designed datasets to match their file handling requirements. The resulting view on a dataset seems to be overly restrictive and leads to unfortunate usage patterns.",
     "crumbs": [
       "Hacking plan",
-      "Hosting a hackathon site",
-      "Technical details for host teams",
-      "Data request"
+      "Talks",
+      "Technical",
+      "Storing data"
     ]
   },
   {
-    "objectID": "Hosts/index.html",
-    "href": "Hosts/index.html",
-    "title": "Hosts",
-    "section": "",
-    "text": "This is a table with the known participating institutions and teams, including people nominated to committees.\n\n\n\nTeam\nComputing facility\nMeeting location\nSteering group member\nTechnical committee\nLogistics committee\nAssociated Project(s)\n\n\n\n\nAR\nCIMA/IFAECI\nCIMA\nLluís Fita Borrell\nGabriel Vieytes\nLluís Fita Borrell\n\n\n\nAU\nNCI\nANU Canberra\nChristian Jakob\nMelissa Hart\nMelissa Hart\nARC Centre of Excellence for the Weather of the 21st Century\n\n\nBR\nINPE\nUSP\nRosmeri Porfirio da Rocha\nSebastião Antonio\nRosmeri Porfirio da Rocha\n\n\n\nCN\nEarthlab\nIAP\nTianjun Zhou\nHang Su\nMulan Zhang\n\n\n\nEU\nDKRZ\nMPI-M\nBjorn Stevens\nFlorian Ziemen\nYuting Wu, Heike Konow\nnextGEMS WarmWorld\n\n\nJP\nJHPCN\nUTokyo\nMasaki Satoh\nTakashi Arakawa, Masaki Satoh\nTomoki Ohno, Masaki Satoh\nICCP-GSRA\n\n\nUK\nJASMIN\nUniv Oxford\nPier Luigi Vidale\nFatima Chami\nPhilip Stier\n\n\n\nUS-Central (NSF/NCAR)\nNCAR-NWSC\nNCAR\nBrian Medeiros / Bill Skamarock\nJohn Clyne\nJulia Kukulies\n\n\n\nUS-East (GFDL)\nGFDL\nPrinceton University\nTim Merlis\nTim Merlis\nTim Merlis\nXSHIELD\n\n\nUS-West (DOE)\nNERSC/LBL\nLBL/Berkeley\nAndrew Gettelman / Paul Ullrich\nAndrew Gettelman\nPaul Ullrich\nE3SM (SCREAM)",
+    "objectID": "talks/technical/storing_data/index.html#access-to-subsets",
+    "href": "talks/technical/storing_data/index.html#access-to-subsets",
+    "title": "Storing data",
+    "section": "Access to subsets",
+    "text": "Access to subsets\n\n\n\n\n\n\nWithout subset access and hierarchies, analysis scripts are forced to load way too much data.",
     "crumbs": [
       "Hacking plan",
-      "Hosts"
+      "Talks",
+      "Technical",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storing_data/index.html#align-the-ordering-of-data-with-read-patterns",
+    "href": "talks/technical/storing_data/index.html#align-the-ordering-of-data-with-read-patterns",
+    "title": "Storing data",
+    "section": "Align the ordering of data with read patterns",
+    "text": "Align the ordering of data with read patterns\n\nhttps://www.unidata.ucar.edu/blogs/developer/entry/chunking_data_why_it_mattersMake a compromise that’s okay-ish for everybody by chunking along all dimensions.",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storing_data/index.html#compress-small-chunks",
+    "href": "talks/technical/storing_data/index.html#compress-small-chunks",
+    "title": "Storing data",
+    "section": "Compress small chunks",
+    "text": "Compress small chunks\n\nAny access will require uncompressing entire chunks.\nBy keeping them small to reduce the amount of data that will be uncompressed but not used.\nKeep them big enough for the compressor to do its job.\nUsually MB-ish blocks are a good compromise.",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storing_data/index.html#use-fast-compressors",
+    "href": "talks/technical/storing_data/index.html#use-fast-compressors",
+    "title": "Storing data",
+    "section": "Use fast compressors",
+    "text": "Use fast compressors\n\ndeflate (gzip/…) is widely used but slow.\nlz4 and zstd are much faster.\nUse lz4 or zstd from blosc as a good standard.",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storing_data/index.html#contents-of-a-dataset",
+    "href": "talks/technical/storing_data/index.html#contents-of-a-dataset",
+    "title": "Storing data",
+    "section": "Contents of a dataset",
+    "text": "Contents of a dataset\n\nMetadata\nn-d variables consisting of many numbers",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storing_data/index.html#netcdf4-hdf5",
+    "href": "talks/technical/storing_data/index.html#netcdf4-hdf5",
+    "title": "Storing data",
+    "section": "netCDF4 / HDF5",
+    "text": "netCDF4 / HDF5\n\nnetCDF4, a.k.a. HDF5 stores metadata and chunks in one file.\nUsually a dataset is split across many of these files.\nLoading the dataset requires opening all files.1\n\nThere is the option of multi-file netCDF4/HDF5, but I have not seen this in practice.",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storing_data/index.html#zarr-is-as-simple-as-it-gets.",
+    "href": "talks/technical/storing_data/index.html#zarr-is-as-simple-as-it-gets.",
+    "title": "Storing data",
+    "section": "Zarr is as simple as it gets.",
+    "text": "Zarr is as simple as it gets.\n\n.json files for the metadata\nbinary files for (compressed) chunks\n\nAs chunks are stored separately, this scales for any size of dataset. We are working with a 500 TB dataset in nextGEMS.",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storing_data/index.html#kerchunk-fsspec",
+    "href": "talks/technical/storing_data/index.html#kerchunk-fsspec",
+    "title": "Storing data",
+    "section": "Kerchunk + fsspec",
+    "text": "Kerchunk + fsspec\n\nWe can index a multi-file HDF5 dataset with kerchunk, and then create a pseudo-filesystem zarr with fsspec in python.\nAllows to treat a set of netCDF4 files as one zarr dataset.\nDirect access only via python.\nA simple python web server can present it as zarr via https for other languages.",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Storing data"
+    ]
+  },
+  {
+    "objectID": "talks/technical/storing_data/index.html#performance-benchmarks-for-chunking",
+    "href": "talks/technical/storing_data/index.html#performance-benchmarks-for-chunking",
+    "title": "Storing data",
+    "section": "Performance benchmarks for chunking",
+    "text": "Performance benchmarks for chunking\n\n\n\n\n\n\n\n\n\n\nStorage layout, chunk shapes\nRead time series (sec)\nRead spatial slice (sec)\nPerformance bias (slowest / fastest)\n\n\n\n\nContiguous favoring time range\n0.013\n180\n14000\n\n\nContiguous favoring spatial slice\n200\n0.012\n17000\n\n\nDefault (all axes equal) chunks, 4673 x 12 x 16\n1.4\n34\n24\n\n\n36 KB chunks, 92 x 9 x 11\n2.4\n1.7\n1.4\n\n\n8 KB chunks, 46 x 6 x 8\n1.4\n1.1\n1.2\n\n\n\nsource: unidata blog",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Storing data"
     ]
   },
   {
@@ -403,500 +515,6 @@
     ]
   },
   {
-    "objectID": "talks/technical/processing_needs/index.html#hardware",
-    "href": "talks/technical/processing_needs/index.html#hardware",
-    "title": "Processing needs",
-    "section": "Hardware",
-    "text": "Hardware\n\na couple of dedicated analysis nodes in a SLURM partition (~32 at DKRZ, 10 above normal)\nreservations have proven less useful than simply expanding the interactive partition\nlimit of 2 nodes per participant (larger jobs are usually user error)",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Processing needs"
-    ]
-  },
-  {
-    "objectID": "talks/technical/processing_needs/index.html#services",
-    "href": "talks/technical/processing_needs/index.html#services",
-    "title": "Processing needs",
-    "section": "Services",
-    "text": "Services\n\ninteractive access to the computing resources\nJupyterHub (or similar) is usually an appreciated entry point",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Processing needs"
-    ]
-  },
-  {
-    "objectID": "talks/technical/processing_needs/index.html#python-environments",
-    "href": "talks/technical/processing_needs/index.html#python-environments",
-    "title": "Processing needs",
-    "section": "Python environments",
-    "text": "Python environments\n\nit’s hard (if not impossible) to provide a single environment for all users\nCompromise: provide a lean python environment with “common” scientific packages\nusers can install their exotic dependencies on top of that",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Processing needs"
-    ]
-  },
-  {
-    "objectID": "talks/technical/processing_needs/index.html#our-recommendation",
-    "href": "talks/technical/processing_needs/index.html#our-recommendation",
-    "title": "Processing needs",
-    "section": "Our recommendation",
-    "text": "Our recommendation\n\nuse micromamba1 to manage a basic python environment\nwe should maintain a single environment.yaml to provide common packages\nusers may install more “exotic” packages on their own\n\nFaster than conda and circumvents license issues",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Processing needs"
-    ]
-  },
-  {
-    "objectID": "talks/technical/processing_needs/index.html#data",
-    "href": "talks/technical/processing_needs/index.html#data",
-    "title": "Processing needs",
-    "section": "Data",
-    "text": "Data\n\nstate-of-the-art compression can help to reduce both disk usage and access time (zstd, lz4)\ntest access to data using the hackathon environment",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Processing needs"
-    ]
-  },
-  {
-    "objectID": "talks/technical/useful_datasets/index.html#time-to-plot",
-    "href": "talks/technical/useful_datasets/index.html#time-to-plot",
-    "title": "Building useful datasets for  Earth System Model output",
-    "section": "time to plot",
-    "text": "time to plot\nthe time it takes until the analysis plot is ready\n\n\n\nunderstanding the data\ncoding the analysis\ngetting the data",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Building useful datasets for <br/> Earth System Model output"
-    ]
-  },
-  {
-    "objectID": "talks/technical/useful_datasets/index.html#section",
-    "href": "talks/technical/useful_datasets/index.html#section",
-    "title": "Building useful datasets for  Earth System Model output",
-    "section": "",
-    "text": "Useful output is  written once and  read at least once.",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Building useful datasets for <br/> Earth System Model output"
-    ]
-  },
-  {
-    "objectID": "talks/technical/useful_datasets/index.html#idea",
-    "href": "talks/technical/useful_datasets/index.html#idea",
-    "title": "Building useful datasets for  Earth System Model output",
-    "section": "Idea",
-    "text": "Idea\noptimize output for analysis \n\n(not write throughput)",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Building useful datasets for <br/> Earth System Model output"
-    ]
-  },
-  {
-    "objectID": "talks/technical/useful_datasets/index.html#datasets-are",
-    "href": "talks/technical/useful_datasets/index.html#datasets-are",
-    "title": "Building useful datasets for  Earth System Model output",
-    "section": "datasets are",
-    "text": "datasets are\n\n(for this talk)\n\n\n\nfigure from xarray documentation\n\n\n\n\nn-dimensional variables\nshared dimensions\n\n\n\ncoordinates\nattributes for metadata",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Building useful datasets for <br/> Earth System Model output"
-    ]
-  },
-  {
-    "objectID": "talks/technical/useful_datasets/index.html#datasets-are-not",
-    "href": "talks/technical/useful_datasets/index.html#datasets-are-not",
-    "title": "Building useful datasets for  Earth System Model output",
-    "section": "datasets are not",
-    "text": "datasets are not\n\na single file\na storage format\nshaped by storage & handling",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Building useful datasets for <br/> Earth System Model output"
-    ]
-  },
-  {
-    "objectID": "talks/technical/useful_datasets/index.html#we-had-unstructured-output",
-    "href": "talks/technical/useful_datasets/index.html#we-had-unstructured-output",
-    "title": "Building useful datasets for  Earth System Model output",
-    "section": "we had: unstructured output",
-    "text": "we had: unstructured output\n$ ls *.nc\nngc2009_atm_mon_20200329T000000Z.nc\nngc2009_oce_2d_1h_inst_20200329T000000Z.nc\nngc2009_atm_pl_6h_inst_20200329T000000Z.nc\nngc2009_lnd_tl_6h_inst_20200329T000000Z.nc\nngc2009_lnd_2d_30min_inst_20200329T000000Z.nc\nngc2009_atm_2d_30min_inst_20200329T000000Z.nc\nngc2009_oce_0-200m_3h_inst_1_20210329T000000Z.nc\nngc2009_oce_0-200m_3h_inst_2_20210329T000000Z.nc\nngc2009_oce_moc_1d_mean_20210329T000000Z.nc\nngc2009_oce_2d_1d_mean_20210329T000000Z.nc\nngc2009_oce_ml_1d_mean_20210329T000000Z.nc\nngc2009_oce_2d_1h_mean_20210329T000000Z.nc\n...\n$ ls *.nc | wc -l\n  12695",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Building useful datasets for <br/> Earth System Model output"
-    ]
-  },
-  {
-    "objectID": "talks/technical/useful_datasets/index.html#now-a-single-dataset",
-    "href": "talks/technical/useful_datasets/index.html#now-a-single-dataset",
-    "title": "Building useful datasets for  Earth System Model output",
-    "section": "now: a single dataset",
-    "text": "now: a single dataset\n\nprovides an easy-to-understand overview\nforces consistency across output\ncutting things is easier than glueing things\n\nds = cat.ICON.ngc4008.to_dask()",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Building useful datasets for <br/> Earth System Model output"
-    ]
-  },
-  {
-    "objectID": "talks/technical/useful_datasets/index.html#now-a-single-dataset-1",
-    "href": "talks/technical/useful_datasets/index.html#now-a-single-dataset-1",
-    "title": "Building useful datasets for  Earth System Model output",
-    "section": "now: a single dataset",
-    "text": "now: a single dataset",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Building useful datasets for <br/> Earth System Model output"
-    ]
-  },
-  {
-    "objectID": "talks/technical/useful_datasets/index.html#model-resolution",
-    "href": "talks/technical/useful_datasets/index.html#model-resolution",
-    "title": "Building useful datasets for  Earth System Model output",
-    "section": "model resolution",
-    "text": "model resolution\n\n\n\n\n\nGrid\nCells\n\n\n\n\n1° by 1°\n0.06M\n\n\n10 km\n5.1M\n\n\n5 km\n20M\n\n\n1 km\n510M\n\n\n200 m\n12750M\n\n\n\n\n\n\n\nScreen\nPixels\n\n\n\n\nVGA\n0.3M\n\n\nFull HD\n2.1M\n\n\nMacBook 13’\n4.1M\n\n\n4K\n8.8M\n\n\n8K\n35.4M\n\n\n\n\nIt’s impossible to look at the entire globe in full resolution.",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Building useful datasets for <br/> Earth System Model output"
-    ]
-  },
-  {
-    "objectID": "talks/technical/useful_datasets/index.html#different-regions-same-size",
-    "href": "talks/technical/useful_datasets/index.html#different-regions-same-size",
-    "title": "Building useful datasets for  Earth System Model output",
-    "section": "different regions, same size",
-    "text": "different regions, same size",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Building useful datasets for <br/> Earth System Model output"
-    ]
-  },
-  {
-    "objectID": "talks/technical/useful_datasets/index.html#we-had-over-loading",
-    "href": "talks/technical/useful_datasets/index.html#we-had-over-loading",
-    "title": "Building useful datasets for  Earth System Model output",
-    "section": "we had: over-loading",
-    "text": "we had: over-loading\n\n\n\n\n\n\nAnalysis scripts are forced to load way too much data.\n\nPlots by Marius Winkler & Hans Segura",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Building useful datasets for <br/> Earth System Model output"
-    ]
-  },
-  {
-    "objectID": "talks/technical/useful_datasets/index.html#now-aggregation",
-    "href": "talks/technical/useful_datasets/index.html#now-aggregation",
-    "title": "Building useful datasets for  Earth System Model output",
-    "section": "now: aggregation",
-    "text": "now: aggregation\n\n\nWe do that in time and space.",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Building useful datasets for <br/> Earth System Model output"
-    ]
-  },
-  {
-    "objectID": "talks/technical/useful_datasets/index.html#now-chunking",
-    "href": "talks/technical/useful_datasets/index.html#now-chunking",
-    "title": "Building useful datasets for  Earth System Model output",
-    "section": "now: chunking",
-    "text": "now: chunking",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Building useful datasets for <br/> Earth System Model output"
-    ]
-  },
-  {
-    "objectID": "talks/technical/useful_datasets/index.html#hierarchies",
-    "href": "talks/technical/useful_datasets/index.html#hierarchies",
-    "title": "Building useful datasets for  Earth System Model output",
-    "section": "hierarchies",
-    "text": "hierarchies\nscale analysis with screen size\n\n(instead of with model size)",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Building useful datasets for <br/> Earth System Model output"
-    ]
-  },
-  {
-    "objectID": "talks/technical/useful_datasets/index.html#about-healpix",
-    "href": "talks/technical/useful_datasets/index.html#about-healpix",
-    "title": "Building useful datasets for  Earth System Model output",
-    "section": "about HEALPix",
-    "text": "about HEALPix\n\n\n\nHierarchical\nEqual Area\nisoLatitude\n\n\n\n\nNot necessary for the aforementioned.\n… but aligns very well.",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Building useful datasets for <br/> Earth System Model output"
-    ]
-  },
-  {
-    "objectID": "talks/technical/useful_datasets/index.html#about-healpix-1",
-    "href": "talks/technical/useful_datasets/index.html#about-healpix-1",
-    "title": "Building useful datasets for  Earth System Model output",
-    "section": "about HEALPix",
-    "text": "about HEALPix\n… but aligns very well.\n\nexact 1:4 grid cell relation between levels\ndirect index computation from lat/lon\nindex is space-filling curve",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Building useful datasets for <br/> Earth System Model output"
-    ]
-  },
-  {
-    "objectID": "talks/technical/useful_datasets/index.html#dropsonde-vs-model",
-    "href": "talks/technical/useful_datasets/index.html#dropsonde-vs-model",
-    "title": "Building useful datasets for  Earth System Model output",
-    "section": "dropsonde vs model",
-    "text": "dropsonde vs model\nSelect ICON model output at alldropsonde locations during EUREC4A field campaign:\nsonde_pix = healpix.ang2pix(\n    icon.crs.healpix_nside, joanne.flight_lon, joanne.flight_lat,\n    lonlat=True, nest=True\n)\n\nicon_sondes = (\n    icon[[\"ua\", \"va\", \"ta\", \"hus\"]]\n    .sel(time=joanne.launch_time, method=\"nearest\")\n    .isel(cell=sonde_pix)\n    .compute()\n)\n\n(55 sec, 1GB, single thread, full code at easy.gems)",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Building useful datasets for <br/> Earth System Model output"
-    ]
-  },
-  {
-    "objectID": "talks/technical/useful_datasets/index.html#dropsonde-vs-model-1",
-    "href": "talks/technical/useful_datasets/index.html#dropsonde-vs-model-1",
-    "title": "Building useful datasets for  Earth System Model output",
-    "section": "dropsonde vs model",
-    "text": "dropsonde vs model",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Building useful datasets for <br/> Earth System Model output"
-    ]
-  },
-  {
-    "objectID": "talks/technical/useful_datasets/index.html#direct-output-1",
-    "href": "talks/technical/useful_datasets/index.html#direct-output-1",
-    "title": "Building useful datasets for  Earth System Model output",
-    "section": "direct output",
-    "text": "direct output\n\n\noutput process is coupled to the running model\nwrites entire hierarchy at once\ndataset is accessible as soon as the model starts",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Building useful datasets for <br/> Earth System Model output"
-    ]
-  },
-  {
-    "objectID": "talks/technical/useful_datasets/index.html#monitoring",
-    "href": "talks/technical/useful_datasets/index.html#monitoring",
-    "title": "Building useful datasets for  Earth System Model output",
-    "section": "monitoring",
-    "text": "monitoring\ncat.ICON.ngc4008(time=\"P1D\", zoom=\"0\").to_dask().tas.mean(\"cell\").plot()\n\n\n(100ms, 250MB, single thread)\ndemo",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Building useful datasets for <br/> Earth System Model output"
-    ]
-  },
-  {
-    "objectID": "talks/technical/useful_datasets/index.html#exploring-5km-global-output",
-    "href": "talks/technical/useful_datasets/index.html#exploring-5km-global-output",
-    "title": "Building useful datasets for  Earth System Model output",
-    "section": "exploring 5km global output",
-    "text": "exploring 5km global output",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Building useful datasets for <br/> Earth System Model output"
-    ]
-  },
-  {
-    "objectID": "talks/technical/useful_datasets/index.html#hackathons",
-    "href": "talks/technical/useful_datasets/index.html#hackathons",
-    "title": "Building useful datasets for  Earth System Model output",
-    "section": "hackathons",
-    "text": "hackathons\nOutput tested on multiple \\(\\mathcal{O}(\\textrm{PB})\\)-scale model runs, 100+ users:\n\nremarkably little issues raised\nvery positive general feedback\nenabled diagnostics which seemed impossible before",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Building useful datasets for <br/> Earth System Model output"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#datasets-are",
-    "href": "talks/technical/storing_data/index.html#datasets-are",
-    "title": "Storing data",
-    "section": "Datasets are",
-    "text": "Datasets are\n\n(from xarray docs)\n\n\nn-dimensional variables\nshared dimensions\n\n\n\ncoordinates\nattributes for metadata",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#datasets-are-not",
-    "href": "talks/technical/storing_data/index.html#datasets-are-not",
-    "title": "Storing data",
-    "section": "Datasets are not",
-    "text": "Datasets are not\n\na single file\na storage format\nshaped by storage & handling\n\n\nIn the past, people often designed datasets to match their file handling requirements. The resulting view on a dataset seems to be overly restrictive and leads to unfortunate usage patterns.",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#access-to-subsets",
-    "href": "talks/technical/storing_data/index.html#access-to-subsets",
-    "title": "Storing data",
-    "section": "Access to subsets",
-    "text": "Access to subsets\n\n\n\n\n\n\nWithout subset access and hierarchies, analysis scripts are forced to load way too much data.",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#align-the-ordering-of-data-with-read-patterns",
-    "href": "talks/technical/storing_data/index.html#align-the-ordering-of-data-with-read-patterns",
-    "title": "Storing data",
-    "section": "Align the ordering of data with read patterns",
-    "text": "Align the ordering of data with read patterns\n\nhttps://www.unidata.ucar.edu/blogs/developer/entry/chunking_data_why_it_mattersMake a compromise that’s okay-ish for everybody by chunking along all dimensions.",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#compress-small-chunks",
-    "href": "talks/technical/storing_data/index.html#compress-small-chunks",
-    "title": "Storing data",
-    "section": "Compress small chunks",
-    "text": "Compress small chunks\n\nAny access will require uncompressing entire chunks.\nBy keeping them small to reduce the amount of data that will be uncompressed but not used.\nKeep them big enough for the compressor to do its job.\nUsually MB-ish blocks are a good compromise.",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#use-fast-compressors",
-    "href": "talks/technical/storing_data/index.html#use-fast-compressors",
-    "title": "Storing data",
-    "section": "Use fast compressors",
-    "text": "Use fast compressors\n\ndeflate (gzip/…) is widely used but slow.\nlz4 and zstd are much faster.\nUse lz4 or zstd from blosc as a good standard.",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#contents-of-a-dataset",
-    "href": "talks/technical/storing_data/index.html#contents-of-a-dataset",
-    "title": "Storing data",
-    "section": "Contents of a dataset",
-    "text": "Contents of a dataset\n\nMetadata\nn-d variables consisting of many numbers",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#netcdf4-hdf5",
-    "href": "talks/technical/storing_data/index.html#netcdf4-hdf5",
-    "title": "Storing data",
-    "section": "netCDF4 / HDF5",
-    "text": "netCDF4 / HDF5\n\nnetCDF4, a.k.a. HDF5 stores metadata and chunks in one file.\nUsually a dataset is split across many of these files.\nLoading the dataset requires opening all files.1\n\nThere is the option of multi-file netCDF4/HDF5, but I have not seen this in practice.",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#zarr-is-as-simple-as-it-gets.",
-    "href": "talks/technical/storing_data/index.html#zarr-is-as-simple-as-it-gets.",
-    "title": "Storing data",
-    "section": "Zarr is as simple as it gets.",
-    "text": "Zarr is as simple as it gets.\n\n.json files for the metadata\nbinary files for (compressed) chunks\n\nAs chunks are stored separately, this scales for any size of dataset. We are working with a 500 TB dataset in nextGEMS.",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#kerchunk-fsspec",
-    "href": "talks/technical/storing_data/index.html#kerchunk-fsspec",
-    "title": "Storing data",
-    "section": "Kerchunk + fsspec",
-    "text": "Kerchunk + fsspec\n\nWe can index a multi-file HDF5 dataset with kerchunk, and then create a pseudo-filesystem zarr with fsspec in python.\nAllows to treat a set of netCDF4 files as one zarr dataset.\nDirect access only via python.\nA simple python web server can present it as zarr via https for other languages.",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
-    "objectID": "talks/technical/storing_data/index.html#performance-benchmarks-for-chunking",
-    "href": "talks/technical/storing_data/index.html#performance-benchmarks-for-chunking",
-    "title": "Storing data",
-    "section": "Performance benchmarks for chunking",
-    "text": "Performance benchmarks for chunking\n\n\n\n\n\n\n\n\n\n\nStorage layout, chunk shapes\nRead time series (sec)\nRead spatial slice (sec)\nPerformance bias (slowest / fastest)\n\n\n\n\nContiguous favoring time range\n0.013\n180\n14000\n\n\nContiguous favoring spatial slice\n200\n0.012\n17000\n\n\nDefault (all axes equal) chunks, 4673 x 12 x 16\n1.4\n34\n24\n\n\n36 KB chunks, 92 x 9 x 11\n2.4\n1.7\n1.4\n\n\n8 KB chunks, 46 x 6 x 8\n1.4\n1.1\n1.2\n\n\n\nsource: unidata blog",
-    "crumbs": [
-      "Hacking plan",
-      "Talks",
-      "Technical",
-      "Storing data"
-    ]
-  },
-  {
     "objectID": "talks/technical/python_packages/index.html#the-basics",
     "href": "talks/technical/python_packages/index.html#the-basics",
     "title": "Sharing is caring",
@@ -962,42 +580,68 @@
     ]
   },
   {
-    "objectID": "talks/technical/storage-requirements/index.html#ballpark-estimate-for-level-9-13km",
-    "href": "talks/technical/storage-requirements/index.html#ballpark-estimate-for-level-9-13km",
-    "title": "Storage requirements",
-    "section": "Ballpark estimate for level 9 (13km)",
-    "text": "Ballpark estimate for level 9 (13km)\n\n\n\n\n\n\n\n\n\n\n\n\ntype\ncells / snap-shot\nMB / snap-shot1\nsnapshots\nGB / var\nvars\nGB total\n\n\n\n\n2D\n3 M\n6\n365*24\n52\n33\n1650\n\n\n2D2\n3 M\n6\n365*4\n13\n33\n275\n\n\n3D\n75 M\n150\n365*4\n220\n12\n2600\n\n\n\nAssuming 4-byte floats and 50% compressionFor consistent datasets",
+    "objectID": "talks/technical/processing_needs/index.html#hardware",
+    "href": "talks/technical/processing_needs/index.html#hardware",
+    "title": "Processing needs",
+    "section": "Hardware",
+    "text": "Hardware\n\na couple of dedicated analysis nodes in a SLURM partition (~32 at DKRZ, 10 above normal)\nreservations have proven less useful than simply expanding the interactive partition\nlimit of 2 nodes per participant (larger jobs are usually user error)",
     "crumbs": [
       "Hacking plan",
       "Talks",
       "Technical",
-      "Storage requirements"
+      "Processing needs"
     ]
   },
   {
-    "objectID": "talks/technical/storage-requirements/index.html#making-things-useful",
-    "href": "talks/technical/storage-requirements/index.html#making-things-useful",
-    "title": "Storage requirements",
-    "section": "Making things useful",
-    "text": "Making things useful\n\nAdding the full HEALPix hierarchy adds 30%, and makes the dataset useful.\nAdd daily means (+25% w.r.t the 6-hourly data)\nTotal size per dataset at 13 km: 6.6TB\nDoubling the resolution multiplies the storage need by 4.\n3-hourly 3D fields increase the size to 10.6 TB",
+    "objectID": "talks/technical/processing_needs/index.html#services",
+    "href": "talks/technical/processing_needs/index.html#services",
+    "title": "Processing needs",
+    "section": "Services",
+    "text": "Services\n\ninteractive access to the computing resources\nJupyterHub (or similar) is usually an appreciated entry point",
     "crumbs": [
       "Hacking plan",
       "Talks",
       "Technical",
-      "Storage requirements"
+      "Processing needs"
     ]
   },
   {
-    "objectID": "talks/technical/storage-requirements/index.html#totals",
-    "href": "talks/technical/storage-requirements/index.html#totals",
-    "title": "Storage requirements",
-    "section": "Totals",
-    "text": "Totals\n\n10 models at level 9 (13 km): 68 TB\n10 models at level 10 (6 km): 272 TB\n10 models at level 11 (3 km): 1.1 PB",
+    "objectID": "talks/technical/processing_needs/index.html#python-environments",
+    "href": "talks/technical/processing_needs/index.html#python-environments",
+    "title": "Processing needs",
+    "section": "Python environments",
+    "text": "Python environments\n\nit’s hard (if not impossible) to provide a single environment for all users\nCompromise: provide a lean python environment with “common” scientific packages\nusers can install their exotic dependencies on top of that",
     "crumbs": [
       "Hacking plan",
       "Talks",
       "Technical",
-      "Storage requirements"
+      "Processing needs"
+    ]
+  },
+  {
+    "objectID": "talks/technical/processing_needs/index.html#our-recommendation",
+    "href": "talks/technical/processing_needs/index.html#our-recommendation",
+    "title": "Processing needs",
+    "section": "Our recommendation",
+    "text": "Our recommendation\n\nuse micromamba1 to manage a basic python environment\nwe should maintain a single environment.yaml to provide common packages\nusers may install more “exotic” packages on their own\n\nFaster than conda and circumvents license issues",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Processing needs"
+    ]
+  },
+  {
+    "objectID": "talks/technical/processing_needs/index.html#data",
+    "href": "talks/technical/processing_needs/index.html#data",
+    "title": "Processing needs",
+    "section": "Data",
+    "text": "Data\n\nstate-of-the-art compression can help to reduce both disk usage and access time (zstd, lz4)\ntest access to data using the hackathon environment",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Processing needs"
     ]
   },
   {
@@ -1365,151 +1009,339 @@
     ]
   },
   {
-    "objectID": "talks/index.html",
-    "href": "talks/index.html",
-    "title": "Talks",
-    "section": "",
-    "text": "Building useful datasets for Earth System Model output\nStorage requirements\nCatalogs\nPython packages\nProcessing needs",
+    "objectID": "talks/technical/storage-requirements/index.html#ballpark-estimate-for-level-9-13km",
+    "href": "talks/technical/storage-requirements/index.html#ballpark-estimate-for-level-9-13km",
+    "title": "Storage requirements",
+    "section": "Ballpark estimate for level 9 (13km)",
+    "text": "Ballpark estimate for level 9 (13km)\n\n\n\n\n\n\n\n\n\n\n\n\ntype\ncells / snap-shot\nMB / snap-shot1\nsnapshots\nGB / var\nvars\nGB total\n\n\n\n\n2D\n3 M\n6\n365*24\n52\n33\n1650\n\n\n2D2\n3 M\n6\n365*4\n13\n33\n275\n\n\n3D\n75 M\n150\n365*4\n220\n12\n2600\n\n\n\nAssuming 4-byte floats and 50% compressionFor consistent datasets",
     "crumbs": [
       "Hacking plan",
-      "Talks"
+      "Talks",
+      "Technical",
+      "Storage requirements"
     ]
   },
   {
-    "objectID": "talks/index.html#technical",
-    "href": "talks/index.html#technical",
-    "title": "Talks",
-    "section": "",
-    "text": "Building useful datasets for Earth System Model output\nStorage requirements\nCatalogs\nPython packages\nProcessing needs",
+    "objectID": "talks/technical/storage-requirements/index.html#making-things-useful",
+    "href": "talks/technical/storage-requirements/index.html#making-things-useful",
+    "title": "Storage requirements",
+    "section": "Making things useful",
+    "text": "Making things useful\n\nAdding the full HEALPix hierarchy adds 30%, and makes the dataset useful.\nAdd daily means (+25% w.r.t the 6-hourly data)\nTotal size per dataset at 13 km: 6.6TB\nDoubling the resolution multiplies the storage need by 4.\n3-hourly 3D fields increase the size to 10.6 TB",
     "crumbs": [
       "Hacking plan",
-      "Talks"
+      "Talks",
+      "Technical",
+      "Storage requirements"
     ]
   },
   {
-    "objectID": "hosting/technical/meeting-2024-10-21.html",
-    "href": "hosting/technical/meeting-2024-10-21.html",
-    "title": "Preparation meeting on 2024-10-21/22",
-    "section": "",
-    "text": "This will be a virtual meeting via zoom, and we will record the sessions / take notes to allow for those with conflicting schedules / time zones to follow the conversations.\nWe will hold the sessions in the afternoon to ease participation from the Americas.\nPlease register to receive the zoom link\n\n\n\n\n\n\n\n\nTime in CEST (UTC+2)\nWhat\nWho\n\n\n\n\nThe setting\n\n\n\n\n15:00\nRound of introductions, agenda , …\nall, Flo (DKRZ)\n\n\n15:20\nIdea and goals of the hackathon\nBjorn Stevens (MPI-M)\n\n\n15:45\nA typical hackathon agenda\nYuting Wu (MPI-M)\n\n\n16:00\nUseful datasets\nTobi (MPI-M)\n\n\n16:15\nRegional grids\nAndreas Prein (ETHZ)\n\n\n16:30\nThe experimental protocols\nDaisuke Takasuka (Tohoku Univ)\n\n\n17:00\nDiscussion on the setting and data\nall\n\n\n17:30\n☕️ Coffee break\nall\n\n\nData access\n\n\n\n\n17:45\nZarr and other stores\nFlo\n\n\n18:00\nCatalogs\nTobi (MPI-M)\n\n\n18:15\nStorage requirements\nFlo (DKRZ)\n\n\n18:30\nOpen discussion\nall\n\n\n19:00\nEnd\nall\n\n\n\n\n\n\n\n\n\nTime in CEST (UTC+2)\nWhat\nWho\n\n\n\n\nWorking with the data\n\n\n\n\n15:00\nWelcome back and recap\nFlo\n\n\n15:15\nUxarray\nOrhan Eroglu / John Clyne (UCAR)\n\n\n15:30\neasygems and other python packages\nLukas (MPI-M)\n\n\n15:45\nStorm trackers\nPaul Ulrich (LLNL)\n\n\n16:00\nProcessing needs, incl. py envs,…\nLukas\n\n\nDocumentation and collaboration\n\n\n\n\n16:15\ndocumentation: Project Pythia, easy.gems.dkrz.de\nJohn Clyne (UCAR), Tobi?\n\n\n16:45\nCollecting code and results across nodes\nNikolay Koldunov (AWI)\n\n\n17:00\n☕️ Coffee break\n\n\n\nWorking from here\n\n\n\n\n17:30\nWhat’s open, next steps\nall, Flo\n\n\n19:00\nEnd",
+    "objectID": "talks/technical/storage-requirements/index.html#totals",
+    "href": "talks/technical/storage-requirements/index.html#totals",
+    "title": "Storage requirements",
+    "section": "Totals",
+    "text": "Totals\n\n10 models at level 9 (13 km): 68 TB\n10 models at level 10 (6 km): 272 TB\n10 models at level 11 (3 km): 1.1 PB",
     "crumbs": [
       "Hacking plan",
-      "Hosting a hackathon site",
-      "Technical details for host teams",
-      "Preparation meeting on 2024-10-21/22"
+      "Talks",
+      "Technical",
+      "Storage requirements"
     ]
   },
   {
-    "objectID": "hosting/technical/meeting-2024-10-21.html#monday-2024-10-21",
-    "href": "hosting/technical/meeting-2024-10-21.html#monday-2024-10-21",
-    "title": "Preparation meeting on 2024-10-21/22",
-    "section": "",
-    "text": "Time in CEST (UTC+2)\nWhat\nWho\n\n\n\n\nThe setting\n\n\n\n\n15:00\nRound of introductions, agenda , …\nall, Flo (DKRZ)\n\n\n15:20\nIdea and goals of the hackathon\nBjorn Stevens (MPI-M)\n\n\n15:45\nA typical hackathon agenda\nYuting Wu (MPI-M)\n\n\n16:00\nUseful datasets\nTobi (MPI-M)\n\n\n16:15\nRegional grids\nAndreas Prein (ETHZ)\n\n\n16:30\nThe experimental protocols\nDaisuke Takasuka (Tohoku Univ)\n\n\n17:00\nDiscussion on the setting and data\nall\n\n\n17:30\n☕️ Coffee break\nall\n\n\nData access\n\n\n\n\n17:45\nZarr and other stores\nFlo\n\n\n18:00\nCatalogs\nTobi (MPI-M)\n\n\n18:15\nStorage requirements\nFlo (DKRZ)\n\n\n18:30\nOpen discussion\nall\n\n\n19:00\nEnd\nall",
+    "objectID": "talks/technical/useful_datasets/index.html#time-to-plot",
+    "href": "talks/technical/useful_datasets/index.html#time-to-plot",
+    "title": "Building useful datasets for  Earth System Model output",
+    "section": "time to plot",
+    "text": "time to plot\nthe time it takes until the analysis plot is ready\n\n\n\nunderstanding the data\ncoding the analysis\ngetting the data",
     "crumbs": [
       "Hacking plan",
-      "Hosting a hackathon site",
-      "Technical details for host teams",
-      "Preparation meeting on 2024-10-21/22"
+      "Talks",
+      "Technical",
+      "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "hosting/technical/meeting-2024-10-21.html#tuesday-2024-10-22",
-    "href": "hosting/technical/meeting-2024-10-21.html#tuesday-2024-10-22",
-    "title": "Preparation meeting on 2024-10-21/22",
+    "objectID": "talks/technical/useful_datasets/index.html#section",
+    "href": "talks/technical/useful_datasets/index.html#section",
+    "title": "Building useful datasets for  Earth System Model output",
     "section": "",
-    "text": "Time in CEST (UTC+2)\nWhat\nWho\n\n\n\n\nWorking with the data\n\n\n\n\n15:00\nWelcome back and recap\nFlo\n\n\n15:15\nUxarray\nOrhan Eroglu / John Clyne (UCAR)\n\n\n15:30\neasygems and other python packages\nLukas (MPI-M)\n\n\n15:45\nStorm trackers\nPaul Ulrich (LLNL)\n\n\n16:00\nProcessing needs, incl. py envs,…\nLukas\n\n\nDocumentation and collaboration\n\n\n\n\n16:15\ndocumentation: Project Pythia, easy.gems.dkrz.de\nJohn Clyne (UCAR), Tobi?\n\n\n16:45\nCollecting code and results across nodes\nNikolay Koldunov (AWI)\n\n\n17:00\n☕️ Coffee break\n\n\n\nWorking from here\n\n\n\n\n17:30\nWhat’s open, next steps\nall, Flo\n\n\n19:00\nEnd",
+    "text": "Useful output is  written once and  read at least once.",
     "crumbs": [
       "Hacking plan",
-      "Hosting a hackathon site",
-      "Technical details for host teams",
-      "Preparation meeting on 2024-10-21/22"
+      "Talks",
+      "Technical",
+      "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "hosting/technical/transforming_to_healpix.html",
-    "href": "hosting/technical/transforming_to_healpix.html",
-    "title": "Transforming data to healpix",
-    "section": "",
-    "text": "Healpix has kind-of-strange curved cell boundaries, so conservative remaps are not trivial. A more trivial approach is nearest-neighbor remapping.\nIf you put emphasis on conservation properties, you can do a nearest-neighbor remap to a higher-resolution healpix grid, and then coarsen again. Possibly all in the same processing pipeline.\nThere needs to be some attention paid to missing values when coarsening (averaging 4 cells together) from a fine to a coarser grid.\n\n\n\n\n\nThe simplest way to convert a file to a healpix level 9 netCDF probably is using a recent cdo version and calling\ncdo -f nc4 -k auto -z zstd -remapnn,hpz9 INFILE OUTFILE\nTo create zarr, first create an .ncrc file specifying that you want the dimension separator to be a / instead of ..\necho &gt;&gt; ~/.ncrc\necho ZARR.DIMENSION_SEPARATOR=/ &gt;&gt; ~/.ncrc\nThen use\ncdo -f nczarr -k auto -z zstd -remapnn,hpz9 INFILE \\\n    file://OUTFILE.zarr#mode=zarr,file\nHowever, cdo does not really produce the optimal chunking, so going via python might be better for production. For testing, this should actually work pretty well.",
+    "objectID": "talks/technical/useful_datasets/index.html#idea",
+    "href": "talks/technical/useful_datasets/index.html#idea",
+    "title": "Building useful datasets for  Earth System Model output",
+    "section": "Idea",
+    "text": "Idea\noptimize output for analysis \n\n(not write throughput)",
     "crumbs": [
       "Hacking plan",
-      "Hosting a hackathon site",
-      "Technical details for host teams",
-      "Transforming data to healpix"
+      "Talks",
+      "Technical",
+      "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "hosting/technical/transforming_to_healpix.html#interpolation-methods",
-    "href": "hosting/technical/transforming_to_healpix.html#interpolation-methods",
-    "title": "Transforming data to healpix",
-    "section": "",
-    "text": "Healpix has kind-of-strange curved cell boundaries, so conservative remaps are not trivial. A more trivial approach is nearest-neighbor remapping.\nIf you put emphasis on conservation properties, you can do a nearest-neighbor remap to a higher-resolution healpix grid, and then coarsen again. Possibly all in the same processing pipeline.\nThere needs to be some attention paid to missing values when coarsening (averaging 4 cells together) from a fine to a coarser grid.",
+    "objectID": "talks/technical/useful_datasets/index.html#datasets-are",
+    "href": "talks/technical/useful_datasets/index.html#datasets-are",
+    "title": "Building useful datasets for  Earth System Model output",
+    "section": "datasets are",
+    "text": "datasets are\n\n(for this talk)\n\n\n\nfigure from xarray documentation\n\n\n\n\nn-dimensional variables\nshared dimensions\n\n\n\ncoordinates\nattributes for metadata",
     "crumbs": [
       "Hacking plan",
-      "Hosting a hackathon site",
-      "Technical details for host teams",
-      "Transforming data to healpix"
+      "Talks",
+      "Technical",
+      "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "hosting/technical/transforming_to_healpix.html#tools",
-    "href": "hosting/technical/transforming_to_healpix.html#tools",
-    "title": "Transforming data to healpix",
-    "section": "",
-    "text": "The simplest way to convert a file to a healpix level 9 netCDF probably is using a recent cdo version and calling\ncdo -f nc4 -k auto -z zstd -remapnn,hpz9 INFILE OUTFILE\nTo create zarr, first create an .ncrc file specifying that you want the dimension separator to be a / instead of ..\necho &gt;&gt; ~/.ncrc\necho ZARR.DIMENSION_SEPARATOR=/ &gt;&gt; ~/.ncrc\nThen use\ncdo -f nczarr -k auto -z zstd -remapnn,hpz9 INFILE \\\n    file://OUTFILE.zarr#mode=zarr,file\nHowever, cdo does not really produce the optimal chunking, so going via python might be better for production. For testing, this should actually work pretty well.",
+    "objectID": "talks/technical/useful_datasets/index.html#datasets-are-not",
+    "href": "talks/technical/useful_datasets/index.html#datasets-are-not",
+    "title": "Building useful datasets for  Earth System Model output",
+    "section": "datasets are not",
+    "text": "datasets are not\n\na single file\na storage format\nshaped by storage & handling",
     "crumbs": [
       "Hacking plan",
-      "Hosting a hackathon site",
-      "Technical details for host teams",
-      "Transforming data to healpix"
+      "Talks",
+      "Technical",
+      "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "hosting/meeting-dates-and-times.html",
-    "href": "hosting/meeting-dates-and-times.html",
-    "title": "Preparation meetings",
-    "section": "",
-    "text": "Latest Updates on status of each node\n\ndata readiness\nTop-level intake catalogue\n\nexamples of how to use\n\nsystem readiness (jupyter hub server, environments)\nsoftware, starting from introductory notebooks\nscience plans\n\nCommunications plan\n\nKey people at each node\nZoom and social media contacts\nEnlisting people in Mattermost\n\nCoordinated Activites and Common Events\n\n\n\n\n\nStatus of each node\n\ndata readiness\ndata catalogues (intake format)\nsoftware, starting from introductory notebooks\nscience plans\n\nAffiliate nodes:\n\nECMWF\nESA/EarthCare\nInception (UAE)\nNVIDIA\nPNNL\n\nScience teams concept\nGeneral Programme\nCommunications plan\n\nKey people at each node\nZoom and social media contacts\nEnlisting people in Mattermost\n\nTutorial sessions\n\nWhen and how\n\n\n\n\n\n\nBrief reports from each node\n\nlocal science plans\ndata and software status\nstatus of registrations\n\n\nA few updates on the overall programme for the week of 12-17 May\n\nOpening by easternmost node: Australia, Monday 12 May (Sunday for many, recorded)\nOpening keynote lecture by Tim Palmer on Monday 12 May, St Hugh’s, Oxford\nDemonstration session with WCRP JSC, Paris, Tuesday 13 May, 21:00 Paris time\nClosing ceremony by westernmost node: West US, Friday 17 May\n\nWMO sponsorship: last call for requests for support\nPlans for broadcasting from nodes at the end of each day\nAOB\n\n\n\n\n\nSummary of progress from each node, including run status\nStorm trackers\nCopying data between nodes\nShared notebooks with examples\nWCRP webinar talk by Andrew Gettelman\nAgenda for the hackathon and cross-site collaboration\n\nOpening (probably by the Australian team)\n\n\n\n\n\n\nDiscussion on the draft science plan\nMind map of working groups and intended investigations: \nStatus of data requests\nReadiness status of:\n\nNode web pages + registration\nData at nodes\n\nSoftware stacks at nodes\n\n\n\n\n\n\n\nSendai Protocol paper\n\npublished today in Progress in Earth and Planetary Science. doi:10.1186/s40645-024-00668-1\na few adaptations for the hackathon need to be made, given the reality of which simulations exist\n\nUpdate on global registrations so far\nReports on progress with initial data processing, re-gridding etc.\nStatus update from each node:\n\nPlans for mini science conferences to design node-specific objectives and actions\nLogistics (data repositories, compute, venue)\nRun status\nSoftware stack\nLocal web sites for each node’s organisation and registration\n\n\n\n\n\n\nCoordination of websites and advertising\nFinalizing the data request (see also the Mattermost discussion of Trackers)\nSet up a test run and assessment of one regional HEALPix conversion\n\nLukas Kluft is working on transforming an ICON regional simulation.\n\nHandling of finances\n\nby each node individually\nparticipation fees depend on local costs and funding\nstipends\n\nOutreach activities (daily blog, videos, …)\nStreaming one presentation per day per node, ideally also recording it\n\n\n\n\n\n8:00 to 9:30 CET and repeated at 17:00 to 18:30 CET\nEach meeting will cover:\n\nSteering Group topics in the first 30 minutes, and next\nTechnical Group topics.\n\n\n\n\n\n\n\n\n\n\nHackaton Gantt",
+    "objectID": "talks/technical/useful_datasets/index.html#we-had-unstructured-output",
+    "href": "talks/technical/useful_datasets/index.html#we-had-unstructured-output",
+    "title": "Building useful datasets for  Earth System Model output",
+    "section": "we had: unstructured output",
+    "text": "we had: unstructured output\n$ ls *.nc\nngc2009_atm_mon_20200329T000000Z.nc\nngc2009_oce_2d_1h_inst_20200329T000000Z.nc\nngc2009_atm_pl_6h_inst_20200329T000000Z.nc\nngc2009_lnd_tl_6h_inst_20200329T000000Z.nc\nngc2009_lnd_2d_30min_inst_20200329T000000Z.nc\nngc2009_atm_2d_30min_inst_20200329T000000Z.nc\nngc2009_oce_0-200m_3h_inst_1_20210329T000000Z.nc\nngc2009_oce_0-200m_3h_inst_2_20210329T000000Z.nc\nngc2009_oce_moc_1d_mean_20210329T000000Z.nc\nngc2009_oce_2d_1d_mean_20210329T000000Z.nc\nngc2009_oce_ml_1d_mean_20210329T000000Z.nc\nngc2009_oce_2d_1h_mean_20210329T000000Z.nc\n...\n$ ls *.nc | wc -l\n  12695",
     "crumbs": [
       "Hacking plan",
-      "Hosting a hackathon site",
-      "Preparation meetings"
+      "Talks",
+      "Technical",
+      "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "hosting/meeting-dates-and-times.html#meeting-dates",
-    "href": "hosting/meeting-dates-and-times.html#meeting-dates",
-    "title": "Preparation meetings",
-    "section": "",
-    "text": "Latest Updates on status of each node\n\ndata readiness\nTop-level intake catalogue\n\nexamples of how to use\n\nsystem readiness (jupyter hub server, environments)\nsoftware, starting from introductory notebooks\nscience plans\n\nCommunications plan\n\nKey people at each node\nZoom and social media contacts\nEnlisting people in Mattermost\n\nCoordinated Activites and Common Events\n\n\n\n\n\nStatus of each node\n\ndata readiness\ndata catalogues (intake format)\nsoftware, starting from introductory notebooks\nscience plans\n\nAffiliate nodes:\n\nECMWF\nESA/EarthCare\nInception (UAE)\nNVIDIA\nPNNL\n\nScience teams concept\nGeneral Programme\nCommunications plan\n\nKey people at each node\nZoom and social media contacts\nEnlisting people in Mattermost\n\nTutorial sessions\n\nWhen and how\n\n\n\n\n\n\nBrief reports from each node\n\nlocal science plans\ndata and software status\nstatus of registrations\n\n\nA few updates on the overall programme for the week of 12-17 May\n\nOpening by easternmost node: Australia, Monday 12 May (Sunday for many, recorded)\nOpening keynote lecture by Tim Palmer on Monday 12 May, St Hugh’s, Oxford\nDemonstration session with WCRP JSC, Paris, Tuesday 13 May, 21:00 Paris time\nClosing ceremony by westernmost node: West US, Friday 17 May\n\nWMO sponsorship: last call for requests for support\nPlans for broadcasting from nodes at the end of each day\nAOB\n\n\n\n\n\nSummary of progress from each node, including run status\nStorm trackers\nCopying data between nodes\nShared notebooks with examples\nWCRP webinar talk by Andrew Gettelman\nAgenda for the hackathon and cross-site collaboration\n\nOpening (probably by the Australian team)\n\n\n\n\n\n\nDiscussion on the draft science plan\nMind map of working groups and intended investigations: \nStatus of data requests\nReadiness status of:\n\nNode web pages + registration\nData at nodes\n\nSoftware stacks at nodes\n\n\n\n\n\n\n\nSendai Protocol paper\n\npublished today in Progress in Earth and Planetary Science. doi:10.1186/s40645-024-00668-1\na few adaptations for the hackathon need to be made, given the reality of which simulations exist\n\nUpdate on global registrations so far\nReports on progress with initial data processing, re-gridding etc.\nStatus update from each node:\n\nPlans for mini science conferences to design node-specific objectives and actions\nLogistics (data repositories, compute, venue)\nRun status\nSoftware stack\nLocal web sites for each node’s organisation and registration\n\n\n\n\n\n\nCoordination of websites and advertising\nFinalizing the data request (see also the Mattermost discussion of Trackers)\nSet up a test run and assessment of one regional HEALPix conversion\n\nLukas Kluft is working on transforming an ICON regional simulation.\n\nHandling of finances\n\nby each node individually\nparticipation fees depend on local costs and funding\nstipends\n\nOutreach activities (daily blog, videos, …)\nStreaming one presentation per day per node, ideally also recording it",
+    "objectID": "talks/technical/useful_datasets/index.html#now-a-single-dataset",
+    "href": "talks/technical/useful_datasets/index.html#now-a-single-dataset",
+    "title": "Building useful datasets for  Earth System Model output",
+    "section": "now: a single dataset",
+    "text": "now: a single dataset\n\nprovides an easy-to-understand overview\nforces consistency across output\ncutting things is easier than glueing things\n\nds = cat.ICON.ngc4008.to_dask()",
     "crumbs": [
       "Hacking plan",
-      "Hosting a hackathon site",
-      "Preparation meetings"
+      "Talks",
+      "Technical",
+      "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "hosting/meeting-dates-and-times.html#meeting-times",
-    "href": "hosting/meeting-dates-and-times.html#meeting-times",
-    "title": "Preparation meetings",
-    "section": "",
-    "text": "8:00 to 9:30 CET and repeated at 17:00 to 18:30 CET\nEach meeting will cover:\n\nSteering Group topics in the first 30 minutes, and next\nTechnical Group topics.",
+    "objectID": "talks/technical/useful_datasets/index.html#now-a-single-dataset-1",
+    "href": "talks/technical/useful_datasets/index.html#now-a-single-dataset-1",
+    "title": "Building useful datasets for  Earth System Model output",
+    "section": "now: a single dataset",
+    "text": "now: a single dataset",
     "crumbs": [
       "Hacking plan",
-      "Hosting a hackathon site",
-      "Preparation meetings"
+      "Talks",
+      "Technical",
+      "Building useful datasets for <br/> Earth System Model output"
     ]
   },
   {
-    "objectID": "hosting/meeting-dates-and-times.html#a-few-milestones-from-oct-2024-until-12-may-2025",
-    "href": "hosting/meeting-dates-and-times.html#a-few-milestones-from-oct-2024-until-12-may-2025",
-    "title": "Preparation meetings",
-    "section": "",
-    "text": "Hackaton Gantt",
+    "objectID": "talks/technical/useful_datasets/index.html#model-resolution",
+    "href": "talks/technical/useful_datasets/index.html#model-resolution",
+    "title": "Building useful datasets for  Earth System Model output",
+    "section": "model resolution",
+    "text": "model resolution\n\n\n\n\n\nGrid\nCells\n\n\n\n\n1° by 1°\n0.06M\n\n\n10 km\n5.1M\n\n\n5 km\n20M\n\n\n1 km\n510M\n\n\n200 m\n12750M\n\n\n\n\n\n\n\nScreen\nPixels\n\n\n\n\nVGA\n0.3M\n\n\nFull HD\n2.1M\n\n\nMacBook 13’\n4.1M\n\n\n4K\n8.8M\n\n\n8K\n35.4M\n\n\n\n\nIt’s impossible to look at the entire globe in full resolution.",
     "crumbs": [
       "Hacking plan",
-      "Hosting a hackathon site",
-      "Preparation meetings"
+      "Talks",
+      "Technical",
+      "Building useful datasets for <br/> Earth System Model output"
+    ]
+  },
+  {
+    "objectID": "talks/technical/useful_datasets/index.html#different-regions-same-size",
+    "href": "talks/technical/useful_datasets/index.html#different-regions-same-size",
+    "title": "Building useful datasets for  Earth System Model output",
+    "section": "different regions, same size",
+    "text": "different regions, same size",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Building useful datasets for <br/> Earth System Model output"
+    ]
+  },
+  {
+    "objectID": "talks/technical/useful_datasets/index.html#we-had-over-loading",
+    "href": "talks/technical/useful_datasets/index.html#we-had-over-loading",
+    "title": "Building useful datasets for  Earth System Model output",
+    "section": "we had: over-loading",
+    "text": "we had: over-loading\n\n\n\n\n\n\nAnalysis scripts are forced to load way too much data.\n\nPlots by Marius Winkler & Hans Segura",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Building useful datasets for <br/> Earth System Model output"
+    ]
+  },
+  {
+    "objectID": "talks/technical/useful_datasets/index.html#now-aggregation",
+    "href": "talks/technical/useful_datasets/index.html#now-aggregation",
+    "title": "Building useful datasets for  Earth System Model output",
+    "section": "now: aggregation",
+    "text": "now: aggregation\n\n\nWe do that in time and space.",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Building useful datasets for <br/> Earth System Model output"
+    ]
+  },
+  {
+    "objectID": "talks/technical/useful_datasets/index.html#now-chunking",
+    "href": "talks/technical/useful_datasets/index.html#now-chunking",
+    "title": "Building useful datasets for  Earth System Model output",
+    "section": "now: chunking",
+    "text": "now: chunking",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Building useful datasets for <br/> Earth System Model output"
+    ]
+  },
+  {
+    "objectID": "talks/technical/useful_datasets/index.html#hierarchies",
+    "href": "talks/technical/useful_datasets/index.html#hierarchies",
+    "title": "Building useful datasets for  Earth System Model output",
+    "section": "hierarchies",
+    "text": "hierarchies\nscale analysis with screen size\n\n(instead of with model size)",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Building useful datasets for <br/> Earth System Model output"
+    ]
+  },
+  {
+    "objectID": "talks/technical/useful_datasets/index.html#about-healpix",
+    "href": "talks/technical/useful_datasets/index.html#about-healpix",
+    "title": "Building useful datasets for  Earth System Model output",
+    "section": "about HEALPix",
+    "text": "about HEALPix\n\n\n\nHierarchical\nEqual Area\nisoLatitude\n\n\n\n\nNot necessary for the aforementioned.\n… but aligns very well.",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Building useful datasets for <br/> Earth System Model output"
+    ]
+  },
+  {
+    "objectID": "talks/technical/useful_datasets/index.html#about-healpix-1",
+    "href": "talks/technical/useful_datasets/index.html#about-healpix-1",
+    "title": "Building useful datasets for  Earth System Model output",
+    "section": "about HEALPix",
+    "text": "about HEALPix\n… but aligns very well.\n\nexact 1:4 grid cell relation between levels\ndirect index computation from lat/lon\nindex is space-filling curve",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Building useful datasets for <br/> Earth System Model output"
+    ]
+  },
+  {
+    "objectID": "talks/technical/useful_datasets/index.html#dropsonde-vs-model",
+    "href": "talks/technical/useful_datasets/index.html#dropsonde-vs-model",
+    "title": "Building useful datasets for  Earth System Model output",
+    "section": "dropsonde vs model",
+    "text": "dropsonde vs model\nSelect ICON model output at alldropsonde locations during EUREC4A field campaign:\nsonde_pix = healpix.ang2pix(\n    icon.crs.healpix_nside, joanne.flight_lon, joanne.flight_lat,\n    lonlat=True, nest=True\n)\n\nicon_sondes = (\n    icon[[\"ua\", \"va\", \"ta\", \"hus\"]]\n    .sel(time=joanne.launch_time, method=\"nearest\")\n    .isel(cell=sonde_pix)\n    .compute()\n)\n\n(55 sec, 1GB, single thread, full code at easy.gems)",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Building useful datasets for <br/> Earth System Model output"
+    ]
+  },
+  {
+    "objectID": "talks/technical/useful_datasets/index.html#dropsonde-vs-model-1",
+    "href": "talks/technical/useful_datasets/index.html#dropsonde-vs-model-1",
+    "title": "Building useful datasets for  Earth System Model output",
+    "section": "dropsonde vs model",
+    "text": "dropsonde vs model",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Building useful datasets for <br/> Earth System Model output"
+    ]
+  },
+  {
+    "objectID": "talks/technical/useful_datasets/index.html#direct-output-1",
+    "href": "talks/technical/useful_datasets/index.html#direct-output-1",
+    "title": "Building useful datasets for  Earth System Model output",
+    "section": "direct output",
+    "text": "direct output\n\n\noutput process is coupled to the running model\nwrites entire hierarchy at once\ndataset is accessible as soon as the model starts",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Building useful datasets for <br/> Earth System Model output"
+    ]
+  },
+  {
+    "objectID": "talks/technical/useful_datasets/index.html#monitoring",
+    "href": "talks/technical/useful_datasets/index.html#monitoring",
+    "title": "Building useful datasets for  Earth System Model output",
+    "section": "monitoring",
+    "text": "monitoring\ncat.ICON.ngc4008(time=\"P1D\", zoom=\"0\").to_dask().tas.mean(\"cell\").plot()\n\n\n(100ms, 250MB, single thread)\ndemo",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Building useful datasets for <br/> Earth System Model output"
+    ]
+  },
+  {
+    "objectID": "talks/technical/useful_datasets/index.html#exploring-5km-global-output",
+    "href": "talks/technical/useful_datasets/index.html#exploring-5km-global-output",
+    "title": "Building useful datasets for  Earth System Model output",
+    "section": "exploring 5km global output",
+    "text": "exploring 5km global output",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Building useful datasets for <br/> Earth System Model output"
+    ]
+  },
+  {
+    "objectID": "talks/technical/useful_datasets/index.html#hackathons",
+    "href": "talks/technical/useful_datasets/index.html#hackathons",
+    "title": "Building useful datasets for  Earth System Model output",
+    "section": "hackathons",
+    "text": "hackathons\nOutput tested on multiple \\(\\mathcal{O}(\\textrm{PB})\\)-scale model runs, 100+ users:\n\nremarkably little issues raised\nvery positive general feedback\nenabled diagnostics which seemed impossible before",
+    "crumbs": [
+      "Hacking plan",
+      "Talks",
+      "Technical",
+      "Building useful datasets for <br/> Earth System Model output"
+    ]
+  },
+  {
+    "objectID": "Hosts/index.html",
+    "href": "Hosts/index.html",
+    "title": "Hosts",
+    "section": "",
+    "text": "This is a table with the known participating institutions and teams, including people nominated to committees.\n\n\n\nTeam\nComputing facility\nMeeting location\nSteering group member\nTechnical committee\nLogistics committee\nAssociated Project(s)\n\n\n\n\nAR\nCIMA/IFAECI\nCIMA\nLluís Fita Borrell\nGabriel Vieytes\nLluís Fita Borrell\n\n\n\nAU\nNCI\nANU Canberra\nChristian Jakob\nMelissa Hart\nMelissa Hart\nARC Centre of Excellence for the Weather of the 21st Century\n\n\nBR\nINPE\nUSP\nRosmeri Porfirio da Rocha\nSebastião Antonio\nRosmeri Porfirio da Rocha\n\n\n\nCN\nEarthlab\nIAP\nTianjun Zhou\nHang Su\nMulan Zhang\n\n\n\nEU\nDKRZ\nMPI-M\nBjorn Stevens\nFlorian Ziemen\nYuting Wu, Heike Konow\nnextGEMS WarmWorld\n\n\nJP\nJHPCN\nUTokyo\nMasaki Satoh\nTakashi Arakawa, Masaki Satoh\nTomoki Ohno, Masaki Satoh\nICCP-GSRA\n\n\nUK\nJASMIN\nUniv Oxford\nPier Luigi Vidale\nFatima Chami\nPhilip Stier\n\n\n\nUS-Central (NSF/NCAR)\nNCAR-NWSC\nNCAR\nBrian Medeiros / Bill Skamarock\nJohn Clyne\nJulia Kukulies\n\n\n\nUS-East (GFDL)\nGFDL\nPrinceton University\nTim Merlis\nTim Merlis\nTim Merlis\nXSHIELD\n\n\nUS-West (DOE)\nNERSC/LBL\nLBL/Berkeley\nAndrew Gettelman / Paul Ullrich\nAndrew Gettelman\nPaul Ullrich\nE3SM (SCREAM)",
+    "crumbs": [
+      "Hacking plan",
+      "Hosts"
     ]
   },
   {
@@ -1570,6 +1402,222 @@
       "Hacking plan",
       "Hosting a hackathon site",
       "Logistics for hosting a hackathon site"
+    ]
+  },
+  {
+    "objectID": "hosting/technical/meeting-2024-10-21.html",
+    "href": "hosting/technical/meeting-2024-10-21.html",
+    "title": "Preparation meeting on 2024-10-21/22",
+    "section": "",
+    "text": "This will be a virtual meeting via zoom, and we will record the sessions / take notes to allow for those with conflicting schedules / time zones to follow the conversations.\nWe will hold the sessions in the afternoon to ease participation from the Americas.\nPlease register to receive the zoom link\n\n\n\n\n\n\n\n\nTime in CEST (UTC+2)\nWhat\nWho\n\n\n\n\nThe setting\n\n\n\n\n15:00\nRound of introductions, agenda , …\nall, Flo (DKRZ)\n\n\n15:20\nIdea and goals of the hackathon\nBjorn Stevens (MPI-M)\n\n\n15:45\nA typical hackathon agenda\nYuting Wu (MPI-M)\n\n\n16:00\nUseful datasets\nTobi (MPI-M)\n\n\n16:15\nRegional grids\nAndreas Prein (ETHZ)\n\n\n16:30\nThe experimental protocols\nDaisuke Takasuka (Tohoku Univ)\n\n\n17:00\nDiscussion on the setting and data\nall\n\n\n17:30\n☕️ Coffee break\nall\n\n\nData access\n\n\n\n\n17:45\nZarr and other stores\nFlo\n\n\n18:00\nCatalogs\nTobi (MPI-M)\n\n\n18:15\nStorage requirements\nFlo (DKRZ)\n\n\n18:30\nOpen discussion\nall\n\n\n19:00\nEnd\nall\n\n\n\n\n\n\n\n\n\nTime in CEST (UTC+2)\nWhat\nWho\n\n\n\n\nWorking with the data\n\n\n\n\n15:00\nWelcome back and recap\nFlo\n\n\n15:15\nUxarray\nOrhan Eroglu / John Clyne (UCAR)\n\n\n15:30\neasygems and other python packages\nLukas (MPI-M)\n\n\n15:45\nStorm trackers\nPaul Ulrich (LLNL)\n\n\n16:00\nProcessing needs, incl. py envs,…\nLukas\n\n\nDocumentation and collaboration\n\n\n\n\n16:15\ndocumentation: Project Pythia, easy.gems.dkrz.de\nJohn Clyne (UCAR), Tobi?\n\n\n16:45\nCollecting code and results across nodes\nNikolay Koldunov (AWI)\n\n\n17:00\n☕️ Coffee break\n\n\n\nWorking from here\n\n\n\n\n17:30\nWhat’s open, next steps\nall, Flo\n\n\n19:00\nEnd",
+    "crumbs": [
+      "Hacking plan",
+      "Hosting a hackathon site",
+      "Technical details for host teams",
+      "Preparation meeting on 2024-10-21/22"
+    ]
+  },
+  {
+    "objectID": "hosting/technical/meeting-2024-10-21.html#monday-2024-10-21",
+    "href": "hosting/technical/meeting-2024-10-21.html#monday-2024-10-21",
+    "title": "Preparation meeting on 2024-10-21/22",
+    "section": "",
+    "text": "Time in CEST (UTC+2)\nWhat\nWho\n\n\n\n\nThe setting\n\n\n\n\n15:00\nRound of introductions, agenda , …\nall, Flo (DKRZ)\n\n\n15:20\nIdea and goals of the hackathon\nBjorn Stevens (MPI-M)\n\n\n15:45\nA typical hackathon agenda\nYuting Wu (MPI-M)\n\n\n16:00\nUseful datasets\nTobi (MPI-M)\n\n\n16:15\nRegional grids\nAndreas Prein (ETHZ)\n\n\n16:30\nThe experimental protocols\nDaisuke Takasuka (Tohoku Univ)\n\n\n17:00\nDiscussion on the setting and data\nall\n\n\n17:30\n☕️ Coffee break\nall\n\n\nData access\n\n\n\n\n17:45\nZarr and other stores\nFlo\n\n\n18:00\nCatalogs\nTobi (MPI-M)\n\n\n18:15\nStorage requirements\nFlo (DKRZ)\n\n\n18:30\nOpen discussion\nall\n\n\n19:00\nEnd\nall",
+    "crumbs": [
+      "Hacking plan",
+      "Hosting a hackathon site",
+      "Technical details for host teams",
+      "Preparation meeting on 2024-10-21/22"
+    ]
+  },
+  {
+    "objectID": "hosting/technical/meeting-2024-10-21.html#tuesday-2024-10-22",
+    "href": "hosting/technical/meeting-2024-10-21.html#tuesday-2024-10-22",
+    "title": "Preparation meeting on 2024-10-21/22",
+    "section": "",
+    "text": "Time in CEST (UTC+2)\nWhat\nWho\n\n\n\n\nWorking with the data\n\n\n\n\n15:00\nWelcome back and recap\nFlo\n\n\n15:15\nUxarray\nOrhan Eroglu / John Clyne (UCAR)\n\n\n15:30\neasygems and other python packages\nLukas (MPI-M)\n\n\n15:45\nStorm trackers\nPaul Ulrich (LLNL)\n\n\n16:00\nProcessing needs, incl. py envs,…\nLukas\n\n\nDocumentation and collaboration\n\n\n\n\n16:15\ndocumentation: Project Pythia, easy.gems.dkrz.de\nJohn Clyne (UCAR), Tobi?\n\n\n16:45\nCollecting code and results across nodes\nNikolay Koldunov (AWI)\n\n\n17:00\n☕️ Coffee break\n\n\n\nWorking from here\n\n\n\n\n17:30\nWhat’s open, next steps\nall, Flo\n\n\n19:00\nEnd",
+    "crumbs": [
+      "Hacking plan",
+      "Hosting a hackathon site",
+      "Technical details for host teams",
+      "Preparation meeting on 2024-10-21/22"
+    ]
+  },
+  {
+    "objectID": "hosting/technical/data_request.html",
+    "href": "hosting/technical/data_request.html",
+    "title": "Data request",
+    "section": "",
+    "text": "This data request is based on the Dyamond phase 3 protocol by Takasuka, D. et al. (2024).\n\n\n\n\n\n\nThe main differences to the DYAMOND 3 data request\n\n\n\n\nWe request data on a hierarchy of HEALPix grids instead of 0.25 degree resolution.\nWe added snowfall_flux, liquid_water_content_of_surface_snow, snow_area_fraction_viewable_from_above, soil_liquid_water_content to the request.\nWe specify variable names.\nWe request most 2D fields only as 3-hourly means.\nWe specify that hourly 2D data should be instantaneous.\nWe remove “Downward LW radiation at the TOA”, as it is 0 anyways.\n\n\n\n\n\nThe data from global models should be provided on the HEALPix grid on zoom level 10 (effective cell size of 6 km) or zoom 9 (13km). To ease analysis, please provide all HEALPix levels up to this level.\nFor regional models, we will need further discussion with teams that have a strong experience in intercomparisons of regional models.\n3D Output Levels:\nThe output should be interpolated to the following 25 pressure levels:\nimport numpy as np\ntr = np.arange(100,900,100)\nlt = np.arange(850,1025,25)\nua = np.arange(10,90,20)\nlevels = sorted({1,5,20,150,250,750}.union(tr,lt,ua))\n\n\n\nHEALPix grids have 12*4**level cells, so a level 9 HEALPix grid consists of roughly 3 million cells. It has proven very beneficial for the analysis to also store all lower grid resolutions. This adds approximately 30% to the output volume, and allows prototyping analyses at lower resolution, or generating maps from an amount of data that actually matches the pixels in a plot. For level 9 and all lower levels together, about 4 million floats are needed per 2D slice. Furthermore, we want the 2D fields on 6-hourly interval as well, and all fields also daily. The totals for storing this data (assuming 4 bytes/float, and 50% compression) are\n3D: 2.8TB\n2D: 1.7TB \ntotal: 4.5TB\nSee below for the code.\nWithout the hierarchy, the requirements are:\n\n\n\n\n\n\n\n\n\n\n\n\ntype\ncells / snapshot\nMB / snap-shot1\nsnapshots\nGB / var\nvars\nGB total\n\n\n\n\n2D\n3 M\n6\n365*24\n52\n33\n1650\n\n\n3D\n75 M\n150\n365*4\n220\n12\n2600\n\n\n\nNote that for any additional healpix level, the requirements grow by a factor of 4, so a ~6km resolution dataset (HEALPix level 10) already consumes about 20 TB.\n\n\n\nIn principle any file format that is compatible with standard software could be used. However, zarr has proven very advantageous, as it allows to\n\nbuild large datasets covering anything up to an entire simulation output\nchunk data in all dimensions\n\nIf plain zarr 2 is used, data can be read in many programming languages. For C-based software, a recent libnetcdf will do the trick. The downside of this approach is a lot of small files, which can be problematic on HPC systems, especially with inode quota.\nOther possible approaches include the use of kerchunk in python for grouping data chunks in (netCDF/HDF5) files into unified datasets that look like zarr to python. Other programming languages / codes can then still make use of the underlying netCDF files.\n\n\n\nFor some models, the hydrometeor categories may not map directly onto the specified output. In these cases hydrometeor habits can be left out (for instance if snow and cloud ice are not distinguished), or additional information can be added, e.g., for models with hail. In such cases, please try to follow the CF conventions, and open an issue, so we can amend the table and keep the naming consistent among all teams.\n\n\n\n\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\ngeopotential_height\nzg\nm\n\n\n\neastward_wind\nua\nm/s\n\n\n\nnorthward_wind\nva\nm/s\n\n\n\nupward_air_velocity\nwa\nm/s\n(pick appropriate unit for model)\n\n\nlagrangian_tendency_of_air_pressure\nwap\npa/s\n\n\n\nair_temperature\nta\nK\n\n\n\nrelative_humidity\nhur\n1\n\n\n\nspecific_humidity\nhus\nkg kg-1\n\n\n\nmass_fraction_of_water_in_air\nqall\nkg kg-1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\natmosphere_mass_content_of_cloud_condensed_water\nclwvi\nkg m-2\n\n\n\natmosphere_mass_content_of_cloud_ice\nclivi\nkg m-2\n\n\n\nsurface_downward_latent_heat_flux\nhflsd\nW m-2\ndirection included in short name\n\n\nsurface_downward_sensible_heat_flux\nhfssd\nW m-2\ndirection included in short name\n\n\ntoa_outgoing_longwave_flux\nrlut\nW m-2\n\n\n\ntoa_outgoing_longwave_flux_assuming_clear_sky\nrlutcs\nW m-2\n\n\n\nsurface_upwelling_longwave_flux_in_air\nrlus\nW m-2\n\n\n\nsurface_upwelling_longwave_flux_in_air_assuming_clear_sky\nrluscs\nW m-2\n\n\n\nsurface_downwelling_longwave_flux_in_air\nrlds\nW m-2\n\n\n\nsurface_downwelling_longwave_flux_in_air_assuming_clear_sky\nrldscs\nW m-2\n\n\n\ntoa_outgoing_shortwave_flux\nrsut\nW m-2\n\n\n\ntoa_outgoing_shortwave_flux_assuming_clear_sky\nrsutcs\nW m-2\n\n\n\ntoa_incoming_shortwave_flux\nrsdt\nW m-2\n\n\n\nsurface_upwelling_shortwave_flux_in_air\nrsus\nW m-2\n\n\n\nsurface_upwelling_shortwave_flux_in_air_assuming_clear_sky\nrsuscs\nW m-2\n\n\n\nsurface_downwelling_shortwave_flux_in_air\nrsds\nW m-2\n\n\n\nsurface_downwelling_shortwave_flux_in_air_assuming_clear_sky\nrsdscs\nW m-2\n\n\n\nprecipitation_flux\npr\nkg m-2 s-1\nincludes all forms of precipitation\n\n\nsolid_precipitation_flux\nprs\nkg m-2 s-1\nincludes all forms of solid precipitation\n\n\natmosphere_mass_content_of_water_vapor\nprw\nkg m-2\n\n\n\nsurface_air_pressure\nps\nPa\n\n\n\nair_pressure_at_mean_sea_level\npsl\nPa\n\n\n\nspecific_humidity\nhuss\nkg kg-1\n2m above ground\n\n\nair_temperature\ntas\nK\n2m above ground\n\n\neastward_wind\nuas\nm s-1\n10m above ground\n\n\nnorthward_wind\nvas\nm s-1\n10m above ground\n\n\nsurface_temperature\nts\nK\n\n\n\nsurface_downward_eastward_stress\ntauu\nN m-2\n\n\n\nsurface_downward_northward_stress\ntauv\nN m-2\n\n\n\ncloud_area_fraction\nclt\n1\n\n\n\nliquid_water_content_of_surface_snow\nswe\nkg m-2\nshort name invented\n\n\nsnow_area_fraction_viewable_from_above\nsncvfa\n1\nshort name based on snc for surface_snow_area_fraction\n\n\nsoil_liquid_water_content\nmrso\nkg m-2\nshort name invented\n\n\nsea_ice_area_fraction\nsiconc\n1\n\n\n\n\n\n\n\nThis list is designed to include key outputs like accumulated precipitation, surface temperature and surface wind speed, as well as other features desired for trackers of convective storms and MCS. Other features requiring vertical information are suggested to be done 6 hourly.\n\n\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\ntoa_outgoing_longwave_flux\nrlut\nW m-2\n\n\n\ntoa_outgoing_shortwave_flux\nrsut\nW m-2\n\n\n\nprecipitation_flux (*)\npr\nkg m-2 s-1\nsum of all modes\n\n\nair_pressure_at_mean_sea_level\npsl\nPa\n\n\n\neastward_wind\nuas\nm s-1\n10m above ground\n\n\nnorthward_wind\nvas\nm s-1\n10m above ground\n\n\nsurface_temperature\nts\nK\n\n\n\n\n\nAverage precipitation flux (rate) over the hour is requested. Instantaneous rate for a timestep is okay if that is produced. Please specify.\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\nland_area_fraction\nsftlf\n1\n\n\n\nland_ice_area_fraction\nsftgif\n1\n\n\n\nsurface_altitude\norog\nm\n\n\n\n\n\n\n\n\nSeveral additional requests by specific people have been made. Models are requested to provide them as computer and human time allow.\n\n\nThe purpose of the requested relative vorticity with instantaneous values is to be able to track storms and to assess their baroclinicity. Three levels at 300, 500, and 850 hPa would make it possible. Instantaneous 3 hourly data is needed.\n\n\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\natmosphere_relative_vorticity 300hPa\nrva300\ns-1\n\n\n\natmosphere_relative_vorticity 500hPa\nrva500\ns-1\n\n\n\natmosphere_relative_vorticity 850hPa\nrva850\ns-1\n\n\n\n\n\n\n\n\nFor convective cell tracking and case studies, a short re-run is requested: 15 minute instantaneous output is requested at zoom level 9/10 if available. Two 24 or 48 hour periods? Beginning 2020/2/1 and 2020/8/1\n\n\n\n\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\ntoa_outgoing_longwave_flux\nrlut\nW m-2\n\n\n\ntoa_outgoing_shortwave_flux\nrsut\nW m-2\n\n\n\nprecipitation_flux\npr\nkg m-2 s-1\nsum of all modes\n\n\nair_pressure_at_mean_sea_level\npsl\nPa\n\n\n\neastward_wind\nuas\nm s-1\n10m above ground\n\n\nnorthward_wind\nvas\nm s-1\n10m above ground\n\n\nsurface_temperature\nts\nK\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nstandard name\nshort name\nunits\ncomment\n\n\n\n\ngeopotential_height\nzg\nm\n\n\n\neastward_wind\nua\nm/s\n\n\n\nnorthward_wind\nva\nm/s\n\n\n\nupward_air_velocity\nwa\nm/s\n(pick appropriate unit for model)\n\n\nlagrangian_tendency_of_air_pressure\nwap\npa/s\n\n\n\ntemperature\nta\nK\n\n\n\nrelative_humidity\nhur\n-\n\n\n\nspecific_humidity\nhus\nkg kg-1\n\n\n\nmass_fraction_of_water_in_air\nqall\nkg kg-1\n\n\n\n\n\n\n\n\nvars_3d = 8\nvars_2d_3h = 35\nvars_2d_1h = 7\ninterval_3d = 6/24.\ninterval_2d_3h = 1/8.\ninterval_2d_1h = 1/24.\ninterval_daily = 1.\nlevels_3d = 25\n\nparams = dict ( \n    max_healpix_level = 9,\n    duration = 365,\n    float_precision = 4,\n    float_compression = .5,\n)\ndef compute_volume(var_count, levels, interval, max_healpix_level, duration, float_precision, float_compression):\n    cells = sum (12 * 4** level for level in range (max_healpix_level + 1))\n    return cells * var_count * levels * duration / interval * float_precision * float_compression\n\nvolume_3d = ( compute_volume(var_count=vars_3d, levels=levels_3d, interval=interval_3d, **params) +\ncompute_volume(var_count=vars_3d, levels=levels_3d, interval=interval_daily, **params))\nvolume_2d_3h = (compute_volume(var_count=vars_2d_3h, levels=1, interval = interval_2d_3h, **params) +\n            compute_volume(var_count=vars_2d_3h, levels=1, interval = interval_3d, **params) +\n            compute_volume(var_count=vars_2d_3h, levels=1, interval = interval_daily, **params))\nvolume_2d_1h = (compute_volume(var_count=vars_2d_1h, levels=1, interval = interval_2d_1h, **params))\nprint (f'3D: {volume_3d/1024**4:.1f}TB\\n2D: {(volume_2d_3h+volume_2d_1h)/1024**4:.1f}TB \\ntotal: {(volume_3d+(volume_2d_3h+volume_2d_1h))/1024**4:.1f}TB')",
+    "crumbs": [
+      "Hacking plan",
+      "Hosting a hackathon site",
+      "Technical details for host teams",
+      "Data request"
+    ]
+  },
+  {
+    "objectID": "hosting/technical/data_request.html#data-grid-and-vertical-levels",
+    "href": "hosting/technical/data_request.html#data-grid-and-vertical-levels",
+    "title": "Data request",
+    "section": "",
+    "text": "The data from global models should be provided on the HEALPix grid on zoom level 10 (effective cell size of 6 km) or zoom 9 (13km). To ease analysis, please provide all HEALPix levels up to this level.\nFor regional models, we will need further discussion with teams that have a strong experience in intercomparisons of regional models.\n3D Output Levels:\nThe output should be interpolated to the following 25 pressure levels:\nimport numpy as np\ntr = np.arange(100,900,100)\nlt = np.arange(850,1025,25)\nua = np.arange(10,90,20)\nlevels = sorted({1,5,20,150,250,750}.union(tr,lt,ua))",
+    "crumbs": [
+      "Hacking plan",
+      "Hosting a hackathon site",
+      "Technical details for host teams",
+      "Data request"
+    ]
+  },
+  {
+    "objectID": "hosting/technical/data_request.html#data-volume",
+    "href": "hosting/technical/data_request.html#data-volume",
+    "title": "Data request",
+    "section": "",
+    "text": "HEALPix grids have 12*4**level cells, so a level 9 HEALPix grid consists of roughly 3 million cells. It has proven very beneficial for the analysis to also store all lower grid resolutions. This adds approximately 30% to the output volume, and allows prototyping analyses at lower resolution, or generating maps from an amount of data that actually matches the pixels in a plot. For level 9 and all lower levels together, about 4 million floats are needed per 2D slice. Furthermore, we want the 2D fields on 6-hourly interval as well, and all fields also daily. The totals for storing this data (assuming 4 bytes/float, and 50% compression) are\n3D: 2.8TB\n2D: 1.7TB \ntotal: 4.5TB\nSee below for the code.\nWithout the hierarchy, the requirements are:\n\n\n\n\n\n\n\n\n\n\n\n\ntype\ncells / snapshot\nMB / snap-shot1\nsnapshots\nGB / var\nvars\nGB total\n\n\n\n\n2D\n3 M\n6\n365*24\n52\n33\n1650\n\n\n3D\n75 M\n150\n365*4\n220\n12\n2600\n\n\n\nNote that for any additional healpix level, the requirements grow by a factor of 4, so a ~6km resolution dataset (HEALPix level 10) already consumes about 20 TB.",
+    "crumbs": [
+      "Hacking plan",
+      "Hosting a hackathon site",
+      "Technical details for host teams",
+      "Data request"
+    ]
+  },
+  {
+    "objectID": "hosting/technical/data_request.html#file-formats",
+    "href": "hosting/technical/data_request.html#file-formats",
+    "title": "Data request",
+    "section": "",
+    "text": "In principle any file format that is compatible with standard software could be used. However, zarr has proven very advantageous, as it allows to\n\nbuild large datasets covering anything up to an entire simulation output\nchunk data in all dimensions\n\nIf plain zarr 2 is used, data can be read in many programming languages. For C-based software, a recent libnetcdf will do the trick. The downside of this approach is a lot of small files, which can be problematic on HPC systems, especially with inode quota.\nOther possible approaches include the use of kerchunk in python for grouping data chunks in (netCDF/HDF5) files into unified datasets that look like zarr to python. Other programming languages / codes can then still make use of the underlying netCDF files.",
+    "crumbs": [
+      "Hacking plan",
+      "Hosting a hackathon site",
+      "Technical details for host teams",
+      "Data request"
+    ]
+  },
+  {
+    "objectID": "hosting/technical/data_request.html#variables",
+    "href": "hosting/technical/data_request.html#variables",
+    "title": "Data request",
+    "section": "",
+    "text": "For some models, the hydrometeor categories may not map directly onto the specified output. In these cases hydrometeor habits can be left out (for instance if snow and cloud ice are not distinguished), or additional information can be added, e.g., for models with hail. In such cases, please try to follow the CF conventions, and open an issue, so we can amend the table and keep the naming consistent among all teams.\n\n\n\n\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\ngeopotential_height\nzg\nm\n\n\n\neastward_wind\nua\nm/s\n\n\n\nnorthward_wind\nva\nm/s\n\n\n\nupward_air_velocity\nwa\nm/s\n(pick appropriate unit for model)\n\n\nlagrangian_tendency_of_air_pressure\nwap\npa/s\n\n\n\nair_temperature\nta\nK\n\n\n\nrelative_humidity\nhur\n1\n\n\n\nspecific_humidity\nhus\nkg kg-1\n\n\n\nmass_fraction_of_water_in_air\nqall\nkg kg-1\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\natmosphere_mass_content_of_cloud_condensed_water\nclwvi\nkg m-2\n\n\n\natmosphere_mass_content_of_cloud_ice\nclivi\nkg m-2\n\n\n\nsurface_downward_latent_heat_flux\nhflsd\nW m-2\ndirection included in short name\n\n\nsurface_downward_sensible_heat_flux\nhfssd\nW m-2\ndirection included in short name\n\n\ntoa_outgoing_longwave_flux\nrlut\nW m-2\n\n\n\ntoa_outgoing_longwave_flux_assuming_clear_sky\nrlutcs\nW m-2\n\n\n\nsurface_upwelling_longwave_flux_in_air\nrlus\nW m-2\n\n\n\nsurface_upwelling_longwave_flux_in_air_assuming_clear_sky\nrluscs\nW m-2\n\n\n\nsurface_downwelling_longwave_flux_in_air\nrlds\nW m-2\n\n\n\nsurface_downwelling_longwave_flux_in_air_assuming_clear_sky\nrldscs\nW m-2\n\n\n\ntoa_outgoing_shortwave_flux\nrsut\nW m-2\n\n\n\ntoa_outgoing_shortwave_flux_assuming_clear_sky\nrsutcs\nW m-2\n\n\n\ntoa_incoming_shortwave_flux\nrsdt\nW m-2\n\n\n\nsurface_upwelling_shortwave_flux_in_air\nrsus\nW m-2\n\n\n\nsurface_upwelling_shortwave_flux_in_air_assuming_clear_sky\nrsuscs\nW m-2\n\n\n\nsurface_downwelling_shortwave_flux_in_air\nrsds\nW m-2\n\n\n\nsurface_downwelling_shortwave_flux_in_air_assuming_clear_sky\nrsdscs\nW m-2\n\n\n\nprecipitation_flux\npr\nkg m-2 s-1\nincludes all forms of precipitation\n\n\nsolid_precipitation_flux\nprs\nkg m-2 s-1\nincludes all forms of solid precipitation\n\n\natmosphere_mass_content_of_water_vapor\nprw\nkg m-2\n\n\n\nsurface_air_pressure\nps\nPa\n\n\n\nair_pressure_at_mean_sea_level\npsl\nPa\n\n\n\nspecific_humidity\nhuss\nkg kg-1\n2m above ground\n\n\nair_temperature\ntas\nK\n2m above ground\n\n\neastward_wind\nuas\nm s-1\n10m above ground\n\n\nnorthward_wind\nvas\nm s-1\n10m above ground\n\n\nsurface_temperature\nts\nK\n\n\n\nsurface_downward_eastward_stress\ntauu\nN m-2\n\n\n\nsurface_downward_northward_stress\ntauv\nN m-2\n\n\n\ncloud_area_fraction\nclt\n1\n\n\n\nliquid_water_content_of_surface_snow\nswe\nkg m-2\nshort name invented\n\n\nsnow_area_fraction_viewable_from_above\nsncvfa\n1\nshort name based on snc for surface_snow_area_fraction\n\n\nsoil_liquid_water_content\nmrso\nkg m-2\nshort name invented\n\n\nsea_ice_area_fraction\nsiconc\n1\n\n\n\n\n\n\n\nThis list is designed to include key outputs like accumulated precipitation, surface temperature and surface wind speed, as well as other features desired for trackers of convective storms and MCS. Other features requiring vertical information are suggested to be done 6 hourly.\n\n\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\ntoa_outgoing_longwave_flux\nrlut\nW m-2\n\n\n\ntoa_outgoing_shortwave_flux\nrsut\nW m-2\n\n\n\nprecipitation_flux (*)\npr\nkg m-2 s-1\nsum of all modes\n\n\nair_pressure_at_mean_sea_level\npsl\nPa\n\n\n\neastward_wind\nuas\nm s-1\n10m above ground\n\n\nnorthward_wind\nvas\nm s-1\n10m above ground\n\n\nsurface_temperature\nts\nK\n\n\n\n\n\nAverage precipitation flux (rate) over the hour is requested. Instantaneous rate for a timestep is okay if that is produced. Please specify.\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\nland_area_fraction\nsftlf\n1\n\n\n\nland_ice_area_fraction\nsftgif\n1\n\n\n\nsurface_altitude\norog\nm",
+    "crumbs": [
+      "Hacking plan",
+      "Hosting a hackathon site",
+      "Technical details for host teams",
+      "Data request"
+    ]
+  },
+  {
+    "objectID": "hosting/technical/data_request.html#optional-specific-requests",
+    "href": "hosting/technical/data_request.html#optional-specific-requests",
+    "title": "Data request",
+    "section": "",
+    "text": "Several additional requests by specific people have been made. Models are requested to provide them as computer and human time allow.\n\n\nThe purpose of the requested relative vorticity with instantaneous values is to be able to track storms and to assess their baroclinicity. Three levels at 300, 500, and 850 hPa would make it possible. Instantaneous 3 hourly data is needed.\n\n\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\natmosphere_relative_vorticity 300hPa\nrva300\ns-1\n\n\n\natmosphere_relative_vorticity 500hPa\nrva500\ns-1\n\n\n\natmosphere_relative_vorticity 850hPa\nrva850\ns-1",
+    "crumbs": [
+      "Hacking plan",
+      "Hosting a hackathon site",
+      "Technical details for host teams",
+      "Data request"
+    ]
+  },
+  {
+    "objectID": "hosting/technical/data_request.html#individual-convective-cell-tracking-zhe-feng-pnnl-will-jones-oxford",
+    "href": "hosting/technical/data_request.html#individual-convective-cell-tracking-zhe-feng-pnnl-will-jones-oxford",
+    "title": "Data request",
+    "section": "",
+    "text": "For convective cell tracking and case studies, a short re-run is requested: 15 minute instantaneous output is requested at zoom level 9/10 if available. Two 24 or 48 hour periods? Beginning 2020/2/1 and 2020/8/1\n\n\n\n\n\n\n\n\n\n\n\nCF standard name\nshort name\nunits\ncomment\n\n\n\n\ntoa_outgoing_longwave_flux\nrlut\nW m-2\n\n\n\ntoa_outgoing_shortwave_flux\nrsut\nW m-2\n\n\n\nprecipitation_flux\npr\nkg m-2 s-1\nsum of all modes\n\n\nair_pressure_at_mean_sea_level\npsl\nPa\n\n\n\neastward_wind\nuas\nm s-1\n10m above ground\n\n\nnorthward_wind\nvas\nm s-1\n10m above ground\n\n\nsurface_temperature\nts\nK\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nstandard name\nshort name\nunits\ncomment\n\n\n\n\ngeopotential_height\nzg\nm\n\n\n\neastward_wind\nua\nm/s\n\n\n\nnorthward_wind\nva\nm/s\n\n\n\nupward_air_velocity\nwa\nm/s\n(pick appropriate unit for model)\n\n\nlagrangian_tendency_of_air_pressure\nwap\npa/s\n\n\n\ntemperature\nta\nK\n\n\n\nrelative_humidity\nhur\n-\n\n\n\nspecific_humidity\nhus\nkg kg-1\n\n\n\nmass_fraction_of_water_in_air\nqall\nkg kg-1",
+    "crumbs": [
+      "Hacking plan",
+      "Hosting a hackathon site",
+      "Technical details for host teams",
+      "Data request"
+    ]
+  },
+  {
+    "objectID": "hosting/technical/data_request.html#code-for-computing-the-data-volume",
+    "href": "hosting/technical/data_request.html#code-for-computing-the-data-volume",
+    "title": "Data request",
+    "section": "",
+    "text": "vars_3d = 8\nvars_2d_3h = 35\nvars_2d_1h = 7\ninterval_3d = 6/24.\ninterval_2d_3h = 1/8.\ninterval_2d_1h = 1/24.\ninterval_daily = 1.\nlevels_3d = 25\n\nparams = dict ( \n    max_healpix_level = 9,\n    duration = 365,\n    float_precision = 4,\n    float_compression = .5,\n)\ndef compute_volume(var_count, levels, interval, max_healpix_level, duration, float_precision, float_compression):\n    cells = sum (12 * 4** level for level in range (max_healpix_level + 1))\n    return cells * var_count * levels * duration / interval * float_precision * float_compression\n\nvolume_3d = ( compute_volume(var_count=vars_3d, levels=levels_3d, interval=interval_3d, **params) +\ncompute_volume(var_count=vars_3d, levels=levels_3d, interval=interval_daily, **params))\nvolume_2d_3h = (compute_volume(var_count=vars_2d_3h, levels=1, interval = interval_2d_3h, **params) +\n            compute_volume(var_count=vars_2d_3h, levels=1, interval = interval_3d, **params) +\n            compute_volume(var_count=vars_2d_3h, levels=1, interval = interval_daily, **params))\nvolume_2d_1h = (compute_volume(var_count=vars_2d_1h, levels=1, interval = interval_2d_1h, **params))\nprint (f'3D: {volume_3d/1024**4:.1f}TB\\n2D: {(volume_2d_3h+volume_2d_1h)/1024**4:.1f}TB \\ntotal: {(volume_3d+(volume_2d_3h+volume_2d_1h))/1024**4:.1f}TB')",
+    "crumbs": [
+      "Hacking plan",
+      "Hosting a hackathon site",
+      "Technical details for host teams",
+      "Data request"
+    ]
+  },
+  {
+    "objectID": "hosting/technical/data_request.html#footnotes",
+    "href": "hosting/technical/data_request.html#footnotes",
+    "title": "Data request",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nAssuming 4-byte floats and 50% compression↩︎",
+    "crumbs": [
+      "Hacking plan",
+      "Hosting a hackathon site",
+      "Technical details for host teams",
+      "Data request"
+    ]
+  },
+  {
+    "objectID": "hosting/time_line.html",
+    "href": "hosting/time_line.html",
+    "title": "Organization time line",
+    "section": "",
+    "text": "This is an idealized time line until when tasks need to be completed. Tasks could be completed earlier of course.\n\nas soon as possible\n\ndecide on locations (for people and data)\nwhich projects want to be involved?\nannounce dates to the community, with reference to basic website?\ncome up with a cool title\nwhat budget do we have for location costs, etc.? are there any sponsors?\n\n9 months before the event (August 2024)\n\ndecide on rough agenda, potential keynote speakers\n\n8 months before the event (September 2024)\n\nbook meeting venues\n\n7 months before the event (October 2024)\n6 months before the event (November 2024)\n\nplan possible side events at each location (tours)? social events, world cafe, etc.?\ndefine terms of reference (TOR) for hackathon participation (is necessary for nextGEMS)\n\n5 months before the event (December 2024)\n\nwebsite online\nregistration page(s) set up\nannounce hackathon\npublish schedule\nopen registration (1 Jan)\n\n4 months before the event (January 2025)\n\napplication deadline for travel support (15 Jan)\ninvitation letters for visa applications to be sent out\n\n3 months before the event (February 2025)\n\nregistration closes (1 Feb)\ndecision on participant numbers / can we accept all registrations?\nsend out confirmation about travel support (1 Feb)\nsend out registration confirmation (14 Feb)\nopen payment options (14 Feb)\n\n2 months before the event (March 2025)\n\nset up communication channels for the hackathon (Mattermost, mailing list(s))\nsimulations ready\n\n1 month before the event (April 2025)\n\nworkflow for data access\nparticipation fee payment deadline (15 April)\nsend NDAs to participants\n\nlast weeks before the event\n\nbadges\nsigns",
+    "crumbs": [
+      "Hacking plan",
+      "Hosting a hackathon site",
+      "Organization time line"
+    ]
+  },
+  {
+    "objectID": "hosting/meeting-dates-and-times.html",
+    "href": "hosting/meeting-dates-and-times.html",
+    "title": "Preparation meetings",
+    "section": "",
+    "text": "Latest Updates on status of each node\n\ndata readiness\nTop-level intake catalogue\n\nexamples of how to use\n\nsystem readiness (jupyter hub server, environments)\nsoftware, starting from introductory notebooks\nscience plans\n\nCommunications plan\n\nKey people at each node\nZoom and social media contacts\nEnlisting people in Mattermost\n\nCoordinated Activites and Common Events\n\n\n\n\n\nStatus of each node\n\ndata readiness\ndata catalogues (intake format)\nsoftware, starting from introductory notebooks\nscience plans\n\nAffiliate nodes:\n\nECMWF\nESA/EarthCare\nInception (UAE)\nNVIDIA\nPNNL\n\nScience teams concept\nGeneral Programme\nCommunications plan\n\nKey people at each node\nZoom and social media contacts\nEnlisting people in Mattermost\n\nTutorial sessions\n\nWhen and how\n\n\n\n\n\n\nBrief reports from each node\n\nlocal science plans\ndata and software status\nstatus of registrations\n\n\nA few updates on the overall programme for the week of 12-17 May\n\nOpening by easternmost node: Australia, Monday 12 May (Sunday for many, recorded)\nOpening keynote lecture by Tim Palmer on Monday 12 May, St Hugh’s, Oxford\nDemonstration session with WCRP JSC, Paris, Tuesday 13 May, 21:00 Paris time\nClosing ceremony by westernmost node: West US, Friday 17 May\n\nWMO sponsorship: last call for requests for support\nPlans for broadcasting from nodes at the end of each day\nAOB\n\n\n\n\n\nSummary of progress from each node, including run status\nStorm trackers\nCopying data between nodes\nShared notebooks with examples\nWCRP webinar talk by Andrew Gettelman\nAgenda for the hackathon and cross-site collaboration\n\nOpening (probably by the Australian team)\n\n\n\n\n\n\nDiscussion on the draft science plan\nMind map of working groups and intended investigations: \nStatus of data requests\nReadiness status of:\n\nNode web pages + registration\nData at nodes\n\nSoftware stacks at nodes\n\n\n\n\n\n\n\nSendai Protocol paper\n\npublished today in Progress in Earth and Planetary Science. doi:10.1186/s40645-024-00668-1\na few adaptations for the hackathon need to be made, given the reality of which simulations exist\n\nUpdate on global registrations so far\nReports on progress with initial data processing, re-gridding etc.\nStatus update from each node:\n\nPlans for mini science conferences to design node-specific objectives and actions\nLogistics (data repositories, compute, venue)\nRun status\nSoftware stack\nLocal web sites for each node’s organisation and registration\n\n\n\n\n\n\nCoordination of websites and advertising\nFinalizing the data request (see also the Mattermost discussion of Trackers)\nSet up a test run and assessment of one regional HEALPix conversion\n\nLukas Kluft is working on transforming an ICON regional simulation.\n\nHandling of finances\n\nby each node individually\nparticipation fees depend on local costs and funding\nstipends\n\nOutreach activities (daily blog, videos, …)\nStreaming one presentation per day per node, ideally also recording it\n\n\n\n\n\n8:00 to 9:30 CET and repeated at 17:00 to 18:30 CET\nEach meeting will cover:\n\nSteering Group topics in the first 30 minutes, and next\nTechnical Group topics.\n\n\n\n\n\n\n\n\n\n\nHackaton Gantt",
+    "crumbs": [
+      "Hacking plan",
+      "Hosting a hackathon site",
+      "Preparation meetings"
+    ]
+  },
+  {
+    "objectID": "hosting/meeting-dates-and-times.html#meeting-dates",
+    "href": "hosting/meeting-dates-and-times.html#meeting-dates",
+    "title": "Preparation meetings",
+    "section": "",
+    "text": "Latest Updates on status of each node\n\ndata readiness\nTop-level intake catalogue\n\nexamples of how to use\n\nsystem readiness (jupyter hub server, environments)\nsoftware, starting from introductory notebooks\nscience plans\n\nCommunications plan\n\nKey people at each node\nZoom and social media contacts\nEnlisting people in Mattermost\n\nCoordinated Activites and Common Events\n\n\n\n\n\nStatus of each node\n\ndata readiness\ndata catalogues (intake format)\nsoftware, starting from introductory notebooks\nscience plans\n\nAffiliate nodes:\n\nECMWF\nESA/EarthCare\nInception (UAE)\nNVIDIA\nPNNL\n\nScience teams concept\nGeneral Programme\nCommunications plan\n\nKey people at each node\nZoom and social media contacts\nEnlisting people in Mattermost\n\nTutorial sessions\n\nWhen and how\n\n\n\n\n\n\nBrief reports from each node\n\nlocal science plans\ndata and software status\nstatus of registrations\n\n\nA few updates on the overall programme for the week of 12-17 May\n\nOpening by easternmost node: Australia, Monday 12 May (Sunday for many, recorded)\nOpening keynote lecture by Tim Palmer on Monday 12 May, St Hugh’s, Oxford\nDemonstration session with WCRP JSC, Paris, Tuesday 13 May, 21:00 Paris time\nClosing ceremony by westernmost node: West US, Friday 17 May\n\nWMO sponsorship: last call for requests for support\nPlans for broadcasting from nodes at the end of each day\nAOB\n\n\n\n\n\nSummary of progress from each node, including run status\nStorm trackers\nCopying data between nodes\nShared notebooks with examples\nWCRP webinar talk by Andrew Gettelman\nAgenda for the hackathon and cross-site collaboration\n\nOpening (probably by the Australian team)\n\n\n\n\n\n\nDiscussion on the draft science plan\nMind map of working groups and intended investigations: \nStatus of data requests\nReadiness status of:\n\nNode web pages + registration\nData at nodes\n\nSoftware stacks at nodes\n\n\n\n\n\n\n\nSendai Protocol paper\n\npublished today in Progress in Earth and Planetary Science. doi:10.1186/s40645-024-00668-1\na few adaptations for the hackathon need to be made, given the reality of which simulations exist\n\nUpdate on global registrations so far\nReports on progress with initial data processing, re-gridding etc.\nStatus update from each node:\n\nPlans for mini science conferences to design node-specific objectives and actions\nLogistics (data repositories, compute, venue)\nRun status\nSoftware stack\nLocal web sites for each node’s organisation and registration\n\n\n\n\n\n\nCoordination of websites and advertising\nFinalizing the data request (see also the Mattermost discussion of Trackers)\nSet up a test run and assessment of one regional HEALPix conversion\n\nLukas Kluft is working on transforming an ICON regional simulation.\n\nHandling of finances\n\nby each node individually\nparticipation fees depend on local costs and funding\nstipends\n\nOutreach activities (daily blog, videos, …)\nStreaming one presentation per day per node, ideally also recording it",
+    "crumbs": [
+      "Hacking plan",
+      "Hosting a hackathon site",
+      "Preparation meetings"
+    ]
+  },
+  {
+    "objectID": "hosting/meeting-dates-and-times.html#meeting-times",
+    "href": "hosting/meeting-dates-and-times.html#meeting-times",
+    "title": "Preparation meetings",
+    "section": "",
+    "text": "8:00 to 9:30 CET and repeated at 17:00 to 18:30 CET\nEach meeting will cover:\n\nSteering Group topics in the first 30 minutes, and next\nTechnical Group topics.",
+    "crumbs": [
+      "Hacking plan",
+      "Hosting a hackathon site",
+      "Preparation meetings"
+    ]
+  },
+  {
+    "objectID": "hosting/meeting-dates-and-times.html#a-few-milestones-from-oct-2024-until-12-may-2025",
+    "href": "hosting/meeting-dates-and-times.html#a-few-milestones-from-oct-2024-until-12-may-2025",
+    "title": "Preparation meetings",
+    "section": "",
+    "text": "Hackaton Gantt",
+    "crumbs": [
+      "Hacking plan",
+      "Hosting a hackathon site",
+      "Preparation meetings"
     ]
   }
 ]
