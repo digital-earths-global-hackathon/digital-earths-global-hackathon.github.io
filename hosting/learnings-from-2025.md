@@ -26,11 +26,17 @@ All in all, this was surprisingly successful. There were some technical issues t
 ### Zoom calls during the hackathon
 
 * Did not really line up with the schedules (at least at some nodes). Would need earlier planning to be incorporated into the local schedules.
+* Goals should be very clear.
 
 ### GitHub and Code sharing
 
 * GitHub seems to provide a bit of a barrier for sharing code.
 * Need a concept that scales to 500 people contributing at the same time without established teams or time for learning.
+* If we really want collaboration, we need to train people before the hackathon.
+* Possible rules:
+  * No Jupyter notebooks, just plain python scripts to avoid GB-size repo. `# %%` syntax is fine
+  * Commit and merge frequently
+  * Differentiate between libraries, examples, and dumpster
 
 ## Technical aspects
 
@@ -46,7 +52,7 @@ All in all, this was surprisingly successful. There were some technical issues t
 
 * Provide default chunk settings for 2D/3D datasets
 * Zarr with small (regional) Chunks works well.
-    * The IFS GRIB datasets were very popular in China despite access via EERIE cloud being difficult.
+    * The IFS GRIB datasets were very popular in China despite access via EERIE cloud being difficult. This is due to IFS being popular, not b/c of GRIB being popular.
 * Prepare more uniform conversion scripts for better sharing among the teams
 * Try to get datasets ready weeks before the hackathon (maybe practice with sample datesets to get the scripts right if teams are into last-minute simulations)
 * Create scripts for consistency checks (e.g. do they have crs set?), and encourage their use
